@@ -1,0 +1,989 @@
+{
+  "Uuid": "3c9d0464-8643-5ffe-96e5-ab1769818209",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Info-Clipboard",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Orchid.Directory": {
+        "Key": "Orchid.Generic.Core.Directory",
+        "Value": "OrchidGeneric.dll"
+      },
+      "Orchid.Generic.Core.Directory": {
+        "Key": "Orchid.Generic.Core.Directory",
+        "Value": "OrchidGeneric.dll"
+      },
+      "Orchid.Directory.Current": {
+        "Key": "Orchid.Generic.Core.Directory",
+        "Value": "OrchidGeneric.dll"
+      },
+      "Orchid.Generic.Core.Directory.Current": {
+        "Key": "Orchid.Generic.Core.Directory",
+        "Value": "OrchidGeneric.dll"
+      },
+      "Orchid.Core.Directory.Current": {
+        "Key": "Orchid.Core.Directory",
+        "Value": "OrchidRB.dll"
+      },
+      "Orchid.Core.Directory": {
+        "Key": "Orchid.Core.Directory",
+        "Value": "OrchidRB.dll"
+      },
+      "Orchid.Common.Directory.Current": {
+        "Key": "Orchid.Common.Directory",
+        "Value": "OrchidRB.dll"
+      },
+      "Orchid.Common.Directory": {
+        "Key": "Orchid.Common.Directory",
+        "Value": "OrchidRB.dll"
+      }
+    }
+  },
+  "Inputs": [
+    {
+      "Id": "4196c135cb7f4e78aa8bb2c41db21bce",
+      "Name": "Directory Path",
+      "Type": "string",
+      "Type2": "string",
+      "Value": "%userprofile%\\Programming\\Testing\\Data\\testSet\\",
+      "Description": "Creates a string.",
+      "SelectedIndex": 0
+    }
+  ],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Elements.Element.HasMaterial@Revit.Application.Document,bool",
+      "Id": "7563407f1f034ef998b3d2a3fb03e1c3",
+      "Inputs": [
+        {
+          "Id": "13d357fbef7f47ebad20975c60159fd0",
+          "Name": "document",
+          "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "651c68a2636a47c48068ef4876924875",
+          "Name": "condense",
+          "Description": "Condense to shortest feasible output?\n\nbool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2ae5042ef0554e9d9e1f728b371768b0",
+          "Name": "Element",
+          "Description": "Element.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6baa5b8fe3e34ddfbd7e3f5809d8586e",
+          "Name": "Category",
+          "Description": "Category.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get elements that has material quantities in document, return element grouped by category.\n\nElement.HasMaterial (document: Document = null, condense: bool = true): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.Common.File.Info@string",
+      "Id": "22656f9449a64f55b5bd7eae9208758e",
+      "Inputs": [
+        {
+          "Id": "0a9b0cbb84e541d0b0ab9ca6a3884a9d",
+          "Name": "file",
+          "Description": "File incl. path.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "02dfb72d8f7647e3b959b1206e4b91bf",
+          "Name": "info",
+          "Description": "File information.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get file(s) information.\n\nFile.Info (file: string): string"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.Common.Clipboard.CopyTo@var[]..[],bool",
+      "Id": "783e1ee4b6e542939a9ff56cfd189d4f",
+      "Inputs": [
+        {
+          "Id": "5c60d153a55b4b42b23684528ba0f95b",
+          "Name": "object",
+          "Description": "Object(s) to copy.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e7fe14def47c4c82a48779b534b7adad",
+          "Name": "id",
+          "Description": "Add element id (if exists) to output?\n\nbool\nDefault value : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f227b48254ef444e8843eff1dceb19c3",
+          "Name": "watch",
+          "Description": "Add a watch node to verify the output.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Copy object to Clipboard. Can copy objects from a 1D list, but not from 2D...nD! If List Level is used, then will the last item be available in the clipboard.\n\nClipboard.CopyTo (object: var[]..[], id: bool = false): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.Common.Directory.Contents@string,string,bool,bool",
+      "Id": "a1ecb51f8c394742a0c544441d560ced",
+      "Inputs": [
+        {
+          "Id": "a389bf2da00842c6aca7962c9b3927e2",
+          "Name": "directory",
+          "Description": "Directory as string to get contents from.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e7fd2a7796224f0896fa579ffc0746f3",
+          "Name": "searchString",
+          "Description": "Search string used to filter results.\n\nstring\nDefault value : \"*\"",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4371b21f5beb47b7a5e76040106b50c3",
+          "Name": "deepSearch",
+          "Description": "Apply searching in all subfolders?\n\nbool\nDefault value : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d4c11a46b52d4838a85c82658fec0e01",
+          "Name": "condense",
+          "Description": "Condense to shortest feasible output?\n\nbool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2f7cb8c88fb144df88d42642d605efe1",
+          "Name": "File",
+          "Description": "File as string.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the files in a directory and its subdirectories. Use string for extension type, default is * for all files! If files are are readonly but not hidden, are they included. If files are both hidden or readonly files (and thereby system files) are they left out.\n\nDirectory.Contents (directory: string, searchString: string = \"*\", deepSearch: bool = false, condense: bool = true): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "1..5;",
+      "Id": "182fe83abdc94ca397f67f07a3ae42c1",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "0d2dc62adfa5403a9a547ad2096eaa7a",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "c67449e95ebe4747bdb2f3e9ebc60083",
+      "Inputs": [
+        {
+          "Id": "c84e07a36fdc4d66b7b0e435b5263b98",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f75d38683f7348768074738119566a90",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the node's output"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.Common.Clipboard.CopyTo@var[]..[],bool",
+      "Id": "723fb97cace74ede8968b852e5c67b95",
+      "Inputs": [
+        {
+          "Id": "f8c7c4d742154f9cae548d3288d7ff2a",
+          "Name": "object",
+          "Description": "Object(s) to copy.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2b9798f115db4002a99987c3eae1c14f",
+          "Name": "id",
+          "Description": "Add element id (if exists) to output?\n\nbool\nDefault value : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "61f015efe11d4d959079592470da6fbe",
+          "Name": "watch",
+          "Description": "Add a watch node to verify the output.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Copy object to Clipboard. Can copy objects from a 1D list, but not from 2D...nD! If List Level is used, then will the last item be available in the clipboard.\n\nClipboard.CopyTo (object: var[]..[], id: bool = false): var[]..[]"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "%userprofile%\\Programming\\Testing\\Data\\testSet\\",
+      "Id": "4196c135cb7f4e78aa8bb2c41db21bce",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "1e2016e7892d4d2ca7feafd9cedd77e4",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Common.Document.Info@Revit.Application.Document",
+      "Id": "f32f715db7c04d659596807725e61a66",
+      "Inputs": [
+        {
+          "Id": "766cd4393a5841a1bd79ac4981e49397",
+          "Name": "document",
+          "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e1f1d7e0938c4e9d83a1f129d3af6943",
+          "Name": "info",
+          "Description": "Document info.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the document info.\n\nDocument.Info (document: Document = null): string"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.Common.Clipboard.CopyTo@var[]..[],bool",
+      "Id": "03b18c8c45104d3e920a7a2b61d52989",
+      "Inputs": [
+        {
+          "Id": "836d8f25f74f4512bcbd3bc4731273b1",
+          "Name": "object",
+          "Description": "Object(s) to copy.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "195d9274bdc94f1ea5be264e45aaa02f",
+          "Name": "id",
+          "Description": "Add element id (if exists) to output?\n\nbool\nDefault value : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ca97eb062b0240f5aec8225107936556",
+          "Name": "watch",
+          "Description": "Add a watch node to verify the output.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Copy object to Clipboard. Can copy objects from a 1D list, but not from 2D...nD! If List Level is used, then will the last item be available in the clipboard.\n\nClipboard.CopyTo (object: var[]..[], id: bool = false): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.Common.Clipboard.CopyTo@var[]..[],bool",
+      "Id": "d4d05da63b934a1e8d1469b8f94d5f60",
+      "Inputs": [
+        {
+          "Id": "e2094913f3924319818a54486908a32c",
+          "Name": "object",
+          "Description": "Object(s) to copy.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4b1f510db8f643bbac5412a2b2b495e9",
+          "Name": "id",
+          "Description": "Add element id (if exists) to output?\n\nbool\nDefault value : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "55109a0b70de44b6b374ae47cbe962a2",
+          "Name": "watch",
+          "Description": "Add a watch node to verify the output.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Copy object to Clipboard. Can copy objects from a 1D list, but not from 2D...nD! If List Level is used, then will the last item be available in the clipboard.\n\nClipboard.CopyTo (object: var[]..[], id: bool = false): var[]..[]"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "ef45e57dde30485bb4aa11848ae7b166",
+      "Inputs": [
+        {
+          "Id": "8ba2464b381a495b845f3261e23ff6a5",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "77c5be9d3d81461285836ed4b47bf106",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the node's output"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "6e22c54806c8436a855f4cd58d12030f",
+      "Inputs": [
+        {
+          "Id": "d09b674853bd4902b2de5aa115c373a0",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f17a02e9e4ef417b96ce1ae0dfefaa3c",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the node's output"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "017a53ef90944880acf269e8a139ee17",
+      "Inputs": [
+        {
+          "Id": "9a85db16a30d4561892fc6bf1b4ca74d",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1b81ac2d3ce34c6f80f614cfd87bd2ec",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the node's output"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "d5ed59b1d10c45d3847f1a66998194fc",
+      "Inputs": [
+        {
+          "Id": "e6d54bb008f3451184e21ec9bbde2586",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e86d36e782c94c5e9d05f88dea50eca5",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the node's output"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "38049eb2278e4a478bc4b74a227b6731",
+      "Inputs": [
+        {
+          "Id": "dcfa3ff0ea0d47709184f40723097892",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5312675e2dba42bcb0da099a93c478e1",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the node's output"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "2ae5042ef0554e9d9e1f728b371768b0",
+      "End": "c84e07a36fdc4d66b7b0e435b5263b98",
+      "Id": "ba36b1a49e8f4191b9c5338c9c00082b",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "2ae5042ef0554e9d9e1f728b371768b0",
+      "End": "f8c7c4d742154f9cae548d3288d7ff2a",
+      "Id": "0d3a8727ca78498d8d08f839b20822f8",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "02dfb72d8f7647e3b959b1206e4b91bf",
+      "End": "e6d54bb008f3451184e21ec9bbde2586",
+      "Id": "515882ed99364791a7ac0b6da24b57be",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "02dfb72d8f7647e3b959b1206e4b91bf",
+      "End": "5c60d153a55b4b42b23684528ba0f95b",
+      "Id": "66aebdced25e41da98109845a8b07e77",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "f227b48254ef444e8843eff1dceb19c3",
+      "End": "dcfa3ff0ea0d47709184f40723097892",
+      "Id": "f187708b8e004f288bc02e6baad39905",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "2f7cb8c88fb144df88d42642d605efe1",
+      "End": "0a9b0cbb84e541d0b0ab9ca6a3884a9d",
+      "Id": "5dc277cce3dc4f49afbb02f6fb30453b",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "0d2dc62adfa5403a9a547ad2096eaa7a",
+      "End": "8ba2464b381a495b845f3261e23ff6a5",
+      "Id": "00bc78e83fd14fa888dc01182c18657f",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "0d2dc62adfa5403a9a547ad2096eaa7a",
+      "End": "836d8f25f74f4512bcbd3bc4731273b1",
+      "Id": "31eeab7c7adb4999b5759e962c2a402b",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "1e2016e7892d4d2ca7feafd9cedd77e4",
+      "End": "a389bf2da00842c6aca7962c9b3927e2",
+      "Id": "fe24393a587c426d9fe6477e82fd63ab",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e1f1d7e0938c4e9d83a1f129d3af6943",
+      "End": "9a85db16a30d4561892fc6bf1b4ca74d",
+      "Id": "0485349d33184106ba286834da2ebb90",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e1f1d7e0938c4e9d83a1f129d3af6943",
+      "End": "e2094913f3924319818a54486908a32c",
+      "Id": "7856414e376a44e2869ea8396ca65f4c",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "55109a0b70de44b6b374ae47cbe962a2",
+      "End": "d09b674853bd4902b2de5aa115c373a0",
+      "Id": "1708d347834d446eb6146264d6f060a0",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Orchid",
+      "Version": "216.3.0.5794",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "7563407f1f034ef998b3d2a3fb03e1c3",
+        "22656f9449a64f55b5bd7eae9208758e",
+        "783e1ee4b6e542939a9ff56cfd189d4f",
+        "a1ecb51f8c394742a0c544441d560ced",
+        "723fb97cace74ede8968b852e5c67b95",
+        "f32f715db7c04d659596807725e61a66",
+        "03b18c8c45104d3e920a7a2b61d52989",
+        "d4d05da63b934a1e8d1469b8f94d5f60"
+      ]
+    }
+  ],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.16",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "3.0",
+      "Data": {}
+    }
+  ],
+  "Author": "None provided",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.16.1.2727",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Name": "Element.HasMaterial",
+        "ShowGeometry": true,
+        "Id": "7563407f1f034ef998b3d2a3fb03e1c3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 9.7012297662699325,
+        "Y": 154.99964133201286
+      },
+      {
+        "Name": "File.Info",
+        "ShowGeometry": true,
+        "Id": "22656f9449a64f55b5bd7eae9208758e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 664.270512439896,
+        "Y": 714.88635715783494
+      },
+      {
+        "Name": "Clipboard.CopyTo",
+        "ShowGeometry": true,
+        "Id": "783e1ee4b6e542939a9ff56cfd189d4f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 933.71436397091725,
+        "Y": 829.93903585611361
+      },
+      {
+        "Name": "Directory.Contents",
+        "ShowGeometry": true,
+        "Id": "a1ecb51f8c394742a0c544441d560ced",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 339.82666090887506,
+        "Y": 714.88635715783494
+      },
+      {
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Id": "182fe83abdc94ca397f67f07a3ae42c1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 822.36134002965014,
+        "Y": 154.34248285388105
+      },
+      {
+        "Name": "Watch",
+        "ShowGeometry": true,
+        "Id": "c67449e95ebe4747bdb2f3e9ebc60083",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 425.70122976627,
+        "Y": 243.99964133201286
+      },
+      {
+        "Name": "Clipboard.CopyTo",
+        "ShowGeometry": true,
+        "Id": "723fb97cace74ede8968b852e5c67b95",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": true,
+        "X": 425.70122976627,
+        "Y": 65.999641332012388
+      },
+      {
+        "Name": "Directory Path",
+        "ShowGeometry": true,
+        "Id": "4196c135cb7f4e78aa8bb2c41db21bce",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 10.382809377853334,
+        "Y": 714.88635715783494
+      },
+      {
+        "Name": "Document.Info",
+        "ShowGeometry": true,
+        "Id": "f32f715db7c04d659596807725e61a66",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 621.021907404014,
+        "Y": 1201.8061258585758
+      },
+      {
+        "Name": "Clipboard.CopyTo",
+        "ShowGeometry": true,
+        "Id": "03b18c8c45104d3e920a7a2b61d52989",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": true,
+        "X": 1076.3613400296488,
+        "Y": 65.514982853880255
+      },
+      {
+        "Name": "Clipboard.CopyTo",
+        "ShowGeometry": true,
+        "Id": "d4d05da63b934a1e8d1469b8f94d5f60",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 933.021907404014,
+        "Y": 1284.1429704539755
+      },
+      {
+        "Name": "Watch",
+        "ShowGeometry": true,
+        "Id": "ef45e57dde30485bb4aa11848ae7b166",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1076.3613400296488,
+        "Y": 243.51498285388118
+      },
+      {
+        "Name": "Watch",
+        "ShowGeometry": true,
+        "Id": "6e22c54806c8436a855f4cd58d12030f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1242.7331183105391,
+        "Y": 1284.1429704539755
+      },
+      {
+        "Name": "Watch",
+        "ShowGeometry": true,
+        "Id": "017a53ef90944880acf269e8a139ee17",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1242.7331183105391,
+        "Y": 1119.5375676533959
+      },
+      {
+        "Name": "Watch",
+        "ShowGeometry": true,
+        "Id": "d5ed59b1d10c45d3847f1a66998194fc",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1242.7331183105391,
+        "Y": 714.58364330451559
+      },
+      {
+        "Name": "Watch",
+        "ShowGeometry": true,
+        "Id": "38049eb2278e4a478bc4b74a227b6731",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1604.4334203423894,
+        "Y": 714.58364330451559
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "9a1df11161894cdb9b3f8dcb30ed63a4",
+        "Title": "File Info and copy to clipboard",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "a1ecb51f8c394742a0c544441d560ced",
+          "22656f9449a64f55b5bd7eae9208758e",
+          "783e1ee4b6e542939a9ff56cfd189d4f",
+          "4196c135cb7f4e78aa8bb2c41db21bce"
+        ],
+        "HasNestedGroups": false,
+        "Left": 0.38280937785333435,
+        "Top": 648.88635715783494,
+        "Width": 1145.3315545930639,
+        "Height": 343.05267869827867,
+        "FontSize": 30.0,
+        "InitialTop": 714.88635715783494,
+        "InitialHeight": 307.05267869827867,
+        "TextblockHeight": 56.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "1c5b8a99e6a140bda238a29962d5c11f",
+        "Title": "Clipboard --> copy element",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "7563407f1f034ef998b3d2a3fb03e1c3",
+          "c67449e95ebe4747bdb2f3e9ebc60083",
+          "723fb97cace74ede8968b852e5c67b95"
+        ],
+        "HasNestedGroups": false,
+        "Left": -0.2987702337300675,
+        "Top": -0.00035866798761219343,
+        "Width": 638.0,
+        "Height": 380.00000000000045,
+        "FontSize": 30.0,
+        "InitialTop": 65.999641332012388,
+        "InitialHeight": 344.00000000000045,
+        "TextblockHeight": 56.0,
+        "Background": "#FFA4E1FF"
+      },
+      {
+        "Id": "9e8e5b542170407f8a19859a7cdb7ef1",
+        "Title": "Current document Info and copy to clipboard",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "f32f715db7c04d659596807725e61a66",
+          "d4d05da63b934a1e8d1469b8f94d5f60"
+        ],
+        "HasNestedGroups": false,
+        "Left": 611.021907404014,
+        "Top": 1099.8061258585758,
+        "Width": 534.0,
+        "Height": 346.33684459539973,
+        "FontSize": 30.0,
+        "InitialTop": 1201.8061258585758,
+        "InitialHeight": 274.33684459539973,
+        "TextblockHeight": 92.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "18df5c7c35c24aa5a9f5af9c6418354d",
+        "Title": "Clipboard --> copy int ",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "182fe83abdc94ca397f67f07a3ae42c1",
+          "ef45e57dde30485bb4aa11848ae7b166",
+          "03b18c8c45104d3e920a7a2b61d52989"
+        ],
+        "HasNestedGroups": false,
+        "Left": 812.36134002965014,
+        "Top": -0.48501714611974478,
+        "Width": 550.99999999999864,
+        "Height": 542.00000000000091,
+        "FontSize": 30.0,
+        "InitialTop": 65.514982853880255,
+        "InitialHeight": 344.00000000000091,
+        "TextblockHeight": 56.0,
+        "Background": "#FFA4E1FF"
+      }
+    ],
+    "X": 138.25471190620141,
+    "Y": -15.191746514225422,
+    "Zoom": 0.68979254127285161
+  }
+}
