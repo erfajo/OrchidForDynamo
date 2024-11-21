@@ -19,7 +19,7 @@ I will try to assist you as best as possible. One way to do that is by answering
 
 For further information, and an in-depth description of the points, please follow these guidelines
 https://forum.dynamobim.com/t/how-to-get-help-on-the-dynamo-forums/4677  
-Besides, if you experience error(s), then please read the [error page](https://github.com/erfajo/OrchidForDynamo/blob/master/Error.md) and verify that none of these possible errors are the fault for your error!  
+Besides, if you experience any error, then please read the [error page](https://github.com/erfajo/OrchidForDynamo/blob/master/Error.md) and verify that none of these possible errors are the fault for your error!  
 
 _Please delete this line and the above, and start describing your issue._
 
