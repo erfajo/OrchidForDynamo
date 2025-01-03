@@ -4,6 +4,9 @@ about: Create a report to help us improve
 
 ---
 
+### How to report...
+I will try to assist you as best as possible, but before adding a bug report, please read the [error page](https://github.com/erfajo/OrchidForDynamo/blob/master/Error.md) and verify that none of these possible errors are the fault for the bug you want to report!  
+
 ### Operating system
 (e.g. Windows 7, Windows 10, etc)
 
