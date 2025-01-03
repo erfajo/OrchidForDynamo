@@ -52,7 +52,7 @@
       "Type2": "dropdownSelection",
       "Value": "Brick - Common",
       "Description": "Thermal property sets in current document.",
-      "SelectedIndex": 1
+      "SelectedIndex": 3
     },
     {
       "Id": "96ae0b3ef0a645839e596a6747a03391",
@@ -69,7 +69,7 @@
       "Type": "boolean",
       "Type2": "boolean",
       "Value": "true",
-      "Description": "Selection between a true and false.",
+      "Description": "Enables selection between True and False",
       "SelectedIndex": 0
     },
     {
@@ -79,7 +79,7 @@
       "Type2": "dropdownSelection",
       "Value": "Brick - Common 1800kg",
       "Description": "Physical property sets in current document.",
-      "SelectedIndex": 0
+      "SelectedIndex": 2
     },
     {
       "Id": "f47955ca64f645c09220c13e8e6b7933",
@@ -132,7 +132,7 @@
       "Type": "boolean",
       "Type2": "boolean",
       "Value": "false",
-      "Description": "Selection between a true and false.",
+      "Description": "Enables selection between True and False",
       "SelectedIndex": 0
     }
   ],
@@ -140,9 +140,8 @@
   "Nodes": [
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Revit.Elements.Element.Name",
       "Id": "5296c621ab9e4968be09f809d17948ee",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "5a63d7bd5b884216ab87ac9fc4ec0c25",
@@ -165,14 +164,14 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Revit.Elements.Element.Name",
       "Replication": "Auto",
       "Description": "Get the Name of the Element\n\nElement.Name: string"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Physical.InDocument",
       "Id": "a58e1629531946078cc5c207695d63ac",
+      "NodeType": "FunctionNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -185,13 +184,16 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Physical.InDocument",
       "Replication": "Auto",
       "Description": "Get all physical property set (asset).\n\nPhysical.InDocument ( ): Element[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "NodeType": "ExtensionNode",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
       "Id": "354b4c61c76442b38191682b9f88bfa8",
+      "NodeType": "ExtensionNode",
       "Inputs": [
         {
           "Id": "ec432a8498734055b9cabcd3152dce3e",
@@ -215,13 +217,12 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the node's output"
+      "Description": "Visualizes a node's output"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Physical.SetBehavior@Revit.Elements.Element,var",
       "Id": "98ee9390c3f24a33a99256da3f754beb",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "f084a025aaf64727b1e4716d6a3d9cf3",
@@ -253,6 +254,7 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Physical.SetBehavior@Revit.Elements.Element,var",
       "Replication": "Auto",
       "Description": "Set behavior.\n\nPhysical.SetBehavior (propertySet: Element, behavior: var): Element"
     },
@@ -260,8 +262,8 @@
       "ConcreteType": "Orchid.E.RevitMaterial.PhysicalBehavior, OrchidRE",
       "SelectedIndex": 1,
       "SelectedString": "Orthotropic",
-      "NodeType": "ExtensionNode",
       "Id": "5bde0fe5b6ee49ec9ec6bb5338589f9e",
+      "NodeType": "ExtensionNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -279,9 +281,8 @@
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "11000;\n0.38;\n690;\n420;",
       "Id": "b39ac9ea58b84372b1141ad0a09a1df4",
+      "NodeType": "CodeBlockNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -322,13 +323,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "11000;\n0.38;\n690;\n420;"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "\"Multiple\";\n\"C24\";\n24;\n21;\n2.5;\n4;\n14;\n0.5;\n11000;",
       "Id": "e63d5f02e7744719b071cea488731090",
+      "NodeType": "CodeBlockNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -414,13 +415,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"Multiple\";\n\"C24\";\n24;\n21;\n2.5;\n4;\n14;\n0.5;\n11000;"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "0.00004;",
       "Id": "b746a6eaf0ab47c39a71766e1768aa93",
+      "NodeType": "CodeBlockNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -434,13 +435,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "0.00004;"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Physical.SetBasicThermal@Revit.Elements.Element,double",
       "Id": "d423db9010a742b1b662add51d6019c6",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "004cb967183547e39908cefa64d41094",
@@ -472,14 +473,14 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Physical.SetBasicThermal@Revit.Elements.Element,double",
       "Replication": "Auto",
       "Description": "Set basic thermal.\n\nPhysical.SetBasicThermal (propertySet: Element, expansionCoefficient: double): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Physical.SetMechanical@Revit.Elements.Element,double",
       "Id": "12fbe60ce4954a8fbe2dff9d887428f8",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "8e12b779b81b48c9a283b6c7cb2327bb",
@@ -511,14 +512,14 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Physical.SetMechanical@Revit.Elements.Element,double",
       "Replication": "Auto",
       "Description": "Set mechanical.\n\nPhysical.SetMechanical (propertySet: Element, density: double): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Physical.SetInformation@Revit.Elements.Element,string,string,string,string,string",
       "Id": "957f78c4d42e41e185e08f5298f2edb4",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "380d37db8ee543fdbc0fe77fc2ca02a7",
@@ -586,15 +587,16 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Physical.SetInformation@Revit.Elements.Element,string,string,string,string,string",
       "Replication": "Auto",
       "Description": "Set information.\n\nPhysical.SetInformation (propertySet: Element, description: string = null, keywords: string = null, subclass: string = null, source: string = null, sourceUrl: string = null): Element"
     },
     {
       "ConcreteType": "Orchid.E.RevitMaterial.ThermalPropertySet, OrchidRE",
-      "SelectedIndex": 1,
+      "SelectedIndex": 3,
       "SelectedString": "Brick - Common",
-      "NodeType": "ExtensionNode",
       "Id": "62728dd3967c4db3908b35bda6b9d35a",
+      "NodeType": "ExtensionNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -612,9 +614,8 @@
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Thermal.Duplicate@Revit.Elements.Element,string",
       "Id": "897ff887a1d84b3bb02e4096c5dd45b4",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "5d82c7c945ed4d83800ffbb13360b0bd",
@@ -646,14 +647,14 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Thermal.Duplicate@Revit.Elements.Element,string",
       "Replication": "Auto",
       "Description": "Duplicate thermal property set (asset).\n\nThermal.Duplicate (propertySet: Element, name: string = null): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "\"_xx (thermal)\";",
       "Id": "775ce96ef5b74dbf83641b8ab9183a58",
+      "NodeType": "CodeBlockNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -667,12 +668,15 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"_xx (thermal)\";"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "NodeType": "ExtensionNode",
+      "WatchWidth": 155.2,
+      "WatchHeight": 38.4,
       "Id": "e8cbc7b8509f486d8f84579f5cf34173",
+      "NodeType": "ExtensionNode",
       "Inputs": [
         {
           "Id": "5e529cb6eec54796aa98ff0f6d0970cb",
@@ -696,13 +700,12 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the node's output"
+      "Description": "Visualizes a node's output"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Physical.Create@string,var",
       "Id": "7a24176952ba4f20b1569fbc8fab3464",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "f4a927f507d846aba16d93ad3c92ad28",
@@ -734,6 +737,7 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Physical.Create@string,var",
       "Replication": "Auto",
       "Description": "Create physical property set. Note: If a thermal property exists it is being replaced!\n\nPhysical.Create (name: string, type: var): Element"
     },
@@ -741,8 +745,8 @@
       "ConcreteType": "Orchid.E.RevitMaterial.PhysicalType, OrchidRE",
       "SelectedIndex": 5,
       "SelectedString": "Wood",
-      "NodeType": "ExtensionNode",
       "Id": "96ae0b3ef0a645839e596a6747a03391",
+      "NodeType": "ExtensionNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -760,9 +764,8 @@
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "\"Strength Class C24 Timber\";\n\"Eurocode,Structural,structural,wood,CC:EN 338\";\n\"Wood,thermal,solid\";\n\"Wood\";\n\"Orchid generated\";\n\"https://github.com/erfajo/OrchidForDynamo\";",
       "Id": "9706592bfd044690b9e37bbe9006febe",
+      "NodeType": "CodeBlockNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -821,13 +824,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"Strength Class C24 Timber\";\n\"Eurocode,Structural,structural,wood,CC:EN 338\";\n\"Wood,thermal,solid\";\n\"Wood\";\n\"Orchid generated\";\n\"https://github.com/erfajo/OrchidForDynamo\";"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
-      "NodeType": "BooleanInputNode",
-      "InputValue": true,
       "Id": "dad06699e7144db9aec3fa90aa183fad",
+      "NodeType": "BooleanInputNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -841,13 +844,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Selection between a true and false."
+      "Description": "Enables selection between True and False",
+      "InputValue": true
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Physical.Duplicate@Revit.Elements.Element,string",
       "Id": "cf82c2d683914908a07ab52156b2c63d",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "81fc291ad458453aa8f08f4cc6a12f7d",
@@ -879,15 +882,16 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Physical.Duplicate@Revit.Elements.Element,string",
       "Replication": "Auto",
       "Description": "Duplicate physical property set (asset).\n\nPhysical.Duplicate (propertySet: Element, name: string = null): Element"
     },
     {
       "ConcreteType": "Orchid.E.RevitMaterial.PhysicalPropertySet, OrchidRE",
-      "SelectedIndex": 0,
+      "SelectedIndex": 2,
       "SelectedString": "Brick - Common 1800kg",
-      "NodeType": "ExtensionNode",
       "Id": "fee18535531449619576ea037fa70cb8",
+      "NodeType": "ExtensionNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -905,9 +909,8 @@
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "\"_xx (physical)\";",
       "Id": "3f91b45c7e134078b1cb98f7d138efd5",
+      "NodeType": "CodeBlockNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -921,12 +924,15 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"_xx (physical)\";"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "NodeType": "ExtensionNode",
+      "WatchWidth": 155.2,
+      "WatchHeight": 38.4,
       "Id": "23bb7b07d6dc4dd59a2e08b86a7db7d0",
+      "NodeType": "ExtensionNode",
       "Inputs": [
         {
           "Id": "d0f338829856466293541e1859058608",
@@ -950,12 +956,14 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the node's output"
+      "Description": "Visualizes a node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "NodeType": "ExtensionNode",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
       "Id": "2b95986510e64e99ada4ffafed131d13",
+      "NodeType": "ExtensionNode",
       "Inputs": [
         {
           "Id": "3c2b9d2a6b124f2c96e1c74e14b3f4c8",
@@ -979,13 +987,12 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the node's output"
+      "Description": "Visualizes a node's output"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Thermal.InDocument",
       "Id": "6620135081ff4ce588ae48bf191b468d",
+      "NodeType": "FunctionNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -998,14 +1005,14 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Thermal.InDocument",
       "Replication": "Auto",
       "Description": "Get all thermal property set (asset).\n\nThermal.InDocument ( ): Element[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Revit.Elements.Element.Name",
       "Id": "34d4891fdc154da5845263c6c9e310ef",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "72b906ddd5454fdab5fa9b9ecd31b3d9",
@@ -1028,13 +1035,16 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Revit.Elements.Element.Name",
       "Replication": "Auto",
       "Description": "Get the Name of the Element\n\nElement.Name: string"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "NodeType": "ExtensionNode",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
       "Id": "a2aa200f389c495f934c6617c54e6df2",
+      "NodeType": "ExtensionNode",
       "Inputs": [
         {
           "Id": "87e9e0d30dea4adf950b87065d3184c4",
@@ -1058,12 +1068,14 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the node's output"
+      "Description": "Visualizes a node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "NodeType": "ExtensionNode",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
       "Id": "c4a0ea8bc6e147399221ab8945a3fc92",
+      "NodeType": "ExtensionNode",
       "Inputs": [
         {
           "Id": "b8757086236342e791bef9a398aa4d0e",
@@ -1087,14 +1099,14 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the node's output"
+      "Description": "Visualizes a node's output"
     },
     {
       "ConcreteType": "Orchid.E.RevitMaterial.MaterialAspect, OrchidRE",
       "SelectedIndex": 1,
       "SelectedString": "Thermal",
-      "NodeType": "ExtensionNode",
       "Id": "f47955ca64f645c09220c13e8e6b7933",
+      "NodeType": "ExtensionNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -1112,9 +1124,8 @@
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Material.Create@string",
       "Id": "fb54f7d08edb401698b49e345a7ac0b0",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "3248378bde504b0f9247085843ec68b2",
@@ -1137,14 +1148,14 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Material.Create@string",
       "Replication": "Auto",
       "Description": "Create material. Note: If the material exists it is being replaced!\n\nMaterial.Create (name: string): Material"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Thermal.SetInformation@Revit.Elements.Element,string,string,string,string,string",
       "Id": "9dc384644714455e8ea4f1cb661f1ef9",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "74a8fb41cbc44e9e87e2b7479f1bed2b",
@@ -1212,6 +1223,7 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Thermal.SetInformation@Revit.Elements.Element,string,string,string,string,string",
       "Replication": "Auto",
       "Description": "Set information.\n\nThermal.SetInformation (propertySet: Element, description: string = null, keywords: string = null, subclass: string = null, source: string = null, sourceUrl: string = null): Element"
     },
@@ -1219,8 +1231,8 @@
       "ConcreteType": "Orchid.E.RevitMaterial.WoodConstruction, OrchidRE",
       "SelectedIndex": 0,
       "SelectedString": "Natural",
-      "NodeType": "ExtensionNode",
       "Id": "71e32a036ca643889b186bcd02b5e60a",
+      "NodeType": "ExtensionNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -1240,8 +1252,8 @@
       "ConcreteType": "Orchid.E.RevitMaterial.MaterialAspect, OrchidRE",
       "SelectedIndex": 0,
       "SelectedString": "Physical (Structural)",
-      "NodeType": "ExtensionNode",
       "Id": "d873229251cb4db883a7b1cadf971e8f",
+      "NodeType": "ExtensionNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -1259,9 +1271,8 @@
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Thermal.Create@string,var",
       "Id": "604462977ab94418bff71e9e0a7d7540",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "573cd575f5ce4765baeb37f6a9b678e5",
@@ -1293,6 +1304,7 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Thermal.Create@string,var",
       "Replication": "Auto",
       "Description": "Create thermal property set. Note: If a thermal property exists it is being replaced!\n\nThermal.Create (name: string, type: var): Element"
     },
@@ -1300,8 +1312,8 @@
       "ConcreteType": "Orchid.E.RevitMaterial.ThermalType, OrchidRE",
       "SelectedIndex": 3,
       "SelectedString": "Solid",
-      "NodeType": "ExtensionNode",
       "Id": "799ecfc76c3546cc991c7723adada6c7",
+      "NodeType": "ExtensionNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -1319,9 +1331,8 @@
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Physical.SetStrengthExtended@Revit.Elements.Element,string,string,double,double,double,double,double,double,double,int",
       "Id": "91153ac8a29e4b2abfccd6701401e076",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "99e432b5ce1c4ce4b39a64e03b869972",
@@ -1434,14 +1445,14 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Physical.SetStrengthExtended@Revit.Elements.Element,string,string,double,double,double,double,double,double,double,int",
       "Replication": "Auto",
       "Description": "Set strength (extended).\n\nPhysical.SetStrengthExtended (propertySet: Element, species: string = null, grade: string = null, bending: double = -1, parallelCompression: double = -1, perpendicularCompression: double = -1, parallelShear: double = -1, tensionParallel: double = -1, tensionPerpendicular: double = -1, averageModulus: double = -1, construction: int = -1): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "\"_Timber C24\";",
       "Id": "5c3325c7fe9c46418ee5aeb2590e25d3",
+      "NodeType": "CodeBlockNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -1455,12 +1466,15 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"_Timber C24\";"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "NodeType": "ExtensionNode",
+      "WatchWidth": 80.0,
+      "WatchHeight": 38.4,
       "Id": "a54aef81272e429f97ecfa5a87f20313",
+      "NodeType": "ExtensionNode",
       "Inputs": [
         {
           "Id": "768a263b37b74cb2ab95346166f62601",
@@ -1484,13 +1498,12 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the node's output"
+      "Description": "Visualizes a node's output"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Revit.Elements.Material.Name",
       "Id": "8baf71b85e184ef6ba267aea8e5cb015",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "97c2a73484414099975b25d3b3219737",
@@ -1513,13 +1526,16 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Revit.Elements.Material.Name",
       "Replication": "Auto",
       "Description": "Get Material Name\n\nMaterial.Name: string"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "NodeType": "ExtensionNode",
+      "WatchWidth": 102.4,
+      "WatchHeight": 38.4,
       "Id": "9f96d59b84c24e779863d5a98801f868",
+      "NodeType": "ExtensionNode",
       "Inputs": [
         {
           "Id": "fe5a483b219c4c5bb52c97513d848362",
@@ -1543,13 +1559,12 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the node's output"
+      "Description": "Visualizes a node's output"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Thermal.SetProperties@Revit.Elements.Element,bool,var,double,double,double,double,double,double,double,double",
       "Id": "7256e06091f7495493494b0f1cd13833",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "516d09040b954d3e9eb604d45be4aca0",
@@ -1662,6 +1677,7 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Thermal.SetProperties@Revit.Elements.Element,bool,var,double,double,double,double,double,double,double,double",
       "Replication": "Auto",
       "Description": "Set properties. Note: Can only be used for the thermal type Solid!\n\nThermal.SetProperties (propertySet: Element, transmitsLight: bool = false, behavior: var = Orchid.Internals.Enums.Revit(\"StructuralBehavior.Isotropic\"), thermalConductivity: double = -1, specificHeat: double = -1, density: double = -1, emissivity: double = -1, permeability: double = -1, porosity: double = -1, reflectivity: double = -1, electricalResistivity: double = -1): Element"
     },
@@ -1669,8 +1685,8 @@
       "ConcreteType": "Orchid.E.RevitMaterial.PhysicalBehavior, OrchidRE",
       "SelectedIndex": 1,
       "SelectedString": "Orthotropic",
-      "NodeType": "ExtensionNode",
       "Id": "3b2295b758b04f5094be2dca33f924aa",
+      "NodeType": "ExtensionNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -1688,9 +1704,8 @@
     },
     {
       "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
-      "NodeType": "BooleanInputNode",
-      "InputValue": false,
       "Id": "6b733ea9daef4b1087e0b7ddf5cc815f",
+      "NodeType": "BooleanInputNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -1704,13 +1719,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Selection between a true and false."
+      "Description": "Enables selection between True and False",
+      "InputValue": false
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "0.12;\n0.19;\n496;\n0.85;\n0;\n0.01;\n0;\n10000000;",
       "Id": "9c987bc192274e1eb233f54c42f1f8d0",
+      "NodeType": "CodeBlockNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -1787,13 +1802,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "0.12;\n0.19;\n496;\n0.85;\n0;\n0.01;\n0;\n10000000;"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Material.SetPhysical@Revit.Elements.Material,var,Revit.Elements.Element",
       "Id": "476e29565bc64361a0944a43eab64139",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "d6533c8eb1fc45eea4b525374cf61d2a",
@@ -1834,13 +1849,16 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Material.SetPhysical@Revit.Elements.Material,var,Revit.Elements.Element",
       "Replication": "Auto",
       "Description": "Set physical property.\n\nMaterial.SetPhysical (material: Material, aspect: var, propertySet: Element): var[]..[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "NodeType": "ExtensionNode",
+      "WatchWidth": 80.0,
+      "WatchHeight": 38.4,
       "Id": "ccd32570d63b42a4a711c15badd72722",
+      "NodeType": "ExtensionNode",
       "Inputs": [
         {
           "Id": "ac654a58ad954b4aa8f242a799533743",
@@ -1864,13 +1882,12 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the node's output"
+      "Description": "Visualizes a node's output"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Revit.Elements.Material.Name",
       "Id": "949528173ec545d5859e0ce819dbab17",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "ca58aeb8b54d42d081be5c3ba6929b0b",
@@ -1893,13 +1910,16 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Revit.Elements.Material.Name",
       "Replication": "Auto",
       "Description": "Get Material Name\n\nMaterial.Name: string"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "NodeType": "ExtensionNode",
+      "WatchWidth": 102.4,
+      "WatchHeight": 38.4,
       "Id": "7f8ff62f29154cef8305a9b82c575d7b",
+      "NodeType": "ExtensionNode",
       "Inputs": [
         {
           "Id": "06cf1e3445e744e1b0077a8689bd9a10",
@@ -1923,13 +1943,12 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the node's output"
+      "Description": "Visualizes a node's output"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Material.SetThermal@Revit.Elements.Material,var,Revit.Elements.Element",
       "Id": "80acb778b28941158a24c63da1ccdc08",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "f9b688ec0caf405f8089fd70e51e54f1",
@@ -1970,6 +1989,7 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Material.SetThermal@Revit.Elements.Material,var,Revit.Elements.Element",
       "Replication": "Auto",
       "Description": "Set thermal property.\n\nMaterial.SetThermal (material: Material, aspect: var, propertySet: Element): var[]..[]"
     }
@@ -2394,7 +2414,7 @@
   "NodeLibraryDependencies": [
     {
       "Name": "Orchid",
-      "Version": "2.16.4.6196",
+      "Version": "2.19.3.6432",
       "ReferenceType": "Package",
       "Nodes": [
         "a58e1629531946078cc5c207695d63ac",
@@ -2454,12 +2474,12 @@
       "ScaleFactor": 100.0,
       "HasRunWithoutCrash": true,
       "IsVisibleInDynamoLibrary": true,
-      "Version": "2.16.2.5624",
+      "Version": "2.19.3.6394",
       "RunType": "Manual",
       "RunPeriod": "1000"
     },
     "Camera": {
-      "Name": "Background Preview",
+      "Name": "_Background Preview",
       "EyeX": -17.0,
       "EyeY": 24.0,
       "EyeZ": 50.0,
@@ -2473,492 +2493,492 @@
     "ConnectorPins": [],
     "NodeViews": [
       {
-        "Name": "Element.Name",
-        "ShowGeometry": true,
         "Id": "5296c621ab9e4968be09f809d17948ee",
+        "Name": "Element.Name",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 312.9050727950106,
         "Y": -1009.8800729982178
       },
       {
-        "Name": "Physical.InDocument",
-        "ShowGeometry": true,
         "Id": "a58e1629531946078cc5c207695d63ac",
+        "Name": "Physical.InDocument",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 10.562766666916446,
         "Y": -863.08916656533268
       },
       {
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Id": "354b4c61c76442b38191682b9f88bfa8",
+        "Name": "Watch",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 312.9050727950106,
         "Y": -863.08916656533268
       },
       {
-        "Name": "Physical.SetBehavior",
-        "ShowGeometry": true,
         "Id": "98ee9390c3f24a33a99256da3f754beb",
+        "Name": "Physical.SetBehavior",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1248.4410688483545,
         "Y": 207.58732750844396
       },
       {
-        "Name": "Physical Behavior",
-        "ShowGeometry": true,
         "Id": "5bde0fe5b6ee49ec9ec6bb5338589f9e",
+        "Name": "Physical Behavior",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 881.44106884835071,
         "Y": 383.587327508444
       },
       {
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Id": "b39ac9ea58b84372b1141ad0a09a1df4",
+        "Name": "Code Block",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1615.4410688483545,
         "Y": 457.89732750844439
       },
       {
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Id": "e63d5f02e7744719b071cea488731090",
+        "Name": "Code Block",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 2034.4410688483545,
         "Y": 621.03482750844421
       },
       {
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Id": "b746a6eaf0ab47c39a71766e1768aa93",
+        "Name": "Code Block",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1248.4410688483545,
         "Y": 385.41482750844432
       },
       {
-        "Name": "Physical.SetBasicThermal",
-        "ShowGeometry": true,
         "Id": "d423db9010a742b1b662add51d6019c6",
+        "Name": "Physical.SetBasicThermal",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1615.4410688483545,
         "Y": 279.587327508444
       },
       {
-        "Name": "Physical.SetMechanical",
-        "ShowGeometry": true,
         "Id": "12fbe60ce4954a8fbe2dff9d887428f8",
+        "Name": "Physical.SetMechanical",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 2034.4410688483545,
         "Y": 338.587327508444
       },
       {
-        "Name": "Physical.SetInformation",
-        "ShowGeometry": true,
         "Id": "957f78c4d42e41e185e08f5298f2edb4",
+        "Name": "Physical.SetInformation",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 881.44106884835071,
         "Y": 65.587327508444872
       },
       {
-        "Name": "Thermal Property Sets",
-        "ShowGeometry": true,
         "Id": "62728dd3967c4db3908b35bda6b9d35a",
+        "Name": "Thermal Property Sets",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1130.8755013240147,
         "Y": -389.86432087874448
       },
       {
-        "Name": "Thermal.Duplicate",
-        "ShowGeometry": true,
         "Id": "897ff887a1d84b3bb02e4096c5dd45b4",
+        "Name": "Thermal.Duplicate",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1477.8755013240147,
         "Y": -332.86432087874448
       },
       {
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Id": "775ce96ef5b74dbf83641b8ab9183a58",
+        "Name": "Code Block",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1130.8755013240147,
         "Y": -242.03682087874509
       },
       {
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Id": "e8cbc7b8509f486d8f84579f5cf34173",
+        "Name": "Watch",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1839.8755013240147,
         "Y": -332.86432087874448
       },
       {
-        "Name": "Physical.Create",
-        "ShowGeometry": true,
         "Id": "7a24176952ba4f20b1569fbc8fab3464",
+        "Name": "Physical.Create",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 322.44106884835071,
         "Y": 65.587327508444872
       },
       {
-        "Name": "Physical Type",
-        "ShowGeometry": true,
         "Id": "96ae0b3ef0a645839e596a6747a03391",
+        "Name": "Physical Type",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 10.44106884835071,
         "Y": 99.587327508443963
       },
       {
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Id": "9706592bfd044690b9e37bbe9006febe",
+        "Name": "Code Block",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 322.44106884835071,
         "Y": 613.55232750844414
       },
       {
-        "Name": "Boolean",
-        "ShowGeometry": true,
         "Id": "dad06699e7144db9aec3fa90aa183fad",
+        "Name": "Boolean",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 10.44106884835071,
         "Y": 613.55232750844414
       },
       {
-        "Name": "Physical.Duplicate",
-        "ShowGeometry": true,
         "Id": "cf82c2d683914908a07ab52156b2c63d",
+        "Name": "Physical.Duplicate",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 415.75699072434361,
         "Y": -333.08221948041785
       },
       {
-        "Name": "Physical Property Sets",
-        "ShowGeometry": true,
         "Id": "fee18535531449619576ea037fa70cb8",
+        "Name": "Physical Property Sets",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 10.756990724344064,
         "Y": -390.08221948041785
       },
       {
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Id": "3f91b45c7e134078b1cb98f7d138efd5",
+        "Name": "Code Block",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 10.756990724344064,
         "Y": -242.25471948041755
       },
       {
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Id": "23bb7b07d6dc4dd59a2e08b86a7db7d0",
+        "Name": "Watch",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 777.75699072434361,
         "Y": -333.08221948041785
       },
       {
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Id": "2b95986510e64e99ada4ffafed131d13",
+        "Name": "Watch",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 663.16509290944157,
         "Y": -863.08916656533268
       },
       {
-        "Name": "Thermal.InDocument",
-        "ShowGeometry": true,
         "Id": "6620135081ff4ce588ae48bf191b468d",
+        "Name": "Thermal.InDocument",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1130.0598869842347,
         "Y": -863.116252454449
       },
       {
-        "Name": "Element.Name",
-        "ShowGeometry": true,
         "Id": "34d4891fdc154da5845263c6c9e310ef",
+        "Name": "Element.Name",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1433.5542849210947,
         "Y": -1009.9071588873377
       },
       {
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Id": "a2aa200f389c495f934c6617c54e6df2",
+        "Name": "Watch",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1433.5542849210947,
         "Y": -863.116252454449
       },
       {
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Id": "c4a0ea8bc6e147399221ab8945a3fc92",
+        "Name": "Watch",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1783.8143050355243,
         "Y": -863.116252454449
       },
       {
-        "Name": "Material Aspect",
-        "ShowGeometry": true,
         "Id": "f47955ca64f645c09220c13e8e6b7933",
+        "Name": "Material Aspect",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 2418.4410688483545,
         "Y": 1146.5873275084423
       },
       {
-        "Name": "Material.Create",
-        "ShowGeometry": true,
         "Id": "fb54f7d08edb401698b49e345a7ac0b0",
+        "Name": "Material.Create",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 2418.4410688483545,
         "Y": 999.087327508444
       },
       {
-        "Name": "Thermal.SetInformation",
-        "ShowGeometry": true,
         "Id": "9dc384644714455e8ea4f1cb661f1ef9",
+        "Name": "Thermal.SetInformation",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 2034.4410688483545,
         "Y": 1039.5873275084423
       },
       {
-        "Name": "Wood Constructions",
-        "ShowGeometry": true,
         "Id": "71e32a036ca643889b186bcd02b5e60a",
+        "Name": "Wood Constructions",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 2034.4410688483545,
         "Y": 892.587327508444
       },
       {
-        "Name": "Material Aspect",
-        "ShowGeometry": true,
         "Id": "d873229251cb4db883a7b1cadf971e8f",
+        "Name": "Material Aspect",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 2418.4410688483545,
         "Y": 358.587327508444
       },
       {
-        "Name": "Thermal.Create",
-        "ShowGeometry": true,
         "Id": "604462977ab94418bff71e9e0a7d7540",
+        "Name": "Thermal.Create",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1615.4410688483545,
         "Y": 1039.5873275084423
       },
       {
-        "Name": "Thermal Type",
-        "ShowGeometry": true,
         "Id": "799ecfc76c3546cc991c7723adada6c7",
+        "Name": "Thermal Type",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1248.4410688483545,
         "Y": 1073.5873275084423
       },
       {
-        "Name": "Physical.SetStrengthExtended",
-        "ShowGeometry": true,
         "Id": "91153ac8a29e4b2abfccd6701401e076",
+        "Name": "Physical.SetStrengthExtended",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 2418.4410688483545,
         "Y": 506.587327508444
       },
       {
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Id": "5c3325c7fe9c46418ee5aeb2590e25d3",
+        "Name": "Code Block",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 10.44106884835071,
         "Y": 998.91482750844341
       },
       {
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Id": "a54aef81272e429f97ecfa5a87f20313",
+        "Name": "Watch",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 3531.4410688483545,
         "Y": 1047.0873275084423
       },
       {
-        "Name": "Material.Name",
-        "ShowGeometry": true,
         "Id": "8baf71b85e184ef6ba267aea8e5cb015",
+        "Name": "Material.Name",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 3217.4410688483545,
         "Y": 896.087327508444
       },
       {
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Id": "9f96d59b84c24e779863d5a98801f868",
+        "Name": "Watch",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 3531.4410688483545,
         "Y": 896.087327508444
       },
       {
-        "Name": "Thermal.SetProperties",
-        "ShowGeometry": true,
         "Id": "7256e06091f7495493494b0f1cd13833",
+        "Name": "Thermal.SetProperties",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 2418.4410688483545,
         "Y": 1293.5873275084423
       },
       {
-        "Name": "Physical Behavior",
-        "ShowGeometry": true,
         "Id": "3b2295b758b04f5094be2dca33f924aa",
+        "Name": "Physical Behavior",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 2034.4410688483545,
         "Y": 1503.5873275084423
       },
       {
-        "Name": "Boolean",
-        "ShowGeometry": true,
         "Id": "6b733ea9daef4b1087e0b7ddf5cc815f",
+        "Name": "Boolean",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 2034.4410688483545,
         "Y": 1356.5873275084423
       },
       {
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Id": "9c987bc192274e1eb233f54c42f1f8d0",
+        "Name": "Code Block",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 2034.4410688483545,
         "Y": 1652.2073275084422
       },
       {
-        "Name": "Material.SetPhysical",
-        "ShowGeometry": true,
         "Id": "476e29565bc64361a0944a43eab64139",
+        "Name": "Material.SetPhysical",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 2870.4410688483545,
         "Y": 668.587327508444
       },
       {
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Id": "ccd32570d63b42a4a711c15badd72722",
+        "Name": "Watch",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 3531.4410688483545,
         "Y": 744.087327508444
       },
       {
-        "Name": "Material.Name",
-        "ShowGeometry": true,
         "Id": "949528173ec545d5859e0ce819dbab17",
+        "Name": "Material.Name",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 3217.4410688483545,
         "Y": 593.087327508444
       },
       {
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Id": "7f8ff62f29154cef8305a9b82c575d7b",
+        "Name": "Watch",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 3531.4410688483545,
         "Y": 593.087327508444
       },
       {
-        "Name": "Material.SetThermal",
-        "ShowGeometry": true,
         "Id": "80acb778b28941158a24c63da1ccdc08",
+        "Name": "Material.SetThermal",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 2870.4410688483545,
         "Y": 971.587327508444
       }
@@ -2980,9 +3000,10 @@
         "HasNestedGroups": false,
         "Left": 0.75699072434406389,
         "Top": -456.08221948041785,
-        "Width": 1018.9999999999995,
-        "Height": 345.82750000000033,
+        "Width": 1020.5999999999996,
+        "Height": 345.62750000000028,
         "FontSize": 30.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": -390.08221948041785,
         "InitialHeight": 292.82750000000033,
         "TextblockHeight": 56.0,
@@ -3004,9 +3025,10 @@
         "HasNestedGroups": false,
         "Left": 1120.8755013240147,
         "Top": -455.86432087874448,
-        "Width": 961.0,
-        "Height": 345.82749999999942,
+        "Width": 962.59999999999991,
+        "Height": 345.62749999999937,
         "FontSize": 30.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": -389.86432087874448,
         "InitialHeight": 292.82749999999942,
         "TextblockHeight": 56.0,
@@ -3028,9 +3050,10 @@
         "HasNestedGroups": false,
         "Left": 0.5627666669164455,
         "Top": -1075.8800729982177,
-        "Width": 949.60232624252512,
-        "Height": 510.790906432885,
+        "Width": 951.0023262425251,
+        "Height": 510.99090643288491,
         "FontSize": 30.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": -1009.8800729982178,
         "InitialHeight": 291.790906432885,
         "TextblockHeight": 56.0,
@@ -3052,9 +3075,10 @@
         "HasNestedGroups": false,
         "Left": 1120.0598869842347,
         "Top": -1075.9071588873376,
-        "Width": 950.75441805128958,
-        "Height": 510.79090643288862,
+        "Width": 952.15441805128967,
+        "Height": 510.99090643288855,
         "FontSize": 30.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": -1009.9071588873377,
         "InitialHeight": 291.79090643288862,
         "TextblockHeight": 56.0,
@@ -3105,17 +3129,18 @@
         "HasNestedGroups": false,
         "Left": 0.44106884835071014,
         "Top": -0.41267249155512786,
-        "Width": 3720.0000000000036,
-        "Height": 1892.6199999999974,
+        "Width": 3721.8000000000038,
+        "Height": 1891.6199999999974,
         "FontSize": 30.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": 65.587327508444872,
         "InitialHeight": 1731.6199999999974,
         "TextblockHeight": 56.0,
         "Background": "#FFA4E1FF"
       }
     ],
-    "X": 25.716339861676659,
-    "Y": 518.58626270718446,
-    "Zoom": 0.41027027027026985
+    "X": 85.922062252680988,
+    "Y": 438.70574162616674,
+    "Zoom": 0.40469635057984649
   }
 }

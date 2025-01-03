@@ -25,8 +25,8 @@
       "Name": "String",
       "Type": "string",
       "Type2": "string",
-      "Value": "%userprofile%\\Programming\\Testing\\Data\\testSet",
-      "Description": "Creates a string.",
+      "Value": "%OrchidSamples%\\Data\\testSet",
+      "Description": "Creates a string",
       "SelectedIndex": 0
     },
     {
@@ -34,8 +34,8 @@
       "Name": "String",
       "Type": "string",
       "Type2": "string",
-      "Value": "%userprofile%\\Programming\\Testing\\Data\\testSet",
-      "Description": "Creates a string.",
+      "Value": "%OrchidSamples%\\Data\\testSet",
+      "Description": "Creates a string",
       "SelectedIndex": 0
     },
     {
@@ -45,7 +45,7 @@
       "Type2": "number",
       "Value": "1",
       "NumberType": "Double",
-      "Description": "Creates a number.",
+      "Description": "Creates a number",
       "SelectedIndex": 0
     },
     {
@@ -55,7 +55,7 @@
       "Type2": "number",
       "Value": "2",
       "NumberType": "Double",
-      "Description": "Creates a number.",
+      "Description": "Creates a number",
       "SelectedIndex": 0
     },
     {
@@ -63,47 +63,17 @@
       "Name": "Directory Path",
       "Type": "string",
       "Type2": "string",
-      "Value": "%userprofile%\\Programming\\Testing\\Data\\testSet",
-      "Description": "Creates a string.",
+      "Value": "%OrchidSamples%\\Data\\testSet",
+      "Description": "Creates a string",
       "SelectedIndex": 0
     }
   ],
   "Outputs": [],
   "Nodes": [
     {
-      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "NodeType": "ExtensionNode",
-      "Id": "f9b753f7e2de41819e1e245888fc82d2",
-      "Inputs": [
-        {
-          "Id": "ff26e6600bdb4f759df41f6da6b687c5",
-          "Name": "",
-          "Description": "Node to show output from",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "f449c5a8967b4419b07df5fe421fa340",
-          "Name": "",
-          "Description": "Node output",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "Visualize the node's output"
-    },
-    {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.Common.File.Rename@string,string,string[],string[],bool",
       "Id": "6061f67106864472b2d1beef7d79ff81",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "330da3cc89904089ab3bf25b856f28db",
@@ -140,15 +110,6 @@
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
-        },
-        {
-          "Id": "ab769f267de943e0be534f480bf8d0a3",
-          "Name": "condense",
-          "Description": "Condense to shortest feasible output?\n\nbool\nDefault value : true",
-          "UsingDefaultValue": true,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
         }
       ],
       "Outputs": [
@@ -162,14 +123,14 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.Common.File.Rename@string,string,string[],string[]",
       "Replication": "Auto",
-      "Description": "Rename file.\n\nFile.Rename (directory: string, extension: string, sourceName: string[], targetName: string[], condense: bool = true): var[]..[]"
+      "Description": "Rename file.\n\nFile.Rename (directory: string, extension: string, sourceName: string[], targetName: string[]): string[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "\"rfa\";\n//new names (check list length)\n[\"dummy1\",\"dummy2\"];",
       "Id": "69866aa7c1644b20bafa89a93f017786",
+      "NodeType": "CodeBlockNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -192,13 +153,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"rfa\";\n//new names (check list length)\n[\"dummy1\",\"dummy2\"];"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "DSCore.IO.FileSystem.FileName@string,bool",
       "Id": "180152882d45468cb584ab7a71b4edf7",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "7db7c1216bf842208f593a6ed71c8741",
@@ -230,13 +191,16 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "DSCore.IO.FileSystem.FileName@string,bool",
       "Replication": "Auto",
       "Description": "Returns the file name of a file path.\n\nFileSystem.FileName (path: string, withExtension: bool = true): string"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "NodeType": "ExtensionNode",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
       "Id": "559c081515824af68df6e87a447e9981",
+      "NodeType": "ExtensionNode",
       "Inputs": [
         {
           "Id": "e2fd6353dc2741ba80db947421c14903",
@@ -260,13 +224,12 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the node's output"
+      "Description": "Visualizes a node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
-      "NodeType": "StringInputNode",
-      "InputValue": "%userprofile%\\Programming\\Testing\\Data\\testSet",
       "Id": "9abf7f12d4474eaf94a50fd60e3cf657",
+      "NodeType": "StringInputNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -280,13 +243,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Creates a string."
+      "Description": "Creates a string",
+      "InputValue": "%OrchidSamples%\\Data\\testSet"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "false;",
       "Id": "8a0ff64e1c5747deb7e39d1efc9e161b",
+      "NodeType": "CodeBlockNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -300,13 +263,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "false;"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.Common.Directory.Contents@string,string,bool,bool",
       "Id": "3c325734024e430788c249286efeb203",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "0e4977d038574f7482542832b27df596",
@@ -334,15 +297,6 @@
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
-        },
-        {
-          "Id": "6c5e277c1a9a49fc936a836c9b75d73e",
-          "Name": "condense",
-          "Description": "Condense to shortest feasible output?\n\nbool\nDefault value : true",
-          "UsingDefaultValue": true,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
         }
       ],
       "Outputs": [
@@ -356,14 +310,14 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.Common.Directory.Contents@string,string,bool",
       "Replication": "Auto",
-      "Description": "Get the files in a directory and its subdirectories. Use string for extension type, default is * for all files! If files are are readonly but not hidden, are they included. If files are both hidden or readonly files (and thereby system files) are they left out.\n\nDirectory.Contents (directory: string, searchString: string = \"*\", deepSearch: bool = false, condense: bool = true): var[]..[]"
+      "Description": "Get the files in a directory and its subdirectories. Use string for extension type, default is * for all files! If files are are readonly but not hidden, are they included. If files are both hidden or readonly files (and thereby system files) are they left out.\n\nDirectory.Contents (directory: string, searchString: string = \"*\", deepSearch: bool = false): string[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "\"*.rfa\";\nfalse;",
       "Id": "a257959730c445e7a17ee6b578147fcd",
+      "NodeType": "CodeBlockNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -386,13 +340,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"*.rfa\";\nfalse;"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
-      "NodeType": "StringInputNode",
-      "InputValue": "%userprofile%\\Programming\\Testing\\Data\\testSet",
       "Id": "be198e7379f8448b865e0a63503af93b",
+      "NodeType": "StringInputNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -406,13 +360,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Creates a string."
+      "Description": "Creates a string",
+      "InputValue": "%OrchidSamples%\\Data\\testSet"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.Common.Directory.Contents@string,string,bool,bool",
       "Id": "09afccb155a24e2c92bdf02b5f997fdb",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "5e324f58d4bc47b3af68bd909b34a800",
@@ -440,15 +394,6 @@
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
-        },
-        {
-          "Id": "2b0e75175a3e4cc9b672ef32b3badb5e",
-          "Name": "condense",
-          "Description": "Condense to shortest feasible output?\n\nbool\nDefault value : true",
-          "UsingDefaultValue": true,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
         }
       ],
       "Outputs": [
@@ -462,13 +407,16 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.Common.Directory.Contents@string,string,bool",
       "Replication": "Auto",
-      "Description": "Get the files in a directory and its subdirectories. Use string for extension type, default is * for all files! If files are are readonly but not hidden, are they included. If files are both hidden or readonly files (and thereby system files) are they left out.\n\nDirectory.Contents (directory: string, searchString: string = \"*\", deepSearch: bool = false, condense: bool = true): var[]..[]"
+      "Description": "Get the files in a directory and its subdirectories. Use string for extension type, default is * for all files! If files are are readonly but not hidden, are they included. If files are both hidden or readonly files (and thereby system files) are they left out.\n\nDirectory.Contents (directory: string, searchString: string = \"*\", deepSearch: bool = false): string[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "NodeType": "ExtensionNode",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
       "Id": "aea963338963466b9fa7b532089fec24",
+      "NodeType": "ExtensionNode",
       "Inputs": [
         {
           "Id": "a1c2bb673f734cb4bc8694ddd177c737",
@@ -492,13 +440,12 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the node's output"
+      "Description": "Visualizes a node's output"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "DSCore.List.Slice@var[]..[],int,int,int",
       "Id": "98b0c05d42a0495c9c2297b974d65739",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "da5d7e92eeb74dbeac457f3edf38a174",
@@ -548,15 +495,15 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "DSCore.List.Slice@var[]..[],int,int,int",
       "Replication": "Auto",
       "Description": "Returns a single sub-list from the given list, based on starting index, ending index, and a step amount.\n\nList.Slice (list: var[]..[], start: int, end: int, step: int = 1): var[]..[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.DoubleInput, CoreNodeModels",
-      "NodeType": "NumberInputNode",
       "NumberType": "Double",
-      "InputValue": 1.0,
       "Id": "b4602f6258ba49bbbc824fb465f586f8",
+      "NodeType": "NumberInputNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -570,13 +517,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Creates a number."
+      "Description": "Creates a number",
+      "InputValue": 1.0
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "//start\nMath.Floor(((partition-1)/sliced)*count);\n//end\nMath.Ceiling((partition/sliced)*count);",
       "Id": "7c09721968e84d2d9d88bbe47584073c",
+      "NodeType": "CodeBlockNode",
       "Inputs": [
         {
           "Id": "6f00579c44714b31aef356c781fd8b9e",
@@ -627,13 +574,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "//start\nMath.Floor(((partition-1)/sliced)*count);\n//end\nMath.Ceiling((partition/sliced)*count);"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "\"*.rfa\";\nfalse;",
       "Id": "6ddf9f35d24c469c8b9bccb8fddce02b",
+      "NodeType": "CodeBlockNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -656,14 +603,14 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"*.rfa\";\nfalse;"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.DoubleInput, CoreNodeModels",
-      "NodeType": "NumberInputNode",
       "NumberType": "Double",
-      "InputValue": 2.0,
       "Id": "b0db3e20bfa14ad58eed4517b5273c8b",
+      "NodeType": "NumberInputNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -677,13 +624,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Creates a number."
+      "Description": "Creates a number",
+      "InputValue": 2.0
     },
     {
       "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
-      "NodeType": "StringInputNode",
-      "InputValue": "%userprofile%\\Programming\\Testing\\Data\\testSet",
       "Id": "9382bb72e0a24803970c70ed9d3b8870",
+      "NodeType": "StringInputNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -697,13 +644,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Creates a string."
+      "Description": "Creates a string",
+      "InputValue": "%OrchidSamples%\\Data\\testSet"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "DSCore.List.Count@var[]..[]",
       "Id": "614fad94f7a344b2a2d2a3c706e8afc2",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "3fc6e1440d03480eb646b1f661706a83",
@@ -726,15 +673,47 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "DSCore.List.Count@var[]..[]",
       "Replication": "Auto",
       "Description": "Returns the number of items stored in the given list.\n\nList.Count (list: var[]..[]): int"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
+      "Id": "b99353bd2a74464597cd08a6bf933241",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "032a22c3200641efa4921a2beb2cc958",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "72d8d810ea0647b681b6356eac37dbf6",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
     }
   ],
   "Connectors": [
     {
       "Start": "9b73c306c67b44cbad0ca929d446bd6b",
-      "End": "ff26e6600bdb4f759df41f6da6b687c5",
-      "Id": "9e4879d12179484d87015bf58552fea7",
+      "End": "032a22c3200641efa4921a2beb2cc958",
+      "Id": "5bac7eea4f7b4fe6bbd1841e1b2b8461",
       "IsHidden": "False"
     },
     {
@@ -868,7 +847,7 @@
   "NodeLibraryDependencies": [
     {
       "Name": "Orchid",
-      "Version": "216.3.0.5794",
+      "Version": "2.19.3.6432",
       "ReferenceType": "Package",
       "Nodes": [
         "6061f67106864472b2d1beef7d79ff81",
@@ -906,12 +885,12 @@
       "ScaleFactor": 1.0,
       "HasRunWithoutCrash": true,
       "IsVisibleInDynamoLibrary": true,
-      "Version": "2.16.1.2727",
+      "Version": "2.19.3.6394",
       "RunType": "Manual",
       "RunPeriod": "1000"
     },
     "Camera": {
-      "Name": "Background Preview",
+      "Name": "_Background Preview",
       "EyeX": -17.0,
       "EyeY": 24.0,
       "EyeZ": 50.0,
@@ -925,194 +904,194 @@
     "ConnectorPins": [],
     "NodeViews": [
       {
-        "Name": "Watch",
-        "ShowGeometry": true,
-        "Id": "f9b753f7e2de41819e1e245888fc82d2",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 1556.54696093936,
-        "Y": -875.792917007647
-      },
-      {
-        "Name": "File.Rename",
-        "ShowGeometry": true,
         "Id": "6061f67106864472b2d1beef7d79ff81",
+        "Name": "File.Rename",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1237.0585504722856,
-        "Y": -904.65024259739926
+        "ShowGeometry": true,
+        "X": 1237.1585504722855,
+        "Y": -895.05024259739923
       },
       {
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Id": "69866aa7c1644b20bafa89a93f017786",
+        "Name": "Code Block",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 810.05855047228556,
-        "Y": -784.1677425973993
+        "ShowGeometry": true,
+        "X": 809.95855047228554,
+        "Y": -785.56774259739927
       },
       {
-        "Name": "FileSystem.FileName",
-        "ShowGeometry": true,
         "Id": "180152882d45468cb584ab7a71b4edf7",
+        "Name": "FileSystem.FileName",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 876.052081288777,
         "Y": -489.46948414879387
       },
       {
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Id": "559c081515824af68df6e87a447e9981",
+        "Name": "Watch",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1556.54696093936,
         "Y": -451.127418490281
       },
       {
-        "Name": "String",
-        "ShowGeometry": true,
         "Id": "9abf7f12d4474eaf94a50fd60e3cf657",
+        "Name": "String",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 810.05855047228556,
-        "Y": -973.65024259739926
+        "ShowGeometry": true,
+        "X": 809.95855047228554,
+        "Y": -953.05024259739923
       },
       {
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Id": "8a0ff64e1c5747deb7e39d1efc9e161b",
+        "Name": "Code Block",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 644.45786831512009,
         "Y": -455.50809322067221
       },
       {
-        "Name": "Directory.Contents",
-        "ShowGeometry": true,
         "Id": "3c325734024e430788c249286efeb203",
+        "Name": "Directory.Contents",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 343.21258481923394,
-        "Y": -365.24293024353108
+        "ShowGeometry": true,
+        "X": 352.56478890431231,
+        "Y": -354.27702061441789
       },
       {
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Id": "a257959730c445e7a17ee6b578147fcd",
+        "Name": "Code Block",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 10.212584819233939,
-        "Y": -249.5879302435311
+        "ShowGeometry": true,
+        "X": 10.164788904312275,
+        "Y": -249.62202061441792
       },
       {
-        "Name": "String",
-        "ShowGeometry": true,
         "Id": "be198e7379f8448b865e0a63503af93b",
+        "Name": "String",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 10.212584819233939,
-        "Y": -438.24293024353108
+        "ShowGeometry": true,
+        "X": 10.164788904312275,
+        "Y": -416.27702061441789
       },
       {
-        "Name": "Directory.Contents",
-        "ShowGeometry": true,
         "Id": "09afccb155a24e2c92bdf02b5f997fdb",
+        "Name": "Directory.Contents",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 317.04213957661864,
-        "Y": 244.49772446637633
+        "ShowGeometry": true,
+        "X": 352.34213957661927,
+        "Y": 244.49772446637635
       },
       {
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Id": "aea963338963466b9fa7b532089fec24",
+        "Name": "Watch",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1781.35192857787,
         "Y": 144.928974466376
       },
       {
-        "Name": "List.Slice",
-        "ShowGeometry": true,
         "Id": "98b0c05d42a0495c9c2297b974d65739",
+        "Name": "List.Slice",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1485.04213957662,
-        "Y": 144.928974466376
+        "ShowGeometry": true,
+        "X": 1521.1421395766192,
+        "Y": 144.92897446637636
       },
       {
-        "Name": "Partition",
-        "ShowGeometry": true,
         "Id": "b4602f6258ba49bbbc824fb465f586f8",
+        "Name": "Partition",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 642.04213957661864,
-        "Y": 50.066474466376292
+        "ShowGeometry": true,
+        "X": 677.9421395766193,
+        "Y": 50.066474466376349
       },
       {
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Id": "7c09721968e84d2d9d88bbe47584073c",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 909.04213957661864,
-        "Y": 163.06647446637629
-      },
-      {
         "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
         "ShowGeometry": true,
+        "X": 944.34213957661927,
+        "Y": 163.06647446637635
+      },
+      {
         "Id": "6ddf9f35d24c469c8b9bccb8fddce02b",
+        "Name": "Code Block",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 10.042139576618638,
-        "Y": 349.15272446637624
+        "ShowGeometry": true,
+        "X": 9.9421395766192973,
+        "Y": 349.1527244663763
       },
       {
-        "Name": "Sliced into",
-        "ShowGeometry": true,
         "Id": "b0db3e20bfa14ad58eed4517b5273c8b",
+        "Name": "Sliced into",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 642.04213957661864,
-        "Y": 197.06647446637632
+        "ShowGeometry": true,
+        "X": 677.9421395766193,
+        "Y": 197.06647446637635
       },
       {
-        "Name": "Directory Path",
-        "ShowGeometry": true,
         "Id": "9382bb72e0a24803970c70ed9d3b8870",
+        "Name": "Directory Path",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 10.042139576618638,
-        "Y": 182.49772446637627
+        "ShowGeometry": true,
+        "X": 9.9421395766192973,
+        "Y": 182.4977244663763
       },
       {
-        "Name": "List.Count",
-        "ShowGeometry": true,
         "Id": "614fad94f7a344b2a2d2a3c706e8afc2",
+        "Name": "List.Count",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 642.04213957661864,
-        "Y": 344.06647446637629
+        "ShowGeometry": true,
+        "X": 677.9421395766193,
+        "Y": 344.06647446637635
+      },
+      {
+        "Id": "b99353bd2a74464597cd08a6bf933241",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1556.54696093936,
+        "Y": -895.05024259739923
       }
     ],
     "Annotations": [
@@ -1129,13 +1108,14 @@
           "6061f67106864472b2d1beef7d79ff81"
         ],
         "HasNestedGroups": false,
-        "Left": 800.05855047228556,
-        "Top": -1039.6502425973993,
-        "Width": 670.0,
-        "Height": 413.48249999999996,
+        "Left": 799.95855047228554,
+        "Top": -1019.0502425973992,
+        "Width": 671.19999999999993,
+        "Height": 390.88249999999994,
         "FontSize": 30.0,
-        "InitialTop": -973.65024259739926,
-        "InitialHeight": 312.48249999999996,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": -953.05024259739923,
+        "InitialHeight": 334.48249999999996,
         "TextblockHeight": 56.0,
         "Background": "#FFC1D676"
       },
@@ -1152,14 +1132,15 @@
           "3c325734024e430788c249286efeb203"
         ],
         "HasNestedGroups": false,
-        "Left": 0.21258481923393902,
-        "Top": -540.24293024353108,
-        "Width": 578.0,
-        "Height": 432.655,
+        "Left": 0.16478890431227455,
+        "Top": -517.47702061441782,
+        "Width": 588.0,
+        "Height": 409.25499999999988,
         "FontSize": 30.0,
-        "InitialTop": -438.24293024353108,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": -416.27702061441789,
         "InitialHeight": 311.655,
-        "TextblockHeight": 92.0,
+        "TextblockHeight": 91.199999999999989,
         "Background": "#FFC1D676"
       },
       {
@@ -1180,19 +1161,20 @@
           "09afccb155a24e2c92bdf02b5f997fdb"
         ],
         "HasNestedGroups": false,
-        "Left": 0.042139576618637875,
-        "Top": 0.06647446637629173,
-        "Width": 1686.0000000000014,
-        "Height": 491.08624999999995,
+        "Left": -0.057860423380702741,
+        "Top": 0.066474466376348573,
+        "Width": 1723.1999999999998,
+        "Height": 490.48624999999993,
         "FontSize": 14.0,
-        "InitialTop": 50.066474466376292,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 50.066474466376349,
         "InitialHeight": 444.08624999999995,
         "TextblockHeight": 40.0,
         "Background": "#FFC1D676"
       }
     ],
-    "X": 118.53723800221097,
-    "Y": 662.62288004850268,
-    "Zoom": 0.64974346266361471
+    "X": 54.516093719220031,
+    "Y": 860.96522235231032,
+    "Zoom": 0.871900751095384
   }
 }

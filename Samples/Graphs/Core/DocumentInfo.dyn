@@ -2,7 +2,7 @@
   "Uuid": "4401aa3c-572b-4286-9211-10d5c3eb0d25",
   "IsCustomNode": false,
   "Description": null,
-  "Name": "ApplicationInfo",
+  "Name": "DocumentInfo",
   "ElementResolver": {
     "ResolutionMap": {
       "Revit.Username": {
@@ -133,6 +133,15 @@
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
+        },
+        {
+          "Id": "aeca7dc3560c4f6ba116b544ac42ff9d",
+          "Name": "workshared",
+          "Description": "Return the workshared path?\n\nbool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
         }
       ],
       "Outputs": [
@@ -146,9 +155,9 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitProject.Common.Document.Path@Revit.Application.Document,bool",
+      "FunctionSignature": "Orchid.RevitProject.Common.Document.Path@Revit.Application.Document,bool,bool",
       "Replication": "Auto",
-      "Description": "Get the full path of the document.\n\nDocument.Path (document: Document = null, withExtension: bool = true): string"
+      "Description": "Get the full path of the document (model).\n\nDocument.Path (document: Document = null, withExtension: bool = true, workshared: bool = true): string"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -193,6 +202,15 @@
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
+        },
+        {
+          "Id": "75a6ae33fcfa4e6b8a08eda6c34279cd",
+          "Name": "workshared",
+          "Description": "Return the workshared directory?\n\nbool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
         }
       ],
       "Outputs": [
@@ -206,14 +224,14 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitProject.Common.Document.Directory@Revit.Application.Document",
+      "FunctionSignature": "Orchid.RevitProject.Common.Document.Directory@Revit.Application.Document,bool",
       "Replication": "Auto",
-      "Description": "Get the directory of the document.\n\nDocument.Directory (document: Document = null): string"
+      "Description": "Get the directory of the document. If the document is a workshared model then, as default, the server path will be returned.\n\nDocument.Directory (document: Document = null, workshared: bool = true): string"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "WatchWidth": 222.0,
-      "WatchHeight": 38.0,
+      "WatchWidth": 222.4,
+      "WatchHeight": 38.4,
       "Id": "944ece623d7f4487877a12a38a6ab4ca",
       "NodeType": "ExtensionNode",
       "Inputs": [
@@ -243,8 +261,8 @@
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "WatchWidth": 65.0,
-      "WatchHeight": 38.0,
+      "WatchWidth": 64.8,
+      "WatchHeight": 38.4,
       "Id": "436596d874394b0cad7293d6b17028a6",
       "NodeType": "ExtensionNode",
       "Inputs": [
@@ -275,7 +293,7 @@
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
       "WatchWidth": 420.0,
-      "WatchHeight": 38.0,
+      "WatchHeight": 38.4,
       "Id": "2c7d037a93ef4352b70a4a8443446450",
       "NodeType": "ExtensionNode",
       "Inputs": [
@@ -305,8 +323,8 @@
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "WatchWidth": 125.0,
-      "WatchHeight": 38.0,
+      "WatchWidth": 124.8,
+      "WatchHeight": 38.4,
       "Id": "947c2fef4a7a4503b16b58d26fc3669a",
       "NodeType": "ExtensionNode",
       "Inputs": [
@@ -336,8 +354,8 @@
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "WatchWidth": 298.0,
-      "WatchHeight": 38.0,
+      "WatchWidth": 297.6,
+      "WatchHeight": 38.4,
       "Id": "fc8c3dadc05c4f70af518eecaf0d4858",
       "NodeType": "ExtensionNode",
       "Inputs": [
@@ -402,7 +420,7 @@
   "NodeLibraryDependencies": [
     {
       "Name": "Orchid",
-      "Version": "2.19.3.6366",
+      "Version": "2.19.3.6432",
       "ReferenceType": "Package",
       "Nodes": [
         "5dbc64c2bf444d31b50840300d0e7e9c",
@@ -475,8 +493,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 10.312329398038003,
-        "Y": 380.67349148555229
+        "X": 10.112329398038014,
+        "Y": 385.67349148555229
       },
       {
         "Id": "5557643c4d11470a8bc1ea3f226789ec",
@@ -485,8 +503,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 46.312329398038,
-        "Y": 72.693395584431329
+        "X": 45.712329398038037,
+        "Y": 72.693395584431315
       },
       {
         "Id": "1e557f91eb3a49ff903f6c07775a58c4",
@@ -495,8 +513,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 10.312329398038003,
-        "Y": 559.8823943761912
+        "X": 10.112329398038014,
+        "Y": 564.88239437619131
       },
       {
         "Id": "e2691652491f406c985adb131651eef6",
@@ -505,8 +523,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 34.312329398038,
-        "Y": 227.4478272364581
+        "X": 34.112329398037986,
+        "Y": 227.44782723645807
       },
       {
         "Id": "bc5483352b4d4225a560a46a0b580de9",
@@ -515,8 +533,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 16.312329398038003,
-        "Y": 741.56252986389734
+        "X": 10.712329398037923,
+        "Y": 781.56252986389745
       },
       {
         "Id": "944ece623d7f4487877a12a38a6ab4ca",
@@ -525,8 +543,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 358.312329398038,
-        "Y": 72.693395584431329
+        "X": 356.912329398038,
+        "Y": 72.693395584431315
       },
       {
         "Id": "436596d874394b0cad7293d6b17028a6",
@@ -535,8 +553,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 358.312329398038,
-        "Y": 227.4478272364581
+        "X": 356.512329398038,
+        "Y": 227.44782723645807
       },
       {
         "Id": "2c7d037a93ef4352b70a4a8443446450",
@@ -545,8 +563,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 358.312329398038,
-        "Y": 559.8823943761912
+        "X": 356.512329398038,
+        "Y": 564.88239437619131
       },
       {
         "Id": "947c2fef4a7a4503b16b58d26fc3669a",
@@ -555,8 +573,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 358.312329398038,
-        "Y": 380.67349148555229
+        "X": 356.512329398038,
+        "Y": 385.67349148555229
       },
       {
         "Id": "fc8c3dadc05c4f70af518eecaf0d4858",
@@ -565,8 +583,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 358.312329398038,
-        "Y": 741.56252986389734
+        "X": 361.91232939803791,
+        "Y": 781.56252986389745
       }
     ],
     "Annotations": [
@@ -590,20 +608,20 @@
           "fc8c3dadc05c4f70af518eecaf0d4858"
         ],
         "HasNestedGroups": false,
-        "Left": 0.31232939803800264,
-        "Top": -0.30660441556867113,
-        "Width": 865.0,
-        "Height": 877.869134279466,
+        "Left": 0.112329398038014,
+        "Top": 0.29339558443131608,
+        "Width": 864.8,
+        "Height": 943.46913427946618,
         "FontSize": 36.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
-        "InitialTop": 72.693395584431329,
-        "InitialHeight": 793.0,
-        "TextblockHeight": 63.0,
+        "InitialTop": 72.693395584431315,
+        "InitialHeight": 813.869134279466,
+        "TextblockHeight": 62.4,
         "Background": "#FFC1D676"
       }
     ],
-    "X": 249.35438070427875,
-    "Y": -55.681979902711845,
-    "Zoom": 1.1786762636943351
+    "X": 173.31584880146897,
+    "Y": -52.5377036488279,
+    "Zoom": 1.1354223170516597
   }
 }

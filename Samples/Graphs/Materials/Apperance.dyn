@@ -2,7 +2,7 @@
   "Uuid": "3c9d0464-8643-5ffe-96e5-ab1769818209",
   "IsCustomNode": false,
   "Description": "",
-  "Name": "Apperance_R23",
+  "Name": "Apperance",
   "ElementResolver": {
     "ResolutionMap": {
       "Vector": {
@@ -23,15 +23,15 @@
       "Type2": "dropdownSelection",
       "Value": "Default Wall",
       "Description": "Appearances in current document.",
-      "SelectedIndex": 48
+      "SelectedIndex": 52
     },
     {
       "Id": "62396cd739e842caa0c950631aca3653",
       "Name": "String",
       "Type": "string",
       "Type2": "string",
-      "Value": "%userprofile%\\Programming\\Testing\\Data\\Stone_3.bmp",
-      "Description": "Creates a string.",
+      "Value": "%OrchidSamples%\\Data\\Stone_3.bmp",
+      "Description": "Creates a string",
       "SelectedIndex": 0
     }
   ],
@@ -39,9 +39,8 @@
   "Nodes": [
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "\"_Timber C24\";\n\"GenericSchema\";\n\"HardwoodSchema\";",
       "Id": "c57c3b5fb0d44d82a4ca17ad9cef8e1d",
+      "NodeType": "CodeBlockNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -73,18 +72,18 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"_Timber C24\";\n\"GenericSchema\";\n\"HardwoodSchema\";"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Material.Create@string",
       "Id": "365f8f9275364392b9e41715d73e0142",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "159b8c85a98c471a9ca8d54f8073d45f",
           "Name": "name",
-          "Description": "The material name.\n\nstring",
+          "Description": "Name as string value.\n\nstring",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -102,14 +101,14 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Material.Create@string",
       "Replication": "Auto",
-      "Description": "Create material.\n\nMaterial.Create (name: string): var[]..[]"
+      "Description": "Create material. Note: If the material exists it is being replaced!\n\nMaterial.Create (name: string): Material"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Appearance.Create@string,string",
       "Id": "3f84d5346199467282900f9aae046df5",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "835cbebc9e17481a88854fa84197dcb0",
@@ -141,14 +140,14 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Appearance.Create@string,string",
       "Replication": "Auto",
-      "Description": "Create appearance by schema (default). Note: If the appearance exists is the asset binding being updated!\n\nAppearance.Create (name: string, schema: string): var[]..[]"
+      "Description": "Create appearance by schema (default). Note: If the appearance exists it is being replaced!\n\nAppearance.Create (name: string, schema: string): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Appearance.InDocument",
       "Id": "2cc7ab31fa2e4d5b90fddae7a8aa5680",
+      "NodeType": "FunctionNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -161,14 +160,14 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Appearance.InDocument",
       "Replication": "Auto",
-      "Description": "Get all appearance assets.\n\nAppearance.InDocument ( ): Element[]"
+      "Description": "Get all appearance assets in document.\n\nAppearance.InDocument ( ): Element[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Revit.Elements.Element.Name",
       "Id": "49291d05d88747baa0d8ac3d76f139e4",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "7f9a674fa39c49d0a0975c0145d53ac1",
@@ -191,13 +190,16 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Revit.Elements.Element.Name",
       "Replication": "Auto",
       "Description": "Get the Name of the Element\n\nElement.Name: string"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "NodeType": "ExtensionNode",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
       "Id": "75edf24c1be94517b7ea8686a317a1c5",
+      "NodeType": "ExtensionNode",
       "Inputs": [
         {
           "Id": "a99f6d2ad52e4e79987dacf55671930d",
@@ -221,12 +223,14 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the node's output"
+      "Description": "Visualizes a node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "NodeType": "ExtensionNode",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
       "Id": "023424f454c241b0b70bafd208beddce",
+      "NodeType": "ExtensionNode",
       "Inputs": [
         {
           "Id": "3ff5c268a4fb4106a5029410f5fd2c55",
@@ -250,13 +254,12 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the node's output"
+      "Description": "Visualizes a node's output"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "\"Default Wall\";\n\"_xx\";",
       "Id": "ef6dbad31ef94c118c84d6cac0a00835",
+      "NodeType": "CodeBlockNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -279,12 +282,15 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"Default Wall\";\n\"_xx\";"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "NodeType": "ExtensionNode",
+      "WatchWidth": 184.8,
+      "WatchHeight": 38.4,
       "Id": "3e1a06af984f40dbb97a95759c029ff5",
+      "NodeType": "ExtensionNode",
       "Inputs": [
         {
           "Id": "46c02453335a4cddb92f93feae5a8b8c",
@@ -308,18 +314,17 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the node's output"
+      "Description": "Visualizes a node's output"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Appearance.Duplicate@var,string",
       "Id": "58119417e65b4be399cb3ea8ed90fbcb",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "bea4759f2e104ab2ad151ea03188d9dc",
           "Name": "appearance",
-          "Description": "Appearance.\n\nvar",
+          "Description": "Appearance as Dynamo type.\n\nElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -346,15 +351,16 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Appearance.Duplicate@Revit.Elements.Element,string",
       "Replication": "Auto",
-      "Description": "Duplicate appearance.\n\nAppearance.Duplicate (appearance: var, name: string = null): Element"
+      "Description": "Duplicate appearance.\n\nAppearance.Duplicate (appearance: Element, name: string = null): Element"
     },
     {
       "ConcreteType": "Orchid.E.RevitMaterial.Appearance, OrchidRE",
-      "SelectedIndex": 48,
+      "SelectedIndex": 52,
       "SelectedString": "Default Wall",
-      "NodeType": "ExtensionNode",
       "Id": "3f7c7a2160914665802e0e53c0eb65cc",
+      "NodeType": "ExtensionNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -372,9 +378,8 @@
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Appearance.ByName@string",
       "Id": "04256cad90cf4dd198731f260d485bb1",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "b5372f055b6e40859411783a020789ae",
@@ -397,15 +402,16 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Appearance.ByName@string",
       "Replication": "Auto",
-      "Description": "Get appearance by name.\n\nAppearance.ByName (name: string): Element"
+      "Description": "Get appearance asset by name.\n\nAppearance.ByName (name: string): Element"
     },
     {
       "ConcreteType": "Orchid.E.RevitMaterial.AssetSchema, OrchidRE",
       "SelectedIndex": 1,
       "SelectedString": "Concrete",
-      "NodeType": "ExtensionNode",
       "Id": "e98fc80ae0884756a76ef6191d3c13bd",
+      "NodeType": "ExtensionNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -423,9 +429,8 @@
     },
     {
       "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
-      "NodeType": "BooleanInputNode",
-      "InputValue": false,
       "Id": "9c7077068e074a8f8fbdf6a70fdac475",
+      "NodeType": "BooleanInputNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -439,18 +444,18 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Selection between a true and false."
+      "Description": "Enables selection between True and False",
+      "InputValue": false
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Material.SetAppearance@var,var",
       "Id": "e60a3e5671e94361acee57b4871adc1d",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "e1442ff7b11243349bd732aac397e0d4",
           "Name": "material",
-          "Description": "Material as string or object.\n\nvar",
+          "Description": "Material as Dynamo type.\n\nMaterial",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -459,7 +464,7 @@
         {
           "Id": "957d86b8dd704748a78b0a8f80370dce",
           "Name": "appearance",
-          "Description": "Appearance.\n\nvar",
+          "Description": "Appearance as Dynamo type.\n\nElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -477,14 +482,14 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Material.SetAppearance@Revit.Elements.Material,Revit.Elements.Element",
       "Replication": "Auto",
-      "Description": "Set appearance.\n\nMaterial.SetAppearance (material: var, appearance: var): var[]..[]"
+      "Description": "Set appearance.\n\nMaterial.SetAppearance (material: Material, appearance: Element): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Revit.Elements.Material.Name",
       "Id": "b28fce39c0c942fcb80bb54c1b7270c1",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "a681fad45c70498b8952e06bf334f6d7",
@@ -507,13 +512,16 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Revit.Elements.Material.Name",
       "Replication": "Auto",
       "Description": "Get Material Name\n\nMaterial.Name: string"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "NodeType": "ExtensionNode",
+      "WatchWidth": 80.0,
+      "WatchHeight": 38.4,
       "Id": "a644520e8cdf4d6ca67996bffde09b2d",
+      "NodeType": "ExtensionNode",
       "Inputs": [
         {
           "Id": "1c8b19af00b34502a1678fda4ba73943",
@@ -537,12 +545,14 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the node's output"
+      "Description": "Visualizes a node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "NodeType": "ExtensionNode",
+      "WatchWidth": 102.4,
+      "WatchHeight": 38.4,
       "Id": "a6cc833db4ed409fbc93f5ce438dca29",
+      "NodeType": "ExtensionNode",
       "Inputs": [
         {
           "Id": "2af2a6462ef940e9a11d56d78fce3506",
@@ -566,13 +576,12 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the node's output"
+      "Description": "Visualizes a node's output"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "\"Default\";\n\"Copper - Brushed\";",
       "Id": "7f8b5be609844eaa976fe51e47c62415",
+      "NodeType": "CodeBlockNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -595,13 +604,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"Default\";\n\"Copper - Brushed\";"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Appearance.ByName@string",
       "Id": "e1b489a4fb1a499295cff7677a82e857",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "56e77d299a6e4409a669b9612dbd88b4",
@@ -624,19 +633,19 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Appearance.ByName@string",
       "Replication": "Auto",
-      "Description": "Get appearance by name.\n\nAppearance.ByName (name: string): Element"
+      "Description": "Get appearance asset by name.\n\nAppearance.ByName (name: string): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Material.SetAppearance@var,var",
       "Id": "9fd85c6466a84c639b14765f7d0fa22d",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "aee18cc1bf804b8bb2d300acdfafac29",
           "Name": "material",
-          "Description": "Material as string or object.\n\nvar",
+          "Description": "Material as Dynamo type.\n\nMaterial",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -645,7 +654,7 @@
         {
           "Id": "7c6a7786b4ea4d6898504305a6fdc5b1",
           "Name": "appearance",
-          "Description": "Appearance.\n\nvar",
+          "Description": "Appearance as Dynamo type.\n\nElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -663,14 +672,14 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Material.SetAppearance@Revit.Elements.Material,Revit.Elements.Element",
       "Replication": "Auto",
-      "Description": "Set appearance.\n\nMaterial.SetAppearance (material: var, appearance: var): var[]..[]"
+      "Description": "Set appearance.\n\nMaterial.SetAppearance (material: Material, appearance: Element): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Revit.Elements.Material.ByName@string",
       "Id": "8cb503d172e4447ea33f730332c9c5a4",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "fb08e78b0f6c4cefacffdfa489d1e271",
@@ -693,14 +702,14 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Revit.Elements.Material.ByName@string",
       "Replication": "Auto",
       "Description": "Select a material from the current document by the name\n\nMaterial.ByName (name: string): Material"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Visual.Asset.BySchema@string,bool",
       "Id": "5c8499fed94948c88532df83dc6a7328",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "51cef68b3eaf4ccfb561bef58048e9ff",
@@ -732,13 +741,16 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Visual.Asset.BySchema@string,bool",
       "Replication": "Auto",
       "Description": "Get asset(s) by schema, return distinct category.\n\nAsset.BySchema (schema: string, default: bool = true): var[]..[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "NodeType": "ExtensionNode",
+      "WatchWidth": 80.0,
+      "WatchHeight": 38.4,
       "Id": "e212efb11913435c90868346922ee4da",
+      "NodeType": "ExtensionNode",
       "Inputs": [
         {
           "Id": "e3d72d72332c456293d67bc42142d446",
@@ -762,13 +774,12 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the node's output"
+      "Description": "Visualizes a node's output"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Visual.Asset.BySchema@string,bool",
       "Id": "14eb8f0138bc468b8d3b0abdb7acbe7e",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "514fc74c2d294cfdb23e2fb41baf8179",
@@ -800,14 +811,14 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Visual.Asset.BySchema@string,bool",
       "Replication": "Auto",
       "Description": "Get asset(s) by schema, return distinct category.\n\nAsset.BySchema (schema: string, default: bool = true): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "\"_test1\";\nt[0];",
       "Id": "0056cb40c16a48ad802899897f228e5b",
+      "NodeType": "CodeBlockNode",
       "Inputs": [
         {
           "Id": "a717301a1808487babb5b278aa665e92",
@@ -840,13 +851,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"_test1\";\nt[0];"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Appearance.Create@string,Orchid.RevitMaterial.Visual.Asset",
       "Id": "9d7b98fd2a8a4ec292607d99ca628a07",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "3ebd274f749b4f16b660619b4432220a",
@@ -878,14 +889,14 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Appearance.Create@string,Orchid.RevitMaterial.Visual.Asset",
       "Replication": "Auto",
-      "Description": "Create appearance by asset. Note: If the appearance exists is the asset binding being updated!\n\nAppearance.Create (name: string, asset: Asset): var[]..[]"
+      "Description": "Create appearance by asset. Note: If the appearance exists it is being replaced!\n\nAppearance.Create (name: string, asset: Asset): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Visual.Asset.Category",
       "Id": "d5b275771ddc45c380c27dbf61fa0862",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "bf5fe953516744b1837bb2ebbfb1ce98",
@@ -908,14 +919,14 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Visual.Asset.Category",
       "Replication": "Auto",
       "Description": "The category of the asset.\n\nAsset.Category: string"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Visual.Asset.ByCategory@string",
       "Id": "6815b88585ca439d98723eb232b17e35",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "86be1be1dcff4ecda7e3503513422302",
@@ -938,14 +949,14 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Visual.Asset.ByCategory@string",
       "Replication": "Auto",
       "Description": "Get asset by category.\n\nAsset.ByCategory (category: string): Asset"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "// Asset Schemas\n\n// Ceramic\n\"CeramicSchema\";\n// Concrete\n\"ConcreteSchema\";\n// Generic\n\"GenericSchema\";\n// Glazing\n\"GlazingSchema\";\n// Layered\n\"PrismLayeredSchema\";\n// Masonry\n\"MasonryCMUSchema\";\n// Metal\n\"PrismMetalSchema\";\n// Metalic Paint\n\"MetallicPaintSchema\";\n// Mirror\n\"MirrorSchema\";\n// Opaque\n\"PrismOpaqueSchema\";\n// Plastic\n\"PlasticVinylSchema\";\n// Solid Glass\n\"SolidGlassSchema\";\n// Stone\n\"StoneSchema\";\n// Transparent\n\"PrismTransparentSchema\";\n// Wall Paint\n\"WallPaintSchema\";\n// Water\n\"WaterSchema\";\n// Wood\n\"HardwoodSchema\";",
       "Id": "cd13ad2ecd894a6d8d66aa8a5c1a1228",
+      "NodeType": "CodeBlockNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -1103,12 +1114,15 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "// Asset Schemas\n\n// Ceramic\n\"CeramicSchema\";\n// Concrete\n\"ConcreteSchema\";\n// Generic\n\"GenericSchema\";\n// Glazing\n\"GlazingSchema\";\n// Layered\n\"PrismLayeredSchema\";\n// Masonry\n\"MasonryCMUSchema\";\n// Metal\n\"PrismMetalSchema\";\n// Metalic Paint\n\"MetallicPaintSchema\";\n// Mirror\n\"MirrorSchema\";\n// Opaque\n\"PrismOpaqueSchema\";\n// Plastic\n\"PlasticVinylSchema\";\n// Solid Glass\n\"SolidGlassSchema\";\n// Stone\n\"StoneSchema\";\n// Transparent\n\"PrismTransparentSchema\";\n// Wall Paint\n\"WallPaintSchema\";\n// Water\n\"WaterSchema\";\n// Wood\n\"HardwoodSchema\";"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "NodeType": "ExtensionNode",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
       "Id": "269f24d1d5f54663afb78f16bdf1e90a",
+      "NodeType": "ExtensionNode",
       "Inputs": [
         {
           "Id": "708705946f684db9ab79b7bf32146695",
@@ -1132,13 +1146,12 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the node's output"
+      "Description": "Visualizes a node's output"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.Common.Object.ToRevitType@var",
       "Id": "8b324e43ef664c9ba1d337047202fc19",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "1c147f71b1f549c5872b8bc57c63efb4",
@@ -1153,7 +1166,7 @@
       "Outputs": [
         {
           "Id": "5c0ff04cbf80466989fa198fc348765b",
-          "Name": "Object",
+          "Name": "object",
           "Description": "Object as Revit type.",
           "UsingDefaultValue": false,
           "Level": 2,
@@ -1161,14 +1174,14 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.Common.Object.ToRevitType@var",
       "Replication": "Auto",
       "Description": "Convert Orchid and Dynamo Revit object to Autodesk Revit object.\n\nObject.ToRevitType (object: var): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.Common.Object.ToOrchidType@var",
       "Id": "f8bd88505d6d47ab83ff6fd3c3caf3ff",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "a82dde3447d3499f8c17fc691a4a9065",
@@ -1183,7 +1196,7 @@
       "Outputs": [
         {
           "Id": "7f68a50ffc8342eca29338066f1803f9",
-          "Name": "Object",
+          "Name": "object",
           "Description": "Object as Orchid type.",
           "UsingDefaultValue": false,
           "Level": 2,
@@ -1191,13 +1204,16 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.Common.Object.ToOrchidType@var",
       "Replication": "Auto",
       "Description": "Convert Autodesk Revit object to Orchid object.\n\nObject.ToOrchidType (object: var): var[]..[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "NodeType": "ExtensionNode",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
       "Id": "6622b504694848cd81e37b3358bb1b70",
+      "NodeType": "ExtensionNode",
       "Inputs": [
         {
           "Id": "4d6e8f82e628428db1361b7de73727a0",
@@ -1221,13 +1237,12 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the node's output"
+      "Description": "Visualizes a node's output"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Visual.Texture.Slider@double",
       "Id": "e540042e2ad84ed08048c8f633af065f",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "87de628d2c4840ad8f4d533860fb9dd6",
@@ -1250,14 +1265,14 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Visual.Texture.Slider@double",
       "Replication": "Auto",
       "Description": "Texture for a slider (double) input\n\nTexture.Slider (value: double): Texture"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Visual.Texture.Color@DSCore.Color",
       "Id": "8702726a6eb4407bb989e4a40284c184",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "d44ca65e52ca4fe39dc546427784ef2e",
@@ -1280,14 +1295,14 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Visual.Texture.Color@DSCore.Color",
       "Replication": "Auto",
       "Description": "Texture for a dynamo color input.\n\nTexture.Color (color: Color): Texture"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Visual.Texture.Slider@double",
       "Id": "c2abe615ac6a4508bf8f8f3bcaa187aa",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "529c01d5c8bf48019aba99c9ae13a261",
@@ -1310,14 +1325,14 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Visual.Texture.Slider@double",
       "Replication": "Auto",
       "Description": "Texture for a slider (double) input\n\nTexture.Slider (value: double): Texture"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Visual.Texture.Slider@double",
       "Id": "3e3becf4ee144bb8bb5b53329a2fe62f",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "d03780ff5b194d63ab74aad8084359cd",
@@ -1340,14 +1355,14 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Visual.Texture.Slider@double",
       "Replication": "Auto",
       "Description": "Texture for a slider (double) input\n\nTexture.Slider (value: double): Texture"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Visual.Texture.Image@string",
       "Id": "839aa348ffeb43bdb103cf0406560c30",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "bbb10206957648b1a19aaa7c02bd9ccf",
@@ -1370,6 +1385,7 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Visual.Texture.Image@string",
       "Replication": "Auto",
       "Description": "Texture for an image input.\n\nTexture.Image (path: string): Texture"
     },
@@ -1377,8 +1393,8 @@
       "ConcreteType": "Orchid.E.RevitMaterial.SelfIlluminationColorTemperatur, OrchidRE",
       "SelectedIndex": 3,
       "SelectedString": "Moonlight",
-      "NodeType": "ExtensionNode",
       "Id": "a00b51fe4bcb43c7b3f2e9f8c7c7f8a6",
+      "NodeType": "ExtensionNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -1398,8 +1414,8 @@
       "ConcreteType": "Orchid.E.RevitMaterial.SelfIlluminationLuminance, OrchidRE",
       "SelectedIndex": 3,
       "SelectedString": "Cell Phone Screen",
-      "NodeType": "ExtensionNode",
       "Id": "03f2ee68c9ba4816a10c6f5ebd183a70",
+      "NodeType": "ExtensionNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -1419,8 +1435,8 @@
       "ConcreteType": "Orchid.E.RevitMaterial.TransparencyRefraction, OrchidRE",
       "SelectedIndex": 2,
       "SelectedString": "Alcohol",
-      "NodeType": "ExtensionNode",
       "Id": "68f766d725d04d64be98222b2a261ca0",
+      "NodeType": "ExtensionNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -1438,14 +1454,13 @@
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Appearance.SetGeneric@var,DSCore.Color,Orchid.RevitMaterial.Visual.Texture,double,Orchid.RevitMaterial.Visual.Texture,bool",
       "Id": "36677c3fc8ad492c83d786465fdf98bb",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "59864fce58384898a45dd7d3a2914aa3",
           "Name": "appearance",
-          "Description": "Appearance.\n\nvar",
+          "Description": "Appearance as Dynamo type.\n\nElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1454,7 +1469,7 @@
         {
           "Id": "5cff969577f3474cb02657fe73711f70",
           "Name": "color",
-          "Description": "Color as list of integer or object.\n\nColor",
+          "Description": "Color as Dynamo type.\n\nColor",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1508,19 +1523,19 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Appearance.SetGeneric@Revit.Elements.Element,DSCore.Color,Orchid.RevitMaterial.Visual.Texture,double,Orchid.RevitMaterial.Visual.Texture,bool",
       "Replication": "Auto",
-      "Description": "Set generic appearance.\n\nAppearance.SetGeneric (appearance: var, color: Color, texture: Texture, imageFade: double, glossiness: Texture, highlights: bool): Element"
+      "Description": "Set generic appearance.\n\nAppearance.SetGeneric (appearance: Element, color: Color, texture: Texture, imageFade: double, glossiness: Texture, highlights: bool): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Appearance.SetSelfIllumination@var,Orchid.RevitMaterial.Visual.Texture,double,double",
       "Id": "eab798108bad4628b3767efb07ddeece",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "e900db6be2ea406aae04d44361a2ce83",
           "Name": "appearance",
-          "Description": "Appearance.\n\nvar",
+          "Description": "Appearance as Dynamo type.\n\nElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1565,19 +1580,19 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Appearance.SetSelfIllumination@Revit.Elements.Element,Orchid.RevitMaterial.Visual.Texture,double,double",
       "Replication": "Auto",
-      "Description": "Set self illumination appearance.\n\nAppearance.SetSelfIllumination (appearance: var, texture: Texture, luminance: double, colorTemperature: double): Element"
+      "Description": "Set self illumination appearance.\n\nAppearance.SetSelfIllumination (appearance: Element, texture: Texture, luminance: double, colorTemperature: double): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Appearance.SetTransparency@var,double,Orchid.RevitMaterial.Visual.Texture,double,Orchid.RevitMaterial.Visual.Texture,double",
       "Id": "f4a1dc3075b249c0919d7101fd695aeb",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "d8c9857684394e1286e9f3d0d9bfd7c7",
           "Name": "appearance",
-          "Description": "Appearance.\n\nvar",
+          "Description": "Appearance as Dynamo type.\n\nElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1640,14 +1655,14 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Appearance.SetTransparency@Revit.Elements.Element,double,Orchid.RevitMaterial.Visual.Texture,double,Orchid.RevitMaterial.Visual.Texture,double",
       "Replication": "Auto",
-      "Description": "Set transparency appearance.\n\nAppearance.SetTransparency (appearance: var, amount: double, texture: Texture, imageFade: double, translucency: Texture, refraction: double): Element"
+      "Description": "Set transparency appearance.\n\nAppearance.SetTransparency (appearance: Element, amount: double, texture: Texture, imageFade: double, translucency: Texture, refraction: double): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "Color.ByARGB(255, 50, 115, 65);",
       "Id": "8be5d16f945f4f3c9351dbcd31e59e01",
+      "NodeType": "CodeBlockNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -1661,13 +1676,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "Color.ByARGB(255, 50, 115, 65);"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "Color.ByARGB(255, 205, 135, 165);\n10.0;\n6500.0;",
       "Id": "ef044e3d99164123ad9023b1b39beceb",
+      "NodeType": "CodeBlockNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -1699,13 +1714,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "Color.ByARGB(255, 205, 135, 165);\n10.0;\n6500.0;"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Appearance.ByName@string",
       "Id": "54a72844ecdb4d6c8c70a9d5af5aef45",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "ad4c7e044fed4cf0af3ce8c28be30b23",
@@ -1728,19 +1743,19 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Appearance.ByName@string",
       "Replication": "Auto",
-      "Description": "Get appearance by name.\n\nAppearance.ByName (name: string): Element"
+      "Description": "Get appearance asset by name.\n\nAppearance.ByName (name: string): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Appearance.SetTint@var,DSCore.Color",
       "Id": "466f93b9ff7e4949989c32508139a6ad",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "e53a8d9c4c244cb797e191ff202b47e1",
           "Name": "appearance",
-          "Description": "Appearance.\n\nvar",
+          "Description": "Appearance as Dynamo type.\n\nElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1749,7 +1764,7 @@
         {
           "Id": "4994f140a4724d8fa04e7f237018d872",
           "Name": "color",
-          "Description": "Color.\n\nColor",
+          "Description": "Color as Dynamo type.\n\nColor",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1767,19 +1782,19 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Appearance.SetTint@Revit.Elements.Element,DSCore.Color",
       "Replication": "Auto",
-      "Description": "Set tint appearance.\n\nAppearance.SetTint (appearance: var, color: Color): Element"
+      "Description": "Set tint appearance.\n\nAppearance.SetTint (appearance: Element, color: Color): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Appearance.SetBump@var,Orchid.RevitMaterial.Visual.Texture,Orchid.RevitMaterial.Visual.Texture",
       "Id": "76cddb3b7ba64d75af340b5c4dddafe1",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "5b2f24ee91b7429cb18d4de3b10db14b",
           "Name": "appearance",
-          "Description": "Appearance.\n\nvar",
+          "Description": "Appearance as Dynamo type.\n\nElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1815,19 +1830,19 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Appearance.SetBump@Revit.Elements.Element,Orchid.RevitMaterial.Visual.Texture,Orchid.RevitMaterial.Visual.Texture",
       "Replication": "Auto",
-      "Description": "Set bump appearance.\n\nAppearance.SetBump (appearance: var, texture: Texture, amount: Texture): Element"
+      "Description": "Set bump appearance.\n\nAppearance.SetBump (appearance: Element, texture: Texture, amount: Texture): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Appearance.SetCutouts@var,Orchid.RevitMaterial.Visual.Texture",
       "Id": "703c720d3b254fe38ea75f91d9769b69",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "3eacf115749940a28a5948914d567f0e",
           "Name": "appearance",
-          "Description": "Appearance.\n\nvar",
+          "Description": "Appearance as Dynamo type.\n\nElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1854,19 +1869,19 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Appearance.SetCutouts@Revit.Elements.Element,Orchid.RevitMaterial.Visual.Texture",
       "Replication": "Auto",
-      "Description": "Set cutouts appearance.\n\nAppearance.SetCutouts (appearance: var, texture: Texture): Element"
+      "Description": "Set cutouts appearance.\n\nAppearance.SetCutouts (appearance: Element, texture: Texture): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Appearance.SetReflectivity@var,double,double",
       "Id": "0d69f53ebb5b4a5ba317909561df397d",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "25c5b614b2d345d580343414dd1522b7",
           "Name": "appearance",
-          "Description": "Appearance.\n\nvar",
+          "Description": "Appearance as Dynamo type.\n\nElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1902,14 +1917,14 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Appearance.SetReflectivity@Revit.Elements.Element,double,double",
       "Replication": "Auto",
-      "Description": "Set reflectivity appearance.\n\nAppearance.SetReflectivity (appearance: var, direct: double, oblique: double): Element"
+      "Description": "Set reflectivity appearance.\n\nAppearance.SetReflectivity (appearance: Element, direct: double, oblique: double): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "\"_Timber C24\";",
       "Id": "da9223a32ecc407e8215e11224af8119",
+      "NodeType": "CodeBlockNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -1923,13 +1938,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"_Timber C24\";"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "145;\n15;\n65;",
       "Id": "a6e71c133b75416794a12f4178c6564b",
+      "NodeType": "CodeBlockNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -1961,13 +1976,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "145;\n15;\n65;"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "DSCore.Color.ByARGB@int,int,int,int",
       "Id": "bc96f011671c4e8aa27945e9a30441ef",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "d3e755e919b24124b5b6b6011fae5956",
@@ -2017,14 +2032,14 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "DSCore.Color.ByARGB@int,int,int,int",
       "Replication": "Auto",
       "Description": "Construct a color by alpha, red, green, and blue components.\n\nColor.ByARGB (alpha: int = 255, red: int = 0, green: int = 0, blue: int = 0): Color"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
-      "NodeType": "StringInputNode",
-      "InputValue": "%userprofile%\\Programming\\Testing\\Data\\Stone_3.bmp",
       "Id": "62396cd739e842caa0c950631aca3653",
+      "NodeType": "StringInputNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -2038,18 +2053,18 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Creates a string."
+      "Description": "Creates a string",
+      "InputValue": "%OrchidSamples%\\Data\\Stone_3.bmp"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.RevitMaterial.Appearance.SetInformation@var,string,string",
       "Id": "ef07a06c013c45489c3486fd26e8ae46",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "c8eaf470c8e94335a1edc98758062590",
           "Name": "appearance",
-          "Description": "Appearance.\n\nvar",
+          "Description": "Appearance as Dynamo type.\n\nElement",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -2085,14 +2100,14 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.RevitMaterial.Appearance.SetInformation@Revit.Elements.Element,string,string",
       "Replication": "Auto",
-      "Description": "Set information.\n\nAppearance.SetInformation (appearance: var, description: string = null, keyword: string = null): Element"
+      "Description": "Set information.\n\nAppearance.SetInformation (appearance: Element, description: string = null, keyword: string = null): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "// Description\n\"Hardwood material\";\n// Keyword\n\"pine,wood,interior,\nfurniture,materials,\nhardwood\";",
       "Id": "6299722586414fc18981188834093546",
+      "NodeType": "CodeBlockNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -2115,13 +2130,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "// Description\n\"Hardwood material\";\n// Keyword\n\"pine,wood,interior,\nfurniture,materials,\nhardwood\";"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.Common.File.FromPath@string",
       "Id": "29d12163b60541d8b9e20a783eb1f71c",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "79a5a8a25f974aefa00be8389a738953",
@@ -2144,14 +2159,14 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.Common.File.FromPath@string",
       "Replication": "Auto",
       "Description": "Get file from a path.\n\nFile.FromPath (path: string): string"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "70;\n50;\ntrue;",
       "Id": "9563551a552748e68cfc76db54887a58",
+      "NodeType": "CodeBlockNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -2183,13 +2198,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "70;\n50;\ntrue;"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "-500;",
       "Id": "249b41f1d92f431f922f9b266c5d5bab",
+      "NodeType": "CodeBlockNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -2203,13 +2218,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "-500;"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "40;",
       "Id": "de7eeb2b93ed4297ba13b68d678a9b19",
+      "NodeType": "CodeBlockNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -2223,13 +2238,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "40;"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "35;\n90;\n15;\n1.52;",
       "Id": "b84a2577162d408da2445c9e3d3b7f9c",
+      "NodeType": "CodeBlockNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -2270,7 +2285,8 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "35;\n90;\n15;\n1.52;"
     }
   ],
   "Connectors": [
@@ -2711,7 +2727,7 @@
   "NodeLibraryDependencies": [
     {
       "Name": "Orchid",
-      "Version": "216.3.0.5828",
+      "Version": "2.19.3.6432",
       "ReferenceType": "Package",
       "Nodes": [
         "365f8f9275364392b9e41715d73e0142",
@@ -2788,12 +2804,12 @@
       "ScaleFactor": 1.0,
       "HasRunWithoutCrash": true,
       "IsVisibleInDynamoLibrary": true,
-      "Version": "2.16.1.2727",
+      "Version": "2.19.3.6394",
       "RunType": "Manual",
       "RunPeriod": "1000"
     },
     "Camera": {
-      "Name": "Background Preview",
+      "Name": "_Background Preview",
       "EyeX": -17.0,
       "EyeY": 24.0,
       "EyeZ": 50.0,
@@ -2807,632 +2823,632 @@
     "ConnectorPins": [],
     "NodeViews": [
       {
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Id": "c57c3b5fb0d44d82a4ca17ad9cef8e1d",
+        "Name": "Code Block",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 9.9291798141976528,
         "Y": -267.60137251698438
       },
       {
-        "Name": "Material.Create",
-        "ShowGeometry": true,
         "Id": "365f8f9275364392b9e41715d73e0142",
+        "Name": "Material.Create",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 327.92917981419765,
         "Y": -415.42887251698471
       },
       {
-        "Name": "Appearance.Create",
-        "ShowGeometry": true,
         "Id": "3f84d5346199467282900f9aae046df5",
+        "Name": "Appearance.Create",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 327.92917981419765,
         "Y": -267.42887251698471
       },
       {
-        "Name": "Appearance.InDocument",
-        "ShowGeometry": true,
         "Id": "2cc7ab31fa2e4d5b90fddae7a8aa5680",
+        "Name": "Appearance.InDocument",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 10.251378073245235,
         "Y": 1761.1142385367534
       },
       {
-        "Name": "Element.Name",
-        "ShowGeometry": true,
         "Id": "49291d05d88747baa0d8ac3d76f139e4",
+        "Name": "Element.Name",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 352.3162235457076,
         "Y": 1653.4214920134432
       },
       {
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Id": "75edf24c1be94517b7ea8686a317a1c5",
+        "Name": "Watch",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 352.3162235457076,
         "Y": 1814.3973456327726
       },
       {
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Id": "023424f454c241b0b70bafd208beddce",
+        "Name": "Watch",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 713.38106901817093,
         "Y": 1814.3973456327726
       },
       {
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Id": "ef6dbad31ef94c118c84d6cac0a00835",
+        "Name": "Code Block",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1110.2489496730495,
         "Y": 1662.5007172020628
       },
       {
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Id": "3e1a06af984f40dbb97a95759c029ff5",
+        "Name": "Watch",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 2106.2489496730495,
         "Y": 1653.845717202063
       },
       {
-        "Name": "Appearance.Duplicate",
-        "ShowGeometry": true,
         "Id": "58119417e65b4be399cb3ea8ed90fbcb",
+        "Name": "Appearance.Duplicate",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1742.2489496730495,
         "Y": 1653.845717202063
       },
       {
-        "Name": "Appearances",
-        "ShowGeometry": true,
         "Id": "3f7c7a2160914665802e0e53c0eb65cc",
+        "Name": "Appearances",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1412.2489496730495,
         "Y": 1832.2767593827434
       },
       {
-        "Name": "Appearance.ByName",
-        "ShowGeometry": true,
         "Id": "04256cad90cf4dd198731f260d485bb1",
+        "Name": "Appearance.ByName",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1412.2489496730495,
         "Y": 1653.845717202063
       },
       {
-        "Name": "Asset Schemas",
-        "ShowGeometry": true,
         "Id": "e98fc80ae0884756a76ef6191d3c13bd",
+        "Name": "Asset Properties",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 2490.05855839143,
         "Y": 1731.6933663015029
       },
       {
-        "Name": "Boolean",
-        "ShowGeometry": true,
         "Id": "9c7077068e074a8f8fbdf6a70fdac475",
+        "Name": "Boolean",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 2490.05855839143,
         "Y": 1950.6263119126429
       },
       {
-        "Name": "Material.SetAppearance",
-        "ShowGeometry": true,
         "Id": "e60a3e5671e94361acee57b4871adc1d",
+        "Name": "Material.SetAppearance",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 669.92917981419771,
         "Y": -358.42887251698471
       },
       {
-        "Name": "Material.Name",
-        "ShowGeometry": true,
         "Id": "b28fce39c0c942fcb80bb54c1b7270c1",
+        "Name": "Material.Name",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1021.9291798141995,
         "Y": -434.42887251698471
       },
       {
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Id": "a644520e8cdf4d6ca67996bffde09b2d",
+        "Name": "Watch",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1335.9291798141994,
         "Y": -282.42887251698471
       },
       {
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Id": "a6cc833db4ed409fbc93f5ce438dca29",
+        "Name": "Watch",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1335.9291798141994,
         "Y": -434.42887251698471
       },
       {
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Id": "7f8b5be609844eaa976fe51e47c62415",
+        "Name": "Code Block",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1121.7517317440797,
         "Y": 2212.012479380724
       },
       {
-        "Name": "Appearance.ByName",
-        "ShowGeometry": true,
         "Id": "e1b489a4fb1a499295cff7677a82e857",
+        "Name": "Appearance.ByName",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1454.7517317440797,
         "Y": 2294.3574793807243
       },
       {
-        "Name": "Material.SetAppearance",
-        "ShowGeometry": true,
         "Id": "9fd85c6466a84c639b14765f7d0fa22d",
+        "Name": "Material.SetAppearance",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1784.7517317440797,
         "Y": 2203.3574793807243
       },
       {
-        "Name": "Material.ByName",
-        "ShowGeometry": true,
         "Id": "8cb503d172e4447ea33f730332c9c5a4",
+        "Name": "Material.ByName",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1454.7517317440797,
         "Y": 2146.3574793807243
       },
       {
-        "Name": "Asset.BySchema",
-        "ShowGeometry": true,
         "Id": "5c8499fed94948c88532df83dc6a7328",
+        "Name": "Asset.BySchema",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 2819.05855839143,
         "Y": 1731.6933663015029
       },
       {
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Id": "e212efb11913435c90868346922ee4da",
+        "Name": "Watch",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 2136.7517317440797,
         "Y": 2203.3574793807243
       },
       {
-        "Name": "Asset.BySchema",
-        "ShowGeometry": true,
         "Id": "14eb8f0138bc468b8d3b0abdb7acbe7e",
+        "Name": "Asset.BySchema",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 2870.5185992131692,
         "Y": 2132.9625619126441
       },
       {
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Id": "0056cb40c16a48ad802899897f228e5b",
+        "Name": "Code Block",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 3135.05855839143,
         "Y": 1809.5208663015032
       },
       {
-        "Name": "Appearance.Create",
-        "ShowGeometry": true,
         "Id": "9d7b98fd2a8a4ec292607d99ca628a07",
+        "Name": "Appearance.Create",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 3461.05855839143,
         "Y": 1800.8658663015026
       },
       {
-        "Name": "Asset.Category",
-        "ShowGeometry": true,
         "Id": "d5b275771ddc45c380c27dbf61fa0862",
+        "Name": "Asset.Category",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 3135.05855839143,
         "Y": 1653.8658663015026
       },
       {
-        "Name": "Asset.ByCategory",
-        "ShowGeometry": true,
         "Id": "6815b88585ca439d98723eb232b17e35",
+        "Name": "Asset.ByCategory",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 3461.05855839143,
         "Y": 1653.8658663015026
       },
       {
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Id": "cd13ad2ecd894a6d8d66aa8a5c1a1228",
+        "Name": "Code Block",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 2490.05855839143,
         "Y": 2098.7550619126437
       },
       {
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Id": "269f24d1d5f54663afb78f16bdf1e90a",
+        "Name": "Watch",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 3841.5185992131692,
         "Y": 2289.4625619126441
       },
       {
-        "Name": "Object.ToRevitType",
-        "ShowGeometry": true,
         "Id": "8b324e43ef664c9ba1d337047202fc19",
+        "Name": "Object.ToRevitType",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 3199.5185992131692,
         "Y": 2132.9625619126441
       },
       {
-        "Name": "Object.ToOrchidType",
-        "ShowGeometry": true,
         "Id": "f8bd88505d6d47ab83ff6fd3c3caf3ff",
+        "Name": "Object.ToOrchidType",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 3515.5185992131692,
         "Y": 1976.4625619126432
       },
       {
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Id": "6622b504694848cd81e37b3358bb1b70",
+        "Name": "Watch",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 3841.5185992131692,
         "Y": 1976.4625619126432
       },
       {
-        "Name": "Texture.Slider",
-        "ShowGeometry": true,
         "Id": "e540042e2ad84ed08048c8f633af065f",
+        "Name": "Texture.Slider",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 2687.32039755816,
         "Y": 1197.65313810444
       },
       {
-        "Name": "Texture.Color",
-        "ShowGeometry": true,
         "Id": "8702726a6eb4407bb989e4a40284c184",
+        "Name": "Texture.Color",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 2245.32039755816,
         "Y": 897.65313810444
       },
       {
-        "Name": "Texture.Slider",
-        "ShowGeometry": true,
         "Id": "c2abe615ac6a4508bf8f8f3bcaa187aa",
+        "Name": "Texture.Slider",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1428.32039755816,
         "Y": 773.65313810444
       },
       {
-        "Name": "Texture.Slider",
-        "ShowGeometry": true,
         "Id": "3e3becf4ee144bb8bb5b53329a2fe62f",
+        "Name": "Texture.Slider",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 684.320397558164,
         "Y": 647.65313810444
       },
       {
-        "Name": "Texture.Image",
-        "ShowGeometry": true,
         "Id": "839aa348ffeb43bdb103cf0406560c30",
+        "Name": "Texture.Image",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 684.320397558164,
         "Y": 795.15313810444
       },
       {
-        "Name": "Self Illumination Color Temperatures",
-        "ShowGeometry": true,
         "Id": "a00b51fe4bcb43c7b3f2e9f8c7c7f8a6",
+        "Name": "Self Illumination Color Temperatures",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 2245.32039755816,
         "Y": 1193.65313810444
       },
       {
-        "Name": "Self Illumination Luminances",
-        "ShowGeometry": true,
         "Id": "03f2ee68c9ba4816a10c6f5ebd183a70",
+        "Name": "Self Illumination Luminances",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 2245.32039755816,
         "Y": 1046.65313810444
       },
       {
-        "Name": "Transparency Refractions",
-        "ShowGeometry": true,
         "Id": "68f766d725d04d64be98222b2a261ca0",
+        "Name": "Transparency Refractions",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1428.32039755816,
         "Y": 920.65313810444
       },
       {
-        "Name": "Appearance.SetGeneric",
-        "ShowGeometry": true,
         "Id": "36677c3fc8ad492c83d786465fdf98bb",
+        "Name": "Appearance.SetGeneric",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1064.32039755816,
         "Y": 374.65313810444
       },
       {
-        "Name": "Appearance.SetSelfIllumination",
-        "ShowGeometry": true,
         "Id": "eab798108bad4628b3767efb07ddeece",
+        "Name": "Appearance.SetSelfIllumination",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 2687.32039755816,
         "Y": 949.65313810444
       },
       {
-        "Name": "Appearance.SetTransparency",
-        "ShowGeometry": true,
         "Id": "f4a1dc3075b249c0919d7101fd695aeb",
+        "Name": "Appearance.SetTransparency",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1803.32039755816,
         "Y": 649.65313810444
       },
       {
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Id": "8be5d16f945f4f3c9351dbcd31e59e01",
+        "Name": "Code Block",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 3099.32039755816,
         "Y": 1253.48063810444
       },
       {
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Id": "ef044e3d99164123ad9023b1b39beceb",
+        "Name": "Code Block",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1803.32039755816,
         "Y": 968.480638104441
       },
       {
-        "Name": "Appearance.ByName",
-        "ShowGeometry": true,
         "Id": "54a72844ecdb4d6c8c70a9d5af5aef45",
+        "Name": "Appearance.ByName",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 343.320397558164,
         "Y": 73.6531381044403
       },
       {
-        "Name": "Appearance.SetTint",
-        "ShowGeometry": true,
         "Id": "466f93b9ff7e4949989c32508139a6ad",
+        "Name": "Appearance.SetTint",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 3526.32039755816,
         "Y": 1129.65313810444
       },
       {
-        "Name": "Appearance.SetBump",
-        "ShowGeometry": true,
         "Id": "76cddb3b7ba64d75af340b5c4dddafe1",
+        "Name": "Appearance.SetBump",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 3099.32039755816,
         "Y": 1039.65313810444
       },
       {
-        "Name": "Appearance.SetCutouts",
-        "ShowGeometry": true,
         "Id": "703c720d3b254fe38ea75f91d9769b69",
+        "Name": "Appearance.SetCutouts",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 2245.32039755816,
         "Y": 720.65313810444
       },
       {
-        "Name": "Appearance.SetReflectivity",
-        "ShowGeometry": true,
         "Id": "0d69f53ebb5b4a5ba317909561df397d",
+        "Name": "Appearance.SetReflectivity",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1428.32039755816,
         "Y": 560.65313810444
       },
       {
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Id": "da9223a32ecc407e8215e11224af8119",
+        "Name": "Code Block",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 10.3203975581637,
         "Y": 73.4806381044398
       },
       {
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Id": "a6e71c133b75416794a12f4178c6564b",
+        "Name": "Code Block",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 343.320397558164,
         "Y": 444.13563810444
       },
       {
-        "Name": "Color.ByARGB",
-        "ShowGeometry": true,
         "Id": "bc96f011671c4e8aa27945e9a30441ef",
+        "Name": "Color.ByARGB",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 684.320397558164,
         "Y": 399.65313810444
       },
       {
-        "Name": "String",
-        "ShowGeometry": true,
         "Id": "62396cd739e842caa0c950631aca3653",
+        "Name": "String",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 10.3203975581637,
         "Y": 795.15313810444
       },
       {
-        "Name": "Appearance.SetInformation",
-        "ShowGeometry": true,
         "Id": "ef07a06c013c45489c3486fd26e8ae46",
+        "Name": "Appearance.SetInformation",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 684.320397558164,
         "Y": 187.65313810444
       },
       {
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Id": "6299722586414fc18981188834093546",
+        "Name": "Code Block",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 343.320397558164,
         "Y": 220.79063810444
       },
       {
-        "Name": "File.FromPath",
-        "ShowGeometry": true,
         "Id": "29d12163b60541d8b9e20a783eb1f71c",
+        "Name": "File.FromPath",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 343.320397558164,
         "Y": 795.15313810444
       },
       {
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Id": "9563551a552748e68cfc76db54887a58",
+        "Name": "Code Block",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 343.320397558164,
         "Y": 617.79063810444
       },
       {
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Id": "249b41f1d92f431f922f9b266c5d5bab",
+        "Name": "Code Block",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 2245.32039755816,
         "Y": 1341.48063810444
       },
       {
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Id": "de7eeb2b93ed4297ba13b68d678a9b19",
+        "Name": "Code Block",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1064.32039755816,
         "Y": 692.480638104441
       },
       {
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Id": "b84a2577162d408da2445c9e3d3b7f9c",
+        "Name": "Code Block",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1064.32039755816,
         "Y": 840.13563810444
       }
@@ -3453,13 +3469,14 @@
         ],
         "HasNestedGroups": false,
         "Left": 0.25137807324523465,
-        "Top": 1580.4214920134432,
-        "Width": 1000.1296909449256,
-        "Height": 531.97585361932943,
+        "Top": 1581.0214920134431,
+        "Width": 1001.5296909449257,
+        "Height": 531.57585361932934,
         "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": 1653.4214920134432,
         "InitialHeight": 305.97585361932943,
-        "TextblockHeight": 63.0,
+        "TextblockHeight": 62.4,
         "Background": "#FFFFAA45"
       },
       {
@@ -3478,13 +3495,14 @@
         ],
         "HasNestedGroups": false,
         "Left": 1100.2489496730495,
-        "Top": 1580.845717202063,
-        "Width": 1278.0,
-        "Height": 383.43104218068038,
+        "Top": 1581.445717202063,
+        "Width": 1279.1999999999998,
+        "Height": 382.63104218068042,
         "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": 1653.845717202063,
         "InitialHeight": 323.43104218068038,
-        "TextblockHeight": 63.0,
+        "TextblockHeight": 62.4,
         "Background": "#FFFFAA45"
       },
       {
@@ -3505,13 +3523,14 @@
         ],
         "HasNestedGroups": false,
         "Left": -0.070820185802347169,
-        "Top": -507.42887251698471,
-        "Width": 1525.0000000000018,
-        "Height": 402.0,
+        "Top": -506.82887251698469,
+        "Width": 1526.8000000000018,
+        "Height": 401.59999999999997,
         "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": -434.42887251698471,
         "InitialHeight": 312.0,
-        "TextblockHeight": 63.0,
+        "TextblockHeight": 62.4,
         "Background": "#FFA4E1FF"
       },
       {
@@ -3530,13 +3549,14 @@
         ],
         "HasNestedGroups": false,
         "Left": 1111.7517317440797,
-        "Top": 2073.3574793807243,
-        "Width": 1192.0,
-        "Height": 353.0,
+        "Top": 2073.9574793807242,
+        "Width": 1193.4,
+        "Height": 352.20000000000027,
         "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": 2146.3574793807243,
         "InitialHeight": 293.0,
-        "TextblockHeight": 63.0,
+        "TextblockHeight": 62.4,
         "Background": "#FFFFAA45"
       },
       {
@@ -3563,13 +3583,14 @@
         ],
         "HasNestedGroups": false,
         "Left": 2480.05855839143,
-        "Top": 1580.8658663015026,
-        "Width": 1648.4600408217393,
-        "Height": 1214.8891956111411,
+        "Top": 1581.4658663015025,
+        "Width": 1649.8600408217389,
+        "Height": 1213.8891956111411,
         "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": 1653.8658663015026,
         "InitialHeight": 780.59669561114151,
-        "TextblockHeight": 63.0,
+        "TextblockHeight": 62.4,
         "Background": "#FFFFAA45"
       },
       {
@@ -3612,18 +3633,19 @@
         ],
         "HasNestedGroups": false,
         "Left": 0.32039755816369997,
-        "Top": 0.48063810443980515,
-        "Width": 3799.9999999999964,
-        "Height": 1473.0000000000002,
+        "Top": 1.0806381044398066,
+        "Width": 3801.5999999999963,
+        "Height": 1472.2,
         "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": 73.4806381044398,
         "InitialHeight": 1413.0000000000002,
-        "TextblockHeight": 63.0,
+        "TextblockHeight": 62.4,
         "Background": "#FFFFAA45"
       }
     ],
-    "X": 172.21379069504388,
-    "Y": 157.28105335709108,
-    "Zoom": 0.29298479315993164
+    "X": 88.968832946500072,
+    "Y": 187.83733322341121,
+    "Zoom": 0.36332146228895112
   }
 }

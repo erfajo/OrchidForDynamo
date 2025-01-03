@@ -2,7 +2,12 @@
 The major and minor number follows the Dynamo version, e.g. Orchid 3.0.x.x is usable in Dynamo 3.0.x.x versions. The build number is internal major builds. The revision number is an internal build number without public documentation and display in this file.  
   
   
-### History of Orchid for Dynamo 3.0.x -- 3.2.x (Revit 2025)  
+### History of Orchid for Dynamo 3.0.x -- 3.3.x (Revit 2025)  
+  
+3.3.0  
+- Geometry nodes renamed with prefix “Oc” To “Revit” and geometry nodes without prefix does now have the prefix “Dynamo”. This indicates if a node covers geometry that uses either the Revit.API or the Dynamo.API.  
+- Geometry nodes in general are expanded with many new functions.  
+- Creation of ProjectParameter has been marked obsolete/deprecated. This is also the case with the comparative Dynamo node!  
   
 3.2.1  
 - The “condense” option is removed from several nodes. A specific list.condense function is added.  
@@ -20,6 +25,11 @@ The major and minor number follows the Dynamo version, e.g. Orchid 3.0.x.x is us
   
 
 ### History of Orchid for Dynamo 2.17.x -- 2.19.x (Revit 2024)  
+  
+2.19.4  
+- Geometry nodes renamed with prefix “Oc” To “Revit” and geometry nodes without prefix does now have the prefix “Dynamo”. This indicates if a node covers geometry that uses either the Revit.API or the Dynamo.API.  
+- Geometry nodes in general are expanded with many new functions.  
+- Creation of ProjectParameter has been marked obsolete/deprecated. This is also the case with the comparative Dynamo node!  
   
 2.19.3  
 - The “condense” option is removed from several nodes. A specific list.condense function is added.  
@@ -46,6 +56,11 @@ The major and minor number follows the Dynamo version, e.g. Orchid 3.0.x.x is us
   
   
 ### History of Orchid for Dynamo 2.13.x -- 2.16.x (Revit 2023)  
+  
+2.16.8  
+- Geometry nodes renamed with prefix “Oc” To “Revit” and geometry nodes without prefix does now have the prefix “Dynamo”. This indicates if a node covers geometry that uses either the Revit.API or the Dynamo.API.  
+- Geometry nodes in general are expanded with many new functions.  
+- Creation of ProjectParameter has been marked obsolete/deprecated. This is also the case with the comparative Dynamo node!  
   
 2.16.7  
 - The “condense” option is removed from several nodes. A specific list.condense function is added.  
@@ -89,6 +104,11 @@ The major and minor number follows the Dynamo version, e.g. Orchid 3.0.x.x is us
   
   
 ### History of Orchid for Dynamo 2.10.x -- 2.12.x (Revit 2022)  
+  
+2.12.9  
+- Geometry nodes renamed with prefix “Oc” To “Revit” and geometry nodes without prefix does now have the prefix “Dynamo”. This indicates if a node covers geometry that uses either the Revit.API or the Dynamo.API.  
+- Geometry nodes in general are expanded with many new functions.  
+- Creation of ProjectParameter has been marked obsolete/deprecated. This is also the case with the comparative Dynamo node!  
   
 2.12.8  
 - The “condense” option is removed from several nodes. A specific list.condense function is added.  
@@ -137,6 +157,11 @@ The major and minor number follows the Dynamo version, e.g. Orchid 3.0.x.x is us
   
   
 ### History of Orchid for Dynamo 2.5.x -- 2.6.x (Revit 2021)  
+  
+2.6.11  
+- Geometry nodes renamed with prefix “Oc” To “Revit” and geometry nodes without prefix does now have the prefix “Dynamo”. This indicates if a node covers geometry that uses either the Revit.API or the Dynamo.API.  
+- Geometry nodes in general are expanded with many new functions.  
+- Creation of ProjectParameter has been marked obsolete/deprecated. This is also the case with the comparative Dynamo node!  
   
 2.6.10  
 - The “condense” option is removed from several nodes. A specific list.condense function is added.  

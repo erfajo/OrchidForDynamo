@@ -18,7 +18,7 @@
       "Type": "string",
       "Type2": "string",
       "Value": "e\">",
-      "Description": "Creates a string.",
+      "Description": "Creates a string",
       "SelectedIndex": 0
     },
     {
@@ -27,7 +27,7 @@
       "Type": "string",
       "Type2": "string",
       "Value": "\"Boolean.FaceFlipped|DanEDU\"",
-      "Description": "Creates a string.",
+      "Description": "Creates a string",
       "SelectedIndex": 0
     },
     {
@@ -36,7 +36,7 @@
       "Type": "string",
       "Type2": "string",
       "Value": "\"Boolean.Flipped|DanEDU\"",
-      "Description": "Creates a string.",
+      "Description": "Creates a string",
       "SelectedIndex": 0
     },
     {
@@ -45,7 +45,7 @@
       "Type": "string",
       "Type2": "string",
       "Value": "\"FamilyInstance.IsFlipped\"",
-      "Description": "Creates a string.",
+      "Description": "Creates a string",
       "SelectedIndex": 0
     },
     {
@@ -54,7 +54,7 @@
       "Type": "string",
       "Type2": "string",
       "Value": "\"FamilyInstance.IsFaceFlipped\"",
-      "Description": "Creates a string.",
+      "Description": "Creates a string",
       "SelectedIndex": 0
     },
     {
@@ -62,8 +62,8 @@
       "Name": "String",
       "Type": "string",
       "Type2": "string",
-      "Value": "%userprofile%\\Programming\\Testing\\Data\\test.txt",
-      "Description": "Creates a string.",
+      "Value": "%OrchidSamples%\\Data\\test.txt",
+      "Description": "Creates a string",
       "SelectedIndex": 0
     }
   ],
@@ -71,8 +71,10 @@
   "Nodes": [
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "NodeType": "ExtensionNode",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
       "Id": "7c26affb205940b397dff6ed9176a20e",
+      "NodeType": "ExtensionNode",
       "Inputs": [
         {
           "Id": "173b63500f8143cc95cc2550e22890ce",
@@ -96,13 +98,12 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the node's output"
+      "Description": "Visualizes a node's output"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.Common.String.Substring@string,string,string,bool",
       "Id": "86f422ab35274c348baee267469299f5",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "e9df2fdc19f54f76b10864725b3a918b",
@@ -116,7 +117,7 @@
         {
           "Id": "e9724322cdb547b0966f94eeac27b975",
           "Name": "startsWith",
-          "Description": "Substring to search the start for.\n\nstring",
+          "Description": "Substring to search the start for, or the starting position.\n\nvar",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -125,7 +126,7 @@
         {
           "Id": "623921d72e754c288f528179d87a99a2",
           "Name": "endsWith",
-          "Description": "Substring to search the end for.\n\nstring",
+          "Description": "Substring to search the end for, or the ending position.\n\nvar",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -152,13 +153,16 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.Common.String.Substring@string,var,var,bool",
       "Replication": "Auto",
-      "Description": "Retrieves a substring from the given string. The substring starts at the given start string/character position and ends at the given string/character.\n\nString.Substring (string: string, startsWith: string, endsWith: string, ignoreCase: bool = false): string"
+      "Description": "Retrieves a substring from the given string. The substring starts at the given start string/character position or the given integer and ends at the given string/character or the given integer. Negative value sent to endsWith will start from the end of the string, hence -0 will be the full string length. Note: accepted values are either string or int, all other kind of values will fail!\n\nString.Substring (string: string, startsWith: var, endsWith: var, ignoreCase: bool = false): string"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "NodeType": "ExtensionNode",
+      "WatchWidth": 420.0,
+      "WatchHeight": 200.0,
       "Id": "2a5532cb782f42c08289c17e3e7e0eb6",
+      "NodeType": "ExtensionNode",
       "Inputs": [
         {
           "Id": "d0b143edaee149a2bc7e4da17e73fbc9",
@@ -182,13 +186,12 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the node's output"
+      "Description": "Visualizes a node's output"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.Common.String.Replace@string,string[],string[]",
       "Id": "2907bf9934fe4368b89919bb9eee846e",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "d30dd7ae1d664cdab9b367e7d9a15c32",
@@ -229,14 +232,14 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.Common.String.Replace@string,string[],string[]",
       "Replication": "Auto",
       "Description": "Replaces all occurrences of text in a string with other text.\n\nString.Replace (string: string, searchFor: string[], replaceWith: string[]): string"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "DSCore.List.Cycle@var[]..[],int",
       "Id": "828bcd6bccff4a0b8d5d15c1558ddc50",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "06d2c9ac6d474469bd7434a9551dd3b1",
@@ -268,14 +271,14 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "DSCore.List.Cycle@var[]..[],int",
       "Replication": "Auto",
       "Description": "Creates a new list by concatenating copies of a given list.\n\nList.Cycle (list: var[]..[], amount: int): var[]..[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
-      "NodeType": "StringInputNode",
-      "InputValue": "e\">",
       "Id": "b2f57844a96248f096a3940c6cc888d9",
+      "NodeType": "StringInputNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -289,13 +292,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Creates a string."
+      "Description": "Creates a string",
+      "InputValue": "e\">"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "DSCore.IO.FileSystem.ReadText@var",
       "Id": "4b66edd99e28438d8bcb0628e751efc7",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "e706b82883ca4835abfbf1d68d57e381",
@@ -318,14 +321,14 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "DSCore.IO.FileSystem.ReadText@var",
       "Replication": "Auto",
       "Description": "Reads a text file and returns the contents as a string.\n\nFileSystem.ReadText (file: var): string"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "DSCore.List.Count@var[]..[]",
       "Id": "7c23817cdd014af5aab6669e21076dd1",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "9414bc77c45c48b4913292a92fe62d97",
@@ -348,14 +351,15 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "DSCore.List.Count@var[]..[]",
       "Replication": "Auto",
       "Description": "Returns the number of items stored in the given list.\n\nList.Count (list: var[]..[]): int"
     },
     {
       "ConcreteType": "CoreNodeModels.CreateList, CoreNodeModels",
       "VariableInputPorts": true,
-      "NodeType": "ExtensionNode",
       "Id": "ba1a2c6023f24b35a0fa2b550d339c2d",
+      "NodeType": "ExtensionNode",
       "Inputs": [
         {
           "Id": "ac9819572d2c4ac29b7b877416e3eb59",
@@ -388,13 +392,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Makes a new list out of the given inputs"
+      "Description": "Makes a new list from the given inputs"
     },
     {
       "ConcreteType": "CoreNodeModels.CreateList, CoreNodeModels",
       "VariableInputPorts": true,
-      "NodeType": "ExtensionNode",
       "Id": "36a9b8150e904363af43eee06da978bf",
+      "NodeType": "ExtensionNode",
       "Inputs": [
         {
           "Id": "137bf786e5d44de6a15de576558ee127",
@@ -427,14 +431,14 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Makes a new list out of the given inputs"
+      "Description": "Makes a new list from the given inputs"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSVarArgFunction, DynamoCore",
       "FunctionSignature": "Orchid.Common.String.Format@string,var[]",
       "FunctionType": "VariableArgument",
-      "NodeType": "FunctionNode",
       "Id": "dfabe08c087f4aad84ca8ae39dcba4d0",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "2b54e5ef031d454b82176c5512b89f16",
@@ -489,8 +493,10 @@
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "NodeType": "ExtensionNode",
+      "WatchWidth": 409.6,
+      "WatchHeight": 38.4,
       "Id": "27f883d6d59f4591a834965c32a25f34",
+      "NodeType": "ExtensionNode",
       "Inputs": [
         {
           "Id": "af03f2785a67490b8b6ceb3e06661d4c",
@@ -514,13 +520,12 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualize the node's output"
+      "Description": "Visualizes a node's output"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
-      "NodeType": "StringInputNode",
-      "InputValue": "\"Boolean.FaceFlipped|DanEDU\"",
       "Id": "1cf34c2fe41644478a068c393f1f3852",
+      "NodeType": "StringInputNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -534,13 +539,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Creates a string."
+      "Description": "Creates a string",
+      "InputValue": "\"Boolean.FaceFlipped|DanEDU\""
     },
     {
       "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
-      "NodeType": "StringInputNode",
-      "InputValue": "\"Boolean.Flipped|DanEDU\"",
       "Id": "598ee6f3ed034a1e96fedbcd5ea0e19f",
+      "NodeType": "StringInputNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -554,13 +559,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Creates a string."
+      "Description": "Creates a string",
+      "InputValue": "\"Boolean.Flipped|DanEDU\""
     },
     {
       "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
-      "NodeType": "StringInputNode",
-      "InputValue": "\"FamilyInstance.IsFlipped\"",
       "Id": "dc17ef048ac549f59cdb97192d4c71e7",
+      "NodeType": "StringInputNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -574,13 +579,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Creates a string."
+      "Description": "Creates a string",
+      "InputValue": "\"FamilyInstance.IsFlipped\""
     },
     {
       "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
-      "NodeType": "StringInputNode",
-      "InputValue": "\"FamilyInstance.IsFaceFlipped\"",
       "Id": "5fed051c7cbc45a39571bf01bfba0d28",
+      "NodeType": "StringInputNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -594,13 +599,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Creates a string."
+      "Description": "Creates a string",
+      "InputValue": "\"FamilyInstance.IsFaceFlipped\""
     },
     {
       "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
-      "NodeType": "StringInputNode",
-      "InputValue": "%userprofile%\\Programming\\Testing\\Data\\test.txt",
       "Id": "86b3e281219d4dc59212343fdfce7984",
+      "NodeType": "StringInputNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -614,13 +619,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Creates a string."
+      "Description": "Creates a string",
+      "InputValue": "%OrchidSamples%\\Data\\test.txt"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
-      "NodeType": "StringInputNode",
-      "InputValue": "My dog {0} is {1} years old and messures {2} meters.",
       "Id": "ed4bc797dc16463db65b159885f3c9e4",
+      "NodeType": "StringInputNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -634,17 +639,17 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Creates a string."
+      "Description": "Creates a string",
+      "InputValue": "My dog {0} is {1} years old and messures {2} meters."
     },
     {
       "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
-      "NodeType": "NumberInputNode",
       "NumberType": "Double",
       "MaximumValue": 10.0,
       "MinimumValue": 0.0,
       "StepValue": 1.0,
-      "InputValue": 7.0,
       "Id": "680c83ed49664401b34961c726ebe54b",
+      "NodeType": "NumberInputNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -658,17 +663,17 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "A slider that produces numeric values."
+      "Description": "Produces numeric values",
+      "InputValue": 7.0
     },
     {
       "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
-      "NodeType": "NumberInputNode",
       "NumberType": "Double",
       "MaximumValue": 10.0,
       "MinimumValue": 0.0,
       "StepValue": 0.01,
-      "InputValue": 1.53,
       "Id": "a3cc046c871d4920aa96d558025d0245",
+      "NodeType": "NumberInputNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -682,13 +687,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "A slider that produces numeric values."
+      "Description": "Produces numeric values",
+      "InputValue": 1.53
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "\"King\";",
       "Id": "a30a9686917748328cfb8d58459b3b9e",
+      "NodeType": "CodeBlockNode",
       "Inputs": [],
       "Outputs": [
         {
@@ -702,13 +707,13 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"King\";"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "Orchid.Common.File.FromPath@string",
       "Id": "0948055370c24dd68ef55c643ddc8031",
+      "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "052c91e7bba140639427ee0c3bb421cf",
@@ -731,6 +736,7 @@
           "KeepListStructure": false
         }
       ],
+      "FunctionSignature": "Orchid.Common.File.FromPath@string",
       "Replication": "Auto",
       "Description": "Get file from a path.\n\nFile.FromPath (path: string): string"
     }
@@ -873,19 +879,13 @@
   "NodeLibraryDependencies": [
     {
       "Name": "Orchid",
-      "Version": "216.3.0.5794",
+      "Version": "2.19.3.6432",
       "ReferenceType": "Package",
       "Nodes": [
         "86f422ab35274c348baee267469299f5",
         "2907bf9934fe4368b89919bb9eee846e",
+        "dfabe08c087f4aad84ca8ae39dcba4d0",
         "0948055370c24dd68ef55c643ddc8031"
-      ]
-    },
-    {
-      "Name": "OrchidRB.dll",
-      "ReferenceType": "ZeroTouch",
-      "Nodes": [
-        "dfabe08c087f4aad84ca8ae39dcba4d0"
       ]
     },
     {
@@ -925,12 +925,12 @@
       "ScaleFactor": 1.0,
       "HasRunWithoutCrash": true,
       "IsVisibleInDynamoLibrary": true,
-      "Version": "2.16.1.2727",
+      "Version": "2.19.3.6394",
       "RunType": "Manual",
       "RunPeriod": "1000"
     },
     "Camera": {
-      "Name": "Background Preview",
+      "Name": "_Background Preview",
       "EyeX": -17.0,
       "EyeY": 24.0,
       "EyeZ": 50.0,
@@ -944,222 +944,222 @@
     "ConnectorPins": [],
     "NodeViews": [
       {
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Id": "7c26affb205940b397dff6ed9176a20e",
+        "Name": "Watch",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1556.1159326761808,
         "Y": 418.00917649951413
       },
       {
-        "Name": "String.Substring",
-        "ShowGeometry": true,
         "Id": "86f422ab35274c348baee267469299f5",
+        "Name": "String.Substring",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1206.1159326761808,
         "Y": 418.00917649951413
       },
       {
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Id": "2a5532cb782f42c08289c17e3e7e0eb6",
+        "Name": "Watch",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1540.2964048899973,
         "Y": 856.56915395373187
       },
       {
-        "Name": "String.Replace",
-        "ShowGeometry": true,
         "Id": "2907bf9934fe4368b89919bb9eee846e",
+        "Name": "String.Replace",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 1206.2964048899973,
         "Y": 856.56915395373187
       },
       {
-        "Name": "List.Cycle",
-        "ShowGeometry": true,
         "Id": "828bcd6bccff4a0b8d5d15c1558ddc50",
+        "Name": "List.Cycle",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 868.95144601676861,
         "Y": 471.06455098759056
       },
       {
-        "Name": "String",
-        "ShowGeometry": true,
         "Id": "b2f57844a96248f096a3940c6cc888d9",
+        "Name": "String",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 601.951446016769,
         "Y": 414.064550987591
       },
       {
-        "Name": "FileSystem.ReadText",
-        "ShowGeometry": true,
         "Id": "4b66edd99e28438d8bcb0628e751efc7",
+        "Name": "FileSystem.ReadText",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 621.95116318285693,
         "Y": 66.388832592948
       },
       {
-        "Name": "List.Count",
-        "ShowGeometry": true,
         "Id": "7c23817cdd014af5aab6669e21076dd1",
+        "Name": "List.Count",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 601.951446016769,
         "Y": 562.064550987591
       },
       {
-        "Name": "List.Create",
-        "ShowGeometry": true,
         "Id": "ba1a2c6023f24b35a0fa2b550d339c2d",
+        "Name": "List.Create",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 341.951446016769,
         "Y": 562.064550987591
       },
       {
-        "Name": "List.Create",
-        "ShowGeometry": true,
         "Id": "36a9b8150e904363af43eee06da978bf",
+        "Name": "List.Create",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 341.951446016769,
         "Y": 903.80270552837
       },
       {
-        "Name": "String.Format",
-        "ShowGeometry": true,
         "Id": "dfabe08c087f4aad84ca8ae39dcba4d0",
+        "Name": "String.Format",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 458.07189647125688,
         "Y": 1538.3426902577123
       },
       {
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Id": "27f883d6d59f4591a834965c32a25f34",
+        "Name": "Watch",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 805.07189647125688,
         "Y": 1538.3426902577123
       },
       {
-        "Name": "String",
-        "ShowGeometry": true,
         "Id": "1cf34c2fe41644478a068c393f1f3852",
+        "Name": "String",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 9.95116318285693,
         "Y": 495.064550987591
       },
       {
-        "Name": "String",
-        "ShowGeometry": true,
         "Id": "598ee6f3ed034a1e96fedbcd5ea0e19f",
+        "Name": "String",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 9.95116318285693,
         "Y": 663.064550987591
       },
       {
-        "Name": "String",
-        "ShowGeometry": true,
         "Id": "dc17ef048ac549f59cdb97192d4c71e7",
+        "Name": "String",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 9.95116318285693,
         "Y": 1003.80270552837
       },
       {
-        "Name": "String",
-        "ShowGeometry": true,
         "Id": "5fed051c7cbc45a39571bf01bfba0d28",
+        "Name": "String",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 9.95116318285693,
         "Y": 837.80270552837
       },
       {
-        "Name": "String",
-        "ShowGeometry": true,
         "Id": "86b3e281219d4dc59212343fdfce7984",
+        "Name": "String",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 9.95116318285693,
         "Y": 66.388832592948
       },
       {
-        "Name": "String",
-        "ShowGeometry": true,
         "Id": "ed4bc797dc16463db65b159885f3c9e4",
+        "Name": "String",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 9.95116318285693,
         "Y": 1337.34269025771
       },
       {
-        "Name": "Number Slider",
-        "ShowGeometry": true,
         "Id": "680c83ed49664401b34961c726ebe54b",
+        "Name": "Number Slider",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 9.95116318285693,
         "Y": 1673.34269025771
       },
       {
-        "Name": "Number Slider",
-        "ShowGeometry": true,
         "Id": "a3cc046c871d4920aa96d558025d0245",
+        "Name": "Number Slider",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 9.95116318285693,
         "Y": 1820.34269025771
       },
       {
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Id": "a30a9686917748328cfb8d58459b3b9e",
+        "Name": "Code Block",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 9.95116318285693,
         "Y": 1526.17019025771
       },
       {
-        "Name": "File.FromPath",
-        "ShowGeometry": true,
         "Id": "0948055370c24dd68ef55c643ddc8031",
+        "Name": "File.FromPath",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
+        "ShowGeometry": true,
         "X": 342.95116318285693,
         "Y": 66.388832592948
       }
@@ -1179,11 +1179,12 @@
         "HasNestedGroups": false,
         "Left": 1196.1159326761808,
         "Top": 352.00917649951413,
-        "Width": 647.0,
-        "Height": 363.99999999999994,
+        "Width": 648.40000000000009,
+        "Height": 364.2,
         "FontSize": 30.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": 418.00917649951413,
-        "InitialHeight": 262.0,
+        "InitialHeight": 144.99999999999994,
         "TextblockHeight": 56.0,
         "Background": "#FFC1D676"
       },
@@ -1201,11 +1202,12 @@
         "HasNestedGroups": false,
         "Left": 1196.2964048899973,
         "Top": 790.56915395373187,
-        "Width": 851.0,
-        "Height": 364.00000000000011,
+        "Width": 852.39999999999986,
+        "Height": 364.19999999999993,
         "FontSize": 30.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": 856.56915395373187,
-        "InitialHeight": 227.0,
+        "InitialHeight": 145.0,
         "TextblockHeight": 56.0,
         "Background": "#FFC1D676"
       },
@@ -1230,11 +1232,12 @@
         "HasNestedGroups": false,
         "Left": -0.048836817143069311,
         "Top": 348.064550987591,
-        "Width": 1074.0002828339116,
+        "Width": 1072.6002828339115,
         "Height": 806.73815454077908,
         "FontSize": 30.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": 414.064550987591,
-        "InitialHeight": 487.31265265064985,
+        "InitialHeight": 734.73815454077908,
         "TextblockHeight": 56.0,
         "Background": "#FFA4E1FF"
       },
@@ -1253,11 +1256,12 @@
         "HasNestedGroups": false,
         "Left": -0.048836817143069311,
         "Top": 0.38883259294800609,
-        "Width": 859.0,
-        "Height": 239.0,
+        "Width": 859.19999999999993,
+        "Height": 217.0,
         "FontSize": 30.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": 66.388832592948,
-        "InitialHeight": 162.0,
+        "InitialHeight": 145.0,
         "TextblockHeight": 56.0,
         "Background": "#FFA4E1FF"
       },
@@ -1278,18 +1282,19 @@
         ],
         "HasNestedGroups": false,
         "Left": -0.048836817143069311,
-        "Top": 1264.34269025771,
-        "Width": 1302.1207332884,
-        "Height": 688.0,
+        "Top": 1264.94269025771,
+        "Width": 1303.1207332884,
+        "Height": 687.2,
         "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": 1337.34269025771,
-        "InitialHeight": 452.99999999999682,
-        "TextblockHeight": 63.0,
+        "InitialHeight": 628.0,
+        "TextblockHeight": 62.4,
         "Background": "#FFFFAA45"
       }
     ],
-    "X": 275.11924883286486,
-    "Y": -3.4258806257329582,
-    "Zoom": 0.50348649494529
+    "X": 241.15893172096492,
+    "Y": 18.390028862268224,
+    "Zoom": 0.64986692294064718
   }
 }
