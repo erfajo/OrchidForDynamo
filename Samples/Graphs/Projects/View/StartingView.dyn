@@ -1,0 +1,220 @@
+{
+  "Uuid": "3c9d0464-8643-5ffe-96e5-ab1769818209",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "StartingView",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "724ed8a98f5f44d2a96948b9d027b30b",
+      "Name": "Views",
+      "Type": "selection",
+      "Type2": "dropdownSelection",
+      "Value": "{3D}",
+      "Description": "All views available in the current document.",
+      "SelectedIndex": 0
+    }
+  ],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "ce0f397f15634922badb228bb57723f3",
+      "Inputs": [
+        {
+          "Id": "765f136624b84030a977e5917f2ae6ad",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1c0c78ad172e4ed398258fb55921ddca",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the node's output"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Common.Document.SetStartingView@Revit.Application.Document,Revit.Elements.Views.View",
+      "Id": "6c10d9510cba4e349b4766386c2003f3",
+      "Inputs": [
+        {
+          "Id": "d499de2a724743518faabdd75bac23a5",
+          "Name": "document",
+          "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f02e3249b4164869bdc2caa40004094a",
+          "Name": "view",
+          "Description": "The view to set.\n\nView",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d460b5256c4b4c50933014f7b8f18cec",
+          "Name": "watch",
+          "Description": "Add a watch node to verify the output.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Set the starting view in the document.\n\nDocument.SetStartingView (document: Document = null, view: View): string"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Views, DSRevitNodesUI",
+      "SelectedIndex": 0,
+      "SelectedString": "{3D}",
+      "NodeType": "ExtensionNode",
+      "Id": "724ed8a98f5f44d2a96948b9d027b30b",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "097d01e15580403b9e002a72201463c7",
+          "Name": "Views",
+          "Description": "The selected Views",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All views available in the current document."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "d460b5256c4b4c50933014f7b8f18cec",
+      "End": "765f136624b84030a977e5917f2ae6ad",
+      "Id": "091bb75635ee407f8c0804af4af98d99",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "097d01e15580403b9e002a72201463c7",
+      "End": "f02e3249b4164869bdc2caa40004094a",
+      "Id": "4637a0f26538438b94ad14b87ec711c8",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Orchid",
+      "Version": "2.19.3.6432",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "6c10d9510cba4e349b4766386c2003f3"
+      ]
+    }
+  ],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.16",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "3.0",
+      "Data": {}
+    }
+  ],
+  "Author": "None provided",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.16.1.2727",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Name": "Watch",
+        "ShowGeometry": true,
+        "Id": "ce0f397f15634922badb228bb57723f3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 783.79707111467837,
+        "Y": 94.632613240549
+      },
+      {
+        "Name": "Document.SetStartingView",
+        "ShowGeometry": true,
+        "Id": "6c10d9510cba4e349b4766386c2003f3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 408.79707111467837,
+        "Y": 94.632613240549
+      },
+      {
+        "Name": "Views",
+        "ShowGeometry": true,
+        "Id": "724ed8a98f5f44d2a96948b9d027b30b",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 90.797071114678374,
+        "Y": 128.632613240549
+      }
+    ],
+    "Annotations": [],
+    "X": 186.20292888532163,
+    "Y": 330.867386759451,
+    "Zoom": 1.0
+  }
+}

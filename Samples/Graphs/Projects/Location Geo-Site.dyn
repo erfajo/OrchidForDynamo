@@ -1,0 +1,1724 @@
+{
+  "Uuid": "3c9d0464-8643-5ffe-96e5-ab1769818209",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Location Geo-Site",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "b5bd4c44dec04717ab4e40173abb340c",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "e2865f21d0104d64bcaaa3877e59a38e",
+          "Name": "siteLocation",
+          "Description": "The site location as Dynamo type.\n\nElement\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "7383c2d092804de6ad9744a9fd6a6fad",
+          "Name": "Latitude",
+          "Description": "The latitude degree of the site location.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "439b952f4a69486980d32c155ffd6b08",
+          "Name": "Longitude",
+          "Description": "The longitude degree of the site location.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Common.Location.SiteLocation@Revit.Elements.Element",
+      "Replication": "Auto",
+      "Description": "Get the site location properties.\n\nLocation.SiteLocation (siteLocation: Element = null): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "5f14c24e1cf74a9ea4a70c244275780b",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "7a983e75587b475a9a5d6363fea9c73d",
+          "Name": "element",
+          "Description": "Element or location.\n\nElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b917be09e9454c6c86c756e3288f3957",
+          "Name": "byOrigin",
+          "Description": "Boolean value if point should be by internal origin (true) or by project base point (false)?\n\nbool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "af3103cb68aa44389d05f9fd4b218afd",
+          "Name": "northSouth",
+          "Description": "North/South offset.\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3128b88c5746457f83e79316c17d9196",
+          "Name": "eastWest",
+          "Description": "East/West offset.\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6f8e8689c6bc403997e4e1f2911b1893",
+          "Name": "elevation",
+          "Description": "Elevation according to ground level.\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d1a4ce9051964887919c04b7c278b6f0",
+          "Name": "angle",
+          "Description": "Angle from True North.\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e17c10f178624fc68b0b36d885ea962e",
+          "Name": "void",
+          "Description": "void",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Common.Location.SetProjectPosition@Revit.Elements.Element,bool,double,double,double,double",
+      "Replication": "Auto",
+      "Description": "Set the project position by element or location, in relation to byOrigin selection. This is similar to the Revit command \"Specify Coordinates at Point\". Note. It is extremely bad NOT to have Internal Origin and Project Base Point as the exact same point!\n\nLocation.SetProjectPosition (element: Element, byOrigin: bool = true, northSouth: double = 0, eastWest: double = 0, elevation: double = 0, angle: double = 0): void"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "3f9180e59e2e4929a5f116df859c5e90",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "944171a34d2f48f98028dc345b0be3e5",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "0;"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "46307d331cf24fd885400ea12c105c71",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "1523f282269e490baf99745f1e7460d3",
+          "Name": "document",
+          "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a0acdafd0ea74e389663c47b1f1bf844",
+          "Name": "name",
+          "Description": "Name as string value.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "bc729286da99461781d7c962b017c50e",
+          "Name": "Location",
+          "Description": "Project location.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Common.Location.ByName@Revit.Application.Document,string",
+      "Replication": "Auto",
+      "Description": "Get project location by name.\n\nLocation.ByName (document: Document = null, name: string): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "596007fc5454401fa2d44b451a2cae3b",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "bb95ed68e2db4b21af48eed079957b16",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"Internal\";"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "5bd064e3d61849179c8de8144cd1e8c9",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "1902c9861acb45d69e49a409d61ba0e1",
+          "Name": "element",
+          "Description": "Element or location.\n\nElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7b2404130676499192d3611253aab020",
+          "Name": "byOrigin",
+          "Description": "Boolean value if point should be by internal origin (true) or by project base point (false)?\n\nbool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "560604116e2f46eca2016e8a87282fce",
+          "Name": "northSouth",
+          "Description": "North/South offset.\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6e4beed225344358be2e50650ca83d0d",
+          "Name": "eastWest",
+          "Description": "East/West offset.\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e59e6bc5fd434910a05d15c3a02b61ae",
+          "Name": "elevation",
+          "Description": "Elevation according to ground level.\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "98d625671c0b4722bef4ba2e6aa81fbd",
+          "Name": "angle",
+          "Description": "Angle from True North.\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "694b88f64a7c4fd5af3e042bbe7d36db",
+          "Name": "void",
+          "Description": "void",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Common.Location.SetProjectPosition@Revit.Elements.Element,bool,double,double,double,double",
+      "Replication": "Auto",
+      "Description": "Set the project position by element or location, in relation to byOrigin selection. This is similar to the Revit command \"Specify Coordinates at Point\". Note. It is extremely bad NOT to have Internal Origin and Project Base Point as the exact same point!\n\nLocation.SetProjectPosition (element: Element, byOrigin: bool = true, northSouth: double = 0, eastWest: double = 0, elevation: double = 0, angle: double = 0): void"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "4339dc4ebc8a4bbe90efdee94b18cbf1",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "31f89e5be17040678f8df24690812956",
+          "Name": "document",
+          "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5b609c0ca893443a8ae94d07d7b56780",
+          "Name": "name",
+          "Description": "Name as string value.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "7528d03fc80f4e8fbf9f98e09030a56b",
+          "Name": "Location",
+          "Description": "Project location.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Common.Location.ByName@Revit.Application.Document,string",
+      "Replication": "Auto",
+      "Description": "Get project location by name.\n\nLocation.ByName (document: Document = null, name: string): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "76a0b471eedd4ff29ad24f344a9fa65f",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "edaa7c577c0448c18fd21a08cfd54489",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "84c789feb2504fd096a2303ddac86bcb",
+          "Name": "",
+          "Description": "Value of expression at line 5",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0ebc0c5439a74dacb69f4d24a0aa4ee6",
+          "Name": "",
+          "Description": "Value of expression at line 8",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "// DK coordinate\n\"DKTM3\";\n\n// Local coordinate\n\"Copenhagen\";\n\n// DVR 90 elevation\n48000;"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "873e4be1029e4718b75f3a6dd084c403",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "ceaa24d316af49f48794307d3fda9111",
+          "Name": "element",
+          "Description": "Element or location.\n\nElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "16f67a5bc251479ba1b9d6a6bc46853a",
+          "Name": "byOrigin",
+          "Description": "Boolean value if point should be by internal origin (true) or by project base point (false)?\n\nbool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "95c449762d81445fb5126173ab7efee1",
+          "Name": "northSouth",
+          "Description": "North/South offset.\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5800e596e1dc410a890fc9f93db8f397",
+          "Name": "eastWest",
+          "Description": "East/West offset.\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8c73c7e2ed69448f9e5809e27e7219b7",
+          "Name": "elevation",
+          "Description": "Elevation according to ground level.\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a2684f505f1041b4aac47a261f29e464",
+          "Name": "angle",
+          "Description": "Angle from True North.\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c488c836441c4c1d8050287d48d283f4",
+          "Name": "void",
+          "Description": "void",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Common.Location.SetProjectPosition@Revit.Elements.Element,bool,double,double,double,double",
+      "Replication": "Auto",
+      "Description": "Set the project position by element or location, in relation to byOrigin selection. This is similar to the Revit command \"Specify Coordinates at Point\". Note. It is extremely bad NOT to have Internal Origin and Project Base Point as the exact same point!\n\nLocation.SetProjectPosition (element: Element, byOrigin: bool = true, northSouth: double = 0, eastWest: double = 0, elevation: double = 0, angle: double = 0): void"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "a85fb47ffcac4206a15a21a658c21493",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "cdf422d76d7244cda81aa16e3876cfaa",
+          "Name": "document",
+          "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "313b6e9e1f6748cb90d651afe2a01062",
+          "Name": "name",
+          "Description": "Name as string value.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "803ccbdc0a0342e0aa2f99e396160f00",
+          "Name": "Location",
+          "Description": "Project location.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Common.Location.ByName@Revit.Application.Document,string",
+      "Replication": "Auto",
+      "Description": "Get project location by name.\n\nLocation.ByName (document: Document = null, name: string): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "77c2d9a05e2d45af934ab62ba654b947",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "22e5d0794461423aa9790978447e3a75",
+          "Name": "element",
+          "Description": "Element or location.\n\nElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "05b209937ad84e3dbbefc0482774571f",
+          "Name": "byOrigin",
+          "Description": "Boolean value if point should be by internal origin (true) or by project base point (false)?\n\nbool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "19123ff3bee945bcbfc75a0e46a1a9b9",
+          "Name": "NorthSouth",
+          "Description": "North/South offset.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2d540e2827104428abf383f4fadcfeb1",
+          "Name": "EastWest",
+          "Description": "East/West offset.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2bf3f5a3c44949e093db7288e0e2e3ec",
+          "Name": "Elevation",
+          "Description": "Elevation according to ground level.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ab9671ddad3b4ceca88e77971dd0234a",
+          "Name": "Angle",
+          "Description": "Angle from True North.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Common.Location.ProjectPosition@Revit.Elements.Element,bool",
+      "Replication": "Auto",
+      "Description": "Get the project position by element or location, in relation to byOrigin selection. This is similar to the Revit command \"Report Shared Coordinates\". Note. It is extremely bad NOT to have Internal Origin and Project Base Point as the exact same point!\n\nLocation.ProjectPosition (element: Element, byOrigin: bool = true): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "abd2d13642db48f78c455423b59a2a89",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "0a633dcd0b554f4ca731b295aab51c2c",
+          "Name": "element",
+          "Description": "Element or location.\n\nElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d0d3c4c7e20746c9be8cce8860593dd5",
+          "Name": "byOrigin",
+          "Description": "Boolean value if point should be by internal origin (true) or by project base point (false)?\n\nbool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "caf304bc14484a02b381dee3013442ff",
+          "Name": "NorthSouth",
+          "Description": "North/South offset.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "78ad39e8ab6b447a9a233ba74ab849ba",
+          "Name": "EastWest",
+          "Description": "East/West offset.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "28375bc0f0d047e689c0fb4a60aa603e",
+          "Name": "Elevation",
+          "Description": "Elevation according to ground level.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "dbbdf6bd11e94c71a6ce34a2733c6fe1",
+          "Name": "Angle",
+          "Description": "Angle from True North.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Common.Location.ProjectPosition@Revit.Elements.Element,bool",
+      "Replication": "Auto",
+      "Description": "Get the project position by element or location, in relation to byOrigin selection. This is similar to the Revit command \"Report Shared Coordinates\". Note. It is extremely bad NOT to have Internal Origin and Project Base Point as the exact same point!\n\nLocation.ProjectPosition (element: Element, byOrigin: bool = true): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "87240e7c629e4098b537e472375bb95b",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "48915575c30b4f8592ad401ca2782719",
+          "Name": "latitude",
+          "Description": "The latitude of the site location.\n\ndouble",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3dd99ba6ede543c29a8926796f5fcf82",
+          "Name": "longitude",
+          "Description": "The longitude of the site location.\n\ndouble",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6a70af3ad1c647669082d0218ea24988",
+          "Name": "SiteLocation",
+          "Description": "The site location as Dynamo type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Common.Location.SetSiteLocation@double,double",
+      "Replication": "Auto",
+      "Description": "Set the site location properties.\n\nLocation.SetSiteLocation (latitude: double, longitude: double): Element"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 110.4,
+      "WatchHeight": 38.4,
+      "Id": "a8f73acf38244f45bfdec3658fce8219",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "c27a790c32a34928aa19fbb5b061687f",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f5d9127bc3924c5f8e0e54e4609048b8",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "1926c25925534c9dab3955a4274ac993",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "4375b5f558e142a28483cf4776a95ee9",
+          "Name": "",
+          "Description": "Value of expression at line 3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4fea0327235241c49b7d6f48cf7ca239",
+          "Name": "",
+          "Description": "Value of expression at line 4",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "// EPSG:4326 WGS 84\n// Copenhagen\n55.67601666;\n12.56992672;"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "fe670e0679e04940b4d4692aadc4908f",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "6f623a94df8945a0bce465006a558bcb",
+          "Name": "geoID",
+          "Description": "The geo coordinate id.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8d7420d8c5034692a303f16aa4fff22f",
+          "Name": "SiteLocation",
+          "Description": "The site location as Dynamo type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Common.Location.SetSiteCoordinate@string",
+      "Replication": "Auto",
+      "Description": "Set the site coordinate properties.\n\nLocation.SetSiteCoordinate (geoID: string): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "471fd5a139db49608c9fff8f8700116e",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "1490d008148048ec913132eb73d2bd45",
+          "Name": "siteLocation",
+          "Description": "The site location as Dynamo type.\n\nElement\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c3bb43d059234f5c89174bef70c83a90",
+          "Name": "GeoID",
+          "Description": "The geo coordinate id.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d8b594ff197c4524bdf95feee8eb275e",
+          "Name": "GeoSystem",
+          "Description": "The geo coordinate system.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Common.Location.SiteCoordinate@Revit.Elements.Element",
+      "Replication": "Auto",
+      "Description": "Get the site coordinate properties.\n\nLocation.SiteCoordinate (siteLocation: Element = null): var[]..[]"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 102.4,
+      "WatchHeight": 38.4,
+      "Id": "db0c249d0d924d4d9be28f3de6b5ad71",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "a3d8844d2af642cfad5fe730f374fe62",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "81be69f213db40998865cdf3c2b2581a",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 102.4,
+      "WatchHeight": 38.4,
+      "Id": "13fb2992d2d046c1970e0a698a9b647a",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "7df40e31b1dd40959ca79c6a95ecf4fe",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "258afb95f9134cd6bd7bec941b6bac99",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "a9f23503a2cc412d8a5a651daa149032",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "65b03069250d40189183446afc69c859",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "97cee55b57e84cbf8b2b731aab34fa9a",
+          "Name": "",
+          "Description": "Value of expression at line 3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "// Geo ID -> DKTM3\n\"EPSG:4095\";\n\"ETRF89.DKTM3\";"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "1283d86aaeed48c5929f7659075159e6",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "424a3ee5a8bb4fab86a908017bce5ad0",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "// Site name\n\"Copenhagen\";"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "aac6707a024b4d54a3d2140f9786d38f",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "0f0e505c5bb24e2b9c36a2ff051238fe",
+          "Name": "name",
+          "Description": "The place name.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "749a6d6be0b74ed1a817a9ea6e356c06",
+          "Name": "SiteLocation",
+          "Description": "The site location as Dynamo type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Common.Location.SetSiteName@string",
+      "Replication": "Auto",
+      "Description": "Set the site coordinate properties.\n\nLocation.SetSiteName (name: string): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "dfdf93fa95ee4a72ad97a330c6eead64",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "c2a12e54cbbb4126bfb20731d64e57a9",
+          "Name": "siteLocation",
+          "Description": "The site location as Dynamo type.\n\nElement\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6fcccac29a3a4ad6aeee10e1ee7c6900",
+          "Name": "Name",
+          "Description": "The place name.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Common.Location.SiteName@Revit.Elements.Element",
+      "Replication": "Auto",
+      "Description": "Get the site place name.\n\nLocation.SiteName (siteLocation: Element = null): string"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 95.2,
+      "WatchHeight": 38.4,
+      "Id": "318ba89c1f374b22b12f51a72fba6b36",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "e649046849ca4592ae02f782804107ac",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9639dffc3cee42fea42ccd8fdb60748c",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "4569edf786cb458c90c6f1423ff9c0d3",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "7a81fd03e08941cdaa5281f1f9fc70ff",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "1;"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "bcd3792045724fe89efdccb0f6d62ddb",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "da19adad3b394f16a7e19c96a240a96a",
+          "Name": "timeZone",
+          "Description": "Add time zone numeric value.\n\ndouble",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "38e8ce8a169e4c6caa0c812a95baa4b0",
+          "Name": "SiteLocation",
+          "Description": "The site location as Dynamo type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Common.Location.SetTimeZone@double",
+      "Replication": "Auto",
+      "Description": "Set the time zone by hours ranging from -12 to +12. 0 represents GMT. Note. If the input value is not in the valid range, it will be shifted by multiples of 24 until it is in range.\n\nLocation.SetTimeZone (timeZone: double): Element"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "7383c2d092804de6ad9744a9fd6a6fad",
+      "End": "a3d8844d2af642cfad5fe730f374fe62",
+      "Id": "86de8ce0494f46ecb3a27d85d833b392",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "439b952f4a69486980d32c155ffd6b08",
+      "End": "7df40e31b1dd40959ca79c6a95ecf4fe",
+      "Id": "a92b5043eada4e0abca8d22d47396635",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "944171a34d2f48f98028dc345b0be3e5",
+      "End": "af3103cb68aa44389d05f9fd4b218afd",
+      "Id": "4b6109f40fdb445da750e3da70dba0f1",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "944171a34d2f48f98028dc345b0be3e5",
+      "End": "3128b88c5746457f83e79316c17d9196",
+      "Id": "d636c0cf358d4789bcb799e5279e7ec8",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "944171a34d2f48f98028dc345b0be3e5",
+      "End": "6f8e8689c6bc403997e4e1f2911b1893",
+      "Id": "65cc2014ce1a4778b99e0b053f4ca70d",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "944171a34d2f48f98028dc345b0be3e5",
+      "End": "d1a4ce9051964887919c04b7c278b6f0",
+      "Id": "5ed796e3666047d88a4180d015b5ec66",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "bc729286da99461781d7c962b017c50e",
+      "End": "7a983e75587b475a9a5d6363fea9c73d",
+      "Id": "cf28bfafc054477ca484d225ccec4db3",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "bb95ed68e2db4b21af48eed079957b16",
+      "End": "a0acdafd0ea74e389663c47b1f1bf844",
+      "Id": "f81db8a829da4114bf13ce7aaa2dadf9",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "7528d03fc80f4e8fbf9f98e09030a56b",
+      "End": "1902c9861acb45d69e49a409d61ba0e1",
+      "Id": "67d0537f98e246b89a62918c01fef6c0",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "7528d03fc80f4e8fbf9f98e09030a56b",
+      "End": "22e5d0794461423aa9790978447e3a75",
+      "Id": "9bcc75df54eb425e828ef791a48cf24e",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "edaa7c577c0448c18fd21a08cfd54489",
+      "End": "5b609c0ca893443a8ae94d07d7b56780",
+      "Id": "aee6ed39c9e044db96ee02beeb5f189e",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "84c789feb2504fd096a2303ddac86bcb",
+      "End": "313b6e9e1f6748cb90d651afe2a01062",
+      "Id": "31d93a86a5ea4b36b548c8d48d92281e",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "0ebc0c5439a74dacb69f4d24a0aa4ee6",
+      "End": "e59e6bc5fd434910a05d15c3a02b61ae",
+      "Id": "3999990d3dfd4f5f85d42c48370583f9",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "0ebc0c5439a74dacb69f4d24a0aa4ee6",
+      "End": "8c73c7e2ed69448f9e5809e27e7219b7",
+      "Id": "b120fe5ba6d548b49fbb61e5e4a7bc4c",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "803ccbdc0a0342e0aa2f99e396160f00",
+      "End": "ceaa24d316af49f48794307d3fda9111",
+      "Id": "c1bb70ecd2304a1594428d187932ef20",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "803ccbdc0a0342e0aa2f99e396160f00",
+      "End": "0a633dcd0b554f4ca731b295aab51c2c",
+      "Id": "2dee0d0464ba461d8c2d486d513a12f3",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "19123ff3bee945bcbfc75a0e46a1a9b9",
+      "End": "560604116e2f46eca2016e8a87282fce",
+      "Id": "551a56d2ef9945ebba3afe007c1cf587",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "2d540e2827104428abf383f4fadcfeb1",
+      "End": "6e4beed225344358be2e50650ca83d0d",
+      "Id": "6d8177c03c2a4a2195cc3008a266df0b",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "ab9671ddad3b4ceca88e77971dd0234a",
+      "End": "98d625671c0b4722bef4ba2e6aa81fbd",
+      "Id": "42fe3de019564895853a5c89ad1835e5",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "caf304bc14484a02b381dee3013442ff",
+      "End": "95c449762d81445fb5126173ab7efee1",
+      "Id": "04171353aa264b80b1ab57bb95032f12",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "78ad39e8ab6b447a9a233ba74ab849ba",
+      "End": "5800e596e1dc410a890fc9f93db8f397",
+      "Id": "e0f8a2405c674b5881c788b0e0084b75",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "dbbdf6bd11e94c71a6ce34a2733c6fe1",
+      "End": "a2684f505f1041b4aac47a261f29e464",
+      "Id": "bce2964de8c346d4a0b32b2d990e139b",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "4375b5f558e142a28483cf4776a95ee9",
+      "End": "48915575c30b4f8592ad401ca2782719",
+      "Id": "04ff21e69d2d456ea403c70774057879",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "4fea0327235241c49b7d6f48cf7ca239",
+      "End": "3dd99ba6ede543c29a8926796f5fcf82",
+      "Id": "d1dedb0ac90c4f88bdc07be42ed43f38",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "8d7420d8c5034692a303f16aa4fff22f",
+      "End": "1490d008148048ec913132eb73d2bd45",
+      "Id": "551febd485314a708b77d1efee95f1e0",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "c3bb43d059234f5c89174bef70c83a90",
+      "End": "c27a790c32a34928aa19fbb5b061687f",
+      "Id": "0ac978f01a084ea9b4fdf3f4369c0e34",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "65b03069250d40189183446afc69c859",
+      "End": "6f623a94df8945a0bce465006a558bcb",
+      "Id": "bed92a7964964a959cb4044450bebfab",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "424a3ee5a8bb4fab86a908017bce5ad0",
+      "End": "0f0e505c5bb24e2b9c36a2ff051238fe",
+      "Id": "4c389f1866d945b18735bc5907d3f49d",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "749a6d6be0b74ed1a817a9ea6e356c06",
+      "End": "c2a12e54cbbb4126bfb20731d64e57a9",
+      "Id": "6b1ffe35592c42bdb49eca7024f20daa",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "6fcccac29a3a4ad6aeee10e1ee7c6900",
+      "End": "e649046849ca4592ae02f782804107ac",
+      "Id": "cd7fbd62c70c4ad6894f6c8294586ffa",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "7a81fd03e08941cdaa5281f1f9fc70ff",
+      "End": "da19adad3b394f16a7e19c96a240a96a",
+      "Id": "ee537fa0dfa244c4b5b1fd54f4760fd6",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Orchid",
+      "Version": "2.19.3.6432",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "b5bd4c44dec04717ab4e40173abb340c",
+        "5f14c24e1cf74a9ea4a70c244275780b",
+        "46307d331cf24fd885400ea12c105c71",
+        "5bd064e3d61849179c8de8144cd1e8c9",
+        "4339dc4ebc8a4bbe90efdee94b18cbf1",
+        "873e4be1029e4718b75f3a6dd084c403",
+        "a85fb47ffcac4206a15a21a658c21493",
+        "77c2d9a05e2d45af934ab62ba654b947",
+        "abd2d13642db48f78c455423b59a2a89",
+        "87240e7c629e4098b537e472375bb95b",
+        "fe670e0679e04940b4d4692aadc4908f",
+        "471fd5a139db49608c9fff8f8700116e",
+        "aac6707a024b4d54a3d2140f9786d38f",
+        "dfdf93fa95ee4a72ad97a330c6eead64",
+        "bcd3792045724fe89efdccb0f6d62ddb"
+      ]
+    }
+  ],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.16",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "3.0",
+      "Data": {}
+    }
+  ],
+  "Author": "None provided",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 10000.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.19.3.6394",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "b5bd4c44dec04717ab4e40173abb340c",
+        "Name": "Location.SiteLocation",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 706.536310147781,
+        "Y": 1440.5266792426066
+      },
+      {
+        "Id": "5f14c24e1cf74a9ea4a70c244275780b",
+        "Name": "Location.SetProjectPosition",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 616.86382147211339,
+        "Y": 102.63009338255542
+      },
+      {
+        "Id": "3f9180e59e2e4929a5f116df859c5e90",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 280.06382147211326,
+        "Y": 251.45759338255539
+      },
+      {
+        "Id": "46307d331cf24fd885400ea12c105c71",
+        "Name": "Location.ByName",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 280.06382147211326,
+        "Y": 72.630093382555415
+      },
+      {
+        "Id": "596007fc5454401fa2d44b451a2cae3b",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 9.663821472113284,
+        "Y": 106.45759338255543
+      },
+      {
+        "Id": "5bd064e3d61849179c8de8144cd1e8c9",
+        "Name": "Location.SetProjectPosition",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1034.6059465163735,
+        "Y": 584.25655325621142
+      },
+      {
+        "Id": "4339dc4ebc8a4bbe90efdee94b18cbf1",
+        "Name": "Location.ByName",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 342.60594651637342,
+        "Y": 618.25655325621142
+      },
+      {
+        "Id": "76a0b471eedd4ff29ad24f344a9fa65f",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 9.8059465163733819,
+        "Y": 755.18655325621148
+      },
+      {
+        "Id": "873e4be1029e4718b75f3a6dd084c403",
+        "Name": "Location.SetProjectPosition",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1034.6059465163735,
+        "Y": 902.25655325621142
+      },
+      {
+        "Id": "a85fb47ffcac4206a15a21a658c21493",
+        "Name": "Location.ByName",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 342.60594651637342,
+        "Y": 936.25655325621142
+      },
+      {
+        "Id": "77c2d9a05e2d45af934ab62ba654b947",
+        "Name": "Location.ProjectPosition",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 679.40594651637332,
+        "Y": 652.25655325621142
+      },
+      {
+        "Id": "abd2d13642db48f78c455423b59a2a89",
+        "Name": "Location.ProjectPosition",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 679.40594651637332,
+        "Y": 970.25655325621142
+      },
+      {
+        "Id": "87240e7c629e4098b537e472375bb95b",
+        "Name": "Location.SetSiteLocation",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 342.56206567275569,
+        "Y": 1412.3159664128425
+      },
+      {
+        "Id": "a8f73acf38244f45bfdec3658fce8219",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1076.8904086825708,
+        "Y": 2417.2319484324426
+      },
+      {
+        "Id": "1926c25925534c9dab3955a4274ac993",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 9.762065672755682,
+        "Y": 1388.2809664128429
+      },
+      {
+        "Id": "fe670e0679e04940b4d4692aadc4908f",
+        "Name": "Location.SetSiteCoordinate",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": true,
+        "ShowGeometry": true,
+        "X": 334.89040868256996,
+        "Y": 2417.2319484324426
+      },
+      {
+        "Id": "471fd5a139db49608c9fff8f8700116e",
+        "Name": "Location.SiteCoordinate",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 711.89040868256984,
+        "Y": 2417.2319484324426
+      },
+      {
+        "Id": "db0c249d0d924d4d9be28f3de6b5ad71",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1065.7363101477811,
+        "Y": 1381.5266792426066
+      },
+      {
+        "Id": "13fb2992d2d046c1970e0a698a9b647a",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1065.7363101477811,
+        "Y": 1533.5266792426066
+      },
+      {
+        "Id": "a9f23503a2cc412d8a5a651daa149032",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 9.8904086825699551,
+        "Y": 2400.7144484324426
+      },
+      {
+        "Id": "1283d86aaeed48c5929f7659075159e6",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 10.116104235125192,
+        "Y": 2068.2237280260219
+      },
+      {
+        "Id": "aac6707a024b4d54a3d2140f9786d38f",
+        "Name": "Location.SetSiteName",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 289.11610423512519,
+        "Y": 2084.7412280260219
+      },
+      {
+        "Id": "dfdf93fa95ee4a72ad97a330c6eead64",
+        "Name": "Location.SiteName",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 627.11610423512525,
+        "Y": 2084.7412280260219
+      },
+      {
+        "Id": "318ba89c1f374b22b12f51a72fba6b36",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 962.11610423512525,
+        "Y": 2084.7412280260219
+      },
+      {
+        "Id": "4569edf786cb458c90c6f1423ff9c0d3",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 9.62393748233373,
+        "Y": 1756.6575541439813
+      },
+      {
+        "Id": "bcd3792045724fe89efdccb0f6d62ddb",
+        "Name": "Location.SetTimeZone",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 263.62393748233376,
+        "Y": 1756.6575541439813
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "a89726c7e0604b5ea493102ecf60c4dd",
+        "Title": "Latitude and Longitude -> WGS 84",
+        "DescriptionText": "",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "b5bd4c44dec04717ab4e40173abb340c",
+          "13fb2992d2d046c1970e0a698a9b647a",
+          "db0c249d0d924d4d9be28f3de6b5ad71"
+        ],
+        "HasNestedGroups": false,
+        "Left": 696.536310147781,
+        "Top": 1315.5266792426066,
+        "Width": 560.0,
+        "Height": 354.59999999999991,
+        "FontSize": 30.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 1381.5266792426066,
+        "InitialHeight": 297.0,
+        "TextblockHeight": 56.0,
+        "Background": "#FFA4E1FF"
+      },
+      {
+        "Id": "32b24e6b681e4677b9eabeaa63873e25",
+        "Title": "Set Internal Position -> Survey point",
+        "DescriptionText": "File: defaultProject_location",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "5f14c24e1cf74a9ea4a70c244275780b",
+          "3f9180e59e2e4929a5f116df859c5e90",
+          "46307d331cf24fd885400ea12c105c71",
+          "596007fc5454401fa2d44b451a2cae3b"
+        ],
+        "HasNestedGroups": false,
+        "Left": -0.336178527886716,
+        "Top": 0.23009338255541678,
+        "Width": 907.2,
+        "Height": 405.4,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 72.630093382555415,
+        "InitialHeight": 323.8275,
+        "TextblockHeight": 62.4,
+        "Background": "#FFFFB8D8"
+      },
+      {
+        "Id": "b90f604e170b475286bbe42e116b14eb",
+        "Title": "Set Survey positions -> REMEMBER to set the DVR 90 elevation datum level",
+        "DescriptionText": "",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "5bd064e3d61849179c8de8144cd1e8c9",
+          "4339dc4ebc8a4bbe90efdee94b18cbf1",
+          "76a0b471eedd4ff29ad24f344a9fa65f",
+          "873e4be1029e4718b75f3a6dd084c403",
+          "a85fb47ffcac4206a15a21a658c21493",
+          "abd2d13642db48f78c455423b59a2a89",
+          "77c2d9a05e2d45af934ab62ba654b947"
+        ],
+        "HasNestedGroups": false,
+        "Left": -0.19405348362661812,
+        "Top": 511.85655325621144,
+        "Width": 1324.8000000000002,
+        "Height": 708.6,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 584.25655325621142,
+        "InitialHeight": 531.0,
+        "TextblockHeight": 62.4,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "7b5567c8556a4fe5b279515a0e98c0bd",
+        "Title": "Latitude and Longitude -> WGS 84",
+        "DescriptionText": "",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "87240e7c629e4098b537e472375bb95b",
+          "1926c25925534c9dab3955a4274ac993"
+        ],
+        "HasNestedGroups": false,
+        "Left": -0.23793432724431796,
+        "Top": 1315.8809664128428,
+        "Width": 612.0,
+        "Height": 258.63499999999976,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 1388.2809664128429,
+        "InitialHeight": 169.03499999999963,
+        "TextblockHeight": 62.4,
+        "Background": "#FFA4E1FF"
+      },
+      {
+        "Id": "7515a157cfe14c1481ded61a0bca0c09",
+        "Title": "Site Coordinate",
+        "DescriptionText": "",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "a8f73acf38244f45bfdec3658fce8219",
+          "fe670e0679e04940b4d4692aadc4908f",
+          "471fd5a139db49608c9fff8f8700116e",
+          "a9f23503a2cc412d8a5a651daa149032"
+        ],
+        "HasNestedGroups": false,
+        "Left": -0.10959131743004491,
+        "Top": 2328.3144484324425,
+        "Width": 1275.8000000000006,
+        "Height": 255.91750000000002,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 2400.7144484324426,
+        "InitialHeight": 161.51749999999993,
+        "TextblockHeight": 62.4,
+        "Background": "#FFBB87C6"
+      },
+      {
+        "Id": "3cb76de67f1e41b185fa38c441374f37",
+        "Title": "Site Coordinate",
+        "DescriptionText": "",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "1283d86aaeed48c5929f7659075159e6",
+          "aac6707a024b4d54a3d2140f9786d38f",
+          "dfdf93fa95ee4a72ad97a330c6eead64",
+          "318ba89c1f374b22b12f51a72fba6b36"
+        ],
+        "HasNestedGroups": false,
+        "Left": 0.11610423512519219,
+        "Top": 1995.8237280260219,
+        "Width": 1145.6,
+        "Height": 225.51749999999993,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 2068.2237280260219,
+        "InitialHeight": 161.51749999999993,
+        "TextblockHeight": 62.4,
+        "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "725ae31589174a219927161bb0e116be",
+        "Title": "TimeZone setter",
+        "DescriptionText": "",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "bcd3792045724fe89efdccb0f6d62ddb",
+          "4569edf786cb458c90c6f1423ff9c0d3"
+        ],
+        "HasNestedGroups": false,
+        "Left": -0.37606251766626997,
+        "Top": 1684.2575541439812,
+        "Width": 530.0,
+        "Height": 204.20000000000005,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 1756.6575541439813,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 62.4,
+        "Background": "#FFB5B5B5"
+      }
+    ],
+    "X": 527.37592524926879,
+    "Y": -69.454262900426613,
+    "Zoom": 0.55793560356183591
+  }
+}

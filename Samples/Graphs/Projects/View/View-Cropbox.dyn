@@ -1,0 +1,2763 @@
+{
+  "Uuid": "3c9d0464-8643-5ffe-96e5-ab1769818209",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "View-Cropbox",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "2221b8938a3641bb90405ada78f7622e",
+      "Name": "Select Model Element",
+      "Type": "selection",
+      "Type2": "hostSelection",
+      "Value": "e518f88a-53bb-491f-a452-b725684f5d08-000a68a4",
+      "Description": "Select a model element from the document.",
+      "SelectedIndex": 0
+    },
+    {
+      "Id": "aa9e25e7ac854cf0a344268a6fa11a3a",
+      "Name": "Model Views",
+      "Type": "selection",
+      "Type2": "dropdownSelection",
+      "Value": "Level 1 (door)",
+      "Description": "Model views in current document.",
+      "SelectedIndex": 3
+    },
+    {
+      "Id": "e3768634081b47528cdcb38500a305ca",
+      "Name": "Sheet Views",
+      "Type": "selection",
+      "Type2": "dropdownSelection",
+      "Value": "Level 1 (door)",
+      "Description": "Sheet views in current document.",
+      "SelectedIndex": 0
+    }
+  ],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "27a48c2df3ce43ebbe5f850270f56b55",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "bba4278da67e436fa57a10db4f1971d7",
+          "Name": "curve",
+          "Description": "Autodesk.DesignScript.Geometry.Curve",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6e5dbc53e18f4eb38acd85da21760bfa",
+          "Name": "Point",
+          "Description": "Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Curve.EndPoint",
+      "Replication": "Auto",
+      "Description": "Get the end Point along the Curve\n\nCurve.EndPoint: Point"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "c0a6ad02f1954157b9ed325ec2b73491",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "ca8763f1991541a799c2fb9ac464154e",
+          "Name": "point",
+          "Description": "Autodesk.DesignScript.Geometry.Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e8bf02b922b343a8aae6bd963b7ead17",
+          "Name": "vectorToAdd",
+          "Description": "Vector",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4712be5cd19f4e029dbdd2f5dc0d1933",
+          "Name": "Point",
+          "Description": "Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Point.Add@Autodesk.DesignScript.Geometry.Vector",
+      "Replication": "Auto",
+      "Description": "Add a vector to a point. The same as Translate(Vector).\n\nPoint.Add (vectorToAdd: Vector): Point"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "60edd2423b2946fa969fac2157c52c38",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "103c5792421d4357a5ca304e2e9b9abb",
+          "Name": "view",
+          "Description": "View.\n\nView",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9f7e8b70662d411ea035182820703afe",
+          "Name": "curve",
+          "Description": "Curve[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1a887b950d7b47858246fcd1f85924ff",
+          "Name": "View",
+          "Description": "View.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Views.View.SetCropBox@Revit.Elements.Views.View,Autodesk.DesignScript.Geometry.Curve[]",
+      "Replication": "Auto",
+      "Description": "Set crop box by bounding box.\n\nView.SetCropBox (view: View, curve: Curve[]): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "d547a703d2d34903bc4104774beb0538",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "3f47da2e18c449e5bad90d8a60e2d34c",
+          "Name": "startPoint",
+          "Description": "Line start point\n\nPoint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4db32b66e6ea4024b845317eb81a5cc7",
+          "Name": "endPoint",
+          "Description": "Line end point\n\nPoint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "98a7d80a8cf342768d6afc8d6af61ada",
+          "Name": "Line",
+          "Description": "Line from start and end point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Line.ByStartPointEndPoint@Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Point",
+      "Replication": "Auto",
+      "Description": "Creates a straight Line between two input Points.\n\nLine.ByStartPointEndPoint (startPoint: Point, endPoint: Point): Line"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "a77822b159f14022b6826a510e5aed8c",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "3ace0ef7586d4a49a6a03cf24ac100b2",
+          "Name": "view",
+          "Description": "View.\n\nView",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b0b22ef83864415cb971b82723e8fe5d",
+          "Name": "point",
+          "Description": "Translation point.\n\nPoint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3f37651dd7734b55b551310e65a12e13",
+          "Name": "View",
+          "Description": "View.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Views.View.MoveCropBox@Revit.Elements.Views.View,Autodesk.DesignScript.Geometry.Point",
+      "Replication": "Auto",
+      "Description": "Move crop box (2D) by point (translation).\n\nView.MoveCropBox (view: View, point: Point): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "2d43b1d03f624291b990e37b38dd7638",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "4365fc94b6ec416fae7c5f51b500df68",
+          "Name": "view3D",
+          "Description": "View3D.\n\nElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "65a1b0bca24a48329410ccf34b218293",
+          "Name": "point",
+          "Description": "Translation point.\n\nPoint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "7dba42a8a9e241b4ae0b96729f28ab7e",
+          "Name": "View3D",
+          "Description": "View3D.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Views.View.MoveSectionBox@Revit.Elements.Element,Autodesk.DesignScript.Geometry.Point",
+      "Replication": "Auto",
+      "Description": "Move section box (3D) by point (translation).\n\nView.MoveSectionBox (view3D: Element, point: Point): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "a7f56baed5624f1db5a61953c3a7e995",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "569d6d09ef4744a18e09d0322f62751f",
+          "Name": "curve",
+          "Description": "Autodesk.DesignScript.Geometry.Curve",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "cac5f821eb89454b8726e24f1ea46c1a",
+          "Name": "Point",
+          "Description": "Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Curve.StartPoint",
+      "Replication": "Auto",
+      "Description": "Get the start Point along the Curve\n\nCurve.StartPoint: Point"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "29fd727485a5450fae4e582d61009486",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "762d5f55e5a04093b026126f3f871ea8",
+          "Name": "point",
+          "Description": "Autodesk.DesignScript.Geometry.Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "904054a38c114d33ada68d18599235c5",
+          "Name": "vectorToAdd",
+          "Description": "Vector",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3ecb78836bd54b15843f44976c070c0e",
+          "Name": "Point",
+          "Description": "Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Point.Add@Autodesk.DesignScript.Geometry.Vector",
+      "Replication": "Auto",
+      "Description": "Add a vector to a point. The same as Translate(Vector).\n\nPoint.Add (vectorToAdd: Vector): Point"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "83c6312a856c408c90a65f7c70f2315e",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "a73ee78ddd504467a95e6ba79cf19da9",
+          "Name": "document",
+          "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a63d014863de43cc80cc57a17331dce0",
+          "Name": "View",
+          "Description": "View.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Views.View.ThreeD@Revit.Application.Document",
+      "Replication": "Auto",
+      "Description": "All threeD (3D) view in document. Ordered by type and name.\n\nView.ThreeD (document: Document = null): Element[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "f837a4e67eeb4f11a485ce1ac5feed4e",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "a9db64353de345a1b60aa8e886c288d0",
+          "Name": "document",
+          "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c0114f6d2d424d459446591d61ebcc53",
+          "Name": "View",
+          "Description": "View.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Views.View.Model@Revit.Application.Document",
+      "Replication": "Auto",
+      "Description": "All model view in document. Ordered by type and name.\n\nView.Model (document: Document = null): Element[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "267e9cb7f50141c98c406a1770bb63b0",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "f949ffa9570342b2b4a0d7d87f35e57c",
+          "Name": "point",
+          "Description": "Autodesk.DesignScript.Geometry.Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6dbf42cf5b2349aab4183619c29350c4",
+          "Name": "vectorToAdd",
+          "Description": "Vector",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e7451bdc24ec410d940fd8cf7bd1eaf3",
+          "Name": "Point",
+          "Description": "Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Point.Add@Autodesk.DesignScript.Geometry.Vector",
+      "Replication": "Auto",
+      "Description": "Add a vector to a point. The same as Translate(Vector).\n\nPoint.Add (vectorToAdd: Vector): Point"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "297494ca72e24603b5534b6c22b269e7",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "ff6300fd78df445c93530936d1dee193",
+          "Name": "boundingBox",
+          "Description": "Autodesk.DesignScript.Geometry.BoundingBox",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3aa912b4892f4807a3cc033762a20612",
+          "Name": "Point",
+          "Description": "Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.BoundingBox.MaxPoint",
+      "Replication": "Auto",
+      "Description": "The maximum point\n\nBoundingBox.MaxPoint: Point"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "df870374539344a996161e92a6b84fed",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "e2a757bb838545eaaf06e55c465a17ef",
+          "Name": "view",
+          "Description": "View.\n\nView",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "dd98d2ce7a424cd69f172a6247b8bc76",
+          "Name": "boundingBox",
+          "Description": "BoundingBox.\n\nBoundingBox",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a5d7a2b8c834481bb4a297acf4ead9da",
+          "Name": "View",
+          "Description": "View.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Views.View.SetCropBox@Revit.Elements.Views.View,Autodesk.DesignScript.Geometry.BoundingBox",
+      "Replication": "Auto",
+      "Description": "Set crop box by bounding box.\n\nView.SetCropBox (view: View, boundingBox: BoundingBox): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "7ef58ceb0d9c4cd7bfea5b962ac7b340",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "527eb86477704dea89663aff8a5f0b1d",
+          "Name": "min",
+          "Description": "Point\nDefault value : Autodesk.DesignScript.Geometry.Point.ByCoordinates(0, 0, 0)",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "03f3899b3ff445a2bd2e6b2b972247bf",
+          "Name": "max",
+          "Description": "Point\nDefault value : Autodesk.DesignScript.Geometry.Point.ByCoordinates(1, 1, 1)",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f5947bf70a114de4a74ce1553c232452",
+          "Name": "BoundingBox",
+          "Description": "BoundingBox",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.BoundingBox.ByCorners@Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Point",
+      "Replication": "Auto",
+      "Description": "Creates the an axis-aligned BoundingBox spanning between the minimum Point and the maximum Point.\n\nBoundingBox.ByCorners (min: Point = Autodesk.DesignScript.Geometry.Point.ByCoordinates(0, 0, 0), max: Point = Autodesk.DesignScript.Geometry.Point.ByCoordinates(1, 1, 1)): BoundingBox"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "d5bf6099a80449d2b9dcea927fc78583",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "39a972f72f2c44fc9efdc4145dafd344",
+          "Name": "vector",
+          "Description": "Autodesk.DesignScript.Geometry.Vector",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d09b69f644ed4e5cad6db8f2308aa2fd",
+          "Name": "Vector",
+          "Description": "Vector",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Vector.Reverse",
+      "Replication": "Auto",
+      "Description": "Get the reverse of the vector. Essentially this negates the X, Y, and Z components of the Vector.\n\nVector.Reverse ( ): Vector"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "86a6e54617d54abfb0b8e451ef05fe91",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "8973d69eae1841e28c4dea0f537043bb",
+          "Name": "view",
+          "Description": "View.\n\nView",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "78be0b77e38847a7b2d38a3f37a426c1",
+          "Name": "BoundingBox",
+          "Description": "BoundingBox.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "73648004bdda42c7b638726eb5b868b3",
+          "Name": "Curve",
+          "Description": "Curve.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Views.View.CropBox@Revit.Elements.Views.View",
+      "Replication": "Auto",
+      "Description": "Get crop box. Note. Views that are splitted will return the curve of the first crop boundary!\n\nView.CropBox (view: View): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "f2e166fb80ff4b5887aadacebd2e5151",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "50277372c9754bf99c59006b5ce566e9",
+          "Name": "point",
+          "Description": "Autodesk.DesignScript.Geometry.Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d6661c8d931946cda5e2f15c8af44205",
+          "Name": "Vector",
+          "Description": "Vector",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Point.AsVector",
+      "Replication": "Auto",
+      "Description": "Get the Vector with the same X, Y, and Z component\n\nPoint.AsVector ( ): Vector"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "3a6bb0265cc34aab9ae4aeeb1fb676f5",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "0d96dd4fe557456f83422689e3d4dd7b",
+          "Name": "document",
+          "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0cf5bd5da5c2496182f210807f6adca7",
+          "Name": "View",
+          "Description": "View.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Views.View.Model@Revit.Application.Document",
+      "Replication": "Auto",
+      "Description": "All model view in document. Ordered by type and name.\n\nView.Model (document: Document = null): Element[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "3b1a42b326cc4067857522fc90c06b2c",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "5dc998f531414d03aae063a216c31aa4",
+          "Name": "boundingBox",
+          "Description": "Autodesk.DesignScript.Geometry.BoundingBox",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "fbb32863dedd4d8188a52ab0172733cf",
+          "Name": "Point",
+          "Description": "Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.BoundingBox.MinPoint",
+      "Replication": "Auto",
+      "Description": "The minimum point\n\nBoundingBox.MinPoint: Point"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "6ed9b3dbca884f34a33261bda5cc77c6",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "25f80c21689849078f152391045214d1",
+          "Name": "point",
+          "Description": "Autodesk.DesignScript.Geometry.Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1fa5675bb47044fb8c504d5b885d0f5e",
+          "Name": "vectorToAdd",
+          "Description": "Vector",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2e63f7236b214d149d370424c7f017b0",
+          "Name": "Point",
+          "Description": "Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Point.Add@Autodesk.DesignScript.Geometry.Vector",
+      "Replication": "Auto",
+      "Description": "Add a vector to a point. The same as Translate(Vector).\n\nPoint.Add (vectorToAdd: Vector): Point"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "a50eb8544db745c2a88ff7e813f40d59",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "54c923181f824a538e4551b35e836809",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8812836de633429ca1ce8198bfdb68a9",
+          "Name": "Geometry",
+          "Description": "Location Geometry",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.Element.GetLocation",
+      "Replication": "Auto",
+      "Description": "Get an existing element's location\n\nElement.GetLocation ( ): Geometry"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "dfefe276cb594b138d1650f1a4801a88",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "aa0ea827a8fe4e36b70bda3e7e6542b2",
+          "Name": "view",
+          "Description": "View.\n\nView",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ec88835f9461487790ae8f069a44b2a6",
+          "Name": "point",
+          "Description": "Translation point.\n\nPoint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "534d512f1caf416da19b9741580b6282",
+          "Name": "View",
+          "Description": "View.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Views.View.Move@Revit.Elements.Views.View,Autodesk.DesignScript.Geometry.Point",
+      "Replication": "Auto",
+      "Description": "Move view by point (translation).\n\nView.Move (view: View, point: Point): Element"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 297.6,
+      "WatchHeight": 38.4,
+      "Id": "2657f56dd0bd478fb7e88c961f5b9fd9",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "747281bd8a8b423c95232c06458d58dd",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b7e7edebfcd34b83bea8920d106883a4",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 237.6,
+      "WatchHeight": 38.4,
+      "Id": "5c6e1d0a235d4f20a68e875013621a1a",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "f34457de27ac47b698618de780c2d932",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9ac96445721a41f1bcacea1ddb37eeb9",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 110.4,
+      "WatchHeight": 38.4,
+      "Id": "cd32cbf69daf4745ad8e6c76569e86ae",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "38009ac43c8b429f8e5afcd97878484b",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "13e7cf4f21ee43fc92d9923c2ca16982",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "Dynamo.Nodes.DSModelElementSelection, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "e518f88a-53bb-491f-a452-b725684f5d08-000a68a4"
+      ],
+      "Id": "2221b8938a3641bb90405ada78f7622e",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "de868d4fa8c64b9c803ba826d61369a7",
+          "Name": "Element",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select a model element from the document."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "9bdec1cdfa3448b58435bffff6de5d11",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "36362fbf125b462096169b19306216cf",
+          "Name": "document",
+          "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e73b362992c94c0d98a1dd52431fadc7",
+          "Name": "View",
+          "Description": "View.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Views.View.Model@Revit.Application.Document",
+      "Replication": "Auto",
+      "Description": "All model view in document. Ordered by type and name.\n\nView.Model (document: Document = null): Element[]"
+    },
+    {
+      "ConcreteType": "Orchid.E.RevitProject.Views.ModelView, OrchidRE",
+      "SelectedIndex": 3,
+      "SelectedString": "Level 1 (door)",
+      "Id": "aa9e25e7ac854cf0a344268a6fa11a3a",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "c9da16b55b13465fb2ea19e050110655",
+          "Name": "View",
+          "Description": "The selected View",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Model views in current document."
+    },
+    {
+      "ConcreteType": "Orchid.E.RevitProject.Views.SheetView, OrchidRE",
+      "SelectedIndex": 0,
+      "SelectedString": "Level 1 (door)",
+      "Id": "e3768634081b47528cdcb38500a305ca",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "84c01fa761e1491494e54d06634e344a",
+          "Name": "View",
+          "Description": "The selected View",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Sheet views in current document."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 72.8,
+      "WatchHeight": 38.4,
+      "Id": "994cd7377d1d453fbe10f4ecf1e5e7a4",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "bce4b9c6ef984124858671206260c7ad",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c19ec801d0b94c4b8639a80c91dc2291",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
+      "Id": "7bf4a6fdfe5f41b1a82e7678e0a10869",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "80a2e950549f41c496c20ce89078ddbc",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0cdf9848962646149016da48531991a9",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
+      "Id": "2244be1977c6429cbba61273d179c4f9",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "bc5cf66432274b3691510b793eaa0acb",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5acf02ae6cbb4ecf9f27d7e017224881",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
+      "Id": "2e6f0c71d4dc4b9782f6c1cbb5ee6513",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "0ab5d0c84a074241b811294737121625",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "951b74301ae24d61abc241d5f0af5bc4",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
+      "Id": "2f0e4024d1e8424681355cc1ae74eca2",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "bf3c5c39435a4c27a4ca4e4f1fab1ded",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f1c008e7609347e39aa77e6ff54fedf3",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "9cd4b81e434f4b5ca257ab7a10955457",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "90c7724031a4415b85c6f07493c11d07",
+          "Name": "document",
+          "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "155426de1de145d0b3962cc68333b941",
+          "Name": "View",
+          "Description": "View.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Views.View.InDocument@Revit.Application.Document",
+      "Replication": "Auto",
+      "Description": "All view in document. Ordered by type and name.\n\nView.InDocument (document: Document = null): Element[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "faa7aa54aff045ab8ba96c5874983790",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "dde5e70cdf6846b1858148b05cb573e1",
+          "Name": "document",
+          "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ba46d7a0c05a41deb31f13f36f096536",
+          "Name": "View",
+          "Description": "View.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Views.View.ThreeD@Revit.Application.Document",
+      "Replication": "Auto",
+      "Description": "All threeD (3D) view in document. Ordered by type and name.\n\nView.ThreeD (document: Document = null): Element[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "1191ca35854648ea989aca3554c4ef29",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "2ae69d75a8ad4b5db17c8ad93ef292f6",
+          "Name": "viewFamilyType",
+          "Description": "ViewFamilyType.\n\nElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3a4acf09bc044aa58fe2c1d189e59c19",
+          "Name": "View",
+          "Description": "View.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Views.View.ByViewFamilyType@Revit.Elements.Element",
+      "Replication": "Auto",
+      "Description": "All view by ViewFamilyType.\n\nView.ByViewFamilyType (viewFamilyType: Element): Element[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "960c173e82b144b39bcc65ed86993bfb",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "f6126e8690bb41108dd83e7276ae2e22",
+          "Name": "viewport",
+          "Description": "Viewport.\n\nElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "05898402d9d04b36ba9eb58800ba0e2b",
+          "Name": "point",
+          "Description": "Translation point.\n\nPoint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0a8535c17d1342389ef408a4e8fec7b9",
+          "Name": "Viewport",
+          "Description": "Viewport.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Views.Viewport.Move@Revit.Elements.Element,Autodesk.DesignScript.Geometry.Point",
+      "Replication": "Auto",
+      "Description": "Move viewport on sheet. Important! Set point values in true length unit values not scaled according to the viewport!\n\nViewport.Move (viewport: Element, point: Point): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "c2980bddd7454308a59d5dd236d4cd7f",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "1742cee9190244e99942924f34ddd9f6",
+          "Name": "document",
+          "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "82b8a3275e4f4dc59d67b30297f17990",
+          "Name": "Viewport",
+          "Description": "Viewport.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Views.Viewport.InDocument@Revit.Application.Document",
+      "Replication": "Auto",
+      "Description": "All viewport in document.\n\nViewport.InDocument (document: Document = null): Element[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "da2c6de7821141dda5f089efdddf9619",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "b86e1c67b02740e2b213c2617c4a415e",
+          "Name": "document",
+          "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2ed55b63702b42748d3f47931f931364",
+          "Name": "viewType",
+          "Description": "ViewType as enumeration type.\n\nvar",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "93ffd501aa8e41a3b49bb11c95fd5a94",
+          "Name": "View",
+          "Description": "View.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Views.View.ByViewType@Revit.Application.Document,var",
+      "Replication": "Auto",
+      "Description": "All view by ViewType in document.\n\nView.ByViewType (document: Document = null, viewType: var): Element[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "e37c6051a2274b6e986b09854e263f3f",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "c2df9ef0e5bc4b259a3361569f2b974d",
+          "Name": "name",
+          "Description": "View name as string.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "34a16781815144ae88878448a7a4d6f4",
+          "Name": "ViewFamilyType",
+          "Description": "View family type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8a455098394a407cb4407a311f45dfe0",
+          "Name": "Enum",
+          "Description": "ViewFamily as enumeration type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Views.ViewFamilyType.ByName@string",
+      "Replication": "Auto",
+      "Description": "Get view family type by name.\n\nViewFamilyType.ByName (name: string): var[]..[]"
+    },
+    {
+      "ConcreteType": "Orchid.E.RevitProject.Views.ViewFamilyType, OrchidRE",
+      "SelectedIndex": 7,
+      "SelectedString": "Floor Plan",
+      "Id": "a0551263000a40d5a0d4025e3fb53066",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "3e3d115604584a328a05d9367dd8133d",
+          "Name": "ViewFamilyType",
+          "Description": "The selected ViewFamilyType",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "view family types in current document."
+    },
+    {
+      "ConcreteType": "Orchid.E.RevitProject.Views.ViewType, OrchidRE",
+      "SelectedIndex": 9,
+      "SelectedString": "FloorPlan",
+      "Id": "9801200d02704d3aa67dfbfe01e98916",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "e4989ba23dc14a9db355ab83ad6a78a8",
+          "Name": "ViewType",
+          "Description": "The selected ViewType",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "View type (Autodesk.Revit) enumeration values."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "f1d56dfc44dc4b1ba1351c91d1cb4c42",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "839b2e3bce434c5ba366b62a5e7e6efc",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "[\"Floor Plan\",\n\"Section\",\n\"3D View\"];"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "4fe63dfd54f64d46afab1ed458d49bdb",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d77aeaffa3dd446dac7f648f81d84d39",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e4b1f04f29dc41a08faeb4e3f2c9b4b5",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"ViewType\";\n[\"FloorPlan\",\n\"Section\",\n\"ThreeD\"];"
+    },
+    {
+      "ConcreteType": "Orchid.E.RevitProject.Views.ScopeBox, OrchidRE",
+      "SelectedIndex": 0,
+      "SelectedString": "Scope Box 1",
+      "Id": "02a0d3af162e4eb9892a49f0de920860",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "5af3bd14f048421f94984bfab1628d9d",
+          "Name": "ScopeBox",
+          "Description": "The selected ScopeBox",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Scope boxes in current document."
+    },
+    {
+      "ConcreteType": "Orchid.E.RevitProject.Common.DesignOption, OrchidRE",
+      "SelectedIndex": 0,
+      "SelectedString": "Option 1  <primary>",
+      "Id": "7d0cce9e88544cb8891855811cccc2a3",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "e59e8f29e89a4b0e8239d7e16c4f560f",
+          "Name": "DesignOption",
+          "Description": "The selected DesignOption",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Design options in current document."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "36f9afc4406c44dd885dc1c43efa616b",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "b3cd28cbd60e49e088636697fd0b57a1",
+          "Name": "enumType",
+          "Description": "Name of the Revit enumeration type.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "57dbed71821a4b7bb7686cf8558f3805",
+          "Name": "valueName",
+          "Description": "Name of the enumeration value.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "84230000bbcb4a9eb270ada777d1a1b5",
+          "Name": "Enum",
+          "Description": "Revit enumeration type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.AdeskApp.Revit.EnumByName@string,string",
+      "Replication": "Longest",
+      "Description": "Get Autodesk Revit enumeration value by name and enumeration type.\n\nRevit.EnumByName (enumType: string, valueName: string): var[]..[]"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "6e5dbc53e18f4eb38acd85da21760bfa",
+      "End": "ca8763f1991541a799c2fb9ac464154e",
+      "Id": "76b8bacee66e4821919eedcaa19d06de",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "4712be5cd19f4e029dbdd2f5dc0d1933",
+      "End": "4db32b66e6ea4024b845317eb81a5cc7",
+      "Id": "d99628bdb4954393a959148aadd23d1f",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "98a7d80a8cf342768d6afc8d6af61ada",
+      "End": "9f7e8b70662d411ea035182820703afe",
+      "Id": "3ccafff3a6664249b2512258f64a0828",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "cac5f821eb89454b8726e24f1ea46c1a",
+      "End": "762d5f55e5a04093b026126f3f871ea8",
+      "Id": "8d993ab42b4d4f9d9974aef77673f27a",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "3ecb78836bd54b15843f44976c070c0e",
+      "End": "3f47da2e18c449e5bad90d8a60e2d34c",
+      "Id": "16ca14f34e364573b9952fb6dfba9b00",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "a63d014863de43cc80cc57a17331dce0",
+      "End": "4365fc94b6ec416fae7c5f51b500df68",
+      "Id": "1ec5d95416514a59bebf50db5ac0f994",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "c0114f6d2d424d459446591d61ebcc53",
+      "End": "3ace0ef7586d4a49a6a03cf24ac100b2",
+      "Id": "428a73d50c7e4a4999ee1d31fc34fb39",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e7451bdc24ec410d940fd8cf7bd1eaf3",
+      "End": "03f3899b3ff445a2bd2e6b2b972247bf",
+      "Id": "b5f7d33c6c024d4d9d66cf47b271de1f",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "3aa912b4892f4807a3cc033762a20612",
+      "End": "f949ffa9570342b2b4a0d7d87f35e57c",
+      "Id": "7a8c40365d31452a8c8f8b29e6183cfa",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "f5947bf70a114de4a74ce1553c232452",
+      "End": "dd98d2ce7a424cd69f172a6247b8bc76",
+      "Id": "1c031cf8971c481481a60f86d8a9a80d",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "d09b69f644ed4e5cad6db8f2308aa2fd",
+      "End": "e8bf02b922b343a8aae6bd963b7ead17",
+      "Id": "8603cd4a3dda4cf49274f9f664e2f487",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "d09b69f644ed4e5cad6db8f2308aa2fd",
+      "End": "904054a38c114d33ada68d18599235c5",
+      "Id": "fb5e645337954f89a5791d04580e8d30",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "d09b69f644ed4e5cad6db8f2308aa2fd",
+      "End": "6dbf42cf5b2349aab4183619c29350c4",
+      "Id": "2ecf515eed6d45daa9d09430e41132f1",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "d09b69f644ed4e5cad6db8f2308aa2fd",
+      "End": "1fa5675bb47044fb8c504d5b885d0f5e",
+      "Id": "bf9ac2b4e726491797f25a8fa55ec1ab",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "78be0b77e38847a7b2d38a3f37a426c1",
+      "End": "ff6300fd78df445c93530936d1dee193",
+      "Id": "b36c6f67e4e34ab9acf338a625148604",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "78be0b77e38847a7b2d38a3f37a426c1",
+      "End": "5dc998f531414d03aae063a216c31aa4",
+      "Id": "d4c8c96ac7704f9297de837f5223b512",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "73648004bdda42c7b638726eb5b868b3",
+      "End": "bba4278da67e436fa57a10db4f1971d7",
+      "Id": "b3bcf882be85475b93a751fc50e0b3c1",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "73648004bdda42c7b638726eb5b868b3",
+      "End": "569d6d09ef4744a18e09d0322f62751f",
+      "Id": "f8d9ddced61f49d2b5031dc8cced4261",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "d6661c8d931946cda5e2f15c8af44205",
+      "End": "39a972f72f2c44fc9efdc4145dafd344",
+      "Id": "a5e2253edb2c446c822e6632aecef4da",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "0cf5bd5da5c2496182f210807f6adca7",
+      "End": "103c5792421d4357a5ca304e2e9b9abb",
+      "Id": "2f599160c2914f6ba0b14da42914079c",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "0cf5bd5da5c2496182f210807f6adca7",
+      "End": "e2a757bb838545eaaf06e55c465a17ef",
+      "Id": "5a5f0cdc4e874b1ebffd838b7dbbb66e",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "0cf5bd5da5c2496182f210807f6adca7",
+      "End": "8973d69eae1841e28c4dea0f537043bb",
+      "Id": "14e4bc5d33db4298b9caf1bef8d21cf0",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "fbb32863dedd4d8188a52ab0172733cf",
+      "End": "25f80c21689849078f152391045214d1",
+      "Id": "723ffadb16324c12aad7196edfeda802",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "2e63f7236b214d149d370424c7f017b0",
+      "End": "527eb86477704dea89663aff8a5f0b1d",
+      "Id": "f2ffc0805c7e4c85986178bf91b7a2e0",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "8812836de633429ca1ce8198bfdb68a9",
+      "End": "50277372c9754bf99c59006b5ce566e9",
+      "Id": "118a9c752228442597324bc94788ceb3",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "8812836de633429ca1ce8198bfdb68a9",
+      "End": "05898402d9d04b36ba9eb58800ba0e2b",
+      "Id": "22766b6faf6643e7aec83ae769ce2397",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "8812836de633429ca1ce8198bfdb68a9",
+      "End": "ec88835f9461487790ae8f069a44b2a6",
+      "Id": "22a714ebc0394b959c6e3571063a7bf8",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "8812836de633429ca1ce8198bfdb68a9",
+      "End": "b0b22ef83864415cb971b82723e8fe5d",
+      "Id": "5b01a662bacd4a90a42e923e02d0a6de",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "8812836de633429ca1ce8198bfdb68a9",
+      "End": "65a1b0bca24a48329410ccf34b218293",
+      "Id": "f2c57c52d7844c6188b963c68b78d0a5",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "de868d4fa8c64b9c803ba826d61369a7",
+      "End": "54c923181f824a538e4551b35e836809",
+      "Id": "e79a92e160b94f6cae6fe1d899bcf6a6",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e73b362992c94c0d98a1dd52431fadc7",
+      "End": "aa0ea827a8fe4e36b70bda3e7e6542b2",
+      "Id": "e502dbe6b4f4496e8f76d1bfe01a5bd6",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "c9da16b55b13465fb2ea19e050110655",
+      "End": "747281bd8a8b423c95232c06458d58dd",
+      "Id": "451fabf85b8548df804dda3f1f5ddcbf",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "84c01fa761e1491494e54d06634e344a",
+      "End": "f34457de27ac47b698618de780c2d932",
+      "Id": "7aa03892106243ecbaf1616731ffc46d",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "155426de1de145d0b3962cc68333b941",
+      "End": "80a2e950549f41c496c20ce89078ddbc",
+      "Id": "86a1a80b19b74d4282e47e817dcedde2",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "ba46d7a0c05a41deb31f13f36f096536",
+      "End": "bc5cf66432274b3691510b793eaa0acb",
+      "Id": "56528e3cadbe42fea1faa181fd466435",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "3a4acf09bc044aa58fe2c1d189e59c19",
+      "End": "0ab5d0c84a074241b811294737121625",
+      "Id": "ac00574360a44327aa0cc7224eeb3f55",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "82b8a3275e4f4dc59d67b30297f17990",
+      "End": "f6126e8690bb41108dd83e7276ae2e22",
+      "Id": "9ba5601d51274772a2f3a2c1b0b20cac",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "93ffd501aa8e41a3b49bb11c95fd5a94",
+      "End": "bf3c5c39435a4c27a4ca4e4f1fab1ded",
+      "Id": "e32e9bffa9d249809bad5459ebbc0d88",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "34a16781815144ae88878448a7a4d6f4",
+      "End": "2ae69d75a8ad4b5db17c8ad93ef292f6",
+      "Id": "d81cd899152f4a4eb138ab1dadb8b1d4",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "839b2e3bce434c5ba366b62a5e7e6efc",
+      "End": "c2df9ef0e5bc4b259a3361569f2b974d",
+      "Id": "450a95df2d1d4a9f8de35cf96291644f",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "d77aeaffa3dd446dac7f648f81d84d39",
+      "End": "b3cd28cbd60e49e088636697fd0b57a1",
+      "Id": "32075ad885424e4bb290d318cd1b6458",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e4b1f04f29dc41a08faeb4e3f2c9b4b5",
+      "End": "57dbed71821a4b7bb7686cf8558f3805",
+      "Id": "1984179daf89479fbca48b39a719e7ec",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "5af3bd14f048421f94984bfab1628d9d",
+      "End": "bce4b9c6ef984124858671206260c7ad",
+      "Id": "acd032a4484e4b44878e774227534487",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e59e8f29e89a4b0e8239d7e16c4f560f",
+      "End": "38009ac43c8b429f8e5afcd97878484b",
+      "Id": "e9e4fbdafff84094a0cb7954bacb1751",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "84230000bbcb4a9eb270ada777d1a1b5",
+      "End": "2ed55b63702b42748d3f47931f931364",
+      "Id": "447b3fa0cec84676a4387ff891c0d3f7",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Orchid",
+      "Version": "2.19.3.6432",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "60edd2423b2946fa969fac2157c52c38",
+        "a77822b159f14022b6826a510e5aed8c",
+        "2d43b1d03f624291b990e37b38dd7638",
+        "83c6312a856c408c90a65f7c70f2315e",
+        "f837a4e67eeb4f11a485ce1ac5feed4e",
+        "df870374539344a996161e92a6b84fed",
+        "86a6e54617d54abfb0b8e451ef05fe91",
+        "3a6bb0265cc34aab9ae4aeeb1fb676f5",
+        "dfefe276cb594b138d1650f1a4801a88",
+        "9bdec1cdfa3448b58435bffff6de5d11",
+        "aa9e25e7ac854cf0a344268a6fa11a3a",
+        "e3768634081b47528cdcb38500a305ca",
+        "9cd4b81e434f4b5ca257ab7a10955457",
+        "faa7aa54aff045ab8ba96c5874983790",
+        "1191ca35854648ea989aca3554c4ef29",
+        "960c173e82b144b39bcc65ed86993bfb",
+        "c2980bddd7454308a59d5dd236d4cd7f",
+        "da2c6de7821141dda5f089efdddf9619",
+        "e37c6051a2274b6e986b09854e263f3f",
+        "a0551263000a40d5a0d4025e3fb53066",
+        "9801200d02704d3aa67dfbfe01e98916",
+        "02a0d3af162e4eb9892a49f0de920860",
+        "7d0cce9e88544cb8891855811cccc2a3",
+        "36f9afc4406c44dd885dc1c43efa616b"
+      ]
+    }
+  ],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.16",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "3.0",
+      "Data": {}
+    }
+  ],
+  "Author": "None provided",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.19.3.6394",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "27a48c2df3ce43ebbe5f850270f56b55",
+        "Name": "Curve.EndPoint",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1421.932529413549,
+        "Y": 1193.8603676636847
+      },
+      {
+        "Id": "c0a6ad02f1954157b9ed325ec2b73491",
+        "Name": "Point.Add",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1717.932529413549,
+        "Y": 1193.8603676636847
+      },
+      {
+        "Id": "60edd2423b2946fa969fac2157c52c38",
+        "Name": "View.SetCropBox",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 2421.9325294135488,
+        "Y": 1053.8603676636847
+      },
+      {
+        "Id": "d547a703d2d34903bc4104774beb0538",
+        "Name": "Line.ByStartPointEndPoint",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 2050.9325294135488,
+        "Y": 1087.8603676636847
+      },
+      {
+        "Id": "a77822b159f14022b6826a510e5aed8c",
+        "Name": "View.MoveCropBox",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1086.6743212473127,
+        "Y": 1367.215790885879
+      },
+      {
+        "Id": "2d43b1d03f624291b990e37b38dd7638",
+        "Name": "View.MoveSectionBox",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1064.4751764910568,
+        "Y": 1715.3570480935991
+      },
+      {
+        "Id": "a7f56baed5624f1db5a61953c3a7e995",
+        "Name": "Curve.StartPoint",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1421.932529413549,
+        "Y": 1015.8603676636847
+      },
+      {
+        "Id": "29fd727485a5450fae4e582d61009486",
+        "Name": "Point.Add",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1717.932529413549,
+        "Y": 1015.8603676636847
+      },
+      {
+        "Id": "83c6312a856c408c90a65f7c70f2315e",
+        "Name": "View.ThreeD",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 750.475176491057,
+        "Y": 1715.3570480935991
+      },
+      {
+        "Id": "f837a4e67eeb4f11a485ce1ac5feed4e",
+        "Name": "View.Model",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 772.67432124731272,
+        "Y": 1367.215790885879
+      },
+      {
+        "Id": "267e9cb7f50141c98c406a1770bb63b0",
+        "Name": "Point.Add",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1769.649486259483,
+        "Y": 681.71426775174575
+      },
+      {
+        "Id": "297494ca72e24603b5534b6c22b269e7",
+        "Name": "BoundingBox.MaxPoint",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1421.649486259483,
+        "Y": 681.71426775174575
+      },
+      {
+        "Id": "df870374539344a996161e92a6b84fed",
+        "Name": "View.SetCropBox",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 2456.6494862594827,
+        "Y": 541.71426775174564
+      },
+      {
+        "Id": "7ef58ceb0d9c4cd7bfea5b962ac7b340",
+        "Name": "BoundingBox.ByCorners",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 2102.6494862594827,
+        "Y": 575.71426775174564
+      },
+      {
+        "Id": "d5bf6099a80449d2b9dcea927fc78583",
+        "Name": "Vector.Reverse",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 978.69061610215454,
+        "Y": 689.97249876770081
+      },
+      {
+        "Id": "86a6e54617d54abfb0b8e451ef05fe91",
+        "Name": "View.CropBox",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 324.13126298134063,
+        "Y": 1014.1163037946308
+      },
+      {
+        "Id": "f2e166fb80ff4b5887aadacebd2e5151",
+        "Name": "Point.AsVector",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 679.69061610215454,
+        "Y": 689.97249876770081
+      },
+      {
+        "Id": "3a6bb0265cc34aab9ae4aeeb1fb676f5",
+        "Name": "View.Model",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 10.131262981340626,
+        "Y": 1014.1163037946308
+      },
+      {
+        "Id": "3b1a42b326cc4067857522fc90c06b2c",
+        "Name": "BoundingBox.MinPoint",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1421.649486259483,
+        "Y": 503.71426775174564
+      },
+      {
+        "Id": "6ed9b3dbca884f34a33261bda5cc77c6",
+        "Name": "Point.Add",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1769.649486259483,
+        "Y": 503.71426775174564
+      },
+      {
+        "Id": "a50eb8544db745c2a88ff7e813f40d59",
+        "Name": "Element.GetLocation",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 345.69061610215454,
+        "Y": 689.97249876770081
+      },
+      {
+        "Id": "dfefe276cb594b138d1650f1a4801a88",
+        "Name": "View.Move",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1112.0620574531602,
+        "Y": 353.67302267624848
+      },
+      {
+        "Id": "2657f56dd0bd478fb7e88c961f5b9fd9",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 321.55171403160853,
+        "Y": 1353.8601702622846
+      },
+      {
+        "Id": "5c6e1d0a235d4f20a68e875013621a1a",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 321.72853050834715,
+        "Y": 1665.8207374407168
+      },
+      {
+        "Id": "cd32cbf69daf4745ad8e6c76569e86ae",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 401.28646294351114,
+        "Y": 378.15508636707114
+      },
+      {
+        "Id": "2221b8938a3641bb90405ada78f7622e",
+        "Name": "Select Model Element",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 9.6906161021545358,
+        "Y": 689.97249876770081
+      },
+      {
+        "Id": "9bdec1cdfa3448b58435bffff6de5d11",
+        "Name": "View.Model",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 798.06205745316038,
+        "Y": 353.67302267624848
+      },
+      {
+        "Id": "aa9e25e7ac854cf0a344268a6fa11a3a",
+        "Name": "Model Views",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 9.5517140316085261,
+        "Y": 1353.8601702622846
+      },
+      {
+        "Id": "e3768634081b47528cdcb38500a305ca",
+        "Name": "Sheet Views",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 9.7285305083471485,
+        "Y": 1665.8207374407168
+      },
+      {
+        "Id": "994cd7377d1d453fbe10f4ecf1e5e7a4",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 350.05547274284061,
+        "Y": 66.009350958960454
+      },
+      {
+        "Id": "7bf4a6fdfe5f41b1a82e7678e0a10869",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -387.34052419049613,
+        "Y": 65.9432938853912
+      },
+      {
+        "Id": "2244be1977c6429cbba61273d179c4f9",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -387.34052419049613,
+        "Y": 385.00362536490519
+      },
+      {
+        "Id": "2e6f0c71d4dc4b9782f6c1cbb5ee6513",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -386.80348428019477,
+        "Y": 1354.4600030255804
+      },
+      {
+        "Id": "2f0e4024d1e8424681355cc1ae74eca2",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -388.00307457069306,
+        "Y": 834.3920051732282
+      },
+      {
+        "Id": "9cd4b81e434f4b5ca257ab7a10955457",
+        "Name": "View.InDocument",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -701.34052419049613,
+        "Y": 65.9432938853912
+      },
+      {
+        "Id": "faa7aa54aff045ab8ba96c5874983790",
+        "Name": "View.ThreeD",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -701.34052419049613,
+        "Y": 385.00362536490519
+      },
+      {
+        "Id": "1191ca35854648ea989aca3554c4ef29",
+        "Name": "View.ByViewFamilyType",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -702.80348428019488,
+        "Y": 1354.4600030255804
+      },
+      {
+        "Id": "960c173e82b144b39bcc65ed86993bfb",
+        "Name": "Viewport.Move",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1136.2199819920354,
+        "Y": 17.720509703337314
+      },
+      {
+        "Id": "c2980bddd7454308a59d5dd236d4cd7f",
+        "Name": "Viewport.InDocument",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 798.2199819920354,
+        "Y": 17.720509703337314
+      },
+      {
+        "Id": "da2c6de7821141dda5f089efdddf9619",
+        "Name": "View.ByViewType",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -704.003074570693,
+        "Y": 834.3920051732282
+      },
+      {
+        "Id": "e37c6051a2274b6e986b09854e263f3f",
+        "Name": "ViewFamilyType.ByName",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -1062.8034842801947,
+        "Y": 1354.4600030255804
+      },
+      {
+        "Id": "a0551263000a40d5a0d4025e3fb53066",
+        "Name": "View Family Types",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -1438.8034842801983,
+        "Y": 1528.6701499148694
+      },
+      {
+        "Id": "9801200d02704d3aa67dfbfe01e98916",
+        "Name": "View Type",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -1365.6030745706935,
+        "Y": 1069.1653199653729
+      },
+      {
+        "Id": "f1d56dfc44dc4b1ba1351c91d1cb4c42",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -1356.8034842801983,
+        "Y": 1354.2875030255802
+      },
+      {
+        "Id": "4fe63dfd54f64d46afab1ed458d49bdb",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -1319.2030745706934,
+        "Y": 877.04700517322817
+      },
+      {
+        "Id": "02a0d3af162e4eb9892a49f0de920860",
+        "Name": "Scope Boxes",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 10.055472742840664,
+        "Y": 66.009350958960454
+      },
+      {
+        "Id": "7d0cce9e88544cb8891855811cccc2a3",
+        "Name": "Design Options",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 10.286462943511111,
+        "Y": 378.15508636707114
+      },
+      {
+        "Id": "36f9afc4406c44dd885dc1c43efa616b",
+        "Name": "Revit.EnumByName",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -1032.8030745706933,
+        "Y": 868.3920051732282
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "23f2f07633b44554a331cc86310d1279",
+        "Title": "...by curve",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "a7f56baed5624f1db5a61953c3a7e995",
+          "27a48c2df3ce43ebbe5f850270f56b55",
+          "29fd727485a5450fae4e582d61009486",
+          "c0a6ad02f1954157b9ed325ec2b73491",
+          "60edd2423b2946fa969fac2157c52c38",
+          "d547a703d2d34903bc4104774beb0538"
+        ],
+        "HasNestedGroups": false,
+        "Left": 1411.932529413549,
+        "Top": 949.86036766368466,
+        "Width": 1219.1999999999996,
+        "Height": 406.20000000000005,
+        "FontSize": 30.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 1015.8603676636847,
+        "InitialHeight": 323.0,
+        "TextblockHeight": 56.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "a91b3ac912ae408c81a62613a8878962",
+        "Title": "Adjust sectionsbox",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "2d43b1d03f624291b990e37b38dd7638",
+          "83c6312a856c408c90a65f7c70f2315e"
+        ],
+        "HasNestedGroups": false,
+        "Left": 740.475176491057,
+        "Top": 1649.3570480935991,
+        "Width": 571.59999999999968,
+        "Height": 228.20000000000005,
+        "FontSize": 30.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 1715.3570480935991,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 56.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "c981044a3c8d4fc19efdc431d56e1b38",
+        "Title": "Adjust view crop box",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "f837a4e67eeb4f11a485ce1ac5feed4e",
+          "a77822b159f14022b6826a510e5aed8c"
+        ],
+        "HasNestedGroups": false,
+        "Left": 762.67432124731272,
+        "Top": 1301.215790885879,
+        "Width": 549.2,
+        "Height": 228.20000000000005,
+        "FontSize": 30.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 1367.215790885879,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 56.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "5a5b7c22b880428cb8172ce0950d9e79",
+        "Title": "...by bounding box",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "297494ca72e24603b5534b6c22b269e7",
+          "3b1a42b326cc4067857522fc90c06b2c",
+          "6ed9b3dbca884f34a33261bda5cc77c6",
+          "267e9cb7f50141c98c406a1770bb63b0",
+          "df870374539344a996161e92a6b84fed",
+          "7ef58ceb0d9c4cd7bfea5b962ac7b340"
+        ],
+        "HasNestedGroups": false,
+        "Left": 1411.649486259483,
+        "Top": 437.71426775174564,
+        "Width": 1290.1999999999996,
+        "Height": 406.20000000000005,
+        "FontSize": 30.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 503.71426775174564,
+        "InitialHeight": 323.00000000000011,
+        "TextblockHeight": 56.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "fe602caa770e499f99b1edc990dc06e9",
+        "Title": "Proces by vector",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "2221b8938a3641bb90405ada78f7622e",
+          "a50eb8544db745c2a88ff7e813f40d59",
+          "f2e166fb80ff4b5887aadacebd2e5151",
+          "d5bf6099a80449d2b9dcea927fc78583"
+        ],
+        "HasNestedGroups": false,
+        "Left": -0.30938389784546416,
+        "Top": 623.97249876770081,
+        "Width": 1193.8,
+        "Height": 217.0,
+        "FontSize": 30.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 689.97249876770081,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 56.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "771a7791cad3439784cd7ed6300aa2dc",
+        "Title": "Adjust view crop box",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "3a6bb0265cc34aab9ae4aeeb1fb676f5",
+          "86a6e54617d54abfb0b8e451ef05fe91"
+        ],
+        "HasNestedGroups": false,
+        "Left": 0.13126298134062608,
+        "Top": 948.11630379463077,
+        "Width": 567.59999999999991,
+        "Height": 233.0,
+        "FontSize": 30.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 1014.1163037946308,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 56.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "7bb0447d12f141b39c58780abf8d417d",
+        "Title": "Adjust view",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "9bdec1cdfa3448b58435bffff6de5d11",
+          "dfefe276cb594b138d1650f1a4801a88"
+        ],
+        "HasNestedGroups": false,
+        "Left": 788.06205745316038,
+        "Top": 287.67302267624848,
+        "Width": 522.79999999999973,
+        "Height": 228.2,
+        "FontSize": 30.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 353.67302267624848,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 56.0,
+        "Background": "#FFD4B6DB"
+      },
+      {
+        "Id": "6205308e1eed4db9b30cdde845f6da05",
+        "Title": "Model view",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "aa9e25e7ac854cf0a344268a6fa11a3a",
+          "2657f56dd0bd478fb7e88c961f5b9fd9"
+        ],
+        "HasNestedGroups": false,
+        "Left": -0.44828596839147394,
+        "Top": 1287.8601702622846,
+        "Width": 708.0,
+        "Height": 202.59999999999991,
+        "FontSize": 30.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 1353.8601702622846,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 56.0,
+        "Background": "#FFFFB8D8"
+      },
+      {
+        "Id": "03c8dc7ff9a1419d8e2c46753091dd7b",
+        "Title": "Sheet view",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "e3768634081b47528cdcb38500a305ca",
+          "5c6e1d0a235d4f20a68e875013621a1a"
+        ],
+        "HasNestedGroups": false,
+        "Left": -0.2714694916528515,
+        "Top": 1599.8207374407168,
+        "Width": 648.0,
+        "Height": 202.59999999999991,
+        "FontSize": 30.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 1665.8207374407168,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 56.0,
+        "Background": "#FFA4E1FF"
+      },
+      {
+        "Id": "144b5dc0271441ef92f3d4eb45f36832",
+        "Title": "Design option",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "cd32cbf69daf4745ad8e6c76569e86ae",
+          "7d0cce9e88544cb8891855811cccc2a3"
+        ],
+        "HasNestedGroups": false,
+        "Left": 0.28646294351111123,
+        "Top": 312.15508636707114,
+        "Width": 599.80000000000007,
+        "Height": 202.60000000000002,
+        "FontSize": 30.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 378.15508636707114,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 56.0,
+        "Background": "#FF71C6A8"
+      },
+      {
+        "Id": "4486ea451baa4872999793311b6c812a",
+        "Title": "Collect all view",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "7bf4a6fdfe5f41b1a82e7678e0a10869",
+          "9cd4b81e434f4b5ca257ab7a10955457",
+          "2244be1977c6429cbba61273d179c4f9",
+          "faa7aa54aff045ab8ba96c5874983790"
+        ],
+        "HasNestedGroups": false,
+        "Left": -711.34052419049613,
+        "Top": -0.056706114608800817,
+        "Width": 612.4,
+        "Height": 683.260331479514,
+        "FontSize": 30.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 65.9432938853912,
+        "InitialHeight": 464.060331479514,
+        "TextblockHeight": 56.0,
+        "Background": "#FFFFB8D8"
+      },
+      {
+        "Id": "7303f504901d4105874144103b1c528f",
+        "Title": "Collect sselected view by view family type",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "2e6f0c71d4dc4b9782f6c1cbb5ee6513",
+          "1191ca35854648ea989aca3554c4ef29",
+          "e37c6051a2274b6e986b09854e263f3f",
+          "a0551263000a40d5a0d4025e3fb53066",
+          "f1d56dfc44dc4b1ba1351c91d1cb4c42"
+        ],
+        "HasNestedGroups": false,
+        "Left": -1448.8034842801983,
+        "Top": 1288.2875030255802,
+        "Width": 1350.4000000000035,
+        "Height": 372.18264688928912,
+        "FontSize": 30.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 1354.2875030255802,
+        "InitialHeight": 319.38264688928916,
+        "TextblockHeight": 56.0,
+        "Background": "#FFFFB8D8"
+      },
+      {
+        "Id": "48ee83723ff34a239ec01581f20ba0d6",
+        "Title": "Scope box",
+        "DescriptionText": "File: defaultProject_extended",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "994cd7377d1d453fbe10f4ecf1e5e7a4",
+          "02a0d3af162e4eb9892a49f0de920860"
+        ],
+        "HasNestedGroups": false,
+        "Left": 0.055472742840663614,
+        "Top": 0.0093509589604536814,
+        "Width": 511.19999999999993,
+        "Height": 202.6,
+        "FontSize": 30.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 66.009350958960454,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 56.0,
+        "Background": "#FF71C6A8"
+      },
+      {
+        "Id": "92b11bf9613b4a2083a909b6c4e4e5d0",
+        "Title": "Collect sselected view by view family type",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "2f0e4024d1e8424681355cc1ae74eca2",
+          "4fe63dfd54f64d46afab1ed458d49bdb",
+          "9801200d02704d3aa67dfbfe01e98916",
+          "da2c6de7821141dda5f089efdddf9619",
+          "36f9afc4406c44dd885dc1c43efa616b"
+        ],
+        "HasNestedGroups": false,
+        "Left": -1375.6030745706935,
+        "Top": 768.3920051732282,
+        "Width": 1276.0000000000005,
+        "Height": 432.57331479214463,
+        "FontSize": 30.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 834.3920051732282,
+        "InitialHeight": 342.7733147921449,
+        "TextblockHeight": 56.0,
+        "Background": "#FFFFB8D8"
+      },
+      {
+        "Id": "a415b01b18ec42d898e09f6ddde624a7",
+        "Title": "Adjust viewport on sheet",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "960c173e82b144b39bcc65ed86993bfb",
+          "c2980bddd7454308a59d5dd236d4cd7f"
+        ],
+        "HasNestedGroups": false,
+        "Left": 788.2199819920354,
+        "Top": -48.279490296662686,
+        "Width": 591.59999999999991,
+        "Height": 228.2,
+        "FontSize": 30.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 17.720509703337314,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 56.0,
+        "Background": "#FFA4E1FF"
+      }
+    ],
+    "X": 594.56272263817459,
+    "Y": 260.70507135157573,
+    "Zoom": 0.39238348308602605
+  }
+}

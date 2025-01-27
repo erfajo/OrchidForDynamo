@@ -1,0 +1,4560 @@
+{
+  "Uuid": "3fa130c0-9b3f-41e0-82b0-a67513832330",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "LightSource",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Color": {
+        "Key": "DSCore.Color",
+        "Value": "DSCoreNodes.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Orchid.E.RevitProject.Elements.LightShapeStyle, OrchidRE",
+      "SelectedIndex": 2,
+      "SelectedString": "Rectangle",
+      "Id": "80f5fd0e5cf647c9a7a41b7da247928a",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "f0fc22d91737468095a9c953c2d4908a",
+          "Name": "Enum",
+          "Description": "The selected Enum",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Light shape style (Autodesk.Revit) enumeration values."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "6ffbcb99e9574a8fad364c197dc4809c",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [
+        {
+          "Id": "f2a3f7dc0e464f5b9a366d357d0f8b1e",
+          "Name": "familyType",
+          "Description": "familyType",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8d0c2ef92378443d9f5970fb19f9d6aa",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0fe4eada1b4c45b5a9ed4e2d11f368a7",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "familyType;\n\"Point\";"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
+      "Id": "22532f1d6b604565a5716b419a8b5410",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "fa06332187f7425f8e098e1f0ffba936",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5488f50953b846209edc84861f3b3cbb",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "df30722de113477b97613693f8d07d5f",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "419c3c928741458d9c3d498222129d86",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "368c1d2271ae4cecb06dd35ef9bfc466",
+          "Name": "familyType",
+          "Description": "FamilyType as Orchid type.\n\nFamilyType[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6103eb8fd3224b5985f0c1d00c42e99c",
+          "Name": "style",
+          "Description": "Light shape style as Revit enumeration type.\n\nvar\nDefault value : Orchid.Internals.Enums.Revit(\"LightShapeStyle.Point\")",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c6e5b87b2c784e58943a837c1d5b45e5",
+          "Name": "FamilyType",
+          "Description": "FamilyType as Orchid type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitFamily.FamilyParameter.SetLightShape@Revit.Application.Document,Orchid.RevitFamily.FamilyType[],var",
+      "Replication": "Auto",
+      "Description": "Set light shape style, using either Point, Line, Rectangle or Circle style.\n\nFamilyParameter.SetLightShape (familyDocument: Document = null, familyType: FamilyType[], style: var = Orchid.Internals.Enums.Revit(\"LightShapeStyle.Point\")): FamilyType[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "31c9587d77ce469b804fdb9b389a31bf",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "ef74290c4455440ba964b3564c8c94a1",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2968b35bc97945c0b11e1ee15302836e",
+          "Name": "familyType",
+          "Description": "FamilyType as Orchid type.\n\nFamilyType[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8720c5bc6dbb4bbdaf60415b282289ac",
+          "Name": "Style",
+          "Description": "The light shape style, either as Point, Line, Rectangle or Circle.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cda2abbf3d994a179750d1eeb75a3aab",
+          "Name": "Value",
+          "Description": "Depending on the style is this value either emit length, emit width/length, emit diameter or no value.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitFamily.FamilyParameter.LightShape@Revit.Application.Document,Orchid.RevitFamily.FamilyType[]",
+      "Replication": "Auto",
+      "Description": "Get light shape style, that is either Point, Line, Rectangle or Circle style. Note: To verify which values is needed for the style, please look inside Revit!\n\nFamilyParameter.LightShape (familyDocument: Document = null, familyType: FamilyType[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "d3c360ed9ffa4427bcb8f2386503d203",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [
+        {
+          "Id": "829c84934d7f43b780c6017d9852ea8d",
+          "Name": "familyType",
+          "Description": "familyType",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "acc5d1dfd242410cb55a0d879805f48a",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "248a368f22d747e4bc1706661aa79022",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "familyType;\n\"Spherical\";"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
+      "Id": "6281087ad38e404b8e6ea3c3af409619",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "b57584e9072b43c0a0f5181493cdc7b9",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "03e46f42d40c4f1e9947d39c2f00acfa",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
+      "Id": "ddcc0a16db6c4738944f4dc9b05f07d2",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "79ccedec605641859d201d681fa2b5db",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f0944135d76f4479ab4d951ee3186b9e",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
+      "Id": "37435238d3764ada8802f709f984f857",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "f5b91c583a4342f880724072828c8b00",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1764bd230f834658ada966751dbac75f",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "ca034c692de64b87aba35affaeded143",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "3a7448fce29f4be7becd65473b7d3036",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8bc6586fd40342528dec662f8586f475",
+          "Name": "familyType",
+          "Description": "FamilyType as Orchid type.\n\nFamilyType[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4459f27cd5644ae1865cf2ebcbdf85b8",
+          "Name": "Style",
+          "Description": "The light distribution style, either as Spherical, Hemispherical, Spot or PhotometricWeb style.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "aab2e6ee1eac45cc8135cbf595fe30df",
+          "Name": "Value",
+          "Description": "Depending on the style is this value either Spot beam angle/Spot field angle/Tilt angle, Photometric web file/Tilt angle or no value.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitFamily.FamilyParameter.LightDistribution@Revit.Application.Document,Orchid.RevitFamily.FamilyType[]",
+      "Replication": "Auto",
+      "Description": "Get light distribution style, that is either Spherical, Hemispherical, Spot or PhotometricWeb style. Note: To verify which values is needed for the style, please look inside Revit!\n\nFamilyParameter.LightDistribution (familyDocument: Document = null, familyType: FamilyType[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "c102a717922a4d0fb8a7c2aae1330590",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "283de9ff177143198042815edd3362a5",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1e60cad3d9cf424f95e768cb61e6d650",
+          "Name": "name",
+          "Description": "Name as string value.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4c4063c15a1c40d6a0ebc2a873549599",
+          "Name": "FamilyType",
+          "Description": "FamilyType as Orchid type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitFamily.FamilyType.ByName@Revit.Application.Document,string",
+      "Replication": "Auto",
+      "Description": "Get family type by name. Note: FamilyType in a family document and a project document is NOT the same! FamilyType in a project document is denoted FamilySymbol in the Autodesk Revit API!\n\nFamilyType.ByName (familyDocument: Document = null, name: string): FamilyType"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "dbcfe7c3d30d480bba948eca259b3095",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "5fd41858685c40bbad8b8f3ffe2c6cb3",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c3f1462647084637aa2a43c842b09196",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"Type 1\";\n\"Type 2\";"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "68cfaa6cbac14619ae4b1257e1631823",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [
+        {
+          "Id": "51646422b3114426a20bc9719dbba4e7",
+          "Name": "familyType",
+          "Description": "familyType",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "29ec660f2c014080a926c7f70ef63843",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "29afff8b1aa745178ff317ba0da44f5f",
+          "Name": "",
+          "Description": "Value of expression at line 3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ad6a9e9904e74d2597861a2e385c383e",
+          "Name": "",
+          "Description": "Value of expression at line 5",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "95f0db86a1dc4cf4a38ea93d87c40ab9",
+          "Name": "",
+          "Description": "Value of expression at line 6",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "familyType;\n// Style\n\"PresetColor\";\n\n3100;\n\"FluorescentWarm\";"
+    },
+    {
+      "ConcreteType": "Orchid.E.RevitProject.Elements.ColorPreset, OrchidRE",
+      "SelectedIndex": 6,
+      "SelectedString": "Fluorescent (Warm White)",
+      "Id": "c90796f7d8c248efbeee0e7dd52d6b8e",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "767dc387881a42839f5021031f2b8717",
+          "Name": "Enum",
+          "Description": "The selected Enum",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Light color preset (Autodesk.Revit) enumeration values."
+    },
+    {
+      "ConcreteType": "Orchid.E.RevitProject.Elements.LightDistributionStyle, OrchidRE",
+      "SelectedIndex": 2,
+      "SelectedString": "Spot light distribution",
+      "Id": "24b125e9ebcd49d19d49d2fd86282de4",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d30c77dda5494909af89870731aee269",
+          "Name": "Enum",
+          "Description": "The selected Enum",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Light distribution style (Autodesk.Revit) enumeration values."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "8d56a71c07f34f7caa6c414ccae10a3b",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "75d8b4a937f347ee8e6a5eae47ee5c46",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0bb167c9387d49f4ad43cc20860ca0ce",
+          "Name": "familyType",
+          "Description": "FamilyType as Orchid type.\n\nFamilyType[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7c9ab79f9136485aaaea8e1bc1d9b257",
+          "Name": "style",
+          "Description": "Light distribution style as Revit enumeration type.\n\nvar\nDefault value : Orchid.Internals.Enums.Revit(\"LightDistributionStyle.Spherical\")",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ba24b3aa4baf4f71b5a148e79d39e4f8",
+          "Name": "FamilyType",
+          "Description": "FamilyType as Orchid type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitFamily.FamilyParameter.SetLightDistribution@Revit.Application.Document,Orchid.RevitFamily.FamilyType[],var",
+      "Replication": "Auto",
+      "Description": "Set light distribution style, using either Spherical, Hemispherical, Spot or PhotometricWeb style. Note: To verify which values is needed for the style, please look inside Revit!\n\nFamilyParameter.SetLightDistribution (familyDocument: Document = null, familyType: FamilyType[], style: var = Orchid.Internals.Enums.Revit(\"LightDistributionStyle.Spherical\")): FamilyType[]"
+    },
+    {
+      "ConcreteType": "Orchid.E.RevitProject.Elements.InitialColor, OrchidRE",
+      "SelectedIndex": 1,
+      "SelectedString": "Custom color",
+      "Id": "a57b7ec193084ede91a75f69e8d0f9d9",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "5023e146bdee4ba08d674910c338334e",
+          "Name": "Enum",
+          "Description": "The selected Enum",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Light color style/initial color (Orchid) enumeration values."
+    },
+    {
+      "ConcreteType": "Orchid.E.RevitProject.Elements.InitialIntensity, OrchidRE",
+      "SelectedIndex": 0,
+      "SelectedString": "Flux intensity",
+      "Id": "c1cde71acfa7406a97b5b75ee5e13146",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "b24a3c16e4ec40d0bd272607e8d632d4",
+          "Name": "Enum",
+          "Description": "The selected Enum",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Light intensity/initial intensity (Orchid) enumeration values."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "fbdd2e286a2d4410be8aac859013d416",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "464b634067084cab9c3dab0958c83e61",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "56b712a4ac4f4899b3d5f2a1da63646d",
+          "Name": "FamilyType",
+          "Description": "FamilyType as Orchid type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitFamily.FamilyType.InDocument@Revit.Application.Document",
+      "Replication": "Auto",
+      "Description": "Get all family types in the familyDocument. Note: If no family types exists, then a default family type will be created named as the familyDocument. Note: FamilyType in a family document and a project document is NOT the same! FamilyType in a project document is denoted FamilySymbol in the Autodesk Revit API!\n\nFamilyType.InDocument (familyDocument: Document = null): FamilyType[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "b75eb20d0b2d40019c67d073d6b3c588",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [
+        {
+          "Id": "141275f1f0514467985ea23ffdbc1865",
+          "Name": "familyType",
+          "Description": "familyType",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1b21bd5ed8ce43cbb6ed582f6afb360e",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8cf7223f46064b1bba619eff13cf98c6",
+          "Name": "",
+          "Description": "Value of expression at line 3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1782452d66fc47f3aba64a2af68b52b2",
+          "Name": "",
+          "Description": "Value of expression at line 6",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "62dbc0e2570049edbcb73a071478887c",
+          "Name": "",
+          "Description": "Value of expression at line 7",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f376b59b7df8455597119ab6a9ad2349",
+          "Name": "",
+          "Description": "Value of expression at line 9",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e4291bc6aed548949cf742462235c2b6",
+          "Name": "",
+          "Description": "Value of expression at line 11",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a4993bd9b5444f6e87e0c7ca73f5d114",
+          "Name": "",
+          "Description": "Value of expression at line 13",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "68eb7231dba94cbb8d1dfc2a86a28506",
+          "Name": "",
+          "Description": "Value of expression at line 14",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "familyType;\n// Style\n\"Flux\";\n\n// Wattage\n10;\n150;\n// Flux\n1400;\n// Luminous\n440;\n// lluminance\n50;\n3048;"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "c89a9274dd684962b2c5b40e469ca911",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "e68a0784d9d4497ea530a7a5978afedc",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a8e2f25672484876b673443fbceb4da8",
+          "Name": "familyType",
+          "Description": "FamilyType as Orchid type.\n\nFamilyType[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d842b0c6fb334cb0ad38b5d0fcdafc1c",
+          "Name": "wattage",
+          "Description": "Wattage value for the initial intensity.\n\ndouble\nDefault value : 9.29",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "514167a144e844a1927ded50a5b4e8e1",
+          "Name": "efficacy",
+          "Description": "Efficacy Value for the initial intensity.\n\ndouble\nDefault value : 148.54",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f5661d84f26243cab5d3657d49ff0661",
+          "Name": "FamilyType",
+          "Description": "FamilyType as Orchid type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitFamily.FamilyParameter.SetLightWattageIntensity@Revit.Application.Document,Orchid.RevitFamily.FamilyType[],double,double",
+      "Replication": "Auto",
+      "Description": "Set light (Wattage) initial intensity.\n\nFamilyParameter.SetLightWattageIntensity (familyDocument: Document = null, familyType: FamilyType[], wattage: double = 9.29, efficacy: double = 148.54): FamilyType[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "9e3700bd832a40e1b629b413985deb54",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "5aed940a61e14935aef803b2d1ce429e",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "bae0603827bf4ae5a49ee6fda0e654ac",
+          "Name": "familyType",
+          "Description": "FamilyType as Orchid type.\n\nFamilyType[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "636d63c98109407eb419c7e427878e20",
+          "Name": "value",
+          "Description": "Flux value for the initial intensity.\n\ndouble\nDefault value : 1380",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2dd46125a9f74d68bdaffa8780c15f32",
+          "Name": "FamilyType",
+          "Description": "FamilyType as Orchid type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitFamily.FamilyParameter.SetLightFluxIntensity@Revit.Application.Document,Orchid.RevitFamily.FamilyType[],double",
+      "Replication": "Auto",
+      "Description": "Set light (Flux) initial intensity.\n\nFamilyParameter.SetLightFluxIntensity (familyDocument: Document = null, familyType: FamilyType[], value: double = 1380): FamilyType[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "569f07cc662b464fb5791601de35ca6e",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "613dbadadaac432ba2d76f981fd2f18f",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5250ed2d92f34289b812a490821e3e48",
+          "Name": "familyType",
+          "Description": "FamilyType as Orchid type.\n\nFamilyType[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "18d1b5cd18d9420a8f88679c063bfa68",
+          "Name": "value",
+          "Description": "Value for the initial intensity.\n\ndouble\nDefault value : 109.82",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e141c4cc63584905b483c5d4cd207546",
+          "Name": "FamilyType",
+          "Description": "FamilyType as Orchid type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitFamily.FamilyParameter.SetLightLuminousIntensity@Revit.Application.Document,Orchid.RevitFamily.FamilyType[],double",
+      "Replication": "Auto",
+      "Description": "Set light (Luminous) initial intensity.\n\nFamilyParameter.SetLightLuminousIntensity (familyDocument: Document = null, familyType: FamilyType[], value: double = 109.82): FamilyType[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "89e2a0b66b9c4141923e671955ac43e5",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "4c4abcb471184d95a74bbec1922d1c35",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4e1bb46b095440d7b4ca8afc502a8848",
+          "Name": "familyType",
+          "Description": "FamilyType as Orchid type.\n\nFamilyType[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d6688cd04ff14512a918b1f8898699c6",
+          "Name": "illuminance",
+          "Description": "Illuminance value for the initial intensity.\n\ndouble\nDefault value : 11.82",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8349f4abef1d4525b1df83b2fdcaf1c2",
+          "Name": "distance",
+          "Description": "Distance Value for the initial intensity.\n\ndouble\nDefault value : 3048",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "621ca027af1c4566acdbb0d4cd9f00f6",
+          "Name": "FamilyType",
+          "Description": "FamilyType as Orchid type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitFamily.FamilyParameter.SetLightIlluminanceIntensity@Revit.Application.Document,Orchid.RevitFamily.FamilyType[],double,double",
+      "Replication": "Auto",
+      "Description": "Set light (Illuminance) initial intensity.\n\nFamilyParameter.SetLightIlluminanceIntensity (familyDocument: Document = null, familyType: FamilyType[], illuminance: double = 11.82, distance: double = 3048): FamilyType[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "9fee2ce56e3f41778f0218b9f74eadae",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "f7c0532e410c4dd5b7f63ea55840d152",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "10cab798cd2642d2b36cadc3528578e9",
+          "Name": "familyType",
+          "Description": "FamilyType as Orchid type.\n\nFamilyType[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7bd0a43c434946a8a10c299fe368d8b0",
+          "Name": "value",
+          "Description": "Value for the custom initial color.\n\ndouble\nDefault value : 3200",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "53b04e1e5eb547c69b16695d2d8e836f",
+          "Name": "FamilyType",
+          "Description": "FamilyType as Orchid type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitFamily.FamilyParameter.SetLightCustomColor@Revit.Application.Document,Orchid.RevitFamily.FamilyType[],double",
+      "Replication": "Auto",
+      "Description": "Set light (Custom) initial color.\n\nFamilyParameter.SetLightCustomColor (familyDocument: Document = null, familyType: FamilyType[], value: double = 3200): FamilyType[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "11186ccca7f94e3cb67095355d14fb07",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "c800a76a75614b64a632b21d6d1d55b1",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4f9b485c658d41f9994334ca9fc58b7a",
+          "Name": "familyType",
+          "Description": "FamilyType as Orchid type.\n\nFamilyType[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "348607e0c1354bf4b8f579d5bbb975cc",
+          "Name": "color",
+          "Description": "Preset initial color as Revit enumeration type.\n\nvar\nDefault value : Orchid.Internals.Enums.Revit(\"ColorPreset.FluorescentWarm\")",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "dbd62237d4384df38ed01badd78315e8",
+          "Name": "FamilyType",
+          "Description": "FamilyType as Orchid type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitFamily.FamilyParameter.SetLightPresetColor@Revit.Application.Document,Orchid.RevitFamily.FamilyType[],var",
+      "Replication": "Auto",
+      "Description": "Set light (Preset) initial color.\n\nFamilyParameter.SetLightPresetColor (familyDocument: Document = null, familyType: FamilyType[], color: var = Orchid.Internals.Enums.Revit(\"ColorPreset.FluorescentWarm\")): FamilyType[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "dfe18116477b4151946d9c1f879340d1",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "27243ca0b4d2450d91cf50697d963fc3",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8522f4cb0b6c4cf789031d69ef3f75d6",
+          "Name": "familyType",
+          "Description": "FamilyType as Orchid type.\n\nFamilyType[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2189465be24742669e079a36eb26f185",
+          "Name": "Style",
+          "Description": "The initial intensity, either as Flux, Luminous, Illuminance or Wattage.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2b6958caee244fa0a5ab377c2ea3c729",
+          "Name": "Value",
+          "Description": "Depending on the style is this value either Flux, Luminosity, Illuminance/Distance or Wattage/Efficacy.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitFamily.FamilyParameter.LightIntensity@Revit.Application.Document,Orchid.RevitFamily.FamilyType[]",
+      "Replication": "Auto",
+      "Description": "Get light initial intensity, that is either Flux, Luminous, Illuminance or Wattage intensity. Note: To verify which values is needed for the style, please look inside Revit!\n\nFamilyParameter.LightIntensity (familyDocument: Document = null, familyType: FamilyType[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "01cd266b15ce47fbbdd040767baadedf",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "de3b834ddd30410db1073e0e4b3d6337",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5c97623315fd4cba93e9f5b7029dbca5",
+          "Name": "familyType",
+          "Description": "FamilyType as Orchid type.\n\nFamilyType[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a48674dbbb93485dbcfd9ce3b5490c34",
+          "Name": "Style",
+          "Description": "The initial intensity, either as Flux, Luminous, Illuminance or Wattage.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "96924c3d074b4b37b5df49bdc60cd468",
+          "Name": "Value",
+          "Description": "Depending on the style is this value either Flux, Luminosity, Illuminance/Distance or Wattage/Efficacy.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitFamily.FamilyParameter.LightIntensity@Revit.Application.Document,Orchid.RevitFamily.FamilyType[]",
+      "Replication": "Auto",
+      "Description": "Get light initial intensity, that is either Flux, Luminous, Illuminance or Wattage intensity. Note: To verify which values is needed for the style, please look inside Revit!\n\nFamilyParameter.LightIntensity (familyDocument: Document = null, familyType: FamilyType[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "2695b0f07bfa4258aa5dbefcfdb45951",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "ff92ba8f8215438e83cd0bcac0f2e04d",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d867f46991f74c17831e863476cfdc2d",
+          "Name": "familyType",
+          "Description": "FamilyType as Orchid type.\n\nFamilyType[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f54a18110ebf4de2a8a52ce247a19617",
+          "Name": "Style",
+          "Description": "The initial intensity, either as Flux, Luminous, Illuminance or Wattage.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2a401db0fa3d4d799a0677d52102115f",
+          "Name": "Value",
+          "Description": "Depending on the style is this value either Flux, Luminosity, Illuminance/Distance or Wattage/Efficacy.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitFamily.FamilyParameter.LightIntensity@Revit.Application.Document,Orchid.RevitFamily.FamilyType[]",
+      "Replication": "Auto",
+      "Description": "Get light initial intensity, that is either Flux, Luminous, Illuminance or Wattage intensity. Note: To verify which values is needed for the style, please look inside Revit!\n\nFamilyParameter.LightIntensity (familyDocument: Document = null, familyType: FamilyType[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "76c4c18c3c1349baa5237923c708476d",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "c2d443a9e1d1420c99351718bd628c86",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e1e57753284a4c04a157e4b5641b2b3d",
+          "Name": "familyType",
+          "Description": "FamilyType as Orchid type.\n\nFamilyType[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e2e4d22f408f40278628faf8865c3bfb",
+          "Name": "Style",
+          "Description": "The initial intensity, either as Flux, Luminous, Illuminance or Wattage.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "34dda6c467f94cec8a1bcdf3d2fc0441",
+          "Name": "Value",
+          "Description": "Depending on the style is this value either Flux, Luminosity, Illuminance/Distance or Wattage/Efficacy.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitFamily.FamilyParameter.LightIntensity@Revit.Application.Document,Orchid.RevitFamily.FamilyType[]",
+      "Replication": "Auto",
+      "Description": "Get light initial intensity, that is either Flux, Luminous, Illuminance or Wattage intensity. Note: To verify which values is needed for the style, please look inside Revit!\n\nFamilyParameter.LightIntensity (familyDocument: Document = null, familyType: FamilyType[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
+      "Id": "b4a8b784019a4f2cba3da94bb714512d",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "846796bfd95246b1be3726d7d831b575",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "172482e1db4240b8ab380ee5d302fa05",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "69d14eb6becd43c2aba044817717e461",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [
+        {
+          "Id": "c7c1d4ddcf9e4958ba000efa1b5750c3",
+          "Name": "familyType",
+          "Description": "familyType",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e6578dd4aa954d90a731012007d04505",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "352bef749ab64359ac1afd02879a69f9",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "familyType;\nColor.ByARGB\n(0, 127, 127, 127);"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "03c3c7184e0544cd9e620c36c4dea1b9",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [
+        {
+          "Id": "91d4e2926b8844579e17d2de65808750",
+          "Name": "familyType",
+          "Description": "familyType",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "919527a16d5c49eeb22aec2c7ef7429c",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4ce2c9431cb54301ba38cc2baf3275d0",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "familyType;\n\"None\";"
+    },
+    {
+      "ConcreteType": "Orchid.E.RevitProject.Elements.LightDimmingColor, OrchidRE",
+      "SelectedIndex": 1,
+      "SelectedString": "Incandescent lamp curve dimming color",
+      "Id": "f10d665eb00b4a5a8780534bae8be013",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "7008ce699adb44eca83be685977594cd",
+          "Name": "Enum",
+          "Description": "The selected Enum",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Light dimming color (Autodesk.Revit) enumeration values."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
+      "Id": "a643759075f74d72b7a8929fd20a35fe",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "31457f29b43a4d6ba48e2d5ac5c1045b",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "bccefd89edbd4203825ed5777d85e8cc",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "6804c44ca75347e28814db7ea0a9a0dd",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "41b2068f72a64b7c861b12d250a2faf1",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a59e94b5e86a40fcb9b779285104e7f2",
+          "Name": "familyType",
+          "Description": "FamilyType as Orchid type.\n\nFamilyType[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "eca8bd378c6845928cc2da52c8e19853",
+          "Name": "color",
+          "Description": "Color as dynamo type.\n\nColor\nDefault value : DSCore.Color.ByARGB(0, 255, 255, 255)",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "65a17f3222d94468be99781120b84143",
+          "Name": "FamilyType",
+          "Description": "FamilyType as Orchid type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitFamily.FamilyParameter.SetLightColorFilter@Revit.Application.Document,Orchid.RevitFamily.FamilyType[],DSCore.Color",
+      "Replication": "Auto",
+      "Description": "Set light color filter.\n\nFamilyParameter.SetLightColorFilter (familyDocument: Document = null, familyType: FamilyType[], color: Color = DSCore.Color.ByARGB(0, 255, 255, 255)): FamilyType[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "7412857ec87544e99c575bb85e75de05",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "42533cd32aea42798abe115fc9c89777",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cac298968cbf4fc8b304d0fece86b5a3",
+          "Name": "familyType",
+          "Description": "FamilyType as Orchid type.\n\nFamilyType[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e10a65b6c26f48b8b23ee00dea06af4d",
+          "Name": "Color",
+          "Description": "Color as dynamo type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitFamily.FamilyParameter.LightColorFilter@Revit.Application.Document,Orchid.RevitFamily.FamilyType[]",
+      "Replication": "Auto",
+      "Description": "Get light color filter.\n\nFamilyParameter.LightColorFilter (familyDocument: Document = null, familyType: FamilyType[]): Color[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "d3eaed4e73814d439fe9d5f2d27f6076",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "7e2759042db04e59ba2d141219fd2ea1",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "83b8042dc2da430e9dbdd9d11774dd8d",
+          "Name": "familyType",
+          "Description": "FamilyType as Orchid type.\n\nFamilyType[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "360af53d36e54e81bec07537f7720d7e",
+          "Name": "Name",
+          "Description": "The dimming color name.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitFamily.FamilyParameter.LightDimmingColor@Revit.Application.Document,Orchid.RevitFamily.FamilyType[]",
+      "Replication": "Auto",
+      "Description": "Get light dimming color name.\n\nFamilyParameter.LightDimmingColor (familyDocument: Document = null, familyType: FamilyType[]): string[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "19c77eaa92cf4f37831b8fd20b234504",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "62321768dacc4e2ab08211f516a14052",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3780107ceef2424a9d4232b78b87fa4b",
+          "Name": "familyType",
+          "Description": "FamilyType as Orchid type.\n\nFamilyType[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "dffde28e466b4bd2b13485fced7749fd",
+          "Name": "color",
+          "Description": "Light dimming color as Revit enumeration type.\n\nvar\nDefault value : Orchid.Internals.Enums.Revit(\"LightDimmingColor.None\")",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "16ddf61c279943959ce8e9bd4dda42ae",
+          "Name": "FamilyType",
+          "Description": "FamilyType as Orchid type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitFamily.FamilyParameter.SetLightDimmingColor@Revit.Application.Document,Orchid.RevitFamily.FamilyType[],var",
+      "Replication": "Auto",
+      "Description": "Set light dimming color by name.\n\nFamilyParameter.SetLightDimmingColor (familyDocument: Document = null, familyType: FamilyType[], color: var = Orchid.Internals.Enums.Revit(\"LightDimmingColor.None\")): FamilyType[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "08260cf3d94246449bd96b120b171996",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "748ac8c3428640ca86d29fd65314eb7c",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7bc8eb0fa87246cba1899a7084f47eda",
+          "Name": "familyType",
+          "Description": "FamilyType as Orchid type.\n\nFamilyType[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "48272c5f8cdf42838592279863e43f64",
+          "Name": "style",
+          "Description": "var\nDefault value : Orchid.Internals.Enums.Orchid(\"InitialColor.PresetColor\")",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c8da1e365c8847289c1fe27d1d902764",
+          "Name": "color",
+          "Description": "Color as dynamo type.\n\nvar\nDefault value : Orchid.Internals.Enums.Revit(\"ColorPreset.FluorescentWarm\")",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "08c21d03b1c84b30bf9ffc56e326104c",
+          "Name": "value",
+          "Description": "double\nDefault value : 3200",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2bee9e8844b14eda90c97d62efd50204",
+          "Name": "FamilyType",
+          "Description": "FamilyType as Orchid type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitFamily.FamilyParameter.SetLightColor@Revit.Application.Document,Orchid.RevitFamily.FamilyType[],var,var,double",
+      "Replication": "Auto",
+      "Description": "Set light color filter.\n\nFamilyParameter.SetLightColor (familyDocument: Document = null, familyType: FamilyType[], style: var = Orchid.Internals.Enums.Orchid(\"InitialColor.PresetColor\"), color: var = Orchid.Internals.Enums.Revit(\"ColorPreset.FluorescentWarm\"), value: double = 3200): FamilyType[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "ef6cdf9716b249dca0c037266085a73e",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "28f6b744238940c491009940dabc620f",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4488b932be4a460496d75f3f3ba49c93",
+          "Name": "familyType",
+          "Description": "FamilyType as Orchid type.\n\nFamilyType[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9cce7566a92642419e7c3bb098893020",
+          "Name": "style",
+          "Description": "Light initial intensity as Orchid enumeration type.\n\nvar\nDefault value : Orchid.Internals.Enums.Orchid(\"InitialIntensity.Flux\")",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3a0e08ddff1240b48e8b3bcce8f27432",
+          "Name": "valueA",
+          "Description": "Depending on the style is this value either for flux, luminous, illuminance, or wattage.\n\ndouble\nDefault value : 1380",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9d3908f683194a2ba4cbbe631c558d12",
+          "Name": "valueB",
+          "Description": "Depending on the style is this value either for distance, efficacy, or has no value.\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ee2f4126628a4d01942255d134c67031",
+          "Name": "FamilyType",
+          "Description": "FamilyType as Orchid type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitFamily.FamilyParameter.SetLightIntensity@Revit.Application.Document,Orchid.RevitFamily.FamilyType[],var,double,double",
+      "Replication": "Auto",
+      "Description": "Set light initial intensity, using either Flux, Luminous, Illuminance or Wattage intensity. Note: To verify which values is needed for the style, please look inside Revit!\n\nFamilyParameter.SetLightIntensity (familyDocument: Document = null, familyType: FamilyType[], style: var = Orchid.Internals.Enums.Orchid(\"InitialIntensity.Flux\"), valueA: double = 1380, valueB: double = 0): FamilyType[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "f8666866cb34489895aa9fe3a77d42ca",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "93d85149e00d4444bfa3a1343d0ba455",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "814d9b8448ec4a1fafa0877691b59d7b",
+          "Name": "familyType",
+          "Description": "FamilyType as Orchid type.\n\nFamilyType[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "79ac2b550d5247598fbbdf20bd5b5bc4",
+          "Name": "Style",
+          "Description": "The initial intensity, either as Flux, Luminous, Illuminance or Wattage.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8d471c4ee50d469bbb9e7a8a44cbcaa8",
+          "Name": "Value",
+          "Description": "Depending on the style is this value either Flux, Luminosity, Illuminance/Distance or Wattage/Efficacy.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitFamily.FamilyParameter.LightIntensity@Revit.Application.Document,Orchid.RevitFamily.FamilyType[]",
+      "Replication": "Auto",
+      "Description": "Get light initial intensity, that is either Flux, Luminous, Illuminance or Wattage intensity. Note: To verify which values is needed for the style, please look inside Revit!\n\nFamilyParameter.LightIntensity (familyDocument: Document = null, familyType: FamilyType[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Orchid.E.RevitProject.Elements.LossFactor, OrchidRE",
+      "SelectedIndex": 0,
+      "SelectedString": "Basic loss factor",
+      "Id": "db5de2ee6ab440a2bd9aa90380fe07fe",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "c542fd70d7b745c78bfd9b8b4db15fe8",
+          "Name": "Enum",
+          "Description": "The selected Enum",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Light loss factor (Orchid) enumeration values."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "47c9e3a56bce4235bbcd9ff3f002f1be",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "c591812958944abb91c765ab8de0626c",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "43f24f575bba454b8a8c3b12f7a82590",
+          "Name": "familyType",
+          "Description": "FamilyType as Orchid type.\n\nFamilyType[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "84aab1e3e11e46a3bd539c42fd95ebfb",
+          "Name": "Style",
+          "Description": "The loss factor either as Basic or Advanced style.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1afbf6fdef7845cfb1c77009570a0ad2",
+          "Name": "Value",
+          "Description": "Depending on the style is this value either Basic loss factor or Temperature/Voltage/Ballast/Lamp tilt/Surface depreciation/ Lamp lumen depreciation/Luminaire dirt depreciation/ calculated loss factor.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitFamily.FamilyParameter.LightLossFactor@Revit.Application.Document,Orchid.RevitFamily.FamilyType[]",
+      "Replication": "Auto",
+      "Description": "Get light loss factor, that is either basic or advanved loss factor. Note: To verify which values is needed for the style, please look inside Revit!\n\nFamilyParameter.LightLossFactor (familyDocument: Document = null, familyType: FamilyType[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "d72ce3b3ed6d4c57ab43913855fc5a7a",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "ff46bf6834394857aa639b3f4367beb8",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7020131edbed4af7bd499f3b86753f5e",
+          "Name": "familyType",
+          "Description": "FamilyType as Orchid type.\n\nFamilyType[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0be60121dbfd427fb3071137b9ae7b33",
+          "Name": "Color",
+          "Description": "Color as dynamo type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6e547d5c004243d1adb9fc47914932db",
+          "Name": "d1",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitFamily.FamilyParameter.LightColor@Revit.Application.Document,Orchid.RevitFamily.FamilyType[]",
+      "Replication": "Auto",
+      "Description": "Get light color filter.\n\nFamilyParameter.LightColor (familyDocument: Document = null, familyType: FamilyType[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "802e251a3c8c403db90ad701e221e6c0",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "3f27c9b0317343e888b8cc1fea0e49fb",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7b8cbe9f61804dd58aed9d9029065731",
+          "Name": "familyType",
+          "Description": "FamilyType as Orchid type.\n\nFamilyType[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "7bfa8b25dd134aa8bb86c1acd715e3a3",
+          "Name": "Color",
+          "Description": "Color as dynamo type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5691dad1835245089299f37f2496cec8",
+          "Name": "d1",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitFamily.FamilyParameter.LightColor@Revit.Application.Document,Orchid.RevitFamily.FamilyType[]",
+      "Replication": "Auto",
+      "Description": "Get light color filter.\n\nFamilyParameter.LightColor (familyDocument: Document = null, familyType: FamilyType[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "bd645b27741d46d58702e676fa60cbee",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "97d6912f612040fca08cb12ac4628586",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "04554e81abba4a8e8018388a8223c3e3",
+          "Name": "familyType",
+          "Description": "FamilyType as Orchid type.\n\nFamilyType[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "39c9c25e8c22424c981ff2f0679cad14",
+          "Name": "Color",
+          "Description": "Color as dynamo type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "845a5e3c8e5249f183a8e7402f90f07e",
+          "Name": "d1",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitFamily.FamilyParameter.LightColor@Revit.Application.Document,Orchid.RevitFamily.FamilyType[]",
+      "Replication": "Auto",
+      "Description": "Get light color filter.\n\nFamilyParameter.LightColor (familyDocument: Document = null, familyType: FamilyType[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "3e7d1bda73a64059847f2c940625baf7",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [
+        {
+          "Id": "e129c68baa194da5bc24fedb6bf6b63c",
+          "Name": "familyType",
+          "Description": "familyType",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "05fedb66c8f24ba596bcfbbba0c286a8",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4d6798641d244833bd8c1b18b94dc9e9",
+          "Name": "",
+          "Description": "Value of expression at line 4",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f2d5ec1c41e545e2884286721f4076c9",
+          "Name": "",
+          "Description": "Value of expression at line 5",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "30ba1fe919954b6c989cc9149749af60",
+          "Name": "",
+          "Description": "Value of expression at line 6",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e6471df4a6454407b4171075e7353d30",
+          "Name": "",
+          "Description": "Value of expression at line 7",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "familyType;\n\n// Style\n\"Basic\";\n3.00;\n1.25;\n0.75;"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 38.4,
+      "Id": "02c77f0429bd469c9f629c1ebc386524",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "9f02f85fa25b4ebfa12bbe378f2e3c6e",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "71c607d26c124ec98bcdaf03d5c251ee",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 38.4,
+      "Id": "46104dd50bcc40c0b620603c84bfbebe",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "1c68017a606b4a648165ce0252d49102",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a693f884473747daadcb9ace0a648567",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 38.4,
+      "Id": "cbb50f899cc945a3a841d387adbf411f",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "5d15dc28be9a4d78a79b886e5358b5c5",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6211168a0f3e4e589ab35081009d9aa4",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 38.4,
+      "Id": "8031ee13ac9c4e209088cf8452898ca6",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "c47880592cdf4986a22d6b11bb001450",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f33ef957a63c4120bbe5aac43703e0a6",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 38.4,
+      "Id": "f831fb86e1f14e41857f2993267bb72d",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "66e592f85e5246a0bb54f1471456ba20",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e183096276e64bf38a25ca6a475d4724",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 38.4,
+      "Id": "d9e468f3f0504bcea584cb8b608e2d73",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "3ed175a08b554ba08e605577d7983736",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5109bebbe72948b0a7eb52a3ef41266f",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 38.4,
+      "Id": "b7eafdbe0c8e433fb060f2bdc4ec5169",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "28abf51198ee41a68b0fdfdbe310256c",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "373e03e9df2544f5b969a10ba4540404",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 38.4,
+      "Id": "b2728a30bf3b46c7bf65aa605d38006a",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "f91cc7b3f7eb4e1f92856a843fc4adba",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "435530a261a0477b937735b9198be0f6",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "0101de1bc2cf4d649b2bcc8b7d3631e5",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "28b9adc296ea4e19adf4674978b2c097",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "753875b75f8f41a3a47e1dc1437cf1bc",
+          "Name": "familyType",
+          "Description": "FamilyType as Orchid type.\n\nFamilyType[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "987a3d165cba48bea57aa8a429c3a82c",
+          "Name": "value",
+          "Description": "Value for the loss factor.\n\ndouble\nDefault value : 1.75",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c8f9c19c01784d85a1a226fd3537595f",
+          "Name": "FamilyType",
+          "Description": "FamilyType as Orchid type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitFamily.FamilyParameter.SetBasicLossFactor@Revit.Application.Document,Orchid.RevitFamily.FamilyType[],double",
+      "Replication": "Auto",
+      "Description": "Set light (Basic) loss factor.\n\nFamilyParameter.SetBasicLossFactor (familyDocument: Document = null, familyType: FamilyType[], value: double = 1.75): FamilyType[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "428ef4d46b3c4163afbb5340775dcf50",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "1793593cf4074f2fb8f9692d409cca5b",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "02f7c41e62354ff08751f88f49b3c383",
+          "Name": "familyType",
+          "Description": "FamilyType as Orchid type.\n\nFamilyType[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "29a7141724774553800cb27b0b271ef1",
+          "Name": "temperature",
+          "Description": "Temperature value for the loss factor (-2.0 - 2.0).\n\ndouble\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4b9b7140b59b40ea915b223a7b477182",
+          "Name": "voltage",
+          "Description": "Voltage value for the loss factor (-2.0 - 2.0).\n\ndouble\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "823a12665ea14ab68aa02b2da6eb46d3",
+          "Name": "ballast",
+          "Description": "Ballast value for the loss factor (0.0 - 1.0).\n\ndouble\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d377439fd80048628ecacc09f9779627",
+          "Name": "tilt",
+          "Description": "Lamp tilt value for the loss factor (0.0 - 1.0).\n\ndouble\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ba2dd1b176914238be3dcbeaa44e660a",
+          "Name": "surface",
+          "Description": "Surface depreciation value for the loss factor (0.0 - 1.0).\n\ndouble\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e8c35b48c84e4b548350c4a3ef5671c9",
+          "Name": "lumen",
+          "Description": "Lamp lumen depreciation value for the loss factor (0.0 - 1.0).\n\ndouble\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f9c3dc837c6a416f98ae08f58c981b18",
+          "Name": "luminaire",
+          "Description": "Luminaire dirt depreciation value for the loss factor (0.0 - 1.0).\n\ndouble\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5a857ce52bf841219f5dd2697004db1c",
+          "Name": "FamilyType",
+          "Description": "FamilyType as Orchid type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitFamily.FamilyParameter.SetAdvancedLossFactor@Revit.Application.Document,Orchid.RevitFamily.FamilyType[],double,double,double,double,double,double,double",
+      "Replication": "Auto",
+      "Description": "Set light (Advanced) loss factor.\n\nFamilyParameter.SetAdvancedLossFactor (familyDocument: Document = null, familyType: FamilyType[], temperature: double = 1, voltage: double = 1, ballast: double = 1, tilt: double = 1, surface: double = 1, lumen: double = 1, luminaire: double = 1): FamilyType[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "86461876b20845dbb8311e7acb7d3bf0",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "b341b169316648f4bdfd5268b30d4f4c",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a3956c0155da4e4dbe10bffe1d0f8aad",
+          "Name": "familyType",
+          "Description": "FamilyType as Orchid type.\n\nFamilyType[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "33a820b5145d44108f91436ca136a78d",
+          "Name": "Style",
+          "Description": "The loss factor either as Basic or Advanced style.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "45566c3807c64812b4f56b58dcf7999c",
+          "Name": "Value",
+          "Description": "Depending on the style is this value either Basic loss factor or Temperature/Voltage/Ballast/Lamp tilt/Surface depreciation/ Lamp lumen depreciation/Luminaire dirt depreciation/ calculated loss factor.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitFamily.FamilyParameter.LightLossFactor@Revit.Application.Document,Orchid.RevitFamily.FamilyType[]",
+      "Replication": "Auto",
+      "Description": "Get light loss factor, that is either basic or advanved loss factor. Note: To verify which values is needed for the style, please look inside Revit!\n\nFamilyParameter.LightLossFactor (familyDocument: Document = null, familyType: FamilyType[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "8183a3c522034910aa7433f7f7eadb84",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "e34c908243b945faa534be1ebbd73f10",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "073fda8a510f461ba269eda0ba702115",
+          "Name": "familyType",
+          "Description": "FamilyType as Orchid type.\n\nFamilyType[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "12980e9c9ab5472f8857de6b5d2797d5",
+          "Name": "Style",
+          "Description": "The loss factor either as Basic or Advanced style.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d71a7da4e5e742b8affe4550c3535b81",
+          "Name": "Value",
+          "Description": "Depending on the style is this value either Basic loss factor or Temperature/Voltage/Ballast/Lamp tilt/Surface depreciation/ Lamp lumen depreciation/Luminaire dirt depreciation/ calculated loss factor.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitFamily.FamilyParameter.LightLossFactor@Revit.Application.Document,Orchid.RevitFamily.FamilyType[]",
+      "Replication": "Auto",
+      "Description": "Get light loss factor, that is either basic or advanved loss factor. Note: To verify which values is needed for the style, please look inside Revit!\n\nFamilyParameter.LightLossFactor (familyDocument: Document = null, familyType: FamilyType[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "8c2652fa61854f1b8999ca66e403eb8e",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "42ee1fce821f4662a942404415ea7d76",
+          "Name": "familyDocument",
+          "Description": "Family document (rfa).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f9020cb4789c44fab381193531308164",
+          "Name": "familyType",
+          "Description": "FamilyType as Orchid type.\n\nFamilyType[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "948e5b5683744f49abb38c35a5f81670",
+          "Name": "style",
+          "Description": "Loss factor as Orchid enumeration type.\n\nvar\nDefault value : Orchid.Internals.Enums.Orchid(\"LossFactor.Basic\")",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5ebc81a6a37a47cf92c87a09c11fa748",
+          "Name": "value",
+          "Description": "Basic loss factor value (0.0 - 4.0).\n\ndouble\nDefault value : 1.75",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fbf0ce7ec8f1460f963db724a4cf113c",
+          "Name": "temperature",
+          "Description": "Advanced loss factor, value for the temperature (-2.0 - 2.0).\n\ndouble\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f83f2b80098441c28ee4c28749f8fae6",
+          "Name": "voltage",
+          "Description": "Advanced loss factor, value for the voltage (-2.0 - 2.0).\n\ndouble\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b1db70d4a9644a69949756643b15285f",
+          "Name": "ballast",
+          "Description": "Advanced loss factor, value for the ballast (0.0 - 1.0).\n\ndouble\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3a7ac4de345b40b0910eda8c0aea2eeb",
+          "Name": "tilt",
+          "Description": "Advanced loss factor, value for the lamp tilt (0.0 - 1.0).\n\ndouble\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c8f64718d8a143e4963e4992ff9e0b71",
+          "Name": "surface",
+          "Description": "Advanced loss factor, value for the surface depreciation (0.0 - 1.0).\n\ndouble\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3581f215416249f5a10f92fe87268fee",
+          "Name": "lumen",
+          "Description": "Advanced loss factor, value for the lamp lumen depreciation (0.0 - 1.0).\n\ndouble\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4ef56d75b8634f68b233ad0096cb94b2",
+          "Name": "luminaire",
+          "Description": "Advanced loss factor, value for the luminaire dirt depreciation (0.0 - 1.0).\n\ndouble\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d6ba01e3cacc415ea31e8eb89fd09f78",
+          "Name": "FamilyType",
+          "Description": "Family type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitFamily.FamilyParameter.SetLightLossFactor@Revit.Application.Document,Orchid.RevitFamily.FamilyType[],var,double,double,double,double,double,double,double,double",
+      "Replication": "Auto",
+      "Description": "Set light loss factor, using either basic or advanved loss factor. Note: To verify which values is needed for the style, please look inside Revit!\n\nFamilyParameter.SetLightLossFactor (familyDocument: Document = null, familyType: FamilyType[], style: var = Orchid.Internals.Enums.Orchid(\"LossFactor.Basic\"), value: double = 1.75, temperature: double = 1, voltage: double = 1, ballast: double = 1, tilt: double = 1, surface: double = 1, lumen: double = 1, luminaire: double = 1): FamilyType[]"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
+      "Id": "2f4b215176a143419835c58b11181223",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "3703e11c1f8b42719b5aef3e3472710a",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "417bf8cee4ec4c428ce3c4ded55c6ad3",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
+      "Id": "187c8a973ed7447eb061fb9ff63a477a",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "43614db5df4e4f08b043a80814bcc198",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c4f692b607484ab19f787ab76d4549f8",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
+      "Id": "f589ba0ad6a34713bade1dd5f20b9dd4",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "8e0da69b764a4833854a9e60d6eec64f",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "434cc0ed9b9d4e4782f72410c551d9c5",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
+      "Id": "bd4804cd52004034b3d9c75d7d22d230",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "28800e9fccce411d819ba88f47ec08fe",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9eef4cd376834b50ac98b50fc08e0800",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
+      "Id": "77dfc38c1f8c444290348607b48ba19d",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "5e49f5d570fb4718a1037e4d11290421",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "437c72ec25004ec1bfc258d25460f474",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
+      "Id": "80e87221eba043938bb1662c36ce0765",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "f8f456e43b914507be94d65af14f0a1e",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3a6db12e13e64763a886fa756252d7ad",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "f0fc22d91737468095a9c953c2d4908a",
+      "End": "6103eb8fd3224b5985f0c1d00c42e99c",
+      "Id": "b4dc1d1490904786b33f7f2e0939466b",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "8d0c2ef92378443d9f5970fb19f9d6aa",
+      "End": "368c1d2271ae4cecb06dd35ef9bfc466",
+      "Id": "d7474835967d4d7ca1d8fe9518c88883",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "c6e5b87b2c784e58943a837c1d5b45e5",
+      "End": "2968b35bc97945c0b11e1ee15302836e",
+      "Id": "f6173f8198c04bdaaf9b3516c39e84fa",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "8720c5bc6dbb4bbdaf60415b282289ac",
+      "End": "fa06332187f7425f8e098e1f0ffba936",
+      "Id": "d31080d1ec9a40e8922a19b89e01df43",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "cda2abbf3d994a179750d1eeb75a3aab",
+      "End": "f5b91c583a4342f880724072828c8b00",
+      "Id": "6d03ae4420fc432e9701e4875d5af35c",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "acc5d1dfd242410cb55a0d879805f48a",
+      "End": "0bb167c9387d49f4ad43cc20860ca0ce",
+      "Id": "3afa70c4777e46d49cfc2446987baf88",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "4459f27cd5644ae1865cf2ebcbdf85b8",
+      "End": "b57584e9072b43c0a0f5181493cdc7b9",
+      "Id": "d838c261451b48cbb73d7fe1c415ad3d",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "aab2e6ee1eac45cc8135cbf595fe30df",
+      "End": "79ccedec605641859d201d681fa2b5db",
+      "Id": "aee7f16d389e42878838197d7d2ed9fb",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "4c4063c15a1c40d6a0ebc2a873549599",
+      "End": "f2a3f7dc0e464f5b9a366d357d0f8b1e",
+      "Id": "670c3f0b45b8441c8515fc151d51d62d",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "4c4063c15a1c40d6a0ebc2a873549599",
+      "End": "829c84934d7f43b780c6017d9852ea8d",
+      "Id": "906d6dbd1c3e469e830f72b782747e63",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "4c4063c15a1c40d6a0ebc2a873549599",
+      "End": "c7c1d4ddcf9e4958ba000efa1b5750c3",
+      "Id": "884b9c4eacc846d4adb95061872a560e",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "4c4063c15a1c40d6a0ebc2a873549599",
+      "End": "141275f1f0514467985ea23ffdbc1865",
+      "Id": "cd57953d3c9a41d5b1f3aac5adae0763",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "4c4063c15a1c40d6a0ebc2a873549599",
+      "End": "e129c68baa194da5bc24fedb6bf6b63c",
+      "Id": "679d9f1d351b45738a83dc4799befead",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "4c4063c15a1c40d6a0ebc2a873549599",
+      "End": "91d4e2926b8844579e17d2de65808750",
+      "Id": "760aa1f25ad1432ebefc51246d001096",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "4c4063c15a1c40d6a0ebc2a873549599",
+      "End": "51646422b3114426a20bc9719dbba4e7",
+      "Id": "7fa6f7eda00c4660a1baf85dd92996b3",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "c3f1462647084637aa2a43c842b09196",
+      "End": "1e60cad3d9cf424f95e768cb61e6d650",
+      "Id": "60f1037c4d524054a2aa1c6156b75f85",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "29ec660f2c014080a926c7f70ef63843",
+      "End": "10cab798cd2642d2b36cadc3528578e9",
+      "Id": "c9621330283c4093a0939b4f388e2b39",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "29ec660f2c014080a926c7f70ef63843",
+      "End": "4f9b485c658d41f9994334ca9fc58b7a",
+      "Id": "f7ed05548f0d461cab0eec15061db5a5",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "29ec660f2c014080a926c7f70ef63843",
+      "End": "7bc8eb0fa87246cba1899a7084f47eda",
+      "Id": "f02fcac9ace747b98bbf269bfce40ca9",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "ad6a9e9904e74d2597861a2e385c383e",
+      "End": "7bd0a43c434946a8a10c299fe368d8b0",
+      "Id": "31b7e58f0a664f2bb668e393fe0b9430",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "ad6a9e9904e74d2597861a2e385c383e",
+      "End": "08c21d03b1c84b30bf9ffc56e326104c",
+      "Id": "ee3d594ef1164f2a856715442efceae5",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "767dc387881a42839f5021031f2b8717",
+      "End": "348607e0c1354bf4b8f579d5bbb975cc",
+      "Id": "faebbad5e09e460c8273b95f1b379db0",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "d30c77dda5494909af89870731aee269",
+      "End": "7c9ab79f9136485aaaea8e1bc1d9b257",
+      "Id": "7e9095d0c1e3405a92f5c18c871f85ec",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "ba24b3aa4baf4f71b5a148e79d39e4f8",
+      "End": "8bc6586fd40342528dec662f8586f475",
+      "Id": "3db61d56e4634dc181781f16cdae9b3e",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "5023e146bdee4ba08d674910c338334e",
+      "End": "48272c5f8cdf42838592279863e43f64",
+      "Id": "99a1060259634af492267d204362dd52",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "b24a3c16e4ec40d0bd272607e8d632d4",
+      "End": "9cce7566a92642419e7c3bb098893020",
+      "Id": "00ce31c91663409bb85f8d12acf2d9c5",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "1b21bd5ed8ce43cbb6ed582f6afb360e",
+      "End": "a8e2f25672484876b673443fbceb4da8",
+      "Id": "fee50f172281467a8eb82d8b7e92397c",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "1b21bd5ed8ce43cbb6ed582f6afb360e",
+      "End": "bae0603827bf4ae5a49ee6fda0e654ac",
+      "Id": "5fb41eb5560a4816966eaaf8fc8d606e",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "1b21bd5ed8ce43cbb6ed582f6afb360e",
+      "End": "5250ed2d92f34289b812a490821e3e48",
+      "Id": "78318a17a8604b2683cfd79ac4012c3b",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "1b21bd5ed8ce43cbb6ed582f6afb360e",
+      "End": "4e1bb46b095440d7b4ca8afc502a8848",
+      "Id": "4bf8449d45d64491b97abca6acb1758c",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "1b21bd5ed8ce43cbb6ed582f6afb360e",
+      "End": "4488b932be4a460496d75f3f3ba49c93",
+      "Id": "2768b94c0e274020b70a3dc2c04030af",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "1782452d66fc47f3aba64a2af68b52b2",
+      "End": "d842b0c6fb334cb0ad38b5d0fcdafc1c",
+      "Id": "36097ba21c4d470d8b122cb86136e6ea",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "62dbc0e2570049edbcb73a071478887c",
+      "End": "514167a144e844a1927ded50a5b4e8e1",
+      "Id": "0b997addffe34dba962060ae26f5b5f3",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "f376b59b7df8455597119ab6a9ad2349",
+      "End": "3a0e08ddff1240b48e8b3bcce8f27432",
+      "Id": "8a46ee3e07ae446f8f873dbbd30ee9f5",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "f376b59b7df8455597119ab6a9ad2349",
+      "End": "636d63c98109407eb419c7e427878e20",
+      "Id": "afb5e99df5f84774b82e0067331fb0c2",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e4291bc6aed548949cf742462235c2b6",
+      "End": "18d1b5cd18d9420a8f88679c063bfa68",
+      "Id": "db9676b8ac16407e950b18ac2fe1ae6a",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "a4993bd9b5444f6e87e0c7ca73f5d114",
+      "End": "d6688cd04ff14512a918b1f8898699c6",
+      "Id": "7d06661c5bb24f689d15b5eacd477787",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "68eb7231dba94cbb8d1dfc2a86a28506",
+      "End": "8349f4abef1d4525b1df83b2fdcaf1c2",
+      "Id": "ae33c0feff00444b9e6c2cf79661b6d0",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "f5661d84f26243cab5d3657d49ff0661",
+      "End": "e1e57753284a4c04a157e4b5641b2b3d",
+      "Id": "f7723c509320467faf08157e44664cc9",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "2dd46125a9f74d68bdaffa8780c15f32",
+      "End": "5c97623315fd4cba93e9f5b7029dbca5",
+      "Id": "ed5a9aebe5db42a3bb70b26eff7e5e8e",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e141c4cc63584905b483c5d4cd207546",
+      "End": "d867f46991f74c17831e863476cfdc2d",
+      "Id": "dbac305d8b3748b48922c5842d1e71c0",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "621ca027af1c4566acdbb0d4cd9f00f6",
+      "End": "8522f4cb0b6c4cf789031d69ef3f75d6",
+      "Id": "93a4f874a05a4538b0e92e51fe98676b",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "53b04e1e5eb547c69b16695d2d8e836f",
+      "End": "7020131edbed4af7bd499f3b86753f5e",
+      "Id": "41be97d34e684a6d82f4fc48bf9bb3f0",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "dbd62237d4384df38ed01badd78315e8",
+      "End": "7b8cbe9f61804dd58aed9d9029065731",
+      "Id": "8bbdfa71c0ad4e5c99170c99879bf9d3",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "2b6958caee244fa0a5ab377c2ea3c729",
+      "End": "f91cc7b3f7eb4e1f92856a843fc4adba",
+      "Id": "356eeb60972e4476b5b1598e828782af",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "96924c3d074b4b37b5df49bdc60cd468",
+      "End": "66e592f85e5246a0bb54f1471456ba20",
+      "Id": "641d1fc54ba24c26a4569d5588bd1e2b",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "2a401db0fa3d4d799a0677d52102115f",
+      "End": "28abf51198ee41a68b0fdfdbe310256c",
+      "Id": "feeb0baa86f44f3abcaa6b81f2f7a8d7",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "34dda6c467f94cec8a1bcdf3d2fc0441",
+      "End": "1c68017a606b4a648165ce0252d49102",
+      "Id": "09f70b88e35c4fb48bf4acc4a941bb27",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e6578dd4aa954d90a731012007d04505",
+      "End": "a59e94b5e86a40fcb9b779285104e7f2",
+      "Id": "27b7745e48e743ba905e7885e26e611d",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "352bef749ab64359ac1afd02879a69f9",
+      "End": "eca8bd378c6845928cc2da52c8e19853",
+      "Id": "14304dedaa64479295f2a5edc93aa96e",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "919527a16d5c49eeb22aec2c7ef7429c",
+      "End": "3780107ceef2424a9d4232b78b87fa4b",
+      "Id": "9aa39f87da5d480a842b94936f91356b",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "7008ce699adb44eca83be685977594cd",
+      "End": "dffde28e466b4bd2b13485fced7749fd",
+      "Id": "697d6e198e1346039e2e4904f3be6e4a",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "65a17f3222d94468be99781120b84143",
+      "End": "cac298968cbf4fc8b304d0fece86b5a3",
+      "Id": "efb2a02bea1b43f3b6f5ede2f8865e7d",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e10a65b6c26f48b8b23ee00dea06af4d",
+      "End": "846796bfd95246b1be3726d7d831b575",
+      "Id": "ed0b6a3820534076addc49a299897aca",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "360af53d36e54e81bec07537f7720d7e",
+      "End": "31457f29b43a4d6ba48e2d5ac5c1045b",
+      "Id": "7df8241946c9447f9df370820ec36d88",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "16ddf61c279943959ce8e9bd4dda42ae",
+      "End": "83b8042dc2da430e9dbdd9d11774dd8d",
+      "Id": "0574f1c334f5444e8ce0f0838173a115",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "2bee9e8844b14eda90c97d62efd50204",
+      "End": "04554e81abba4a8e8018388a8223c3e3",
+      "Id": "1f2c01f8bee744b7864ce1d4848bcc74",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "ee2f4126628a4d01942255d134c67031",
+      "End": "814d9b8448ec4a1fafa0877691b59d7b",
+      "Id": "11c95df7b0d1460a9884bf7abf3f28d9",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "79ac2b550d5247598fbbdf20bd5b5bc4",
+      "End": "8e0da69b764a4833854a9e60d6eec64f",
+      "Id": "c7d8315beca641baa6e8db8307908623",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "8d471c4ee50d469bbb9e7a8a44cbcaa8",
+      "End": "28800e9fccce411d819ba88f47ec08fe",
+      "Id": "5cc7af77829144029d4400f15c79d556",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "c542fd70d7b745c78bfd9b8b4db15fe8",
+      "End": "948e5b5683744f49abb38c35a5f81670",
+      "Id": "38853323e5c545c09727828e09f6f837",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "84aab1e3e11e46a3bd539c42fd95ebfb",
+      "End": "5e49f5d570fb4718a1037e4d11290421",
+      "Id": "10984a83f0554d89b1b0b13edd02c1e6",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "1afbf6fdef7845cfb1c77009570a0ad2",
+      "End": "f8f456e43b914507be94d65af14f0a1e",
+      "Id": "1e9aaea79f254863a9ac2a23fda29b7f",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "6e547d5c004243d1adb9fc47914932db",
+      "End": "9f02f85fa25b4ebfa12bbe378f2e3c6e",
+      "Id": "1b7cc14c10ed4023adc9be85f0fae768",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "5691dad1835245089299f37f2496cec8",
+      "End": "c47880592cdf4986a22d6b11bb001450",
+      "Id": "392e99c9402a47ff86e029610dba87fb",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "39c9c25e8c22424c981ff2f0679cad14",
+      "End": "3703e11c1f8b42719b5aef3e3472710a",
+      "Id": "f746ab5becc84dc99244cc02231fc2b2",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "845a5e3c8e5249f183a8e7402f90f07e",
+      "End": "43614db5df4e4f08b043a80814bcc198",
+      "Id": "48a50d5d10b2465683c09614f28f47dd",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "05fedb66c8f24ba596bcfbbba0c286a8",
+      "End": "753875b75f8f41a3a47e1dc1437cf1bc",
+      "Id": "152cf1bf571442a09c938a9b139c753a",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "05fedb66c8f24ba596bcfbbba0c286a8",
+      "End": "02f7c41e62354ff08751f88f49b3c383",
+      "Id": "ae9fdb1d264140908932eb8ae985e57c",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "05fedb66c8f24ba596bcfbbba0c286a8",
+      "End": "f9020cb4789c44fab381193531308164",
+      "Id": "a8aebbd079b843669c2f2765f18fddad",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "f2d5ec1c41e545e2884286721f4076c9",
+      "End": "987a3d165cba48bea57aa8a429c3a82c",
+      "Id": "fef6a11ae3b94bc693f4fa8973a3ce94",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "f2d5ec1c41e545e2884286721f4076c9",
+      "End": "5ebc81a6a37a47cf92c87a09c11fa748",
+      "Id": "d6bc7703136a4c1fb34ae9cb6b8d0b2f",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "30ba1fe919954b6c989cc9149749af60",
+      "End": "4b9b7140b59b40ea915b223a7b477182",
+      "Id": "0edab39ed2ba4369875b424c84541c33",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "30ba1fe919954b6c989cc9149749af60",
+      "End": "29a7141724774553800cb27b0b271ef1",
+      "Id": "62d7e406922d4c14b0a61d4ff5427158",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "30ba1fe919954b6c989cc9149749af60",
+      "End": "f83f2b80098441c28ee4c28749f8fae6",
+      "Id": "6ac0bb136d30422bb0d538e8b621e044",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "30ba1fe919954b6c989cc9149749af60",
+      "End": "fbf0ce7ec8f1460f963db724a4cf113c",
+      "Id": "52a0515f15544b8b9ca49c4dafb3cd20",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e6471df4a6454407b4171075e7353d30",
+      "End": "d377439fd80048628ecacc09f9779627",
+      "Id": "69c66d08ab214c4fa8f90644109e501e",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e6471df4a6454407b4171075e7353d30",
+      "End": "ba2dd1b176914238be3dcbeaa44e660a",
+      "Id": "3b0135e31b8b49598fb10df5bbeabc7d",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e6471df4a6454407b4171075e7353d30",
+      "End": "e8c35b48c84e4b548350c4a3ef5671c9",
+      "Id": "f487870f3295476db1c4058a25e076d3",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e6471df4a6454407b4171075e7353d30",
+      "End": "f9c3dc837c6a416f98ae08f58c981b18",
+      "Id": "7d5ab3d295864a5397658bcba1f24f9e",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e6471df4a6454407b4171075e7353d30",
+      "End": "823a12665ea14ab68aa02b2da6eb46d3",
+      "Id": "85aa61326a864422b7d08d1417b792ab",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e6471df4a6454407b4171075e7353d30",
+      "End": "b1db70d4a9644a69949756643b15285f",
+      "Id": "213c1ee1bd87435f81229ce2cb0a3ddd",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e6471df4a6454407b4171075e7353d30",
+      "End": "3a7ac4de345b40b0910eda8c0aea2eeb",
+      "Id": "310bebb27d834dd18dd44e8d3be893c0",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e6471df4a6454407b4171075e7353d30",
+      "End": "c8f64718d8a143e4963e4992ff9e0b71",
+      "Id": "7daed990ecd4445492c17cecd7928534",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e6471df4a6454407b4171075e7353d30",
+      "End": "3581f215416249f5a10f92fe87268fee",
+      "Id": "8cba1d1487394e23813d98383f476024",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e6471df4a6454407b4171075e7353d30",
+      "End": "4ef56d75b8634f68b233ad0096cb94b2",
+      "Id": "0f14e9641703445584a2c6839dabd188",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "c8f9c19c01784d85a1a226fd3537595f",
+      "End": "a3956c0155da4e4dbe10bffe1d0f8aad",
+      "Id": "5df9b0bca8f04749b9744d4794ef5948",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "5a857ce52bf841219f5dd2697004db1c",
+      "End": "073fda8a510f461ba269eda0ba702115",
+      "Id": "7249d8f1ad3d4178b30033d9b81b63e7",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "45566c3807c64812b4f56b58dcf7999c",
+      "End": "5d15dc28be9a4d78a79b886e5358b5c5",
+      "Id": "e4145497a5634fa3a810d0c82a6f55b3",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "d71a7da4e5e742b8affe4550c3535b81",
+      "End": "3ed175a08b554ba08e605577d7983736",
+      "Id": "1ad7db02789a48638ca1f95c80a5b0e6",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "d6ba01e3cacc415ea31e8eb89fd09f78",
+      "End": "43f24f575bba454b8a8c3b12f7a82590",
+      "Id": "d06a5adb9a824a628ff2230fe6149441",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Orchid",
+      "Version": "2.19.3.6432",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "80f5fd0e5cf647c9a7a41b7da247928a",
+        "df30722de113477b97613693f8d07d5f",
+        "31c9587d77ce469b804fdb9b389a31bf",
+        "ca034c692de64b87aba35affaeded143",
+        "c102a717922a4d0fb8a7c2aae1330590",
+        "c90796f7d8c248efbeee0e7dd52d6b8e",
+        "24b125e9ebcd49d19d49d2fd86282de4",
+        "8d56a71c07f34f7caa6c414ccae10a3b",
+        "a57b7ec193084ede91a75f69e8d0f9d9",
+        "c1cde71acfa7406a97b5b75ee5e13146",
+        "fbdd2e286a2d4410be8aac859013d416",
+        "c89a9274dd684962b2c5b40e469ca911",
+        "9e3700bd832a40e1b629b413985deb54",
+        "569f07cc662b464fb5791601de35ca6e",
+        "89e2a0b66b9c4141923e671955ac43e5",
+        "9fee2ce56e3f41778f0218b9f74eadae",
+        "11186ccca7f94e3cb67095355d14fb07",
+        "dfe18116477b4151946d9c1f879340d1",
+        "01cd266b15ce47fbbdd040767baadedf",
+        "2695b0f07bfa4258aa5dbefcfdb45951",
+        "76c4c18c3c1349baa5237923c708476d",
+        "f10d665eb00b4a5a8780534bae8be013",
+        "6804c44ca75347e28814db7ea0a9a0dd",
+        "7412857ec87544e99c575bb85e75de05",
+        "d3eaed4e73814d439fe9d5f2d27f6076",
+        "19c77eaa92cf4f37831b8fd20b234504",
+        "08260cf3d94246449bd96b120b171996",
+        "ef6cdf9716b249dca0c037266085a73e",
+        "f8666866cb34489895aa9fe3a77d42ca",
+        "db5de2ee6ab440a2bd9aa90380fe07fe",
+        "47c9e3a56bce4235bbcd9ff3f002f1be",
+        "d72ce3b3ed6d4c57ab43913855fc5a7a",
+        "802e251a3c8c403db90ad701e221e6c0",
+        "bd645b27741d46d58702e676fa60cbee",
+        "0101de1bc2cf4d649b2bcc8b7d3631e5",
+        "428ef4d46b3c4163afbb5340775dcf50",
+        "86461876b20845dbb8311e7acb7d3bf0",
+        "8183a3c522034910aa7433f7f7eadb84",
+        "8c2652fa61854f1b8999ca66e403eb8e"
+      ]
+    }
+  ],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.12",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "1.10",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.19.3.6394",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "80f5fd0e5cf647c9a7a41b7da247928a",
+        "Name": "Light Shape Styles",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 669.73293598531063,
+        "Y": -489.85904729705089
+      },
+      {
+        "Id": "6ffbcb99e9574a8fad364c197dc4809c",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 669.73293598531063,
+        "Y": -648.031547297051
+      },
+      {
+        "Id": "22532f1d6b604565a5716b419a8b5410",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1982.9944203386317,
+        "Y": -647.36344523575008
+      },
+      {
+        "Id": "df30722de113477b97613693f8d07d5f",
+        "Name": "FamilyParameter.SetLightShape",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1024.7329359853115,
+        "Y": -619.85904729705089
+      },
+      {
+        "Id": "31c9587d77ce469b804fdb9b389a31bf",
+        "Name": "FamilyParameter.LightShape",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1509.9944203386317,
+        "Y": -647.36344523575008
+      },
+      {
+        "Id": "d3c360ed9ffa4427bcb8f2386503d203",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 669.76522720922867,
+        "Y": -176.08743740227419
+      },
+      {
+        "Id": "6281087ad38e404b8e6ea3c3af409619",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1982.9944203386317,
+        "Y": -175.083859426878
+      },
+      {
+        "Id": "ddcc0a16db6c4738944f4dc9b05f07d2",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 2324.2053711822418,
+        "Y": -175.083859426878
+      },
+      {
+        "Id": "37435238d3764ada8802f709f984f857",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 2324.2053711822418,
+        "Y": -647.36344523575008
+      },
+      {
+        "Id": "ca034c692de64b87aba35affaeded143",
+        "Name": "FamilyParameter.LightDistribution",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1509.9944203386317,
+        "Y": -175.083859426878
+      },
+      {
+        "Id": "c102a717922a4d0fb8a7c2aae1330590",
+        "Name": "FamilyType.ByName",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 266.22194409778,
+        "Y": 72.355247918997151
+      },
+      {
+        "Id": "dbcfe7c3d30d480bba948eca259b3095",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 10.221944097779954,
+        "Y": 89.837747918997167
+      },
+      {
+        "Id": "68cfaa6cbac14619ae4b1257e1631823",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 2722.370690132072,
+        "Y": -1020.3962138147318
+      },
+      {
+        "Id": "c90796f7d8c248efbeee0e7dd52d6b8e",
+        "Name": "Light Color Presets",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 2722.3706901320611,
+        "Y": -739.616641033042
+      },
+      {
+        "Id": "24b125e9ebcd49d19d49d2fd86282de4",
+        "Name": "Light Distribution Styles",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 669.76522720922867,
+        "Y": -17.914937402274518
+      },
+      {
+        "Id": "8d56a71c07f34f7caa6c414ccae10a3b",
+        "Name": "FamilyParameter.SetLightDistribution",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1032.7652272092323,
+        "Y": -147.91493740227361
+      },
+      {
+        "Id": "a57b7ec193084ede91a75f69e8d0f9d9",
+        "Name": "Light Color Styles",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 2722.3706901320611,
+        "Y": -1235.8153373419418
+      },
+      {
+        "Id": "c1cde71acfa7406a97b5b75ee5e13146",
+        "Name": "Light Intensities",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 2722.421238047752,
+        "Y": -359.46365065189457
+      },
+      {
+        "Id": "fbdd2e286a2d4410be8aac859013d416",
+        "Name": "FamilyType.InDocument",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 265.72194409778,
+        "Y": 251.47317657215405
+      },
+      {
+        "Id": "b75eb20d0b2d40019c67d073d6b3c588",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 2722.421238047752,
+        "Y": 88.418499531431735
+      },
+      {
+        "Id": "c89a9274dd684962b2c5b40e469ca911",
+        "Name": "FamilyParameter.SetLightWattageIntensity",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": true,
+        "ShowGeometry": true,
+        "X": 3092.421238047752,
+        "Y": -145.20170845677512
+      },
+      {
+        "Id": "9e3700bd832a40e1b629b413985deb54",
+        "Name": "FamilyParameter.SetLightFluxIntensity",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": true,
+        "ShowGeometry": true,
+        "X": 3092.421238047752,
+        "Y": 102.97099953143152
+      },
+      {
+        "Id": "569f07cc662b464fb5791601de35ca6e",
+        "Name": "FamilyParameter.SetLightLuminousIntensity",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": true,
+        "ShowGeometry": true,
+        "X": 3092.421238047752,
+        "Y": 315.14523912228287
+      },
+      {
+        "Id": "89e2a0b66b9c4141923e671955ac43e5",
+        "Name": "FamilyParameter.SetLightIlluminanceIntensity",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": true,
+        "ShowGeometry": true,
+        "X": 3092.421238047752,
+        "Y": 527.98478395522761
+      },
+      {
+        "Id": "9fee2ce56e3f41778f0218b9f74eadae",
+        "Name": "FamilyParameter.SetLightCustomColor",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": true,
+        "ShowGeometry": true,
+        "X": 3148.370690132072,
+        "Y": -1020.3962138147318
+      },
+      {
+        "Id": "11186ccca7f94e3cb67095355d14fb07",
+        "Name": "FamilyParameter.SetLightPresetColor",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": true,
+        "ShowGeometry": true,
+        "X": 3148.370690132072,
+        "Y": -807.616641033042
+      },
+      {
+        "Id": "dfe18116477b4151946d9c1f879340d1",
+        "Name": "FamilyParameter.LightIntensity",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 3634.3809158224021,
+        "Y": 527.98478395522761
+      },
+      {
+        "Id": "01cd266b15ce47fbbdd040767baadedf",
+        "Name": "FamilyParameter.LightIntensity",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 3634.3809158224021,
+        "Y": 102.97099953143152
+      },
+      {
+        "Id": "2695b0f07bfa4258aa5dbefcfdb45951",
+        "Name": "FamilyParameter.LightIntensity",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 3634.3809158224021,
+        "Y": 315.14523912228287
+      },
+      {
+        "Id": "76c4c18c3c1349baa5237923c708476d",
+        "Name": "FamilyParameter.LightIntensity",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 3634.3809158224021,
+        "Y": -145.20170845677512
+      },
+      {
+        "Id": "b4a8b784019a4f2cba3da94bb714512d",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 2130.5981520985415,
+        "Y": 288.38536296640541
+      },
+      {
+        "Id": "69d14eb6becd43c2aba044817717e461",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 669.729109692958,
+        "Y": 331.43963823044669
+      },
+      {
+        "Id": "03c3c7184e0544cd9e620c36c4dea1b9",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 670.29189385243126,
+        "Y": 768.88559807317506
+      },
+      {
+        "Id": "f10d665eb00b4a5a8780534bae8be013",
+        "Name": "Light Dimming Colors",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 670.29189385243126,
+        "Y": 927.05809807317473
+      },
+      {
+        "Id": "a643759075f74d72b7a8929fd20a35fe",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 2130.9612086678817,
+        "Y": 768.595814253722
+      },
+      {
+        "Id": "6804c44ca75347e28814db7ea0a9a0dd",
+        "Name": "FamilyParameter.SetLightColorFilter",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1086.7291096929616,
+        "Y": 288.78463823044694
+      },
+      {
+        "Id": "7412857ec87544e99c575bb85e75de05",
+        "Name": "FamilyParameter.LightColorFilter",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1657.598152098542,
+        "Y": 288.38536296640541
+      },
+      {
+        "Id": "d3eaed4e73814d439fe9d5f2d27f6076",
+        "Name": "FamilyParameter.LightDimmingColor",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1657.9612086678821,
+        "Y": 768.595814253722
+      },
+      {
+        "Id": "19c77eaa92cf4f37831b8fd20b234504",
+        "Name": "FamilyParameter.SetLightDimmingColor",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1166.2918938524322,
+        "Y": 797.05809807317473
+      },
+      {
+        "Id": "08260cf3d94246449bd96b120b171996",
+        "Name": "FamilyParameter.SetLightColor",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 3148.370690132072,
+        "Y": -1303.8153373419418
+      },
+      {
+        "Id": "ef6cdf9716b249dca0c037266085a73e",
+        "Name": "FamilyParameter.SetLightIntensity",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 3092.421238047752,
+        "Y": -427.46365065189457
+      },
+      {
+        "Id": "f8666866cb34489895aa9fe3a77d42ca",
+        "Name": "FamilyParameter.LightIntensity",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 3634.3809158224021,
+        "Y": -427.46365065189457
+      },
+      {
+        "Id": "db5de2ee6ab440a2bd9aa90380fe07fe",
+        "Name": "Light Loss Factors",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 2721.9599445295216,
+        "Y": 1008.4098013621278
+      },
+      {
+        "Id": "47c9e3a56bce4235bbcd9ff3f002f1be",
+        "Name": "FamilyParameter.LightLossFactor",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 3634.3809158224021,
+        "Y": 940.4098013621242
+      },
+      {
+        "Id": "d72ce3b3ed6d4c57ab43913855fc5a7a",
+        "Name": "FamilyParameter.LightColor",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 3634.3809158224021,
+        "Y": -1020.3962138147318
+      },
+      {
+        "Id": "802e251a3c8c403db90ad701e221e6c0",
+        "Name": "FamilyParameter.LightColor",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 3634.3809158224021,
+        "Y": -807.616641033042
+      },
+      {
+        "Id": "bd645b27741d46d58702e676fa60cbee",
+        "Name": "FamilyParameter.LightColor",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 3634.3809158224021,
+        "Y": -1303.8153373419418
+      },
+      {
+        "Id": "3e7d1bda73a64059847f2c940625baf7",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 2721.9599445295216,
+        "Y": 1466.7546525988582
+      },
+      {
+        "Id": "02c77f0429bd469c9f629c1ebc386524",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 4045.7185014241813,
+        "Y": -986.29303127228377
+      },
+      {
+        "Id": "46104dd50bcc40c0b620603c84bfbebe",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 4045.7185014241813,
+        "Y": 102.97099953143152
+      },
+      {
+        "Id": "cbb50f899cc945a3a841d387adbf411f",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 4045.7185014241813,
+        "Y": 1432.9271525988579
+      },
+      {
+        "Id": "8031ee13ac9c4e209088cf8452898ca6",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 4399.0560870259633,
+        "Y": -986.29303127228377
+      },
+      {
+        "Id": "f831fb86e1f14e41857f2993267bb72d",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 4399.0560870259633,
+        "Y": 102.97099953143152
+      },
+      {
+        "Id": "d9e468f3f0504bcea584cb8b608e2d73",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 4399.0560870259633,
+        "Y": 1432.9271525988579
+      },
+      {
+        "Id": "b7eafdbe0c8e433fb060f2bdc4ec5169",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 4752.3936726277425,
+        "Y": 102.97099953143152
+      },
+      {
+        "Id": "b2728a30bf3b46c7bf65aa605d38006a",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 5105.7312582295126,
+        "Y": 102.97099953143152
+      },
+      {
+        "Id": "0101de1bc2cf4d649b2bcc8b7d3631e5",
+        "Name": "FamilyParameter.SetBasicLossFactor",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 3076.9599445295316,
+        "Y": 1432.9271525988579
+      },
+      {
+        "Id": "428ef4d46b3c4163afbb5340775dcf50",
+        "Name": "FamilyParameter.SetAdvancedLossFactor",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": true,
+        "ShowGeometry": true,
+        "X": 3076.9599445295316,
+        "Y": 1646.1087500989779
+      },
+      {
+        "Id": "86461876b20845dbb8311e7acb7d3bf0",
+        "Name": "FamilyParameter.LightLossFactor",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": true,
+        "ShowGeometry": true,
+        "X": 3634.3809158224021,
+        "Y": 1432.9271525988579
+      },
+      {
+        "Id": "8183a3c522034910aa7433f7f7eadb84",
+        "Name": "FamilyParameter.LightLossFactor",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 3634.3809158224021,
+        "Y": 1646.1087500989779
+      },
+      {
+        "Id": "8c2652fa61854f1b8999ca66e403eb8e",
+        "Name": "FamilyParameter.SetLightLossFactor",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 3076.9599445295316,
+        "Y": 940.4098013621242
+      },
+      {
+        "Id": "2f4b215176a143419835c58b11181223",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 4045.7185014241813,
+        "Y": -1303.8153373419418
+      },
+      {
+        "Id": "187c8a973ed7447eb061fb9ff63a477a",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 4399.0560870259633,
+        "Y": -1303.8153373419418
+      },
+      {
+        "Id": "f589ba0ad6a34713bade1dd5f20b9dd4",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 4045.7185014241813,
+        "Y": -427.46365065189457
+      },
+      {
+        "Id": "bd4804cd52004034b3d9c75d7d22d230",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 4399.0560870259633,
+        "Y": -427.46365065189457
+      },
+      {
+        "Id": "77dfc38c1f8c444290348607b48ba19d",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 4045.7185014241813,
+        "Y": 940.4098013621242
+      },
+      {
+        "Id": "80e87221eba043938bb1662c36ce0765",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 4399.0560870259633,
+        "Y": 940.4098013621242
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "ff9b2043e9524467982a0f753bc73594",
+        "Title": "Set light shape data",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "80f5fd0e5cf647c9a7a41b7da247928a",
+          "6ffbcb99e9574a8fad364c197dc4809c",
+          "df30722de113477b97613693f8d07d5f"
+        ],
+        "HasNestedGroups": false,
+        "Left": 659.73293598531063,
+        "Top": -720.431547297051,
+        "Width": 687.00000000000091,
+        "Height": 362.37250000000012,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": -648.031547297051,
+        "InitialHeight": 303.17250000000013,
+        "TextblockHeight": 62.4,
+        "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "090a4d0a408e4c6087c8fdc32ae9c91c",
+        "Title": "Get light distribution data",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "6281087ad38e404b8e6ea3c3af409619",
+          "ca034c692de64b87aba35affaeded143",
+          "ddcc0a16db6c4738944f4dc9b05f07d2"
+        ],
+        "HasNestedGroups": false,
+        "Left": 1499.9944203386317,
+        "Top": -247.483859426878,
+        "Width": 1112.6109508436102,
+        "Height": 370.6,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": -175.083859426878,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 62.4,
+        "Background": "#FFA4E1FF"
+      },
+      {
+        "Id": "4520fabda34a4f42a1fd11cf922e1375",
+        "Title": "Get light shape data",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "22532f1d6b604565a5716b419a8b5410",
+          "31c9587d77ce469b804fdb9b389a31bf",
+          "37435238d3764ada8802f709f984f857"
+        ],
+        "HasNestedGroups": false,
+        "Left": 1499.9944203386317,
+        "Top": -719.76344523575,
+        "Width": 1112.6109508436102,
+        "Height": 370.59999999999997,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": -647.36344523575008,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 62.4,
+        "Background": "#FFA4E1FF"
+      },
+      {
+        "Id": "1e42d30adc71422c8fdc3e78f1b706f3",
+        "Title": "Set light distribution data",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "24b125e9ebcd49d19d49d2fd86282de4",
+          "d3c360ed9ffa4427bcb8f2386503d203",
+          "8d56a71c07f34f7caa6c414ccae10a3b"
+        ],
+        "HasNestedGroups": false,
+        "Left": 659.76522720922867,
+        "Top": -248.4874374022742,
+        "Width": 739.00000000000364,
+        "Height": 362.37249999999966,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": -176.08743740227419,
+        "InitialHeight": 303.17249999999967,
+        "TextblockHeight": 62.4,
+        "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "dd502d853584451382a85f2b19f57720",
+        "Title": "",
+        "DescriptionText": "File: LundtofteLamp_two",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "c102a717922a4d0fb8a7c2aae1330590",
+          "dbcfe7c3d30d480bba948eca259b3095",
+          "fbdd2e286a2d4410be8aac859013d416"
+        ],
+        "HasNestedGroups": false,
+        "Left": 0.22194409777995361,
+        "Top": -0.044752081002847888,
+        "Width": 565.60000000000014,
+        "Height": 383.31792865315691,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 72.355247918997151,
+        "InitialHeight": 304.20417865315721,
+        "TextblockHeight": 62.4,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "6b21b467b80a4763bf2d50378a071d2a",
+        "Title": "Initial Intensity",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "b75eb20d0b2d40019c67d073d6b3c588",
+          "89e2a0b66b9c4141923e671955ac43e5",
+          "569f07cc662b464fb5791601de35ca6e",
+          "9e3700bd832a40e1b629b413985deb54",
+          "c89a9274dd684962b2c5b40e469ca911",
+          "ef6cdf9716b249dca0c037266085a73e",
+          "c1cde71acfa7406a97b5b75ee5e13146"
+        ],
+        "HasNestedGroups": false,
+        "Left": 2712.421238047752,
+        "Top": -499.86365065189455,
+        "Width": 813.19999999999982,
+        "Height": 1260.4484346071222,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": -427.46365065189457,
+        "InitialHeight": 1100.4484346071222,
+        "TextblockHeight": 62.4,
+        "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "68cfa3c7738f423ebb632335223e82d7",
+        "Title": "Initial Color",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "c90796f7d8c248efbeee0e7dd52d6b8e",
+          "68cfaa6cbac14619ae4b1257e1631823",
+          "11186ccca7f94e3cb67095355d14fb07",
+          "9fee2ce56e3f41778f0218b9f74eadae",
+          "08260cf3d94246449bd96b120b171996",
+          "a57b7ec193084ede91a75f69e8d0f9d9"
+        ],
+        "HasNestedGroups": false,
+        "Left": 2712.3706901320611,
+        "Top": -1376.2153373419419,
+        "Width": 806.8000000000111,
+        "Height": 768.39869630889984,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": -1303.8153373419418,
+        "InitialHeight": 709.1986963088998,
+        "TextblockHeight": 62.4,
+        "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "cc7a4704fd26445e9cad4ccbde703193",
+        "Title": "Get light color filter data",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "b4a8b784019a4f2cba3da94bb714512d",
+          "7412857ec87544e99c575bb85e75de05"
+        ],
+        "HasNestedGroups": false,
+        "Left": 1647.598152098542,
+        "Top": 215.9853629664054,
+        "Width": 771.39999999999964,
+        "Height": 370.6,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 288.38536296640541,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 62.4,
+        "Background": "#FFA4E1FF"
+      },
+      {
+        "Id": "f01ddac5a53b436d9234ba7dd6ff715d",
+        "Title": "Set light color filter data",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "69d14eb6becd43c2aba044817717e461",
+          "6804c44ca75347e28814db7ea0a9a0dd"
+        ],
+        "HasNestedGroups": false,
+        "Left": 659.729109692958,
+        "Top": 216.38463823044694,
+        "Width": 780.20000000000368,
+        "Height": 272.4549999999997,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 288.78463823044694,
+        "InitialHeight": 187.65499999999975,
+        "TextblockHeight": 62.4,
+        "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "848b0161b68e4a2d996d6495ac790522",
+        "Title": "Get light dimming color data",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "a643759075f74d72b7a8929fd20a35fe",
+          "d3eaed4e73814d439fe9d5f2d27f6076"
+        ],
+        "HasNestedGroups": false,
+        "Left": 1647.9612086678821,
+        "Top": 696.195814253722,
+        "Width": 771.39999999999964,
+        "Height": 370.6,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 768.595814253722,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 62.4,
+        "Background": "#FFA4E1FF"
+      },
+      {
+        "Id": "361da26d4bde43f2a111532707ed0059",
+        "Title": "Set light dimming color data",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "f10d665eb00b4a5a8780534bae8be013",
+          "03c3c7184e0544cd9e620c36c4dea1b9",
+          "19c77eaa92cf4f37831b8fd20b234504"
+        ],
+        "HasNestedGroups": false,
+        "Left": 660.29189385243126,
+        "Top": 696.48559807317508,
+        "Width": 888.00000000000091,
+        "Height": 362.3724999999996,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 768.88559807317506,
+        "InitialHeight": 303.17249999999967,
+        "TextblockHeight": 62.4,
+        "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "20dc59bc4fa2417ca2a2fbdc098e42c4",
+        "Title": "Loss Factor",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "3e7d1bda73a64059847f2c940625baf7",
+          "428ef4d46b3c4163afbb5340775dcf50",
+          "0101de1bc2cf4d649b2bcc8b7d3631e5",
+          "8c2652fa61854f1b8999ca66e403eb8e",
+          "db5de2ee6ab440a2bd9aa90380fe07fe"
+        ],
+        "HasNestedGroups": false,
+        "Left": 2711.9599445295216,
+        "Top": 868.00980136212422,
+        "Width": 755.80000000001019,
+        "Height": 1186.6989487368537,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 940.4098013621242,
+        "InitialHeight": 850.69894873685371,
+        "TextblockHeight": 62.4,
+        "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "455e6b969cee42ada14e97ec4db4dd60",
+        "Title": "Loss Factor",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "cbb50f899cc945a3a841d387adbf411f",
+          "d9e468f3f0504bcea584cb8b608e2d73",
+          "8183a3c522034910aa7433f7f7eadb84",
+          "86461876b20845dbb8311e7acb7d3bf0",
+          "80e87221eba043938bb1662c36ce0765",
+          "77dfc38c1f8c444290348607b48ba19d",
+          "47c9e3a56bce4235bbcd9ff3f002f1be"
+        ],
+        "HasNestedGroups": false,
+        "Left": 3624.3809158224021,
+        "Top": 868.00980136212422,
+        "Width": 1063.0751712035608,
+        "Height": 945.09894873685369,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 940.4098013621242,
+        "InitialHeight": 850.69894873685371,
+        "TextblockHeight": 62.4,
+        "Background": "#FFA4E1FF"
+      },
+      {
+        "Id": "6b6f8c84d04b402d8c5af701e6b4276d",
+        "Title": "Initial Color",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "02c77f0429bd469c9f629c1ebc386524",
+          "8031ee13ac9c4e209088cf8452898ca6",
+          "2f4b215176a143419835c58b11181223",
+          "187c8a973ed7447eb061fb9ff63a477a",
+          "d72ce3b3ed6d4c57ab43913855fc5a7a",
+          "802e251a3c8c403db90ad701e221e6c0",
+          "bd645b27741d46d58702e676fa60cbee"
+        ],
+        "HasNestedGroups": false,
+        "Left": 3624.3809158224021,
+        "Top": -1376.2153373419419,
+        "Width": 1063.0751712035608,
+        "Height": 735.59869630889989,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": -1303.8153373419418,
+        "InitialHeight": 641.1986963088998,
+        "TextblockHeight": 62.4,
+        "Background": "#FFA4E1FF"
+      },
+      {
+        "Id": "aa400d074dde46dab4d7e0eef998f9f3",
+        "Title": "Initial Intensity",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "46104dd50bcc40c0b620603c84bfbebe",
+          "f831fb86e1f14e41857f2993267bb72d",
+          "b7eafdbe0c8e433fb060f2bdc4ec5169",
+          "b2728a30bf3b46c7bf65aa605d38006a",
+          "dfe18116477b4151946d9c1f879340d1",
+          "2695b0f07bfa4258aa5dbefcfdb45951",
+          "01cd266b15ce47fbbdd040767baadedf",
+          "76c4c18c3c1349baa5237923c708476d",
+          "f589ba0ad6a34713bade1dd5f20b9dd4",
+          "bd4804cd52004034b3d9c75d7d22d230",
+          "f8666866cb34489895aa9fe3a77d42ca"
+        ],
+        "HasNestedGroups": false,
+        "Left": 3624.3809158224021,
+        "Top": -499.86365065189455,
+        "Width": 1769.75034240711,
+        "Height": 1194.8484346071223,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": -427.46365065189457,
+        "InitialHeight": 1100.4484346071222,
+        "TextblockHeight": 62.4,
+        "Background": "#FFA4E1FF"
+      }
+    ],
+    "X": 26.906354590519278,
+    "Y": 513.44186418621939,
+    "Zoom": 0.3026474592198769
+  }
+}

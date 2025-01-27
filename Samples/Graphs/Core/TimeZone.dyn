@@ -1,0 +1,781 @@
+{
+  "Uuid": "3c9d0464-8643-5ffe-96e5-ab1769818209",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "TimeZone",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "77cc69c386214550b5b151c49f7a95b8",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "0b279103dfbf446ebe3281ba5c3408a9",
+          "Name": "siteLocation",
+          "Description": "The site location as Dynamo type.\n\nElement\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2c823252eb5d447bb5d73aa3ae70a5b9",
+          "Name": "timeZone",
+          "Description": "The time zone numeric value.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Common.Location.TimeZone@Revit.Elements.Element",
+      "Replication": "Auto",
+      "Description": "Get the time zone by hours ranging from -12 to +12. 0 represents GMT. Note. If the input value is not in the valid range, it will be shifted by multiples of 24 until it is in range.\n\nLocation.TimeZone (siteLocation: Element = null): double"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "bcd3792045724fe89efdccb0f6d62ddb",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "79624d65275f465fa5132e338aad5fab",
+          "Name": "timeZone",
+          "Description": "Add time zone numeric value.\n\ndouble",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "59d6362233124443bbd3a753c34f1602",
+          "Name": "SiteLocation",
+          "Description": "The site location as Dynamo type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Common.Location.SetTimeZone@double",
+      "Replication": "Auto",
+      "Description": "Set the time zone by hours ranging from -12 to +12. 0 represents GMT. Note. If the input value is not in the valid range, it will be shifted by multiples of 24 until it is in range.\n\nLocation.SetTimeZone (timeZone: double): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "4569edf786cb458c90c6f1423ff9c0d3",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "b2d1147de84441eb94443e26aa9b2d9e",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "1;"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "4746a527820341dfa3b7a3ae0c680863",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "ba762df8dded42daac712066a2bd4b72",
+          "Name": "timeZone",
+          "Description": "Add time zone numeric value.\n\ndouble",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "63719d9aa53546c1bdadadd235d44294",
+          "Name": "SiteLocation",
+          "Description": "The site location as Dynamo type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.RevitProject.Common.Location.SetTimeZone@double",
+      "Replication": "Auto",
+      "Description": "Set the time zone by hours ranging from -12 to +12. 0 represents GMT. Note. If the input value is not in the valid range, it will be shifted by multiples of 24 until it is in range.\n\nLocation.SetTimeZone (timeZone: double): Element"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 27.2,
+      "WatchHeight": 38.4,
+      "Id": "a21ba46fb7c54a18a0b7f90bda1fc078",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "69c548ff84ee4cb5aa7d823b9976ae5d",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a05820a271f1410dbb0d6f5cf9548fda",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "f848bea619114e7f8d11e798b8597068",
+      "NodeType": "FunctionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "8066944256ef46219000d2f00bac4a37",
+          "Name": "TimeZone",
+          "Description": "TimeZone as Orchid type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.Common.Global.TimeZone.All",
+      "Replication": "Auto",
+      "Description": "Get all timezone(s) in Windows (.Net) system.\n\nTimeZone.All ( ): TimeZone[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "89a210597f3d46a982ac9405bcb3328a",
+      "NodeType": "FunctionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "80e118b257b945d2969c34b8578cd517",
+          "Name": "TimeZone",
+          "Description": "TimeZone as Orchid type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.Common.Global.TimeZone.Current",
+      "Replication": "Auto",
+      "Description": "Get current TimeZone in Windows (.Net) system.\n\nTimeZone.Current: TimeZone"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 260.0,
+      "WatchHeight": 38.4,
+      "Id": "742d1d57e06443489eed1b013e9dedad",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "e876cbdf3d8a472bad72be452858df61",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ef66822432494a21b1bc3fe56ee702ef",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 398.4,
+      "WatchHeight": 353.6,
+      "Id": "61d89261f96d4925a855ff1b36b7cf56",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "eb349d66fc7f43b78bcfb864d4b0fcd1",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3e77d18f5e8846e990c1312d09a22c17",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "47552169335d4d9d833fb9dd3b4a60dd",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "a9b98b38330a4b85931f2fc6b09c8e5f",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b64966b7dbfe423fa2d4b7730761d401",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "57d368347eba41e099f34d9fc2fe3acc",
+          "Name": "",
+          "Description": "Value of expression at line 3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1cc8cb379d4445f49c5bdf50202bc5a7",
+          "Name": "",
+          "Description": "Value of expression at line 4",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"Romance Standard Time\";\n\"GMT Standard Time\";\n\"US Eastern Standard Time\";\n\"India Standard Time\";"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "a36216626f5440ab9cd77c361c0b4db9",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "ec648dc1b7874e9fa2ab0d4abd7f9911",
+          "Name": "id",
+          "Description": "Id of the TimeZone as string.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c355e80b55da447e9da2f79eb3d4da31",
+          "Name": "TimeZone",
+          "Description": "TimeZone as Orchid type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.Common.Global.TimeZone.ById@string",
+      "Replication": "Auto",
+      "Description": "Get TimeZone by id.\n\nTimeZone.ById (id: string): TimeZone"
+    },
+    {
+      "ConcreteType": "Orchid.E.Common.Global.TimeZone, OrchidRE",
+      "SelectedIndex": 92,
+      "SelectedString": "India Standard Time",
+      "Id": "3b72649209b143b0a95d3d36b4fcc86d",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "60e893fe9d70417b917ddfa6e3570d9a",
+          "Name": "TimeZone",
+          "Description": "The selected TimeZone",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Available time zones."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "f07f751a477348c595eb5ae1b314cfb8",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "bc8d64ec760d40f8b8a7d09f4b180be1",
+          "Name": "timeZone",
+          "Description": "Orchid.Common.Global.TimeZone",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2d9c2ab144264a1b9b0a9726bfadf86b",
+          "Name": "string",
+          "Description": "String value.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.Common.Global.TimeZone.Name",
+      "Replication": "Auto",
+      "Description": "TimeZone display name.\n\nTimeZone.Name: string"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 417.6,
+      "WatchHeight": 38.4,
+      "Id": "67385260865245f8a61ce08a0a04d661",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "34f08785653440d2b392e65b48b94a8c",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c64e574d65124978bb2405f31915477e",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "2c823252eb5d447bb5d73aa3ae70a5b9",
+      "End": "69c548ff84ee4cb5aa7d823b9976ae5d",
+      "Id": "9f1c00363ad04167b405aa020fba9125",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "b2d1147de84441eb94443e26aa9b2d9e",
+      "End": "79624d65275f465fa5132e338aad5fab",
+      "Id": "ee537fa0dfa244c4b5b1fd54f4760fd6",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "63719d9aa53546c1bdadadd235d44294",
+      "End": "0b279103dfbf446ebe3281ba5c3408a9",
+      "Id": "19614b12942549678746f321b5334f5d",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "8066944256ef46219000d2f00bac4a37",
+      "End": "eb349d66fc7f43b78bcfb864d4b0fcd1",
+      "Id": "6f5b8ef641b84b9e9b99c7b1d94f2777",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "80e118b257b945d2969c34b8578cd517",
+      "End": "e876cbdf3d8a472bad72be452858df61",
+      "Id": "8353f1333f4947f5a048531b346f2fc2",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "a9b98b38330a4b85931f2fc6b09c8e5f",
+      "End": "ec648dc1b7874e9fa2ab0d4abd7f9911",
+      "Id": "eb596dcf53c14871ad54bff85f0a35c3",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "c355e80b55da447e9da2f79eb3d4da31",
+      "End": "ba762df8dded42daac712066a2bd4b72",
+      "Id": "510f1d0a564c4d03b17f0b966f7d11df",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "c355e80b55da447e9da2f79eb3d4da31",
+      "End": "bc8d64ec760d40f8b8a7d09f4b180be1",
+      "Id": "c90d5ee620d647f4af7bde7f4ef29da2",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "2d9c2ab144264a1b9b0a9726bfadf86b",
+      "End": "34f08785653440d2b392e65b48b94a8c",
+      "Id": "20a308b79e494f21b5199c7d109806d5",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Orchid",
+      "Version": "2.19.3.6432",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "77cc69c386214550b5b151c49f7a95b8",
+        "bcd3792045724fe89efdccb0f6d62ddb",
+        "4746a527820341dfa3b7a3ae0c680863",
+        "f848bea619114e7f8d11e798b8597068",
+        "89a210597f3d46a982ac9405bcb3328a",
+        "a36216626f5440ab9cd77c361c0b4db9",
+        "3b72649209b143b0a95d3d36b4fcc86d",
+        "f07f751a477348c595eb5ae1b314cfb8"
+      ]
+    }
+  ],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.16",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "3.0",
+      "Data": {}
+    }
+  ],
+  "Author": "None provided",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 10000.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.19.3.6394",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "77cc69c386214550b5b151c49f7a95b8",
+        "Name": "Location.TimeZone",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1337.0628924766145,
+        "Y": 139.99146810279933
+      },
+      {
+        "Id": "bcd3792045724fe89efdccb0f6d62ddb",
+        "Name": "Location.SetTimeZone",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": true,
+        "ShowGeometry": true,
+        "X": 979.82599281521254,
+        "Y": 73.298728193152215
+      },
+      {
+        "Id": "4569edf786cb458c90c6f1423ff9c0d3",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 725.82599281521254,
+        "Y": 73.298728193152215
+      },
+      {
+        "Id": "4746a527820341dfa3b7a3ae0c680863",
+        "Name": "Location.SetTimeZone",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 979.82599281521254,
+        "Y": 229.2720554287763
+      },
+      {
+        "Id": "a21ba46fb7c54a18a0b7f90bda1fc078",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1692.0628924766145,
+        "Y": 139.99146810279933
+      },
+      {
+        "Id": "f848bea619114e7f8d11e798b8597068",
+        "Name": "TimeZone.All",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 45.637543905654042,
+        "Y": 741.250217513907
+      },
+      {
+        "Id": "89a210597f3d46a982ac9405bcb3328a",
+        "Name": "TimeZone.Current",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 9.6375439056540415,
+        "Y": 585.60466208543585
+      },
+      {
+        "Id": "742d1d57e06443489eed1b013e9dedad",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 314.63754390565407,
+        "Y": 585.60466208543585
+      },
+      {
+        "Id": "61d89261f96d4925a855ff1b36b7cf56",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 314.63754390565407,
+        "Y": 741.250217513907
+      },
+      {
+        "Id": "47552169335d4d9d833fb9dd3b4a60dd",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 9.7398235678961385,
+        "Y": 229.0995554287764
+      },
+      {
+        "Id": "a36216626f5440ab9cd77c361c0b4db9",
+        "Name": "TimeZone.ById",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 405.73982356789611,
+        "Y": 229.2720554287763
+      },
+      {
+        "Id": "3b72649209b143b0a95d3d36b4fcc86d",
+        "Name": "Time Zones",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 331.73982356789611,
+        "Y": 73.298728193152215
+      },
+      {
+        "Id": "f07f751a477348c595eb5ae1b314cfb8",
+        "Name": "TimeZone.Name",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 909.52881874298816,
+        "Y": 585.67692367762515
+      },
+      {
+        "Id": "67385260865245f8a61ce08a0a04d661",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1229.5288187429883,
+        "Y": 585.67692367762515
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "725ae31589174a219927161bb0e116be",
+        "Title": "TimeZone setter",
+        "DescriptionText": "",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "77cc69c386214550b5b151c49f7a95b8",
+          "bcd3792045724fe89efdccb0f6d62ddb",
+          "4569edf786cb458c90c6f1423ff9c0d3",
+          "4746a527820341dfa3b7a3ae0c680863",
+          "a21ba46fb7c54a18a0b7f90bda1fc078"
+        ],
+        "HasNestedGroups": false,
+        "Left": 715.82599281521254,
+        "Top": 0.89872819315221619,
+        "Width": 1104.6368996614019,
+        "Height": 360.17332723562407,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 73.298728193152215,
+        "InitialHeight": 300.97332723562408,
+        "TextblockHeight": 62.4,
+        "Background": "#FFB5B5B5"
+      },
+      {
+        "Id": "778e57213f0a4cd5a1b3c1bfa5c3ec47",
+        "Title": "TimeZone query",
+        "DescriptionText": "",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "f848bea619114e7f8d11e798b8597068",
+          "89a210597f3d46a982ac9405bcb3328a",
+          "742d1d57e06443489eed1b013e9dedad",
+          "61d89261f96d4925a855ff1b36b7cf56"
+        ],
+        "HasNestedGroups": false,
+        "Left": -0.36245609434595849,
+        "Top": 513.20466208543587,
+        "Width": 801.80000000000007,
+        "Height": 679.84555542847113,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 585.60466208543585,
+        "InitialHeight": 300.6455554284712,
+        "TextblockHeight": 62.4,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "ced47113ba9049f5905f4cf787b1a4bf",
+        "Title": "TimeZone getter",
+        "DescriptionText": "",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "47552169335d4d9d833fb9dd3b4a60dd",
+          "a36216626f5440ab9cd77c361c0b4db9",
+          "3b72649209b143b0a95d3d36b4fcc86d"
+        ],
+        "HasNestedGroups": false,
+        "Left": -0.26017643210386154,
+        "Top": 0.89872819315221619,
+        "Width": 614.4,
+        "Height": 403.20082723562416,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 73.298728193152215,
+        "InitialHeight": 300.97332723562408,
+        "TextblockHeight": 62.4,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "b6ca205cdf0e49ae88fe4c1cd5c32872",
+        "Title": "TimeZone name",
+        "DescriptionText": "",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "f07f751a477348c595eb5ae1b314cfb8",
+          "67385260865245f8a61ce08a0a04d661"
+        ],
+        "HasNestedGroups": false,
+        "Left": 899.52881874298816,
+        "Top": 513.27692367762518,
+        "Width": 836.00000000000011,
+        "Height": 209.0,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 585.67692367762515,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 62.4,
+        "Background": "#FFB5B5B5"
+      }
+    ],
+    "X": 20.08002003209452,
+    "Y": 8.7896278661232827,
+    "Zoom": 1.0293058132877342
+  }
+}

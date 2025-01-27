@@ -1,0 +1,179 @@
+{
+  "Uuid": "3c9d0464-8643-5ffe-96e5-ab1769818209",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "MergePDF",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "a9b4e33df0844aa2ba08dd1663120870",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "2deb6e716a1b4f74b5c72a35ed7825a8",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "874b4866407a4abe8f879d482015b53d",
+          "Name": "",
+          "Description": "Value of expression at line 6",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "//input documents\n[\"C:\\\\Users\\\\Public\\\\Temp\\\\pdf\\\\pdf1.pdf\",\n\"C:\\\\Users\\\\Public\\\\Temp\\\\pdf\\\\pdf2.pdf\"];\n\n//output file path\n\"C:\\\\Users\\\\Public\\\\Temp\\\\PDF\\\\result.pdf\";"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "974b25a5e4634a6398b3456f72d559c8",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "f80f1fcbfc964f43b0dcd4840fe641c1",
+          "Name": "documents",
+          "Description": "List of PDF documents to be merged.\n\nstring[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "157399d85d9b4b90ad2d461e522c0266",
+          "Name": "filePath",
+          "Description": "Give a valid path for the merged PDF output.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3c145dbede784ba4974d6ff8280e24ab",
+          "Name": "watch",
+          "Description": "Add a watch node to verify the output.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.Common.File.MergePDF@string[],string",
+      "Replication": "Auto",
+      "Description": "Merge list of PDF documents.\n\nFile.MergePDF (documents: string[], filePath: string): string"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "2deb6e716a1b4f74b5c72a35ed7825a8",
+      "End": "f80f1fcbfc964f43b0dcd4840fe641c1",
+      "Id": "2d96727cb7ac485b84dfe0bc0c07aa06",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "874b4866407a4abe8f879d482015b53d",
+      "End": "157399d85d9b4b90ad2d461e522c0266",
+      "Id": "24e80e41966f4f3b821b7a872b9235cd",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Orchid",
+      "Version": "2.19.3.6432",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "974b25a5e4634a6398b3456f72d559c8"
+      ]
+    }
+  ],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.16",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "3.0",
+      "Data": {}
+    }
+  ],
+  "Author": "None provided",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.19.3.6394",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "a9b4e33df0844aa2ba08dd1663120870",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -208.12941038333724,
+        "Y": -206.29889975419496
+      },
+      {
+        "Id": "974b25a5e4634a6398b3456f72d559c8",
+        "Name": "File.MergePDF",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 319.87058961666276,
+        "Y": -174.09139975419495
+      }
+    ],
+    "Annotations": [],
+    "X": 447.63170605944055,
+    "Y": 722.32536481019861,
+    "Zoom": 2.0065963060686016
+  }
+}
