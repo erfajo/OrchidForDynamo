@@ -54,7 +54,7 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitProject.Common.Imports.Purge@Revit.Application.Document",
+      "FunctionSignature": "Orchid.Revit.Common.Imports.Purge@Revit.Application.Document",
       "Replication": "Auto",
       "Description": "Purge imported item(s) in document.\n\nImports.Purge (document: Document = null): string"
     },
@@ -253,7 +253,7 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.Geometry.LineStyle.Purge@Revit.Application.Document",
+      "FunctionSignature": "Orchid.Revit.Geometry.LineStyle.Purge@Revit.Application.Document",
       "Replication": "Auto",
       "Description": "Purge line style(s) in document.\n\nLineStyle.Purge (document: Document = null): string"
     },
@@ -283,7 +283,7 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.Geometry.LinePattern.Purge@Revit.Application.Document",
+      "FunctionSignature": "Orchid.Revit.Geometry.LinePattern.Purge@Revit.Application.Document",
       "Replication": "Auto",
       "Description": "Purge line pattern(s) in document. Note: This function may take a while since it is evaluating every view if an element has any graphical override that concerns line patterns!\n\nLinePattern.Purge (document: Document = null): string"
     },
@@ -429,52 +429,13 @@
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "Id": "26ad14e0c37e4fcd8d89f78635bc6360",
-      "NodeType": "FunctionNode",
-      "Inputs": [
-        {
-          "Id": "cb54888c286a48599d961f8fdc087578",
-          "Name": "name",
-          "Description": "The name of the Revit assembly (Autodesk.Revit.DB.x) class.\n\nstring",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "0e7e7ea207ae445db8461073c23f15da",
-          "Name": "Class",
-          "Description": "Class from the Revit assembly (Autodesk.Revit.DB.x).",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "FunctionSignature": "Orchid.RevitProject.Elements.Class.ByName@string",
-      "Replication": "Auto",
-      "Description": "Get a class from the Revit assembly (Autodesk.Revit.DB.x) by name. Note: From Dynamo 2.13 (Revit 2023) and beyond is \"Type\" refactored to \"Class\".\n\nClass.ByName (name: string): var"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "Id": "5ab42c2849624600a3afc6623dbc5078",
       "NodeType": "FunctionNode",
       "Inputs": [
         {
           "Id": "9f9e611f343c426996b029c9aee4699c",
-          "Name": "category",
-          "Description": "Category.\n\nvar",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "681fcc8b2c704376b894ef0021825aaf",
           "Name": "subCategory",
-          "Description": "The subcategory as string or category.\n\nvar",
+          "Description": "Subcategory as Dynamo category type.\n\nCategory",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -492,9 +453,9 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitProject.Categories.SubCategory.Delete@var,var",
+      "FunctionSignature": "Orchid.RevitProject.Categories.SubCategory.Delete@Revit.Elements.Category",
       "Replication": "Auto",
-      "Description": "Delete subcategory by category in document.\n\nSubCategory.Delete (category: var, subCategory: var): string"
+      "Description": "Delete subcategory in document.\n\nSubCategory.Delete (subCategory: Category): string"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -543,7 +504,7 @@
         {
           "Id": "e0f807eab5b24414b59cbe919a8eb669",
           "Name": "category",
-          "Description": "Category.\n\nvar",
+          "Description": "Category as Dynamo type.\n\nCategory",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -561,9 +522,9 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitProject.Categories.SubCategory.ByCategory@Revit.Application.Document,var",
+      "FunctionSignature": "Orchid.RevitProject.Categories.SubCategory.ByCategory@Revit.Application.Document,Revit.Elements.Category",
       "Replication": "Auto",
-      "Description": "Get sub categories by category in document.\n\nSubCategory.ByCategory (document: Document = null, category: var): Category[]"
+      "Description": "Get sub categories by category in document.\n\nSubCategory.ByCategory (document: Document = null, category: Category): Category[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -662,7 +623,7 @@
         {
           "Id": "709ba2c99d08430284f14fc758606b89",
           "Name": "Element",
-          "Description": "Element and/or ElementType.",
+          "Description": "Element.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -671,7 +632,7 @@
       ],
       "FunctionSignature": "Orchid.RevitProject.Elements.Element.OfClass@Revit.Application.Document,var",
       "Replication": "Auto",
-      "Description": "Get all elements of the specified class from from the Revit assembly (Autodesk.Revit.DB.x) in the document. Note: From Dynamo 2.13 (Revit 2023) and beyond is \"Type\" refactored to \"Class\".\n\nElement.OfClass (document: Document = null, class: var): var[]..[]"
+      "Description": "Get all elements of the specified class from from the Revit assembly (Autodesk.Revit.DB.x) in the document.\n\nElement.OfClass (document: Document = null, class: var): Element[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
@@ -719,7 +680,7 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitProject.Common.PostCommand.Purge@bool",
+      "FunctionSignature": "Orchid.Revit.Common.PostCommand.Purge@bool",
       "Replication": "Auto",
       "Description": "Purge document using Post Command. Post commands can only take the current document to be run once. Re-run the graph to re-activate the post command. To get back the \"Purge\" window inside Revit, set the \"activate\" value to \"false\" and re-run the graph once more!\n\nPostCommand.Purge (activate: bool = false): void"
     },
@@ -890,7 +851,7 @@
         {
           "Id": "b90a4ed1023549c58b91c225252fc190",
           "Name": "spatialType",
-          "Description": "var\nDefault value : Orchid.Internals.Enums.Revit(\"SpatialElementType.Room\")",
+          "Description": "Spatial type as enumeration type.\n\nvar\nDefault value : Orchid.Internals.Enums.Revit(\"SpatialElementType.Room\")",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -1138,6 +1099,36 @@
       "FunctionSignature": "Orchid.RevitProject.Categories.Category.Purge@Revit.Application.Document,Revit.Elements.Category[]",
       "Replication": "Auto",
       "Description": "Purge category element(s) in document.\n\nCategory.Purge (document: Document = null, category: Category[]): void"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "a7a897a9a85e47e9bd442add7952ec99",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "05cd6353aaae4e5eb25e54b1fdc6571f",
+          "Name": "name",
+          "Description": "Name of the Revit class.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "44d49bd0c4584f2eb82b2c7d0f1ac5ca",
+          "Name": "Class",
+          "Description": "Revit class.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.AdeskApps.Revit.ClassByName@string",
+      "Replication": "Auto",
+      "Description": "Get Autodesk Revit class by name.\n\nRevit.ClassByName (name: string): var"
     }
   ],
   "Connectors": [
@@ -1161,14 +1152,8 @@
     },
     {
       "Start": "3fef28bd481b4797a50d9b7bd5e87de9",
-      "End": "cb54888c286a48599d961f8fdc087578",
-      "Id": "dbe826fe7d354f10b473c5176370c802",
-      "IsHidden": "False"
-    },
-    {
-      "Start": "0e7e7ea207ae445db8461073c23f15da",
-      "End": "2e16ebc44a7f4908a823adb763048ff5",
-      "Id": "fd7a77ba55eb421190dc308dbe8c7f9f",
+      "End": "05cd6353aaae4e5eb25e54b1fdc6571f",
+      "Id": "c4db7fe20ad54439919fdd547791ef59",
       "IsHidden": "False"
     },
     {
@@ -1181,12 +1166,6 @@
       "Start": "57f2ccc036ce480090199d5bb8692462",
       "End": "e0f807eab5b24414b59cbe919a8eb669",
       "Id": "5d7bed8ebd6d44b38b3d97c2a1f4985b",
-      "IsHidden": "False"
-    },
-    {
-      "Start": "ded11c4bd93b466781e5e5d35b30e0cf",
-      "End": "681fcc8b2c704376b894ef0021825aaf",
-      "Id": "1f4d0768a63b44dc9655c209626d10c9",
       "IsHidden": "False"
     },
     {
@@ -1248,13 +1227,19 @@
       "End": "06d86dbd85bd411c89e3509a2e1eb237",
       "Id": "77ab91dfb1bb449e906612ee24b9fbcf",
       "IsHidden": "False"
+    },
+    {
+      "Start": "44d49bd0c4584f2eb82b2c7d0f1ac5ca",
+      "End": "2e16ebc44a7f4908a823adb763048ff5",
+      "Id": "819c92e97af3479487e3d0610c54bbbb",
+      "IsHidden": "False"
     }
   ],
   "Dependencies": [],
   "NodeLibraryDependencies": [
     {
       "Name": "Orchid",
-      "Version": "2.19.3.6432",
+      "Version": "2.19.5.6567",
       "ReferenceType": "Package",
       "Nodes": [
         "57cfe910d2ef4cb29af131c0cbc76926",
@@ -1268,7 +1253,6 @@
         "fee310f2b83441c9b18b4e08ff0073a5",
         "c7765fc07c1d4b67a628451a2fb6e267",
         "9180f96689f04d68a72a587e149d0282",
-        "26ad14e0c37e4fcd8d89f78635bc6360",
         "5ab42c2849624600a3afc6623dbc5078",
         "da112df093f04574bc31d554abda5602",
         "d621ae3560ca4d9386fe74cd2fdca53c",
@@ -1283,7 +1267,8 @@
         "99ebd76552604a6388c5ef391bce8a8a",
         "0ad891acd2764e598416f88fb973a3b1",
         "878364a1546c4d7da92b033767683d1e",
-        "dccb8c94155a4f16b8bcd80d56b03773"
+        "dccb8c94155a4f16b8bcd80d56b03773",
+        "a7a897a9a85e47e9bd442add7952ec99"
       ]
     }
   ],
@@ -1341,8 +1326,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 9.93212756625121,
-        "Y": 1484.8628444014064
+        "X": 21.421724042919493,
+        "Y": 1485.5522201900062
       },
       {
         "Id": "48ca7aa9f4a9406ca0596ba47900c821",
@@ -1461,8 +1446,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 957.93212756625189,
-        "Y": 1607.3223118325834
+        "X": 980.62172404291982,
+        "Y": 1611.3566173155712
       },
       {
         "Id": "54b641da9cc14ab99ffb2fc8fd3f5a29",
@@ -1471,18 +1456,8 @@
         "IsSetAsOutput": false,
         "Excluded": true,
         "ShowGeometry": true,
-        "X": 9.93212756625121,
-        "Y": 1641.1498118325833
-      },
-      {
-        "Id": "26ad14e0c37e4fcd8d89f78635bc6360",
-        "Name": "Class.ByName",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "ShowGeometry": true,
-        "X": 327.93212756625178,
-        "Y": 1641.3223118325834
+        "X": 10.221724042919789,
+        "Y": 1645.1841173155713
       },
       {
         "Id": "5ab42c2849624600a3afc6623dbc5078",
@@ -1541,8 +1516,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 621.93212756625189,
-        "Y": 1607.3223118325834
+        "X": 645.42172404291978,
+        "Y": 1611.3566173155712
       },
       {
         "Id": "a94ce5bb98b0400cb0da5f5e549493e7",
@@ -1703,6 +1678,16 @@
         "ShowGeometry": true,
         "X": 666.21906374964249,
         "Y": 2313.4584733174893
+      },
+      {
+        "Id": "a7a897a9a85e47e9bd442add7952ec99",
+        "Name": "Revit.ClassByName",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 328.62172404291977,
+        "Y": 1645.3566173155712
       }
     ],
     "Annotations": [
@@ -1720,8 +1705,8 @@
         "HasNestedGroups": false,
         "Left": -0.49864618699535868,
         "Top": 304.3351329249777,
-        "Width": 533.0,
-        "Height": 231.99999999999972,
+        "Width": 533.2,
+        "Height": 231.79999999999978,
         "FontSize": 30.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": 370.3351329249777,
@@ -1747,14 +1732,14 @@
         ],
         "HasNestedGroups": false,
         "Left": 639.75942396121479,
-        "Top": 0.0016909179158517418,
-        "Width": 569.0504366148308,
-        "Height": 659.98916079110063,
+        "Top": 0.60169091791585316,
+        "Width": 569.45043661483089,
+        "Height": 659.18916079110056,
         "FontSize": 36.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": 73.001690917915852,
         "InitialHeight": 599.98916079110063,
-        "TextblockHeight": 63.0,
+        "TextblockHeight": 62.4,
         "Background": "#FFA4E1FF"
       },
       {
@@ -1770,14 +1755,14 @@
         ],
         "HasNestedGroups": false,
         "Left": 1308.0282310171553,
-        "Top": 0.11492141061447114,
-        "Width": 244.0,
-        "Height": 356.37109435286811,
+        "Top": 0.71492141061447256,
+        "Width": 242.40000000000009,
+        "Height": 355.5710943528681,
         "FontSize": 36.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": 73.114921410614471,
         "InitialHeight": 296.37109435286811,
-        "TextblockHeight": 63.0,
+        "TextblockHeight": 62.4,
         "Background": "#FFC1D676"
       },
       {
@@ -1790,20 +1775,20 @@
         "Nodes": [
           "9180f96689f04d68a72a587e149d0282",
           "54b641da9cc14ab99ffb2fc8fd3f5a29",
-          "26ad14e0c37e4fcd8d89f78635bc6360",
           "57cfe910d2ef4cb29af131c0cbc76926",
-          "abdc6af52eb14a59974bc49f0bb10d7f"
+          "abdc6af52eb14a59974bc49f0bb10d7f",
+          "a7a897a9a85e47e9bd442add7952ec99"
         ],
         "HasNestedGroups": false,
-        "Left": -0.067872433748789263,
-        "Top": 1411.8628444014064,
-        "Width": 1163.0000000000007,
-        "Height": 361.459467431177,
+        "Left": 0.22172404291978864,
+        "Top": 1413.1522201900061,
+        "Width": 1185.6000000000001,
+        "Height": 364.004397125565,
         "FontSize": 36.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
-        "InitialTop": 1484.8628444014064,
+        "InitialTop": 1485.5522201900062,
         "InitialHeight": 301.459467431177,
-        "TextblockHeight": 63.0,
+        "TextblockHeight": 62.4,
         "Background": "#FFBB87C6"
       },
       {
@@ -1824,14 +1809,14 @@
         ],
         "HasNestedGroups": false,
         "Left": 0.023735377928460366,
-        "Top": 768.27609107992453,
-        "Width": 1303.9999999999986,
-        "Height": 537.84220495089266,
+        "Top": 768.87609107992455,
+        "Width": 1302.7999999999986,
+        "Height": 537.44220495089269,
         "FontSize": 36.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": 841.27609107992453,
         "InitialHeight": 447.84220495089312,
-        "TextblockHeight": 63.0,
+        "TextblockHeight": 62.4,
         "Background": "#FFD4B6DB"
       },
       {
@@ -1847,14 +1832,14 @@
         ],
         "HasNestedGroups": false,
         "Left": 1399.6717380828643,
-        "Top": 460.24665160167785,
-        "Width": 548.0,
-        "Height": 239.0,
+        "Top": 460.84665160167788,
+        "Width": 546.0,
+        "Height": 238.19999999999993,
         "FontSize": 36.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": 533.24665160167785,
         "InitialHeight": 179.0,
-        "TextblockHeight": 63.0,
+        "TextblockHeight": 62.4,
         "Background": "#FFFFAA45"
       },
       {
@@ -1872,7 +1857,7 @@
         "Left": -0.48140026834860805,
         "Top": -0.015755102172931856,
         "Width": 542.0,
-        "Height": 198.0,
+        "Height": 197.8,
         "FontSize": 30.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": 65.984244897827068,
@@ -1894,8 +1879,8 @@
         "HasNestedGroups": false,
         "Left": 1651.527846690145,
         "Top": 0.23940526197976908,
-        "Width": 271.0,
-        "Height": 349.30525235660025,
+        "Width": 271.20000000000005,
+        "Height": 349.1052523566002,
         "FontSize": 30.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": 66.239405261979769,
@@ -1919,14 +1904,14 @@
         ],
         "HasNestedGroups": false,
         "Left": -0.0563300747185167,
-        "Top": 1880.3160387656765,
-        "Width": 1777.0000000000002,
-        "Height": 251.91374999999948,
+        "Top": 1880.9160387656764,
+        "Width": 1777.2000000000003,
+        "Height": 251.51374999999985,
         "FontSize": 36.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": 1953.3160387656765,
         "InitialHeight": 178.99999999999977,
-        "TextblockHeight": 63.0,
+        "TextblockHeight": 62.4,
         "Background": "#FFC1D676"
       },
       {
@@ -1943,19 +1928,19 @@
         ],
         "HasNestedGroups": false,
         "Left": 0.2190637496425154,
-        "Top": 2240.4584733174893,
-        "Width": 890.0,
-        "Height": 239.0,
+        "Top": 2241.0584733174892,
+        "Width": 888.80000000000007,
+        "Height": 238.20000000000027,
         "FontSize": 36.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": 2313.4584733174893,
-        "InitialHeight": 196.0,
-        "TextblockHeight": 63.0,
+        "InitialHeight": 179.0,
+        "TextblockHeight": 62.4,
         "Background": "#FFC1D676"
       }
     ],
-    "X": 367.32823386778335,
-    "Y": 2.7091622819840779,
-    "Zoom": 0.41359627226581536
+    "X": 313.32198951578425,
+    "Y": 112.94350972926605,
+    "Zoom": 0.30849568783605313
   }
 }

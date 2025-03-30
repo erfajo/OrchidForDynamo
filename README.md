@@ -51,7 +51,7 @@ The functions may also be used as textual scripted functions in code blocks and 
 Inside Dynamo are the Orchid package functions arranged into four main branches: Core, RevitFamily, RevitMaterial, and RevitProject. The Core branch is subdivided into About, Autodesk, Common, and Geometry. The About branch covers functions for information about the Orchid package. The Autodesk branch covers functions for the present Autodesk application. The Common and Geometry branch covers functions that are used for generic purposes. These functions are those that are usable in the Core (Sandbox) application. The branches starting named 'Revit' covers functions to be used inside Revit. Functions for MEP System are included in the RevitProject branch.  
   
 Nodes in the four Revit driven branches can be recognized by their icon ribbon/edge color:  
-Core -> yellow &nbsp;|&nbsp; RevitFamily -> blue &nbsp;|&nbsp; RevitMaterial -> green &nbsp;|&nbsp; RevitProject -> red ... MEPSystem -> purple  
+Core -> yellow &nbsp;|&nbsp; Revit -> yellow &nbsp;|&nbsp; RevitFamily -> blue &nbsp;|&nbsp; RevitMaterial -> green &nbsp;|&nbsp; RevitProject -> red ... MEPSystem -> purple  
   
 ---
 ## License

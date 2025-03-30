@@ -1982,17 +1982,17 @@
       "Outputs": [
         {
           "Id": "073dbae4079e4de2b04d02475231f15b",
-          "Name": "object",
-          "Description": "An object.",
+          "Name": "boolean",
+          "Description": "Whether true or false value.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.Common.Object.ClassOf@var[]..[],var",
+      "FunctionSignature": "Orchid.Common.Object.IsClassOf@var[]..[],var",
       "Replication": "Auto",
-      "Description": "Returns the object if it is by the input class. Note: Dynamo elements may fail due to the existence of the type \"UnknownElement\", in this case, use Element.ClassOf instead. From Dynamo 2.13 (Revit 2023) and beyond is \"Type\" refactored to \"Class\".\n\nObject.ClassOf (object: var[]..[], class: var): var[]"
+      "Description": "Returns the object if it is by the input class. Note: Dynamo elements may fail due to the existence of the type \"UnknownElement\", in this case, use Element.ClassOf instead. From Dynamo 2.13 (Revit 2023) and beyond is \"Type\" refactored to \"Class\".\n\nObject.IsClassOf (object: var[]..[], class: var): bool[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -2020,7 +2020,7 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.AdeskApp.SpecType.ByName@string",
+      "FunctionSignature": "Orchid.AdeskApps.Units.SpecType.ByName@string",
       "Replication": "Auto",
       "Description": "Get (parameter) spec type by name. Note: This function does only work using english/international spec type names!\n\nSpecType.ByName (string: string): SpecType"
     },
@@ -2050,7 +2050,7 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.AdeskApp.GroupType.ByName@string",
+      "FunctionSignature": "Orchid.AdeskApps.Units.GroupType.ByName@string",
       "Replication": "Auto",
       "Description": "Get (parameter) group type by name. Note: This function does only work using english/international group type names!\n\nGroupType.ByName (string: string): GroupType"
     },
@@ -2080,7 +2080,7 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.AdeskApp.SpecType.ByName@string",
+      "FunctionSignature": "Orchid.AdeskApps.Units.SpecType.ByName@string",
       "Replication": "Auto",
       "Description": "Get (parameter) spec type by name. Note: This function does only work using english/international spec type names!\n\nSpecType.ByName (string: string): SpecType"
     },
@@ -2110,7 +2110,7 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.AdeskApp.GroupType.ByName@string",
+      "FunctionSignature": "Orchid.AdeskApps.Units.GroupType.ByName@string",
       "Replication": "Auto",
       "Description": "Get (parameter) group type by name. Note: This function does only work using english/international group type names!\n\nGroupType.ByName (string: string): GroupType"
     },
@@ -2140,7 +2140,7 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.AdeskApp.SpecType.ByName@string",
+      "FunctionSignature": "Orchid.AdeskApps.Units.SpecType.ByName@string",
       "Replication": "Auto",
       "Description": "Get (parameter) spec type by name. Note: This function does only work using english/international spec type names!\n\nSpecType.ByName (string: string): SpecType"
     },
@@ -2170,7 +2170,7 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.AdeskApp.GroupType.ByName@string",
+      "FunctionSignature": "Orchid.AdeskApps.Units.GroupType.ByName@string",
       "Replication": "Auto",
       "Description": "Get (parameter) group type by name. Note: This function does only work using english/international group type names!\n\nGroupType.ByName (string: string): GroupType"
     },
@@ -2200,7 +2200,7 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.AdeskApp.SpecType.ByName@string",
+      "FunctionSignature": "Orchid.AdeskApps.Units.SpecType.ByName@string",
       "Replication": "Auto",
       "Description": "Get (parameter) spec type by name. Note: This function does only work using english/international spec type names!\n\nSpecType.ByName (string: string): SpecType"
     },
@@ -2230,7 +2230,7 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.AdeskApp.GroupType.ByName@string",
+      "FunctionSignature": "Orchid.AdeskApps.Units.GroupType.ByName@string",
       "Replication": "Auto",
       "Description": "Get (parameter) group type by name. Note: This function does only work using english/international group type names!\n\nGroupType.ByName (string: string): GroupType"
     },
@@ -2466,6 +2466,76 @@
       ],
       "Replication": "Disabled",
       "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "7880c3178b4441708c12f810065a4bbf",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "53563ace13b442ad8c62da60af25e64a",
+          "Name": "object",
+          "Description": "An object.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6a8d505e59cd4ed1b9362e14c7b2f30d",
+          "Name": "class",
+          "Description": "Class as System.RuntimeType.\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2aedd60df7eb46c48cd7a1b86534ffdf",
+          "Name": "object",
+          "Description": "An object.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.Common.Object.FilterByClass@var[]..[],var",
+      "Replication": "Auto",
+      "Description": "Returns the object if it is by the input class. Note: Dynamo elements may fail due to the existence of the type \"UnknownElement\", in this case, use Element.ClassOf instead. From Dynamo 2.13 (Revit 2023) and beyond is \"Type\" refactored to \"Class\".\n\nObject.FilterByClass (object: var[]..[], class: var): var[]"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
+      "Id": "f41d0432942f44df8c7334d4eb7e4bc2",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "14714107ece54d7993a13d2c21cf2775",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ae1766c4f9444abca2bc30d1254edb2f",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
     }
   ],
   "Connectors": [
@@ -2539,6 +2609,12 @@
       "Start": "d5791eec64a6461d92e860212f24582f",
       "End": "d13a925c479c4015b4236ca6e60f7b9b",
       "Id": "7eee3762a88a4b89a6de6558bc51fd31",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "d5791eec64a6461d92e860212f24582f",
+      "End": "53563ace13b442ad8c62da60af25e64a",
+      "Id": "a197d6022e96496797f7cbf36dc4c735",
       "IsHidden": "False"
     },
     {
@@ -2908,6 +2984,12 @@
       "IsHidden": "False"
     },
     {
+      "Start": "0f6415f4223345f99b40935a05d14149",
+      "End": "6a8d505e59cd4ed1b9362e14c7b2f30d",
+      "Id": "c638440e0d0e4b5bb3ac34cf95af2451",
+      "IsHidden": "False"
+    },
+    {
       "Start": "073dbae4079e4de2b04d02475231f15b",
       "End": "891d46afff284af98a27cc175473c8ec",
       "Id": "507c8b5898984189a24a2b224f0624b4",
@@ -3026,13 +3108,19 @@
       "End": "a7d29c3a1cd6414cb36ea712ad61d355",
       "Id": "e4caf416bb3a4270be6b80b0c61d6ed7",
       "IsHidden": "False"
+    },
+    {
+      "Start": "2aedd60df7eb46c48cd7a1b86534ffdf",
+      "End": "14714107ece54d7993a13d2c21cf2775",
+      "Id": "5e85a3ced32e4eb99e1be92b5c50234c",
+      "IsHidden": "False"
     }
   ],
   "Dependencies": [],
   "NodeLibraryDependencies": [
     {
       "Name": "Orchid",
-      "Version": "2.19.3.6432",
+      "Version": "2.19.5.6567",
       "ReferenceType": "Package",
       "Nodes": [
         "efd5cc4760b54ebaa7bb9e3b7f275064",
@@ -3072,7 +3160,8 @@
         "45c39eb1820f4195879a7246443ac4ed",
         "736a8d272f3d4e0393b0d3fe7d612366",
         "e66b84846a9a482fb60649973ea76730",
-        "6bc69bd7a6154fbbabc6e423b8393be5"
+        "6bc69bd7a6154fbbabc6e423b8393be5",
+        "7880c3178b4441708c12f810065a4bbf"
       ]
     }
   ],
@@ -3170,8 +3259,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 2841.1451866802763,
-        "Y": 1040.1802829428898
+        "X": 2841.1405688533682,
+        "Y": 1193.1899966258375
       },
       {
         "Id": "de708962a43c4b26b9a91bd091b4ce72",
@@ -3180,8 +3269,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 2570.1451866802763,
-        "Y": 1023.0077829428897
+        "X": 2569.9405688533684,
+        "Y": 1193.0174966258373
       },
       {
         "Id": "fb48ef88d0aa465b930b74b831ad751e",
@@ -3560,18 +3649,18 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 3143.1451866802763,
-        "Y": 1040.1802829428898
+        "X": 3142.7405688533681,
+        "Y": 1193.1899966258375
       },
       {
         "Id": "6bc9a96015ea41078f827158098319c8",
-        "Name": "Object.ClassOf",
+        "Name": "Object.IsClassOf",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 3439.1451866802763,
-        "Y": 1006.1802829428898
+        "X": 3437.9405688533684,
+        "Y": 1002.1899966258374
       },
       {
         "Id": "51992e371acf4bfdb656bc2a08381cae",
@@ -3730,8 +3819,28 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 3763.1451866802763,
-        "Y": 1006.1802829428898
+        "X": 3760.3405688533685,
+        "Y": 1002.1899966258374
+      },
+      {
+        "Id": "7880c3178b4441708c12f810065a4bbf",
+        "Name": "Object.FilterByClass",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 3437.9405688533684,
+        "Y": 1316.1899966258375
+      },
+      {
+        "Id": "f41d0432942f44df8c7334d4eb7e4bc2",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 3760.3405688533685,
+        "Y": 1316.1899966258375
       }
     ],
     "Annotations": [
@@ -3757,7 +3866,7 @@
         "FontSize": 30.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": -579.83245452733058,
-        "InitialHeight": 469.0,
+        "InitialHeight": 471.0,
         "TextblockHeight": 56.0,
         "Background": "#FFC1D676"
       },
@@ -3782,7 +3891,7 @@
         "FontSize": 30.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": 66.013800474570957,
-        "InitialHeight": 323.81833289346787,
+        "InitialHeight": 323.0,
         "TextblockHeight": 56.0,
         "Background": "#FFC1D676"
       },
@@ -3833,7 +3942,7 @@
         "FontSize": 30.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": 65.737843195066176,
-        "InitialHeight": 468.99999999999955,
+        "InitialHeight": 471.0,
         "TextblockHeight": 56.0,
         "Background": "#FFC1D676"
       },
@@ -3859,7 +3968,7 @@
         "FontSize": 30.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": 705.62165688730738,
-        "InitialHeight": 469.0,
+        "InitialHeight": 471.0,
         "TextblockHeight": 56.0,
         "Background": "#FFC1D676"
       },
@@ -3910,7 +4019,7 @@
         "FontSize": 30.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": 1362.1771647610431,
-        "InitialHeight": 470.00000000000045,
+        "InitialHeight": 502.0,
         "TextblockHeight": 56.0,
         "Background": "#FFC1D676"
       },
@@ -3936,7 +4045,7 @@
         "FontSize": 30.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": 1362.1344348506666,
-        "InitialHeight": 469.0,
+        "InitialHeight": 471.0,
         "TextblockHeight": 56.0,
         "Background": "#FFC1D676"
       },
@@ -3952,16 +4061,18 @@
           "de708962a43c4b26b9a91bd091b4ce72",
           "cc85986fa7634457ae574012510b68e3",
           "6bc9a96015ea41078f827158098319c8",
-          "50588b70a1764c829906c1614f9cc000"
+          "50588b70a1764c829906c1614f9cc000",
+          "7880c3178b4441708c12f810065a4bbf",
+          "f41d0432942f44df8c7334d4eb7e4bc2"
         ],
         "HasNestedGroups": false,
-        "Left": 2560.1451866802763,
-        "Top": 940.18028294288979,
-        "Width": 1491.4,
-        "Height": 364.20000000000005,
+        "Left": 2559.9405688533684,
+        "Top": 936.18999662583735,
+        "Width": 1488.8000000000002,
+        "Height": 678.20000000000016,
         "FontSize": 30.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
-        "InitialTop": 1006.1802829428898,
+        "InitialTop": 1002.1899966258374,
         "InitialHeight": 179.0,
         "TextblockHeight": 56.0,
         "Background": "#FFD4B6DB"
@@ -4048,8 +4159,8 @@
         "Background": "#FFA4E1FF"
       }
     ],
-    "X": 289.11654862110623,
-    "Y": 402.58793754882578,
-    "Zoom": 0.30476116468390169
+    "X": 225.23003737151262,
+    "Y": 333.781561214199,
+    "Zoom": 0.22962073972984914
   }
 }

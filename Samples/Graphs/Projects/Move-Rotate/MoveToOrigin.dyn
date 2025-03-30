@@ -1180,7 +1180,7 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.Common.Group.Model",
+      "FunctionSignature": "Orchid.Revit.Common.Group.Model",
       "Replication": "Auto",
       "Description": "Get all model group in current document.\n\nGroup.Model ( ): Element[]"
     },
@@ -1272,36 +1272,6 @@
       ],
       "Replication": "Disabled",
       "Description": "All elements in the active document of a given class."
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "Id": "de9c86f1efd44daebc28d79ee8b6f24f",
-      "NodeType": "FunctionNode",
-      "Inputs": [
-        {
-          "Id": "c38cfd1eb2b44091a60b1d381546084b",
-          "Name": "name",
-          "Description": "The name of the Revit assembly (Autodesk.Revit.DB.x) class.\n\nstring",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "ac2ced5d288f459ea61e9c1894384093",
-          "Name": "Class",
-          "Description": "Class from the Revit assembly (Autodesk.Revit.DB.x).",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "FunctionSignature": "Orchid.Common.Class.ByName@string",
-      "Replication": "Auto",
-      "Description": "Get a class from the Revit assembly (Autodesk.Revit.DB.x) by name. Note: From Dynamo 2.13 (Revit 2023) and beyond is \"Type\" refactored to \"Class\".\n\nClass.ByName (name: string): var"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1416,7 +1386,7 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.Common.Group.Detail@bool",
+      "FunctionSignature": "Orchid.Revit.Common.Group.Detail@bool",
       "Replication": "Auto",
       "Description": "Get all detail group in current document. Note: The boolean value \"filter\", default value (true) is set NOT to include elements placed on legend or drafting view!\n\nGroup.Detail (filter: bool = true): Element[]"
     },
@@ -1973,7 +1943,7 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.AdeskApp.Revit.EnumByName@string,string",
+      "FunctionSignature": "Orchid.AdeskApps.Revit.EnumByName@string,string",
       "Replication": "Auto",
       "Description": "Get Autodesk Revit enumeration value by name and enumeration type.\n\nRevit.EnumByName (enumType: string, valueName: string): var[]..[]"
     },
@@ -2012,7 +1982,7 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.AdeskApp.Revit.EnumByName@string,string",
+      "FunctionSignature": "Orchid.AdeskApps.Revit.EnumByName@string,string",
       "Replication": "Auto",
       "Description": "Get Autodesk Revit enumeration value by name and enumeration type.\n\nRevit.EnumByName (enumType: string, valueName: string): var[]..[]"
     },
@@ -2081,7 +2051,7 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.Geometry.Point.Reverse@Autodesk.DesignScript.Geometry.Point",
+      "FunctionSignature": "Orchid.Revit.Geometry.Point.Reverse@Autodesk.DesignScript.Geometry.Point",
       "Replication": "Auto",
       "Description": "Get the reverse of the point. Essentially this negates the X, Y, and Z components of the Point.\n\nPoint.Reverse (point: Point): Point"
     },
@@ -2201,7 +2171,7 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.AdeskApp.Revit.EnumByName@string,string",
+      "FunctionSignature": "Orchid.AdeskApps.Revit.EnumByName@string,string",
       "Replication": "Auto",
       "Description": "Get Autodesk Revit enumeration value by name and enumeration type.\n\nRevit.EnumByName (enumType: string, valueName: string): var[]..[]"
     },
@@ -2330,6 +2300,36 @@
       "FunctionSignature": "Orchid.RevitProject.Elements.Element.Move@Revit.Elements.Element[],Autodesk.DesignScript.Geometry.Point",
       "Replication": "Auto",
       "Description": "Move Revit Element by point.\n\nElement.Move (element: Element[], point: Point): Element[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "518665792fbd4c29b67f624eb33dc48e",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "b3dad4e6f9eb41e3a213590226b775b8",
+          "Name": "name",
+          "Description": "Name of the Revit class.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2bff5d54309e49a8adc424c1b6098f68",
+          "Name": "Class",
+          "Description": "Revit class.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Orchid.AdeskApps.Revit.ClassByName@string",
+      "Replication": "Auto",
+      "Description": "Get Autodesk Revit class by name.\n\nRevit.ClassByName (name: string): var"
     }
   ],
   "Connectors": [
@@ -2532,12 +2532,6 @@
       "IsHidden": "False"
     },
     {
-      "Start": "ac2ced5d288f459ea61e9c1894384093",
-      "End": "59d4f636fe694019bd9808070a4519d9",
-      "Id": "933e84183f42422895acc12e48964ada",
-      "IsHidden": "False"
-    },
-    {
       "Start": "c1b4e96ceec94ff4866a4833435a6458",
       "End": "d71019078fff42339870949540a02a18",
       "Id": "ee9c89f606ee4328846f001881b0b10e",
@@ -2569,8 +2563,8 @@
     },
     {
       "Start": "31cac48362fe4dd29399c3c2744befee",
-      "End": "c38cfd1eb2b44091a60b1d381546084b",
-      "Id": "fb0be8f98e2044ecaf35a4c5ae72a64b",
+      "End": "b3dad4e6f9eb41e3a213590226b775b8",
+      "Id": "f38b924b131d45ae81bf159f14c70ac3",
       "IsHidden": "False"
     },
     {
@@ -2770,13 +2764,19 @@
       "End": "d018af3f751046e7b1012bc650eb5c3c",
       "Id": "52571ee851a948b29be7e4d366380f07",
       "IsHidden": "False"
+    },
+    {
+      "Start": "2bff5d54309e49a8adc424c1b6098f68",
+      "End": "59d4f636fe694019bd9808070a4519d9",
+      "Id": "0dc43a6c5ac84fbb97b0fa9532e32dc8",
+      "IsHidden": "False"
     }
   ],
   "Dependencies": [],
   "NodeLibraryDependencies": [
     {
       "Name": "Orchid",
-      "Version": "2.19.3.6432",
+      "Version": "2.19.5.6567",
       "ReferenceType": "Package",
       "Nodes": [
         "3b5505b3d21f40dd8ca91927427779d4",
@@ -2801,7 +2801,6 @@
         "502e0d8c30cc48d9a3a9a226ca9a0096",
         "310ebcb5cd3f4428bb9b31e71610bc5b",
         "d04fda02dced410db42939fc564d8ef8",
-        "de9c86f1efd44daebc28d79ee8b6f24f",
         "9a0422c13c4849cf92bf57bb4c1e1737",
         "713205c3816c463c9fdee7d785689f34",
         "e73522ec87704c2ab6c3bfb4e07838e8",
@@ -2819,7 +2818,8 @@
         "bbe96f861d3247cf8f1433e62daef29c",
         "1251127003114073ba5004df2d405fb7",
         "bc6aa02351054e6c91046f24b35d1029",
-        "17181ca61fc54cb09ac5f54a8ed3e0db"
+        "17181ca61fc54cb09ac5f54a8ed3e0db",
+        "518665792fbd4c29b67f624eb33dc48e"
       ]
     }
   ],
@@ -3237,18 +3237,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": -766.73498697306331,
-        "Y": -722.971038040879
-      },
-      {
-        "Id": "de9c86f1efd44daebc28d79ee8b6f24f",
-        "Name": "Class.ByName",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "ShowGeometry": true,
-        "X": -1178.7349869730633,
-        "Y": -722.971038040879
+        "X": -766.4323517584412,
+        "Y": -724.69051099795468
       },
       {
         "Id": "9a0422c13c4849cf92bf57bb4c1e1737",
@@ -3287,8 +3277,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": -1597.7349869730633,
-        "Y": -723.14353804087909
+        "X": -1597.6323517584412,
+        "Y": -724.86301099795469
       },
       {
         "Id": "cb231ec5dba64dac9887fc2baa58e8a7",
@@ -3297,8 +3287,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": -431.73498697306331,
-        "Y": -938.971038040879
+        "X": -432.03235175844139,
+        "Y": -939.69051099795468
       },
       {
         "Id": "70f384aadde941e2b43eddfec4a99863",
@@ -3307,8 +3297,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": -766.73498697306331,
-        "Y": -870.971038040879
+        "X": -766.4323517584412,
+        "Y": -871.69051099795468
       },
       {
         "Id": "141dd589f071418bbf627ae2f7b0a197",
@@ -3317,8 +3307,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": -766.73498697306331,
-        "Y": -1017.971038040879
+        "X": -766.4323517584412,
+        "Y": -1018.6905109979547
       },
       {
         "Id": "f0bd155b9fb14180adde2b38788124dd",
@@ -3327,8 +3317,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": -766.73498697306331,
-        "Y": -575.971038040879
+        "X": -766.4323517584412,
+        "Y": -576.69051099795468
       },
       {
         "Id": "a28f067f7eb64991939fd8a1c73efaff",
@@ -3337,8 +3327,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": -1597.7349869730633,
-        "Y": -1231.9710380408792
+        "X": -1597.6323517584412,
+        "Y": -1231.6905109979548
       },
       {
         "Id": "68586307322a4bb7912889e4897d0372",
@@ -3347,8 +3337,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": -1178.7349869730633,
-        "Y": -1166.9710380408792
+        "X": -1178.4323517584412,
+        "Y": -1166.6905109979548
       },
       {
         "Id": "002f734f05ec42bd854552143ef79e5a",
@@ -3357,8 +3347,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": -1597.7349869730633,
-        "Y": -1084.4885380408791
+        "X": -1597.6323517584412,
+        "Y": -1084.2080109979547
       },
       {
         "Id": "f92454eb73034b0eb2f1873085972f9a",
@@ -3367,8 +3357,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": -1178.7349869730633,
-        "Y": -575.971038040879
+        "X": -1178.4323517584412,
+        "Y": -576.69051099795468
       },
       {
         "Id": "29f51d9545624da9a76ac299fa80c926",
@@ -3377,8 +3367,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": -766.73498697306331,
-        "Y": -1200.9710380408792
+        "X": -766.4323517584412,
+        "Y": -1200.6905109979548
       },
       {
         "Id": "7a8f055125f5434a866412c4ce6f8bde",
@@ -3507,8 +3497,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": -2691.7349869730633,
-        "Y": -1215.3335380408789
+        "X": -2693.6323517584415,
+        "Y": -1215.0530109979545
       },
       {
         "Id": "bbe96f861d3247cf8f1433e62daef29c",
@@ -3517,8 +3507,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": -2311.7349869730633,
-        "Y": -1199.4710380408792
+        "X": -2312.8323517584413,
+        "Y": -1199.1905109979548
       },
       {
         "Id": "1251127003114073ba5004df2d405fb7",
@@ -3527,8 +3517,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": -1983.7349869730633,
-        "Y": -1233.4710380408792
+        "X": -1984.0323517584413,
+        "Y": -1233.1905109979548
       },
       {
         "Id": "bc6aa02351054e6c91046f24b35d1029",
@@ -3549,6 +3539,16 @@
         "ShowGeometry": true,
         "X": 3014.1241649496797,
         "Y": 609.53822679074892
+      },
+      {
+        "Id": "518665792fbd4c29b67f624eb33dc48e",
+        "Name": "Revit.ClassByName",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -1178.4323517584412,
+        "Y": -724.69051099795468
       }
     ],
     "Annotations": [
@@ -3825,20 +3825,20 @@
           "f92454eb73034b0eb2f1873085972f9a",
           "29f51d9545624da9a76ac299fa80c926",
           "e96b595792eb47b8bad52f665ea47f04",
-          "de9c86f1efd44daebc28d79ee8b6f24f",
           "0ed43a5949914f91b8d4cde0e77197ca",
           "1251127003114073ba5004df2d405fb7",
           "91923f7ee4c9486db7b6aec82b53917b",
-          "bbe96f861d3247cf8f1433e62daef29c"
+          "bbe96f861d3247cf8f1433e62daef29c",
+          "518665792fbd4c29b67f624eb33dc48e"
         ],
         "HasNestedGroups": false,
-        "Left": -2701.7349869730633,
-        "Top": -1299.4710380408792,
-        "Width": 2502.4,
-        "Height": 890.50000000000023,
+        "Left": -2703.6323517584415,
+        "Top": -1299.1905109979548,
+        "Width": 2504.0,
+        "Height": 889.50000000000011,
         "FontSize": 30.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
-        "InitialTop": -1233.4710380408792,
+        "InitialTop": -1233.1905109979548,
         "InitialHeight": 802.50000000000023,
         "TextblockHeight": 56.0,
         "Background": "#FFD4B6DB"
@@ -3936,8 +3936,8 @@
         "Background": "#FFC1D676"
       }
     ],
-    "X": 608.03563894192246,
-    "Y": 448.77302268140329,
-    "Zoom": 0.21474463189704304
+    "X": 472.287942660059,
+    "Y": 405.34883506871222,
+    "Zoom": 0.16419759080014285
   }
 }
