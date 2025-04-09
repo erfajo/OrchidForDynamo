@@ -7,7 +7,7 @@
 Orchid is a solution designed for use in the [Dynamo](http://dynamobim.org) environment. The solution is designed to support practical, technical, geometrical, logical, and mathematical issues. The solution contains functions to solve data handling in Revit projects, Revit families, and materials in Revit. Besides this, also functions to solve common data handling like geometry, printing, exporting, and system actions. Orchid is probably the largest and most coherent solutions besides what Autodesk releases for Dynamo.  
   
 **Software environment**  
-Built for Dynamo 3.4 (Revit 2026), Dynamo 3.3 (Revit 2025), Dynamo 2.19 (Revit 2024), Dynamo 2.16 (Revit 2023), Dynamo 2.12 (Revit 2022), and Dynamo 2.6 (Revit 2021).  
+Built for Dynamo 3.4 (Revit 2026), Dynamo 3.3 (Revit 2025), Dynamo 2.19 (Revit 2024), Dynamo 2.16 (Revit 2023).  
   
 **Orchid Samples**  
 In the [samples](Samples) folder are examples using the Orchid package placed.  
@@ -32,8 +32,8 @@ Orchid_340_? &nbsp;&nbsp;&nbsp; (for the dynamo 3.4.x branch)
 Orchid_330_? &nbsp;&nbsp;&nbsp; (for the dynamo 3.3.x branch)  
 Orchid_219_? &nbsp;&nbsp;&nbsp; (for the dynamo 2.19.x branch)  
 Orchid_216_? &nbsp;&nbsp;&nbsp; (for the dynamo 2.16.x branch)  
-Orchid_212_? &nbsp;&nbsp;&nbsp; (for the dynamo 2.12.x branch)  
-Orchid_206_? &nbsp;&nbsp;&nbsp; (for the dynamo 2.6.x branch)  
+Orchid_212_? &nbsp;&nbsp;&nbsp; (for the dynamo 2.12.x branch, however archived and not maintained!)  
+Orchid_206_? &nbsp;&nbsp;&nbsp; (for the dynamo 2.6.x branch, however archived and not maintained!)  
 Orchid_203_? &nbsp;&nbsp;&nbsp; (for the dynamo 2.3.x branch, however archived and not maintained!)  
 Orchid_200_? &nbsp;&nbsp;&nbsp; (for the dynamo 2.0.x branch, however archived and not maintained!)  
   

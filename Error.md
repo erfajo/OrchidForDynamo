@@ -6,8 +6,8 @@ Do always ensure Revit (and Dynamo) is closed during installation!
 ### Dynamo package path  
 The executable installer will install Orchid in the default user path for dynamo packages. If you want to move the default location for packages, then put the path you want to use as the first path. This may also include network and unc paths!  
   
-From Dynamo version 2.10 the dynamo team included that installations were installed in version-specific folders even if the Revit version is not changed. This decision is also followed when installing the Orchid package! ...meaning an Orchid 219 will be installed in a 2.19 packages path even if it is installed in a Dynamo 2.18 version, and might not be loaded due to this!  
-This can be solved by adding the needed path manually or by moving the Orchid package manually.  
+Please note that the ”numbered” version of Orchid will be installed into the numeric folder that reflects the version. This means that Orchid 219 will be installed in the 2.19 packages path, even if it is installed in a Dynamo 2.18 version, and it might not be loaded because of this.  
+This issue can be resolved by adding the needed path manually or by moving the Orchid package manually.  
   
 ### Errors coursed by improper packages 
 If a package is shipped including Dynamo assemblies, then will packages fail if dependencies for a specific version of Dynamo exist in the package. Orchid is written for specific versions due to the enormous scope of Orchid. This kind of error happens on rare occasions, however, if it happens, it seems to be if package builders are new to coding and the community. They might not know that this will involve unintended behavior in Dynamo. All packages should be shipped without any Dynamo assemblies, let Dynamo handle its assemblies. All serious packages are shipped without Dynamo assemblies.  
