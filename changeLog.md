@@ -2,7 +2,10 @@
 The major and minor number follows the Dynamo version, e.g. Orchid 3.0.x.x is usable in Dynamo 3.0.x.x versions. The build number is internal major builds. The revision number is an internal build number without public documentation and display in this file.  
   
   
-### History of Orchid for Dynamo 3.4.x -- 3.5.x (Revit 2026)  
+### History of Orchid for Dynamo 3.4.x -- 3.6.x (Revit 2026)  
+  
+3.6.0  
+- 1st version of Orchid for the Dynamo 3.6.x series.  
   
 3.5.0  
 - 1st version of Orchid for the Dynamo 3.5.x series.  
