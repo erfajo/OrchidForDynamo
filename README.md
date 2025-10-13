@@ -28,7 +28,7 @@ Download the **[OrchidForDynamo](Builds/OrchidForDynamo.exe)** executable instal
 The Orchid package may also be installed by manually copying files from the **[Zipped](Zipped)** folder. This is only recommendable for experienced users! To install/update this way, please unzip the zip-file of the chosen version into your dynamo package folder, into a folder named **Orchid**. Download may be handled either by downloading a single file, or by cloning or zipping the repository. The package folder path can be found in Dynamo via the menu item 'Settings' -> 'Manage Node and Package Paths'.  
   
 Select the zip-file according to your dynamo version!  
-Orchid_350_? &nbsp;&nbsp;&nbsp; (for the dynamo 3.6.x branch)  
+Orchid_360_? &nbsp;&nbsp;&nbsp; (for the dynamo 3.6.x branch)  
 Orchid_330_? &nbsp;&nbsp;&nbsp; (for the dynamo 3.3.x branch)  
 Orchid_219_? &nbsp;&nbsp;&nbsp; (for the dynamo 2.19.x branch)  
 Orchid_216_? &nbsp;&nbsp;&nbsp; (for the dynamo 2.16.x branch)  
