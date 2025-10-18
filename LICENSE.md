@@ -12,28 +12,24 @@ The geographical and behavioral limitation applied in this work implies if you a
   
   
 ### Third-Party Licenses  
+Dynamo  
+https://github.com/DynamoDS/Dynamo  
+https://github.com/DynamoDS/Dynamo/blob/master/LICENSE.txt  
+https://github.com/DynamoDS/DynamoRevit  
+https://github.com/DynamoDS/DynamoRevit/blob/master/LICENSE.txt  
+  
 Autodesk  
 https://www.autodesk.com/company/terms-of-use/en/general-terms  
   
-Dynamo  
-https://github.com/DynamoDS/Dynamo/tree/master/doc/distrib/License.rtf  
-https://github.com/DynamoDS/Dynamo/tree/master/doc/distrib/Autodesk.rtf  
-http://www.apache.org/licenses/LICENSE-2.0  
+.NET Foundation and Contributors  
+https://github.com/dotnet-foundation  
+https://github.com/dotnet-foundation/projects/blob/main/license-compatibility-guide.md  
+  
+Microsoft  
+https://www.microsoft.com/en-us/servicesagreement  
   
 Inno Setup  
 https://github.com/jrsoftware/issrc/blob/master/license.txt  
-  
-PDFsharp
-http://www.pdfsharp.net/Licensing.ashx
-  
-Microsoft  
-https://www.microsoft.com/en-us/servicesagreement/  
-  
-Microsoft 2012 C Runtime DLLS, msvcp110.dll and msvcr110.dll  
-https://msdn.microsoft.com/en-us/vstudio/hh857605  
-  
-Microsoft 2013 C Runtime DLLs, msvcp120.dll, msvcr120.dll  
-http://msdn.microsoft.com/en-us/vstudio/dn501987  
   
 MSBuild tasks  
 https://github.com/loresoft/msbuildtasks/blob/master/LICENSE  
@@ -42,10 +38,10 @@ Newtonsoft JSON
 https://github.com/JamesNK/Newtonsoft.Json  
 https://github.com/JamesNK/Newtonsoft.Json/blob/master/LICENSE.md  
   
-NUnit  
-http://www.nunit.org/  
-http://www.nunit.org/index.php?p=license&r=2.6.2  
+PDFsharp  
+https://docs.pdfsharp.net  
+https://github.com/empira/PDFsharp/blob/master/LICENSE  
   
-Prism  
-http://msdn.microsoft.com/en-us/library/gg406140.aspx  
-http://msdn.microsoft.com/en-us/library/gg405489(PandP.40).aspx  
+NUnit  
+https://nunit.org  
+https://nunit.org/nuget/license.html  

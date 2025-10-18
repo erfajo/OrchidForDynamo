@@ -1,10 +1,10 @@
 ﻿![logo](img/logo.png)
-# &nbsp; Orchid
+# &nbsp;Orchid
   
-![commit](https://img.shields.io/github/last-commit/erfajo/orchidfordynamo)
-![commit activity](https://img.shields.io/github/commit-activity/y/erfajo/orchidfordynamo)
-[![License](https://img.shields.io/badge/License-Freeware-red)](license.md)  
-Orchid is a solution designed for use in the [Dynamo](http://dynamobim.org) environment. The solution is designed to support practical, technical, geometrical, logical, and mathematical issues. The solution contains functions to solve data handling in Revit projects, Revit families, and materials in Revit. Besides this, also functions to solve common data handling like geometry, printing, exporting, and system actions. Orchid is probably the largest and most coherent solutions besides what Autodesk releases for Dynamo.  
+![commit](https://img.shields.io/github/last-commit/erfajo/OrchidForDynamo)
+![commit activity](https://img.shields.io/github/commit-activity/y/erfajo/OrchidForDynamo)
+[![License](https://img.shields.io/badge/License-Freeware-red)](LICENSE.md)  
+Orchid is a solution designed for use in the [Dynamo](https://dynamobim.org) environment. The solution is designed to support practical, technical, geometrical, logical, and mathematical issues. The solution contains functions to solve data handling in Revit projects, Revit families, and materials in Revit. Besides this, also functions to solve common data handling like geometry, printing, exporting, and system actions. Orchid is probably the largest and most coherent solutions besides what Autodesk releases for Dynamo.  
   
 **Software environment**  
 Built for Dynamo 3.6 (Revit 2026), Dynamo 3.3 (Revit 2025), Dynamo 2.19 (Revit 2024), Dynamo 2.16 (Revit 2023).  
@@ -46,7 +46,7 @@ If Orchid dosnt work after installation, then try to see if you have one of thes
   
 ---
 ## Node description and organization
-Nodes are generally arranged in assemblies directed towards the [Dynamo](http://dynamobim.org) application. One assembly cover all the basic in the Orchid package, two assemblies cover either the Core (Sandbox) application, or the Dynamo for Revit application. Next, two assemblies that cover the [Autodesk IFC exporter](http://github.com/Autodesk/revit-ifc). Lastly, some assemblies cover third-party functions. The 'node' assemblies is a 'set' of two assemblies for base/standard functions and extensible functions, mainly dropdown nodes.  
+Nodes are generally arranged in assemblies directed towards the [Dynamo](https://dynamobim.org) application. One assembly cover all the basic in the Orchid package, two assemblies cover either the Core (Sandbox) application, or the Dynamo for Revit application. Next, two assemblies that cover the [Autodesk IFC exporter](http://github.com/Autodesk/revit-ifc). Lastly, some assemblies cover third-party functions. The 'node' assemblies is a 'set' of two assemblies for base/standard functions and extensible functions, mainly dropdown nodes.  
 The functions may also be used as textual scripted functions in code blocks and custom nodes, example when using design script in code blocks as the Dynamo nodes.  
   
 Inside Dynamo are the Orchid package functions arranged into four main branches: Core, RevitFamily, RevitMaterial, and RevitProject. The Core branch is subdivided into About, Autodesk, Common, and Geometry. The About branch covers functions for information about the Orchid package. The Autodesk branch covers functions for the present Autodesk application. The Common and Geometry branch covers functions that are used for generic purposes. These functions are those that are usable in the Core (Sandbox) application. The branches starting named 'Revit' covers functions to be used inside Revit. Functions for MEP System are included in the RevitProject branch.  
