@@ -6,7 +6,7 @@ Do always ensure Revit (and Dynamo) is closed during installation!
 ### Dynamo package path  
 The executable installer will install Orchid in the default user path for dynamo packages. If you want to move the default location for packages, then put the path you want to use as the first path. This may also include network and unc paths!  
   
-Please note that the ”numbered” version of Orchid will be installed into the numeric folder that reflects the version. This means that Orchid 219 will be installed in the 2.19 packages path, even if it is installed in a Dynamo 2.18 version, and it might not be loaded because of this.  
+Please note that the ”numbered” version of Orchid will be installed into the numeric folder that reflects the version. This means that Orchid 306 will be installed in the 3.6 packages path, even if it is installed in a Dynamo 3.5 version, and it might not be loaded because of this.  
 This issue can be resolved by adding the needed path manually or by moving the Orchid package manually.  
   
 ### Errors coursed by improper packages 
