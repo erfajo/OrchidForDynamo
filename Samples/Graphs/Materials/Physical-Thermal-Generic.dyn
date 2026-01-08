@@ -52,7 +52,7 @@
       "Type2": "dropdownSelection",
       "Value": "Brick - Common",
       "Description": "Thermal property sets in current document.",
-      "SelectedIndex": 3
+      "SelectedIndex": 14
     },
     {
       "Id": "96ae0b3ef0a645839e596a6747a03391",
@@ -69,8 +69,7 @@
       "Type": "boolean",
       "Type2": "boolean",
       "Value": "true",
-      "Description": "Enables selection between True and False",
-      "SelectedIndex": 0
+      "Description": "Enables selection between True and False"
     },
     {
       "Id": "fee18535531449619576ea037fa70cb8",
@@ -79,7 +78,7 @@
       "Type2": "dropdownSelection",
       "Value": "Brick - Common 1800kg",
       "Description": "Physical property sets in current document.",
-      "SelectedIndex": 2
+      "SelectedIndex": 12
     },
     {
       "Id": "f47955ca64f645c09220c13e8e6b7933",
@@ -132,8 +131,7 @@
       "Type": "boolean",
       "Type2": "boolean",
       "Value": "false",
-      "Description": "Enables selection between True and False",
-      "SelectedIndex": 0
+      "Description": "Enables selection between True and False"
     }
   ],
   "Outputs": [],
@@ -172,7 +170,17 @@
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "Id": "a58e1629531946078cc5c207695d63ac",
       "NodeType": "FunctionNode",
-      "Inputs": [],
+      "Inputs": [
+        {
+          "Id": "ef9f34b82e1e49848c93aac3b3abfa00",
+          "Name": "document",
+          "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
       "Outputs": [
         {
           "Id": "94806dd23b684391bfea1c944b46b0e0",
@@ -184,9 +192,9 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitMaterial.Physical.InDocument",
+      "FunctionSignature": "Orchid.RevitMaterial.Physical.InDocument@Revit.Application.Document",
       "Replication": "Auto",
-      "Description": "Get all physical property set (asset).\n\nPhysical.InDocument ( ): Element[]"
+      "Description": "Get all physical property set (asset).\n\nPhysical.InDocument (document: Document = null): Element[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -259,7 +267,7 @@
       "Description": "Set behavior.\n\nPhysical.SetBehavior (propertySet: Element, behavior: var): Element"
     },
     {
-      "ConcreteType": "Orchid.E.RevitMaterial.PhysicalBehavior, OrchidRE",
+      "ConcreteType": "Orchid.E.RevitMaterial.PhysicalBehavior, OrchidRevitExtensible",
       "SelectedIndex": 1,
       "SelectedString": "Orthotropic",
       "Id": "5bde0fe5b6ee49ec9ec6bb5338589f9e",
@@ -287,8 +295,8 @@
       "Outputs": [
         {
           "Id": "9240eed879af4900b4b766460e4c85ea",
-          "Name": "",
-          "Description": "Value of expression at line 1",
+          "Name": "integer",
+          "Description": "11000",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -296,8 +304,8 @@
         },
         {
           "Id": "b561c5d0acc64203966b9000c8895c0b",
-          "Name": "",
-          "Description": "Value of expression at line 2",
+          "Name": "double",
+          "Description": "0.38",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -305,8 +313,8 @@
         },
         {
           "Id": "e9039d02fdc3446ca4a7feadf00fc30d",
-          "Name": "",
-          "Description": "Value of expression at line 3",
+          "Name": "integer",
+          "Description": "690",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -314,8 +322,8 @@
         },
         {
           "Id": "015f0a1ca4bf4e64a282088e989ea736",
-          "Name": "",
-          "Description": "Value of expression at line 4",
+          "Name": "integer",
+          "Description": "420",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -334,8 +342,8 @@
       "Outputs": [
         {
           "Id": "b2596921c82b46cf95d20e0636d78fe7",
-          "Name": "",
-          "Description": "Value of expression at line 1",
+          "Name": "string",
+          "Description": "\"Multiple\"",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -343,8 +351,8 @@
         },
         {
           "Id": "f2c14fc6a97b469da08d717c611545a8",
-          "Name": "",
-          "Description": "Value of expression at line 2",
+          "Name": "string",
+          "Description": "\"C24\"",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -352,8 +360,8 @@
         },
         {
           "Id": "73fe9e3fe1b84b54b101dd4bf99ccef4",
-          "Name": "",
-          "Description": "Value of expression at line 3",
+          "Name": "integer",
+          "Description": "24",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -361,8 +369,8 @@
         },
         {
           "Id": "22552d016ca84ba5a557d8dca02c5382",
-          "Name": "",
-          "Description": "Value of expression at line 4",
+          "Name": "integer",
+          "Description": "21",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -370,8 +378,8 @@
         },
         {
           "Id": "9166d59b6b164dbfa88616fd464193a0",
-          "Name": "",
-          "Description": "Value of expression at line 5",
+          "Name": "double",
+          "Description": "2.5",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -379,8 +387,8 @@
         },
         {
           "Id": "c005be54a1dc45c98fd57877cd9ff93d",
-          "Name": "",
-          "Description": "Value of expression at line 6",
+          "Name": "integer",
+          "Description": "4",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -388,8 +396,8 @@
         },
         {
           "Id": "995153d77ce44f0796223bcbb855e349",
-          "Name": "",
-          "Description": "Value of expression at line 7",
+          "Name": "integer",
+          "Description": "14",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -397,8 +405,8 @@
         },
         {
           "Id": "ea6011aff4764221863d8a017733a028",
-          "Name": "",
-          "Description": "Value of expression at line 8",
+          "Name": "double",
+          "Description": "0.5",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -406,8 +414,8 @@
         },
         {
           "Id": "eb03ab6bcd44403695644b09aeaf4c12",
-          "Name": "",
-          "Description": "Value of expression at line 9",
+          "Name": "integer",
+          "Description": "11000",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -426,8 +434,8 @@
       "Outputs": [
         {
           "Id": "3b557cdf409c4803b0d2115451e83a97",
-          "Name": "",
-          "Description": "Value of expression at line 1",
+          "Name": "double",
+          "Description": "4E-05",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -592,8 +600,8 @@
       "Description": "Set information.\n\nPhysical.SetInformation (propertySet: Element, description: string = null, keywords: string = null, subclass: string = null, source: string = null, sourceUrl: string = null): Element"
     },
     {
-      "ConcreteType": "Orchid.E.RevitMaterial.ThermalPropertySet, OrchidRE",
-      "SelectedIndex": 3,
+      "ConcreteType": "Orchid.E.RevitMaterial.ThermalPropertySet, OrchidRevitExtensible",
+      "SelectedIndex": 14,
       "SelectedString": "Brick - Common",
       "Id": "62728dd3967c4db3908b35bda6b9d35a",
       "NodeType": "ExtensionNode",
@@ -659,8 +667,8 @@
       "Outputs": [
         {
           "Id": "52d3933055d94a658a37e400a25b066e",
-          "Name": "",
-          "Description": "Value of expression at line 1",
+          "Name": "string",
+          "Description": "\"_xx (thermal)\"",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -673,8 +681,8 @@
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "WatchWidth": 155.2,
-      "WatchHeight": 38.4,
+      "WatchWidth": 155.0,
+      "WatchHeight": 40.0,
       "Id": "e8cbc7b8509f486d8f84579f5cf34173",
       "NodeType": "ExtensionNode",
       "Inputs": [
@@ -742,7 +750,7 @@
       "Description": "Create physical property set. Note: If a thermal property exists it is being replaced!\n\nPhysical.Create (name: string, type: var): Element"
     },
     {
-      "ConcreteType": "Orchid.E.RevitMaterial.PhysicalType, OrchidRE",
+      "ConcreteType": "Orchid.E.RevitMaterial.PhysicalType, OrchidRevitExtensible",
       "SelectedIndex": 5,
       "SelectedString": "Wood",
       "Id": "96ae0b3ef0a645839e596a6747a03391",
@@ -770,8 +778,8 @@
       "Outputs": [
         {
           "Id": "b54d0ca3591c4a3189f33221f5a2dbb7",
-          "Name": "",
-          "Description": "Value of expression at line 1",
+          "Name": "string",
+          "Description": "\"Strength Class C24 Timber\"",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -779,8 +787,8 @@
         },
         {
           "Id": "6ff551f71f15450ab0c5dd97297d6508",
-          "Name": "",
-          "Description": "Value of expression at line 2",
+          "Name": "string",
+          "Description": "\"Eurocode,Structural,structural,wood,CC:EN 338\"",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -788,8 +796,8 @@
         },
         {
           "Id": "af489d84e0c5480d8fcd833d270e32bf",
-          "Name": "",
-          "Description": "Value of expression at line 3",
+          "Name": "string",
+          "Description": "\"Wood,thermal,solid\"",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -797,8 +805,8 @@
         },
         {
           "Id": "45cf195ee46a41c09d68781465125ff9",
-          "Name": "",
-          "Description": "Value of expression at line 4",
+          "Name": "string",
+          "Description": "\"Wood\"",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -806,8 +814,8 @@
         },
         {
           "Id": "ed757e2f4e134cf99520da8ae6eca018",
-          "Name": "",
-          "Description": "Value of expression at line 5",
+          "Name": "string",
+          "Description": "\"Orchid generated\"",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -815,8 +823,8 @@
         },
         {
           "Id": "20b1c659a96947cc9e33e60cab98ac8a",
-          "Name": "",
-          "Description": "Value of expression at line 6",
+          "Name": "string",
+          "Description": "\"https://github.com/erfajo/OrchidForDynamo\"",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -887,8 +895,8 @@
       "Description": "Duplicate physical property set (asset).\n\nPhysical.Duplicate (propertySet: Element, name: string = null): Element"
     },
     {
-      "ConcreteType": "Orchid.E.RevitMaterial.PhysicalPropertySet, OrchidRE",
-      "SelectedIndex": 2,
+      "ConcreteType": "Orchid.E.RevitMaterial.PhysicalPropertySet, OrchidRevitExtensible",
+      "SelectedIndex": 12,
       "SelectedString": "Brick - Common 1800kg",
       "Id": "fee18535531449619576ea037fa70cb8",
       "NodeType": "ExtensionNode",
@@ -915,8 +923,8 @@
       "Outputs": [
         {
           "Id": "133db620d996447faedc818e7e1999e3",
-          "Name": "",
-          "Description": "Value of expression at line 1",
+          "Name": "string",
+          "Description": "\"_xx (physical)\"",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -929,8 +937,8 @@
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "WatchWidth": 155.2,
-      "WatchHeight": 38.4,
+      "WatchWidth": 155.0,
+      "WatchHeight": 40.0,
       "Id": "23bb7b07d6dc4dd59a2e08b86a7db7d0",
       "NodeType": "ExtensionNode",
       "Inputs": [
@@ -993,7 +1001,17 @@
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "Id": "6620135081ff4ce588ae48bf191b468d",
       "NodeType": "FunctionNode",
-      "Inputs": [],
+      "Inputs": [
+        {
+          "Id": "8bfaedd78edb42a8ada2288794ea0334",
+          "Name": "document",
+          "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
       "Outputs": [
         {
           "Id": "1b35fb8b576b4ee2b7371696aa69de0e",
@@ -1005,9 +1023,9 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitMaterial.Thermal.InDocument",
+      "FunctionSignature": "Orchid.RevitMaterial.Thermal.InDocument@Revit.Application.Document",
       "Replication": "Auto",
-      "Description": "Get all thermal property set (asset).\n\nThermal.InDocument ( ): Element[]"
+      "Description": "Get all thermal property set (asset).\n\nThermal.InDocument (document: Document = null): Element[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1102,7 +1120,7 @@
       "Description": "Visualizes a node's output"
     },
     {
-      "ConcreteType": "Orchid.E.RevitMaterial.MaterialAspect, OrchidRE",
+      "ConcreteType": "Orchid.E.RevitMaterial.MaterialAspect, OrchidRevitExtensible",
       "SelectedIndex": 1,
       "SelectedString": "Thermal",
       "Id": "f47955ca64f645c09220c13e8e6b7933",
@@ -1228,7 +1246,7 @@
       "Description": "Set information.\n\nThermal.SetInformation (propertySet: Element, description: string = null, keywords: string = null, subclass: string = null, source: string = null, sourceUrl: string = null): Element"
     },
     {
-      "ConcreteType": "Orchid.E.RevitMaterial.WoodConstruction, OrchidRE",
+      "ConcreteType": "Orchid.E.RevitMaterial.WoodConstruction, OrchidRevitExtensible",
       "SelectedIndex": 0,
       "SelectedString": "Natural",
       "Id": "71e32a036ca643889b186bcd02b5e60a",
@@ -1249,7 +1267,7 @@
       "Description": "Wood construction values."
     },
     {
-      "ConcreteType": "Orchid.E.RevitMaterial.MaterialAspect, OrchidRE",
+      "ConcreteType": "Orchid.E.RevitMaterial.MaterialAspect, OrchidRevitExtensible",
       "SelectedIndex": 0,
       "SelectedString": "Physical (Structural)",
       "Id": "d873229251cb4db883a7b1cadf971e8f",
@@ -1309,7 +1327,7 @@
       "Description": "Create thermal property set. Note: If a thermal property exists it is being replaced!\n\nThermal.Create (name: string, type: var): Element"
     },
     {
-      "ConcreteType": "Orchid.E.RevitMaterial.ThermalType, OrchidRE",
+      "ConcreteType": "Orchid.E.RevitMaterial.ThermalType, OrchidRevitExtensible",
       "SelectedIndex": 3,
       "SelectedString": "Solid",
       "Id": "799ecfc76c3546cc991c7723adada6c7",
@@ -1457,8 +1475,8 @@
       "Outputs": [
         {
           "Id": "c73720606dbf402dbafc73394cd94c40",
-          "Name": "",
-          "Description": "Value of expression at line 1",
+          "Name": "string",
+          "Description": "\"_Timber C24\"",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1472,7 +1490,7 @@
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
       "WatchWidth": 80.0,
-      "WatchHeight": 38.4,
+      "WatchHeight": 40.0,
       "Id": "a54aef81272e429f97ecfa5a87f20313",
       "NodeType": "ExtensionNode",
       "Inputs": [
@@ -1532,8 +1550,8 @@
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "WatchWidth": 102.4,
-      "WatchHeight": 38.4,
+      "WatchWidth": 102.0,
+      "WatchHeight": 40.0,
       "Id": "9f96d59b84c24e779863d5a98801f868",
       "NodeType": "ExtensionNode",
       "Inputs": [
@@ -1587,7 +1605,7 @@
         {
           "Id": "344a7b02c3914ca38010c7e26bbd677f",
           "Name": "behavior",
-          "Description": "Thermal behavior as enumeration type.\n\nvar\nDefault value : Orchid.Internals.Enums.Revit(\"StructuralBehavior.Isotropic\") (disabled)",
+          "Description": "Thermal behavior as enumeration type.\n\nvar\nDefault value : \"Enums.Revit(StructuralBehavior.Isotropic)\" (disabled)",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1679,10 +1697,10 @@
       ],
       "FunctionSignature": "Orchid.RevitMaterial.Thermal.SetProperties@Revit.Elements.Element,bool,var,double,double,double,double,double,double,double,double",
       "Replication": "Auto",
-      "Description": "Set properties. Note: Can only be used for the thermal type Solid!\n\nThermal.SetProperties (propertySet: Element, transmitsLight: bool = false, behavior: var = Orchid.Internals.Enums.Revit(\"StructuralBehavior.Isotropic\"), thermalConductivity: double = -1, specificHeat: double = -1, density: double = -1, emissivity: double = -1, permeability: double = -1, porosity: double = -1, reflectivity: double = -1, electricalResistivity: double = -1): Element"
+      "Description": "Set properties. Note: Can only be used for the thermal type Solid!\n\nThermal.SetProperties (propertySet: Element, transmitsLight: bool = false, behavior: var = \"Enums.Revit(StructuralBehavior.Isotropic)\", thermalConductivity: double = -1, specificHeat: double = -1, density: double = -1, emissivity: double = -1, permeability: double = -1, porosity: double = -1, reflectivity: double = -1, electricalResistivity: double = -1): Element"
     },
     {
-      "ConcreteType": "Orchid.E.RevitMaterial.PhysicalBehavior, OrchidRE",
+      "ConcreteType": "Orchid.E.RevitMaterial.PhysicalBehavior, OrchidRevitExtensible",
       "SelectedIndex": 1,
       "SelectedString": "Orthotropic",
       "Id": "3b2295b758b04f5094be2dca33f924aa",
@@ -1730,8 +1748,8 @@
       "Outputs": [
         {
           "Id": "6ecc9e47be1f4b7fae1c4fc6957ba373",
-          "Name": "",
-          "Description": "Value of expression at line 1",
+          "Name": "double",
+          "Description": "0.12",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1739,8 +1757,8 @@
         },
         {
           "Id": "41cdb6c2102a44c78112d56031dc0013",
-          "Name": "",
-          "Description": "Value of expression at line 2",
+          "Name": "double",
+          "Description": "0.19",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1748,8 +1766,8 @@
         },
         {
           "Id": "a101db4eae204df79480da23e68b5b56",
-          "Name": "",
-          "Description": "Value of expression at line 3",
+          "Name": "integer",
+          "Description": "496",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1757,8 +1775,8 @@
         },
         {
           "Id": "c0ce741d6d5344638a11a0c730e47112",
-          "Name": "",
-          "Description": "Value of expression at line 4",
+          "Name": "double",
+          "Description": "0.85",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1766,8 +1784,8 @@
         },
         {
           "Id": "159daa062ef84e04b27c45443f803ca4",
-          "Name": "",
-          "Description": "Value of expression at line 5",
+          "Name": "integer",
+          "Description": "0",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1775,8 +1793,8 @@
         },
         {
           "Id": "21208d584e6e46b9aedf0d568d63c5af",
-          "Name": "",
-          "Description": "Value of expression at line 6",
+          "Name": "double",
+          "Description": "0.01",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1784,8 +1802,8 @@
         },
         {
           "Id": "8a197cc0e74b4c24a6f2743841b71bbf",
-          "Name": "",
-          "Description": "Value of expression at line 7",
+          "Name": "integer",
+          "Description": "0",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1793,8 +1811,8 @@
         },
         {
           "Id": "48fcae1c629b401aa4ce1d7eaa3858be",
-          "Name": "",
-          "Description": "Value of expression at line 8",
+          "Name": "integer",
+          "Description": "10000000",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1851,12 +1869,12 @@
       ],
       "FunctionSignature": "Orchid.RevitMaterial.Material.SetPhysical@Revit.Elements.Material,var,Revit.Elements.Element",
       "Replication": "Auto",
-      "Description": "Set physical property.\n\nMaterial.SetPhysical (material: Material, aspect: var, propertySet: Element): var[]..[]"
+      "Description": "Set physical property.\n\nMaterial.SetPhysical (material: Material, aspect: var, propertySet: Element): Material"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
       "WatchWidth": 80.0,
-      "WatchHeight": 38.4,
+      "WatchHeight": 40.0,
       "Id": "ccd32570d63b42a4a711c15badd72722",
       "NodeType": "ExtensionNode",
       "Inputs": [
@@ -1916,8 +1934,8 @@
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "WatchWidth": 102.4,
-      "WatchHeight": 38.4,
+      "WatchWidth": 102.0,
+      "WatchHeight": 40.0,
       "Id": "7f8ff62f29154cef8305a9b82c575d7b",
       "NodeType": "ExtensionNode",
       "Inputs": [
@@ -1991,7 +2009,7 @@
       ],
       "FunctionSignature": "Orchid.RevitMaterial.Material.SetThermal@Revit.Elements.Material,var,Revit.Elements.Element",
       "Replication": "Auto",
-      "Description": "Set thermal property.\n\nMaterial.SetThermal (material: Material, aspect: var, propertySet: Element): var[]..[]"
+      "Description": "Set thermal property.\n\nMaterial.SetThermal (material: Material, aspect: var, propertySet: Element): Material"
     }
   ],
   "Connectors": [
@@ -2414,7 +2432,7 @@
   "NodeLibraryDependencies": [
     {
       "Name": "Orchid",
-      "Version": "2.19.3.6432",
+      "Version": "3.6.0.6844",
       "ReferenceType": "Package",
       "Nodes": [
         "a58e1629531946078cc5c207695d63ac",
@@ -2445,6 +2463,7 @@
       ]
     }
   ],
+  "EnableLegacyPolyCurveBehavior": true,
   "Thumbnail": "",
   "GraphDocumentationURL": null,
   "ExtensionWorkspaceData": [
@@ -2474,7 +2493,7 @@
       "ScaleFactor": 100.0,
       "HasRunWithoutCrash": true,
       "IsVisibleInDynamoLibrary": true,
-      "Version": "2.19.3.6394",
+      "Version": "3.6.1.9895",
       "RunType": "Manual",
       "RunPeriod": "1000"
     },
@@ -2510,7 +2529,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 10.562766666916446,
-        "Y": -863.08916656533268
+        "Y": -863.0891665653327
       },
       {
         "Id": "354b4c61c76442b38191682b9f88bfa8",
@@ -2520,7 +2539,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 312.9050727950106,
-        "Y": -863.08916656533268
+        "Y": -863.0891665653327
       },
       {
         "Id": "98ee9390c3f24a33a99256da3f754beb",
@@ -2539,7 +2558,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 881.44106884835071,
+        "X": 881.4410688483507,
         "Y": 383.587327508444
       },
       {
@@ -2550,7 +2569,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 1615.4410688483545,
-        "Y": 457.89732750844439
+        "Y": 457.8973275084444
       },
       {
         "Id": "e63d5f02e7744719b071cea488731090",
@@ -2560,7 +2579,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 2034.4410688483545,
-        "Y": 621.03482750844421
+        "Y": 621.0348275084442
       },
       {
         "Id": "b746a6eaf0ab47c39a71766e1768aa93",
@@ -2570,7 +2589,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 1248.4410688483545,
-        "Y": 385.41482750844432
+        "Y": 385.4148275084443
       },
       {
         "Id": "d423db9010a742b1b662add51d6019c6",
@@ -2599,8 +2618,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 881.44106884835071,
-        "Y": 65.587327508444872
+        "X": 881.4410688483507,
+        "Y": 65.58732750844487
       },
       {
         "Id": "62728dd3967c4db3908b35bda6b9d35a",
@@ -2610,7 +2629,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 1130.8755013240147,
-        "Y": -389.86432087874448
+        "Y": -389.8643208787445
       },
       {
         "Id": "897ff887a1d84b3bb02e4096c5dd45b4",
@@ -2620,7 +2639,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 1477.8755013240147,
-        "Y": -332.86432087874448
+        "Y": -332.8643208787445
       },
       {
         "Id": "775ce96ef5b74dbf83641b8ab9183a58",
@@ -2630,7 +2649,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 1130.8755013240147,
-        "Y": -242.03682087874509
+        "Y": -242.0368208787451
       },
       {
         "Id": "e8cbc7b8509f486d8f84579f5cf34173",
@@ -2640,7 +2659,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 1839.8755013240147,
-        "Y": -332.86432087874448
+        "Y": -332.8643208787445
       },
       {
         "Id": "7a24176952ba4f20b1569fbc8fab3464",
@@ -2649,8 +2668,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 322.44106884835071,
-        "Y": 65.587327508444872
+        "X": 322.4410688483507,
+        "Y": 65.58732750844487
       },
       {
         "Id": "96ae0b3ef0a645839e596a6747a03391",
@@ -2660,7 +2679,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 10.44106884835071,
-        "Y": 99.587327508443963
+        "Y": 99.58732750844396
       },
       {
         "Id": "9706592bfd044690b9e37bbe9006febe",
@@ -2669,8 +2688,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 322.44106884835071,
-        "Y": 613.55232750844414
+        "X": 322.4410688483507,
+        "Y": 613.5523275084441
       },
       {
         "Id": "dad06699e7144db9aec3fa90aa183fad",
@@ -2680,7 +2699,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 10.44106884835071,
-        "Y": 613.55232750844414
+        "Y": 613.5523275084441
       },
       {
         "Id": "cf82c2d683914908a07ab52156b2c63d",
@@ -2689,7 +2708,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 415.75699072434361,
+        "X": 415.7569907243436,
         "Y": -333.08221948041785
       },
       {
@@ -2719,7 +2738,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 777.75699072434361,
+        "X": 777.7569907243436,
         "Y": -333.08221948041785
       },
       {
@@ -2729,8 +2748,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 663.16509290944157,
-        "Y": -863.08916656533268
+        "X": 663.1650929094416,
+        "Y": -863.0891665653327
       },
       {
         "Id": "6620135081ff4ce588ae48bf191b468d",
@@ -2860,7 +2879,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 10.44106884835071,
-        "Y": 998.91482750844341
+        "Y": 998.9148275084434
       },
       {
         "Id": "a54aef81272e429f97ecfa5a87f20313",
@@ -2998,14 +3017,14 @@
           "23bb7b07d6dc4dd59a2e08b86a7db7d0"
         ],
         "HasNestedGroups": false,
-        "Left": 0.75699072434406389,
+        "Left": 0.7569907243440639,
         "Top": -456.08221948041785,
-        "Width": 1020.5999999999996,
-        "Height": 345.62750000000028,
+        "Width": 1018.9999999999995,
+        "Height": 345.8275000000003,
         "FontSize": 30.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": -390.08221948041785,
-        "InitialHeight": 292.82750000000033,
+        "InitialHeight": 292.8275000000003,
         "TextblockHeight": 56.0,
         "Background": "#FFD4B6DB"
       },
@@ -3024,13 +3043,13 @@
         ],
         "HasNestedGroups": false,
         "Left": 1120.8755013240147,
-        "Top": -455.86432087874448,
-        "Width": 962.59999999999991,
-        "Height": 345.62749999999937,
+        "Top": -455.8643208787445,
+        "Width": 961.0,
+        "Height": 345.8274999999994,
         "FontSize": 30.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
-        "InitialTop": -389.86432087874448,
-        "InitialHeight": 292.82749999999942,
+        "InitialTop": -389.8643208787445,
+        "InitialHeight": 292.8274999999994,
         "TextblockHeight": 56.0,
         "Background": "#FFD4B6DB"
       },
@@ -3050,8 +3069,8 @@
         "HasNestedGroups": false,
         "Left": 0.5627666669164455,
         "Top": -1075.8800729982177,
-        "Width": 951.0023262425251,
-        "Height": 510.99090643288491,
+        "Width": 949.6023262425251,
+        "Height": 504.790906432885,
         "FontSize": 30.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": -1009.8800729982178,
@@ -3075,12 +3094,12 @@
         "HasNestedGroups": false,
         "Left": 1120.0598869842347,
         "Top": -1075.9071588873376,
-        "Width": 952.15441805128967,
-        "Height": 510.99090643288855,
+        "Width": 950.7544180512896,
+        "Height": 504.7909064328886,
         "FontSize": 30.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": -1009.9071588873377,
-        "InitialHeight": 291.79090643288862,
+        "InitialHeight": 291.7909064328886,
         "TextblockHeight": 56.0,
         "Background": "#FFD4B6DB"
       },
@@ -3129,18 +3148,18 @@
         "HasNestedGroups": false,
         "Left": 0.44106884835071014,
         "Top": -0.41267249155512786,
-        "Width": 3721.8000000000038,
-        "Height": 1891.6199999999974,
+        "Width": 3720.0000000000036,
+        "Height": 1892.6199999999974,
         "FontSize": 30.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
-        "InitialTop": 65.587327508444872,
+        "InitialTop": 65.58732750844487,
         "InitialHeight": 1731.6199999999974,
         "TextblockHeight": 56.0,
         "Background": "#FFA4E1FF"
       }
     ],
-    "X": 85.922062252680988,
-    "Y": 438.70574162616674,
-    "Zoom": 0.40469635057984649
+    "X": 27.34176030941996,
+    "Y": 289.0950325890433,
+    "Zoom": 0.2545945945945943
   }
 }

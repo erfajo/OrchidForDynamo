@@ -16,18 +16,36 @@
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "2deb6e716a1b4f74b5c72a35ed7825a8",
-          "Name": "",
-          "Description": "Value of expression at line 2",
+          "Id": "63eb967c5c1541a88a4e63ce04e96128",
+          "Name": "list",
+          "Description": "[\"C:\\Users\\Public\\Temp\\pdf\\pdf1.pdf\", \"C:\\Users\\Public\\Temp\\pdf\\pdf2.pdf\"]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
         },
         {
-          "Id": "874b4866407a4abe8f879d482015b53d",
-          "Name": "",
-          "Description": "Value of expression at line 6",
+          "Id": "ee904f2a20494e64aa3f9fe45cf8f8b3",
+          "Name": "string",
+          "Description": "\"C:\\Users\\Public\\Temp\\pdf\\result.pdf\"",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "12c88c826c124ad1b44753ed7ea7c8a9",
+          "Name": "string",
+          "Description": "\"C:\\Users\\Public\\Temp\\pdf\"",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0751ee1d5cbd4434a3de3f4da89ea2e2",
+          "Name": "boolean",
+          "Description": "true",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -36,7 +54,7 @@
       ],
       "Replication": "Disabled",
       "Description": "Allows for DesignScript code to be authored directly",
-      "Code": "//input documents\n[\"C:\\\\Users\\\\Public\\\\Temp\\\\pdf\\\\pdf1.pdf\",\n\"C:\\\\Users\\\\Public\\\\Temp\\\\pdf\\\\pdf2.pdf\"];\n\n//output file path\n\"C:\\\\Users\\\\Public\\\\Temp\\\\PDF\\\\result.pdf\";"
+      "Code": "//input documents\n[\"C:\\\\Users\\\\Public\\\\Temp\\\\pdf\\\\pdf1.pdf\",\n\"C:\\\\Users\\\\Public\\\\Temp\\\\pdf\\\\pdf2.pdf\"];\n\n//output file path\n\"C:\\\\Users\\\\Public\\\\Temp\\\\pdf\\\\result.pdf\";\n\n//try providing only a directory,\n//this should fail!\n\"C:\\\\Users\\\\Public\\\\Temp\\\\pdf\";\n\n//create if not exists\ntrue;"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -55,8 +73,17 @@
         {
           "Id": "157399d85d9b4b90ad2d461e522c0266",
           "Name": "filePath",
-          "Description": "Give a valid path for the merged PDF output.\n\nstring",
+          "Description": "File name and path for the merged PDF output.\n\nstring",
           "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "11ad2d3d7f0346bd89d37263283ad96f",
+          "Name": "create",
+          "Description": "Create the file if not exists?\n\nbool\nDefault value : false",
+          "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
@@ -73,22 +100,65 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.Common.File.MergePDF@string[],string",
+      "FunctionSignature": "Orchid.Common.File.MergePDF@string[],string,bool",
       "Replication": "Auto",
-      "Description": "Merge list of PDF documents.\n\nFile.MergePDF (documents: string[], filePath: string): string"
+      "Description": "Merge list of PDF documents.\n\nFile.MergePDF (documents: string[], filePath: string, create: bool = false): string"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 469.0,
+      "WatchHeight": 41.0,
+      "Id": "550ecde484934ec997257f2d0b890e1a",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "cdcdfb97bd3748eda61efb3954d8300e",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9df0e449d0cb4204b88d8ec0e6a190f4",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
     }
   ],
   "Connectors": [
     {
-      "Start": "2deb6e716a1b4f74b5c72a35ed7825a8",
+      "Start": "63eb967c5c1541a88a4e63ce04e96128",
       "End": "f80f1fcbfc964f43b0dcd4840fe641c1",
-      "Id": "2d96727cb7ac485b84dfe0bc0c07aa06",
+      "Id": "46abfb0d656348d8927cdfdc793084e7",
       "IsHidden": "False"
     },
     {
-      "Start": "874b4866407a4abe8f879d482015b53d",
+      "Start": "ee904f2a20494e64aa3f9fe45cf8f8b3",
       "End": "157399d85d9b4b90ad2d461e522c0266",
-      "Id": "24e80e41966f4f3b821b7a872b9235cd",
+      "Id": "f49fd9e9565d4694b82d2170bb01651b",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "0751ee1d5cbd4434a3de3f4da89ea2e2",
+      "End": "11ad2d3d7f0346bd89d37263283ad96f",
+      "Id": "b88b90327602447c82b064cfc8fdad42",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "3c145dbede784ba4974d6ff8280e24ab",
+      "End": "cdcdfb97bd3748eda61efb3954d8300e",
+      "Id": "2755afebb215411cb9e8a3afc240ae29",
       "IsHidden": "False"
     }
   ],
@@ -96,13 +166,21 @@
   "NodeLibraryDependencies": [
     {
       "Name": "Orchid",
-      "Version": "2.19.3.6432",
+      "Version": "3.6.0.6844",
       "ReferenceType": "Package",
       "Nodes": [
         "974b25a5e4634a6398b3456f72d559c8"
       ]
+    },
+    {
+      "Name": "result.pdf",
+      "ReferenceType": "External",
+      "Nodes": [
+        "a9b4e33df0844aa2ba08dd1663120870"
+      ]
     }
   ],
+  "EnableLegacyPolyCurveBehavior": true,
   "Thumbnail": "",
   "GraphDocumentationURL": null,
   "ExtensionWorkspaceData": [
@@ -132,7 +210,7 @@
       "ScaleFactor": 1.0,
       "HasRunWithoutCrash": true,
       "IsVisibleInDynamoLibrary": true,
-      "Version": "2.19.3.6394",
+      "Version": "3.6.1.9895",
       "RunType": "Manual",
       "RunPeriod": "1000"
     },
@@ -157,8 +235,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": -208.12941038333724,
-        "Y": -206.29889975419496
+        "X": 10.132255423722427,
+        "Y": 73.28563915740051
       },
       {
         "Id": "974b25a5e4634a6398b3456f72d559c8",
@@ -167,13 +245,48 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 319.87058961666276,
-        "Y": -174.09139975419495
+        "X": 554.1322554237224,
+        "Y": 121.18313915740049
+      },
+      {
+        "Id": "550ecde484934ec997257f2d0b890e1a",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 884.1322554237224,
+        "Y": 121.18313915740049
       }
     ],
-    "Annotations": [],
-    "X": 447.63170605944055,
-    "Y": 722.32536481019861,
-    "Zoom": 2.0065963060686016
+    "Annotations": [
+      {
+        "Id": "9f36cdf0f13e4cbaa85dd987b0cf6508",
+        "Title": "Merge pdf's into one pdf file",
+        "DescriptionText": "",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "a9b4e33df0844aa2ba08dd1663120870",
+          "974b25a5e4634a6398b3456f72d559c8",
+          "550ecde484934ec997257f2d0b890e1a"
+        ],
+        "HasNestedGroups": false,
+        "Left": 0.1322554237224267,
+        "Top": 0.28563915740051016,
+        "Width": 1440.0,
+        "Height": 394.0,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 73.28563915740051,
+        "InitialHeight": 192.8975,
+        "TextblockHeight": 63.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": 23.278461542854558,
+    "Y": 249.38656895333008,
+    "Zoom": 0.6633802816901408
   }
 }
