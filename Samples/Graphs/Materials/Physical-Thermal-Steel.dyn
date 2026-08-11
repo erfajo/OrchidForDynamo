@@ -230,7 +230,7 @@
         {
           "Id": "db29a52c4dc94732910ae6fd8a57f14a",
           "Name": "type",
-          "Description": "Physical (structural) type as enumeration type.\n\nvar",
+          "Description": "Physical (structural) type as enumeration type.\n\nStructuralAssetClass",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -248,9 +248,9 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitMaterial.Physical.Create@string,var",
+      "FunctionSignature": "Orchid.RevitMaterial.Physical.Create@string,Autodesk.Revit.DB.StructuralAssetClass",
       "Replication": "Auto",
-      "Description": "Create physical property set. Note: If a thermal property exists it is being replaced!\n\nPhysical.Create (name: string, type: var): Element"
+      "Description": "Create physical property set. Note: If a thermal property exists it is being replaced!\n\nPhysical.Create (name: string, type: StructuralAssetClass): Element"
     },
     {
       "ConcreteType": "Orchid.E.RevitMaterial.PhysicalType, OrchidRevitExtensible",
@@ -466,7 +466,7 @@
         {
           "Id": "7f7709e78dd94daa8e80df4761daecd9",
           "Name": "type",
-          "Description": "Thermal type as enumeration type.\n\nvar",
+          "Description": "Thermal type as enumeration type.\n\nThermalMaterialType",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -484,9 +484,9 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitMaterial.Thermal.Create@string,var",
+      "FunctionSignature": "Orchid.RevitMaterial.Thermal.Create@string,Autodesk.Revit.DB.ThermalMaterialType",
       "Replication": "Auto",
-      "Description": "Create thermal property set. Note: If a thermal property exists it is being replaced!\n\nThermal.Create (name: string, type: var): Element"
+      "Description": "Create thermal property set. Note: If a thermal property exists it is being replaced!\n\nThermal.Create (name: string, type: ThermalMaterialType): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -525,7 +525,7 @@
         {
           "Id": "a9187c073dd74e1191b3ebb366927f6f",
           "Name": "behavior",
-          "Description": "Physical behavior as enumeration type.\n\nvar",
+          "Description": "Physical behavior as enumeration type.\n\nStructuralBehavior",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -543,9 +543,9 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitMaterial.Physical.SetBehavior@Revit.Elements.Element,var",
+      "FunctionSignature": "Orchid.RevitMaterial.Physical.ApplyBehavior@Revit.Elements.Element,Autodesk.Revit.DB.StructuralBehavior",
       "Replication": "Auto",
-      "Description": "Set behavior.\n\nPhysical.SetBehavior (propertySet: Element, behavior: var): Element"
+      "Description": "Set behavior.\n\nPhysical.ApplyBehavior (propertySet: Element, behavior: StructuralBehavior): Element"
     },
     {
       "ConcreteType": "Orchid.E.RevitMaterial.PhysicalBehavior, OrchidRevitExtensible",
@@ -791,9 +791,9 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitMaterial.Physical.SetInformation@Revit.Elements.Element,string,string,string,string,string",
+      "FunctionSignature": "Orchid.RevitMaterial.Physical.AddInformation@Revit.Elements.Element,string,string,string,string,string",
       "Replication": "Auto",
-      "Description": "Set information.\n\nPhysical.SetInformation (propertySet: Element, description: string = null, keywords: string = null, subclass: string = null, source: string = null, sourceUrl: string = null): Element"
+      "Description": "Set information.\n\nPhysical.AddInformation (propertySet: Element, description: string = null, keywords: string = null, subclass: string = null, source: string = null, sourceUrl: string = null): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1383,7 +1383,7 @@
         {
           "Id": "1b7e6419145849b5abcaece84fd81f75",
           "Name": "behavior",
-          "Description": "Thermal behavior as enumeration type.\n\nvar\nDefault value : \"Enums.Revit(StructuralBehavior.Isotropic)\" (disabled)",
+          "Description": "Thermal behavior as enumeration type.\n\nStructuralBehavior\nDefault value : Autodesk.Revit.DB.StructuralBehavior.Isotropic (disabled)",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1473,9 +1473,9 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitMaterial.Thermal.SetProperties@Revit.Elements.Element,bool,var,double,double,double,double,double,double,double,double",
+      "FunctionSignature": "Orchid.RevitMaterial.Thermal.ApplyProperties@Revit.Elements.Element,bool,Autodesk.Revit.DB.StructuralBehavior,double,double,double,double,double,double,double,double",
       "Replication": "Auto",
-      "Description": "Set properties. Note: Can only be used for the thermal type Solid!\n\nThermal.SetProperties (propertySet: Element, transmitsLight: bool = false, behavior: var = \"Enums.Revit(StructuralBehavior.Isotropic)\", thermalConductivity: double = -1, specificHeat: double = -1, density: double = -1, emissivity: double = -1, permeability: double = -1, porosity: double = -1, reflectivity: double = -1, electricalResistivity: double = -1): Element"
+      "Description": "Set properties. Note: Can only be used for the thermal type Solid!\n\nThermal.ApplyProperties (propertySet: Element, transmitsLight: bool = false, behavior: StructuralBehavior = Autodesk.Revit.DB.StructuralBehavior.Isotropic, thermalConductivity: double = -1, specificHeat: double = -1, density: double = -1, emissivity: double = -1, permeability: double = -1, porosity: double = -1, reflectivity: double = -1, electricalResistivity: double = -1): Element"
     },
     {
       "ConcreteType": "Orchid.E.RevitMaterial.MaterialAspect, OrchidRevitExtensible",
@@ -1569,9 +1569,9 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitMaterial.Thermal.SetInformation@Revit.Elements.Element,string,string,string,string,string",
+      "FunctionSignature": "Orchid.RevitMaterial.Thermal.AddInformation@Revit.Elements.Element,string,string,string,string,string",
       "Replication": "Auto",
-      "Description": "Set information.\n\nThermal.SetInformation (propertySet: Element, description: string = null, keywords: string = null, subclass: string = null, source: string = null, sourceUrl: string = null): Element"
+      "Description": "Set information.\n\nThermal.AddInformation (propertySet: Element, description: string = null, keywords: string = null, subclass: string = null, source: string = null, sourceUrl: string = null): Element"
     },
     {
       "ConcreteType": "Orchid.E.RevitMaterial.MaterialAspect, OrchidRevitExtensible",
@@ -1659,9 +1659,9 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitMaterial.Physical.SetBasicThermal@Revit.Elements.Element,double",
+      "FunctionSignature": "Orchid.RevitMaterial.Physical.ApplyBasicThermal@Revit.Elements.Element,double",
       "Replication": "Auto",
-      "Description": "Set basic thermal.\n\nPhysical.SetBasicThermal (propertySet: Element, expansionCoefficient: double): Element"
+      "Description": "Set basic thermal.\n\nPhysical.ApplyBasicThermal (propertySet: Element, expansionCoefficient: double): Element"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
@@ -1765,9 +1765,9 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitMaterial.Physical.SetStrength@Revit.Elements.Element,double,double,bool",
+      "FunctionSignature": "Orchid.RevitMaterial.Physical.ApplyStrength@Revit.Elements.Element,double,double,bool",
       "Replication": "Auto",
-      "Description": "Set strength.\n\nPhysical.SetStrength (propertySet: Element, yieldStress: double = -1, tensileStrength: double = -1, thermalTreated: bool = false): Element"
+      "Description": "Set strength.\n\nPhysical.ApplyStrength (propertySet: Element, yieldStress: double = -1, tensileStrength: double = -1, thermalTreated: bool = false): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -2675,9 +2675,9 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitMaterial.Material.SetPhysical@Revit.Elements.Material,var,Revit.Elements.Element",
+      "FunctionSignature": "Orchid.RevitMaterial.Material.ApplyPhysical@Revit.Elements.Material,var,Revit.Elements.Element",
       "Replication": "Auto",
-      "Description": "Set physical property.\n\nMaterial.SetPhysical (material: Material, aspect: var, propertySet: Element): Material"
+      "Description": "Set physical property.\n\nMaterial.ApplyPhysical (material: Material, aspect: var, propertySet: Element): Material"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -2939,9 +2939,9 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitMaterial.Material.SetThermal@Revit.Elements.Material,var,Revit.Elements.Element",
+      "FunctionSignature": "Orchid.RevitMaterial.Material.ApplyThermal@Revit.Elements.Material,var,Revit.Elements.Element",
       "Replication": "Auto",
-      "Description": "Set thermal property.\n\nMaterial.SetThermal (material: Material, aspect: var, propertySet: Element): Material"
+      "Description": "Set thermal property.\n\nMaterial.ApplyThermal (material: Material, aspect: var, propertySet: Element): Material"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -3117,7 +3117,7 @@
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "WatchWidth": 130.0,
+      "WatchWidth": 102.0,
       "WatchHeight": 40.0,
       "Id": "924181087e2b482ca5382f9d61b0183f",
       "NodeType": "ExtensionNode",
@@ -3179,7 +3179,7 @@
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "WatchWidth": 131.0,
+      "WatchWidth": 102.0,
       "WatchHeight": 40.0,
       "Id": "d545ad5c82464b0696335204ba6a11af",
       "NodeType": "ExtensionNode",
@@ -3491,9 +3491,9 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitMaterial.Physical.SetMechanical@Revit.Elements.Element,double,double,double,double",
+      "FunctionSignature": "Orchid.RevitMaterial.Physical.ApplyMechanical@Revit.Elements.Element,double,double,double,double",
       "Replication": "Auto",
-      "Description": "Set mechanical.\n\nPhysical.SetMechanical (propertySet: Element, youngModulus: double = -1, poissonRatio: double = -1, shearModulus: double = -1, density: double = -1): Element"
+      "Description": "Set mechanical (extended).\n\nPhysical.ApplyMechanical (propertySet: Element, youngModulus: double = -1, poissonRatio: double = -1, shearModulus: double = -1, density: double = -1): Element"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -4293,7 +4293,7 @@
       "ScaleFactor": 100.0,
       "HasRunWithoutCrash": true,
       "IsVisibleInDynamoLibrary": true,
-      "Version": "3.6.1.9895",
+      "Version": "3.6.2.11575",
       "RunType": "Manual",
       "RunPeriod": "1000"
     },
@@ -4433,7 +4433,7 @@
       },
       {
         "Id": "4b0994e78d8a43458c40747788fc8c98",
-        "Name": "Physical.SetBehavior",
+        "Name": "Physical.ApplyBehavior",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
@@ -4493,7 +4493,7 @@
       },
       {
         "Id": "3ff850d77cb24904bed97178fe175338",
-        "Name": "Physical.SetInformation",
+        "Name": "Physical.AddInformation",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
@@ -4643,7 +4643,7 @@
       },
       {
         "Id": "83ce4e49034b45ec9b534fabb98d589f",
-        "Name": "Thermal.SetInformation",
+        "Name": "Thermal.AddInformation",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
@@ -4673,7 +4673,7 @@
       },
       {
         "Id": "753680a4f19a47efb97bf0b3144f187a",
-        "Name": "Physical.SetBasicThermal",
+        "Name": "Physical.ApplyBasicThermal",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
@@ -4703,7 +4703,7 @@
       },
       {
         "Id": "ffeaea23c2f04e508e830474b69965bc",
-        "Name": "Physical.SetStrength",
+        "Name": "Physical.ApplyStrength",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
@@ -4963,7 +4963,7 @@
       },
       {
         "Id": "824c8df02c074ea1b9c24b1a640c94eb",
-        "Name": "Material.SetPhysical",
+        "Name": "Material.ApplyPhysical",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
@@ -5043,7 +5043,7 @@
       },
       {
         "Id": "2d9712c92e0a43c5ac19358daf58d1e1",
-        "Name": "Material.SetThermal",
+        "Name": "Material.ApplyThermal",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
@@ -5193,7 +5193,7 @@
       },
       {
         "Id": "04dc6b1423534558b73d0ef9447db8ff",
-        "Name": "Physical.SetMechanical",
+        "Name": "Physical.ApplyMechanical",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
@@ -5486,7 +5486,7 @@
         "HasNestedGroups": false,
         "Left": -0.10526447677693795,
         "Top": 0.3381996129064646,
-        "Width": 3681.0000000000036,
+        "Width": 3652.0000000000036,
         "Height": 1779.6199999999953,
         "FontSize": 30.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
@@ -5546,8 +5546,8 @@
         "Background": "#FFC1D676"
       }
     ],
-    "X": 146.24716403805814,
-    "Y": 252.9377021979838,
-    "Zoom": 0.19257054306939475
+    "X": 146.6418320821271,
+    "Y": 289.13868225719636,
+    "Zoom": 0.22384045534047375
   }
 }
