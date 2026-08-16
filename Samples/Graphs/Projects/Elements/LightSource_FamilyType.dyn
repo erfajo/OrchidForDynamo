@@ -32,8 +32,8 @@
       "Outputs": [
         {
           "Id": "1c61e25afb21460d82471cdb94eb101d",
-          "Name": "",
-          "Description": "Value of expression at line 1",
+          "Name": "familyType",
+          "Description": "familyType",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -41,8 +41,8 @@
         },
         {
           "Id": "8fa73ef214224d2a99762495106dc5e0",
-          "Name": "",
-          "Description": "Value of expression at line 2",
+          "Name": "string",
+          "Description": "\"Point\"",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -70,7 +70,7 @@
         {
           "Id": "63b265b7b2024e31a94690b5f98c6876",
           "Name": "style",
-          "Description": "Light shape style as Revit enumeration type.\n\nvar\nDefault value : Orchid.Internals.Enums.Revit(\"LightShapeStyle.Point\") (disabled)",
+          "Description": "Light shape style as Revit enumeration type.\n\nLightShapeStyle\nDefault value : Autodesk.Revit.DB.Lighting.LightShapeStyle.Point (disabled)",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -88,15 +88,25 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitProject.Elements.FamilyType.SetLightShape@Revit.Elements.FamilyType,var",
+      "FunctionSignature": "Orchid.RevitProject.Elements.FamilyType.ApplyLightShape@Revit.Elements.FamilyType,Autodesk.Revit.DB.Lighting.LightShapeStyle",
       "Replication": "Auto",
-      "Description": "Set light shape style, using either Point, Line, Rectangle or Circle style.\n\nFamilyType.SetLightShape (familyType: FamilyType, style: var = Orchid.Internals.Enums.Revit(\"LightShapeStyle.Point\")): FamilyType"
+      "Description": "Set light shape style, using either Point, Line, Rectangle or Circle style.\n\nFamilyType.ApplyLightShape (familyType: FamilyType, style: LightShapeStyle = Autodesk.Revit.DB.Lighting.LightShapeStyle.Point): FamilyType"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "Id": "b773e77182524d2da9c3a5dabd90f4ba",
       "NodeType": "FunctionNode",
-      "Inputs": [],
+      "Inputs": [
+        {
+          "Id": "f784e7c4e5984ce38cc6268aed887194",
+          "Name": "document",
+          "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
       "Outputs": [
         {
           "Id": "2ed45e3f639c479ba4af4a745b63a694",
@@ -117,9 +127,9 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitProject.Elements.FamilyType.InDocument",
+      "FunctionSignature": "Orchid.RevitProject.Elements.FamilyType.InDocument@Revit.Application.Document",
       "Replication": "Auto",
-      "Description": "Get all family types in current document.\n\nFamilyType.InDocument ( ): var[]..[]"
+      "Description": "Get all family types in current document.\n\nFamilyType.InDocument (document: Document = null): var[]..[]"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -184,7 +194,7 @@
       "Description": "Visualizes a node's output"
     },
     {
-      "ConcreteType": "Orchid.E.RevitProject.Elements.LightShapeStyle, OrchidRE",
+      "ConcreteType": "Orchid.E.RevitProject.Elements.LightShapeStyle, OrchidRevitExtensible",
       "SelectedIndex": 2,
       "SelectedString": "Rectangle",
       "Id": "87096a661085446c906da2185cd491cc",
@@ -244,7 +254,7 @@
       "Description": "Get light shape style, that is either Point, Line, Rectangle or Circle style. Note: To verify which values is needed for the style, please look inside Revit!\n\nFamilyType.LightShape (familyType: FamilyType): var[]..[]"
     },
     {
-      "ConcreteType": "Orchid.E.RevitProject.Elements.LightDistributionStyle, OrchidRE",
+      "ConcreteType": "Orchid.E.RevitProject.Elements.LightDistributionStyle, OrchidRevitExtensible",
       "SelectedIndex": 2,
       "SelectedString": "Spot light distribution",
       "Id": "d79dd133106c4242b6daa0b43212f830",
@@ -281,7 +291,7 @@
         {
           "Id": "5ec5d27e1cb8455983a5bf269045dccb",
           "Name": "style",
-          "Description": "Light distribution style as Revit enumeration type.\n\nvar\nDefault value : Orchid.Internals.Enums.Revit(\"LightDistributionStyle.Spherical\") (disabled)",
+          "Description": "Light distribution style as Revit enumeration type.\n\nLightDistributionStyle\nDefault value : Autodesk.Revit.DB.Lighting.LightDistributionStyle.Spherical (disabled)",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -299,9 +309,9 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitProject.Elements.FamilyType.SetLightDistribution@Revit.Elements.FamilyType,var",
+      "FunctionSignature": "Orchid.RevitProject.Elements.FamilyType.ApplyLightDistribution@Revit.Elements.FamilyType,Autodesk.Revit.DB.Lighting.LightDistributionStyle",
       "Replication": "Auto",
-      "Description": "Set light distribution style, using either Spherical, Hemispherical, Spot or PhotometricWeb style. Note: To verify which values is needed for the style, please look inside Revit!\n\nFamilyType.SetLightDistribution (familyType: FamilyType, style: var = Orchid.Internals.Enums.Revit(\"LightDistributionStyle.Spherical\")): FamilyType"
+      "Description": "Set light distribution style, using either Spherical, Hemispherical, Spot or PhotometricWeb style. Note: To verify which values is needed for the style, please look inside Revit!\n\nFamilyType.ApplyLightDistribution (familyType: FamilyType, style: LightDistributionStyle = Autodesk.Revit.DB.Lighting.LightDistributionStyle.Spherical): FamilyType"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -321,8 +331,8 @@
       "Outputs": [
         {
           "Id": "4539042c2fcd46378389f74b4e163ea8",
-          "Name": "",
-          "Description": "Value of expression at line 1",
+          "Name": "familyType",
+          "Description": "familyType",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -330,8 +340,8 @@
         },
         {
           "Id": "d083c520ae9d4dfebfc01c934fcba3b9",
-          "Name": "",
-          "Description": "Value of expression at line 2",
+          "Name": "string",
+          "Description": "\"Spherical\"",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -350,8 +360,8 @@
       "Outputs": [
         {
           "Id": "6c5f30f9f7ec44ca9cf150dc331ecaad",
-          "Name": "",
-          "Description": "Value of expression at line 1",
+          "Name": "string",
+          "Description": "\"LundtofteLamp\"",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -466,9 +476,9 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitProject.Elements.FamilyType.SetLightColorFilter@Revit.Elements.FamilyType,DSCore.Color",
+      "FunctionSignature": "Orchid.RevitProject.Elements.FamilyType.ApplyLightColorFilter@Revit.Elements.FamilyType,DSCore.Color",
       "Replication": "Auto",
-      "Description": "Set light color filter.\n\nFamilyType.SetLightColorFilter (familyType: FamilyType, color: Color = DSCore.Color.ByARGB(0, 255, 255, 255)): FamilyType"
+      "Description": "Set light color filter.\n\nFamilyType.ApplyLightColorFilter (familyType: FamilyType, color: Color = DSCore.Color.ByARGB(0, 255, 255, 255)): FamilyType"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -549,8 +559,8 @@
       "Outputs": [
         {
           "Id": "3a3941bc7aa0494098caa25f1b9d247d",
-          "Name": "",
-          "Description": "Value of expression at line 1",
+          "Name": "familyType",
+          "Description": "familyType",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -558,8 +568,8 @@
         },
         {
           "Id": "487e0371f53b409ca762e60c2052abf6",
-          "Name": "",
-          "Description": "Value of expression at line 2",
+          "Name": "function",
+          "Description": "DSCore.Color.ByARGB(0, 127, 127, 127)",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -734,7 +744,7 @@
       "Description": "Get light distribution style, that is either Spherical, Hemispherical, Spot or PhotometricWeb style. Note: To verify which values is needed for the style, please look inside Revit!\n\nFamilyType.LightDistribution (familyType: FamilyType): var[]..[]"
     },
     {
-      "ConcreteType": "Orchid.E.RevitProject.Elements.ColorPreset, OrchidRE",
+      "ConcreteType": "Orchid.E.RevitProject.Elements.ColorPreset, OrchidRevitExtensible",
       "SelectedIndex": 6,
       "SelectedString": "Fluorescent (Warm White)",
       "Id": "36136961cf2f42bab0c1d0537ace623f",
@@ -772,8 +782,8 @@
       "Outputs": [
         {
           "Id": "7bf1cb4eca6549698e5123b7eb55e14b",
-          "Name": "",
-          "Description": "Value of expression at line 1",
+          "Name": "familyType",
+          "Description": "familyType",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -781,8 +791,8 @@
         },
         {
           "Id": "7eb09c31b99743329683ecdbce4043c6",
-          "Name": "",
-          "Description": "Value of expression at line 3",
+          "Name": "string",
+          "Description": "\"Flux\"",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -790,8 +800,8 @@
         },
         {
           "Id": "01232e6ad87c4a80a28745278afd3a68",
-          "Name": "",
-          "Description": "Value of expression at line 6",
+          "Name": "integer",
+          "Description": "10",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -799,8 +809,8 @@
         },
         {
           "Id": "7988a0c7c1334214bb99c4a09b275fc8",
-          "Name": "",
-          "Description": "Value of expression at line 7",
+          "Name": "integer",
+          "Description": "150",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -808,8 +818,8 @@
         },
         {
           "Id": "9fe1219afdb847518e0b3d015bcbca84",
-          "Name": "",
-          "Description": "Value of expression at line 9",
+          "Name": "integer",
+          "Description": "1400",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -817,8 +827,8 @@
         },
         {
           "Id": "36e378a02d75490dba6e3936a95330bf",
-          "Name": "",
-          "Description": "Value of expression at line 11",
+          "Name": "integer",
+          "Description": "440",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -826,8 +836,8 @@
         },
         {
           "Id": "ee1eda27ccf144d89ab1f3436467b084",
-          "Name": "",
-          "Description": "Value of expression at line 13",
+          "Name": "integer",
+          "Description": "50",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -835,8 +845,8 @@
         },
         {
           "Id": "60dddc2254ab4ed1983cf041e8c4455e",
-          "Name": "",
-          "Description": "Value of expression at line 14",
+          "Name": "integer",
+          "Description": "3048",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -865,8 +875,8 @@
       "Outputs": [
         {
           "Id": "1694f56dd5634a7fbea61642c775192f",
-          "Name": "",
-          "Description": "Value of expression at line 1",
+          "Name": "familyType",
+          "Description": "familyType",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -874,8 +884,8 @@
         },
         {
           "Id": "7bb1c7544d9f4484984d955d6e277a08",
-          "Name": "",
-          "Description": "Value of expression at line 3",
+          "Name": "string",
+          "Description": "\"PresetColor\"",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -883,8 +893,8 @@
         },
         {
           "Id": "a0995cb293c4478d9cbccdbc0f977328",
-          "Name": "",
-          "Description": "Value of expression at line 5",
+          "Name": "integer",
+          "Description": "3100",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -892,8 +902,8 @@
         },
         {
           "Id": "bf143c636cb94243a2bef7434d48dca0",
-          "Name": "",
-          "Description": "Value of expression at line 6",
+          "Name": "string",
+          "Description": "\"FluorescentWarm\"",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -905,7 +915,7 @@
       "Code": "familyType;\n// Style\n\"PresetColor\";\n\n3100;\n\"FluorescentWarm\";"
     },
     {
-      "ConcreteType": "Orchid.E.RevitProject.Elements.InitialColor, OrchidRE",
+      "ConcreteType": "Orchid.E.RevitProject.Elements.InitialColor, OrchidRevitExtensible",
       "SelectedIndex": 1,
       "SelectedString": "Custom color",
       "Id": "19820d28aad0450fb1b250ff33b60fb0",
@@ -926,7 +936,7 @@
       "Description": "Light color style/initial color (Orchid) enumeration values."
     },
     {
-      "ConcreteType": "Orchid.E.RevitProject.Elements.InitialIntensity, OrchidRE",
+      "ConcreteType": "Orchid.E.RevitProject.Elements.InitialIntensity, OrchidRevitExtensible",
       "SelectedIndex": 0,
       "SelectedString": "Flux intensity",
       "Id": "d00131870dca4864b87fa8252ae9ba23",
@@ -981,9 +991,9 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitProject.Elements.FamilyType.SetLightCustomColor@Revit.Elements.FamilyType,double",
+      "FunctionSignature": "Orchid.RevitProject.Elements.FamilyType.ApplyLightCustomColor@Revit.Elements.FamilyType,double",
       "Replication": "Auto",
-      "Description": "Set light (Custom) initial color.\n\nFamilyType.SetLightCustomColor (familyType: FamilyType, value: double = 3200): FamilyType"
+      "Description": "Set light (Custom) initial color.\n\nFamilyType.ApplyLightCustomColor (familyType: FamilyType, value: double = 3200): FamilyType"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1002,7 +1012,7 @@
         {
           "Id": "66e811d1ba484573a9655816a7dbdb19",
           "Name": "color",
-          "Description": "Preset initial color as Revit enumeration type.\n\nvar\nDefault value : Orchid.Internals.Enums.Revit(\"ColorPreset.FluorescentWarm\")",
+          "Description": "Preset initial color as Revit enumeration type.\n\nColorPreset\nDefault value : Autodesk.Revit.DB.Lighting.ColorPreset.FluorescentWarm",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -1020,9 +1030,9 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitProject.Elements.FamilyType.SetLightPresetColor@Revit.Elements.FamilyType,var",
+      "FunctionSignature": "Orchid.RevitProject.Elements.FamilyType.ApplyLightPresetColor@Revit.Elements.FamilyType,Autodesk.Revit.DB.Lighting.ColorPreset",
       "Replication": "Auto",
-      "Description": "Set light (Preset) initial color.\n\nFamilyType.SetLightPresetColor (familyType: FamilyType, color: var = Orchid.Internals.Enums.Revit(\"ColorPreset.FluorescentWarm\")): FamilyType"
+      "Description": "Set light (Preset) initial color.\n\nFamilyType.ApplyLightPresetColor (familyType: FamilyType, color: ColorPreset = Autodesk.Revit.DB.Lighting.ColorPreset.FluorescentWarm): FamilyType"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1059,9 +1069,9 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitProject.Elements.FamilyType.SetLightFluxIntensity@Revit.Elements.FamilyType,double",
+      "FunctionSignature": "Orchid.RevitProject.Elements.FamilyType.ApplyLightFluxIntensity@Revit.Elements.FamilyType,double",
       "Replication": "Auto",
-      "Description": "Set light (Flux) initial intensity.\n\nFamilyType.SetLightFluxIntensity (familyType: FamilyType, value: double = 1380): FamilyType"
+      "Description": "Set light (Flux) initial intensity.\n\nFamilyType.ApplyLightFluxIntensity (familyType: FamilyType, value: double = 1380): FamilyType"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1107,9 +1117,9 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitProject.Elements.FamilyType.SetLightIlluminanceIntensity@Revit.Elements.FamilyType,double,double",
+      "FunctionSignature": "Orchid.RevitProject.Elements.FamilyType.ApplyLightIlluminanceIntensity@Revit.Elements.FamilyType,double,double",
       "Replication": "Auto",
-      "Description": "Set light (Illuminance) initial intensity.\n\nFamilyType.SetLightIlluminanceIntensity (familyType: FamilyType, illuminance: double = 11.82, distance: double = 3048): FamilyType"
+      "Description": "Set light (Illuminance) initial intensity.\n\nFamilyType.ApplyLightIlluminanceIntensity (familyType: FamilyType, illuminance: double = 11.82, distance: double = 3048): FamilyType"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1146,9 +1156,9 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitProject.Elements.FamilyType.SetLightLuminousIntensity@Revit.Elements.FamilyType,double",
+      "FunctionSignature": "Orchid.RevitProject.Elements.FamilyType.ApplyLightLuminousIntensity@Revit.Elements.FamilyType,double",
       "Replication": "Auto",
-      "Description": "Set light (Luminous) initial intensity.\n\nFamilyType.SetLightLuminousIntensity (familyType: FamilyType, value: double = 109.82): FamilyType"
+      "Description": "Set light (Luminous) initial intensity.\n\nFamilyType.ApplyLightLuminousIntensity (familyType: FamilyType, value: double = 109.82): FamilyType"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1194,9 +1204,9 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitProject.Elements.FamilyType.SetLightWattageIntensity@Revit.Elements.FamilyType,double,double",
+      "FunctionSignature": "Orchid.RevitProject.Elements.FamilyType.ApplyLightWattageIntensity@Revit.Elements.FamilyType,double,double",
       "Replication": "Auto",
-      "Description": "Set light (Wattage) initial intensity.\n\nFamilyType.SetLightWattageIntensity (familyType: FamilyType, wattage: double = 9.29, efficacy: double = 148.54): FamilyType"
+      "Description": "Set light (Wattage) initial intensity.\n\nFamilyType.ApplyLightWattageIntensity (familyType: FamilyType, wattage: double = 9.29, efficacy: double = 148.54): FamilyType"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1215,7 +1225,7 @@
         {
           "Id": "9a7919c3b6da4820b4485ec98a8ccec0",
           "Name": "style",
-          "Description": "var\nDefault value : Orchid.Internals.Enums.Orchid(\"InitialColor.PresetColor\")",
+          "Description": "Initial color style as Orchid enumeration type.\n\nInitialColor\nDefault value : Orchid.RevitProject.Elements.InitialColor.PresetColor",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -1224,7 +1234,7 @@
         {
           "Id": "f7c3ee33cd644192b2cf0ac70218d093",
           "Name": "color",
-          "Description": "Color as dynamo type.\n\nvar\nDefault value : Orchid.Internals.Enums.Revit(\"ColorPreset.FluorescentWarm\")",
+          "Description": "Preset initial color (if preset color style) as Revit enumeration type.\n\nColorPreset\nDefault value : Autodesk.Revit.DB.Lighting.ColorPreset.FluorescentWarm",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -1233,7 +1243,7 @@
         {
           "Id": "8b8bd63dfa2241babbfb2bc2a124adef",
           "Name": "value",
-          "Description": "double\nDefault value : 3200",
+          "Description": "Temperature value (if custom color style).\n\ndouble\nDefault value : 3200",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -1251,9 +1261,9 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitProject.Elements.FamilyType.SetLightColor@Revit.Elements.FamilyType,var,var,double",
+      "FunctionSignature": "Orchid.RevitProject.Elements.FamilyType.ApplyLightColor@Revit.Elements.FamilyType,Orchid.RevitProject.Elements.InitialColor,Autodesk.Revit.DB.Lighting.ColorPreset,double",
       "Replication": "Auto",
-      "Description": "Set light color filter.\n\nFamilyType.SetLightColor (familyType: FamilyType, style: var = Orchid.Internals.Enums.Orchid(\"InitialColor.PresetColor\"), color: var = Orchid.Internals.Enums.Revit(\"ColorPreset.FluorescentWarm\"), value: double = 3200): FamilyType"
+      "Description": "Set light initial color, using either Preset colors or a Custom color value. Note: To verify which values is needed for the style, please look inside Revit!\n\nFamilyType.ApplyLightColor (familyType: FamilyType, style: InitialColor = Orchid.RevitProject.Elements.InitialColor.PresetColor, color: ColorPreset = Autodesk.Revit.DB.Lighting.ColorPreset.FluorescentWarm, value: double = 3200): FamilyType"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -1272,7 +1282,7 @@
         {
           "Id": "3e7b0e21b8d3464bac8e82e5609fbefd",
           "Name": "style",
-          "Description": "Light initial intensity as Orchid enumeration type.\n\nvar\nDefault value : Orchid.Internals.Enums.Orchid(\"InitialIntensity.Flux\") (disabled)",
+          "Description": "Light initial intensity as Orchid enumeration type.\n\nInitialIntensity\nDefault value : Orchid.RevitProject.Elements.InitialIntensity.Flux (disabled)",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1308,12 +1318,12 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitProject.Elements.FamilyType.SetLightIntensity@Revit.Elements.FamilyType,var,double,double",
+      "FunctionSignature": "Orchid.RevitProject.Elements.FamilyType.ApplyLightIntensity@Revit.Elements.FamilyType,Orchid.RevitProject.Elements.InitialIntensity,double,double",
       "Replication": "Auto",
-      "Description": "Set light initial intensity, using either Flux, Luminous, Illuminance or Wattage intensity. Note: To verify which values is needed for the style, please look inside Revit!\n\nFamilyType.SetLightIntensity (familyType: FamilyType, style: var = Orchid.Internals.Enums.Orchid(\"InitialIntensity.Flux\"), valueA: double = 1380, valueB: double = 0): FamilyType"
+      "Description": "Set light initial intensity, using either Flux, Luminous, Illuminance or Wattage intensity. Note: To verify which values is needed for the style, please look inside Revit!\n\nFamilyType.ApplyLightIntensity (familyType: FamilyType, style: InitialIntensity = Orchid.RevitProject.Elements.InitialIntensity.Flux, valueA: double = 1380, valueB: double = 0): FamilyType"
     },
     {
-      "ConcreteType": "Orchid.E.RevitProject.Elements.LightDimmingColor, OrchidRE",
+      "ConcreteType": "Orchid.E.RevitProject.Elements.LightDimmingColor, OrchidRevitExtensible",
       "SelectedIndex": 1,
       "SelectedString": "Incandescent lamp curve dimming color",
       "Id": "2ab55bfbed764e10a927b57761248029",
@@ -1334,7 +1344,7 @@
       "Description": "Light dimming color (Autodesk.Revit) enumeration values."
     },
     {
-      "ConcreteType": "Orchid.E.RevitProject.Elements.LossFactor, OrchidRE",
+      "ConcreteType": "Orchid.E.RevitProject.Elements.LossFactor, OrchidRevitExtensible",
       "SelectedIndex": 0,
       "SelectedString": "Basic loss factor",
       "Id": "fb7b6f29bfff423888e029aa121197d8",
@@ -1371,7 +1381,7 @@
         {
           "Id": "f8a830c1129e47a2929cd5ded0c8d08e",
           "Name": "color",
-          "Description": "Light dimming color as Revit enumeration type.\n\nvar\nDefault value : Orchid.Internals.Enums.Revit(\"LightDimmingColor.None\") (disabled)",
+          "Description": "Light dimming color as Revit enumeration type.\n\nLightDimmingColor\nDefault value : Autodesk.Revit.DB.Lighting.LightDimmingColor.None (disabled)",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1389,9 +1399,9 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitProject.Elements.FamilyType.SetLightDimmingColor@Revit.Elements.FamilyType,var",
+      "FunctionSignature": "Orchid.RevitProject.Elements.FamilyType.ApplyLightDimmingColor@Revit.Elements.FamilyType,Autodesk.Revit.DB.Lighting.LightDimmingColor",
       "Replication": "Auto",
-      "Description": "Set light dimming color by name.\n\nFamilyType.SetLightDimmingColor (familyType: FamilyType, color: var = Orchid.Internals.Enums.Revit(\"LightDimmingColor.None\")): FamilyType"
+      "Description": "Set light dimming color by name.\n\nFamilyType.ApplyLightDimmingColor (familyType: FamilyType, color: LightDimmingColor = Autodesk.Revit.DB.Lighting.LightDimmingColor.None): FamilyType"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -1472,8 +1482,8 @@
       "Outputs": [
         {
           "Id": "3ab9923092cf450bb147eccb6b2d9dd7",
-          "Name": "",
-          "Description": "Value of expression at line 1",
+          "Name": "familyType",
+          "Description": "familyType",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1481,8 +1491,8 @@
         },
         {
           "Id": "95021587b1f849aeb1b8c87c694706cf",
-          "Name": "",
-          "Description": "Value of expression at line 2",
+          "Name": "string",
+          "Description": "\"None\"",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1528,9 +1538,9 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitProject.Elements.FamilyType.SetBasicLossFactor@Revit.Elements.FamilyType,double",
+      "FunctionSignature": "Orchid.RevitProject.Elements.FamilyType.ApplyBasicLossFactor@Revit.Elements.FamilyType,double",
       "Replication": "Auto",
-      "Description": "Set light (Basic) loss factor.\n\nFamilyType.SetBasicLossFactor (familyType: FamilyType, value: double = 1.75): FamilyType"
+      "Description": "Set light (Basic) loss factor.\n\nFamilyType.ApplyBasicLossFactor (familyType: FamilyType, value: double = 1.75): FamilyType"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -1550,8 +1560,8 @@
       "Outputs": [
         {
           "Id": "4a7640820f604796af034fbe4eb793c8",
-          "Name": "",
-          "Description": "Value of expression at line 1",
+          "Name": "familyType",
+          "Description": "familyType",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1559,8 +1569,8 @@
         },
         {
           "Id": "ac3b8a527ef24bfaa6134a4927fec812",
-          "Name": "",
-          "Description": "Value of expression at line 4",
+          "Name": "string",
+          "Description": "\"Basic\"",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1568,8 +1578,8 @@
         },
         {
           "Id": "fafca8b5ecc84a55a616153cbb07bfbd",
-          "Name": "",
-          "Description": "Value of expression at line 5",
+          "Name": "double",
+          "Description": "3",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1577,8 +1587,8 @@
         },
         {
           "Id": "841709f30a154a44a9486e5e7c260afa",
-          "Name": "",
-          "Description": "Value of expression at line 6",
+          "Name": "double",
+          "Description": "1.25",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1586,8 +1596,8 @@
         },
         {
           "Id": "3088d2efc0a54bccb31c77db4fb016c6",
-          "Name": "",
-          "Description": "Value of expression at line 7",
+          "Name": "double",
+          "Description": "0.75",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1913,7 +1923,7 @@
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
       "WatchWidth": 200.0,
-      "WatchHeight": 38.4,
+      "WatchHeight": 40.0,
       "Id": "76284973f2654fbd83643dad52727e06",
       "NodeType": "ExtensionNode",
       "Inputs": [
@@ -1944,7 +1954,7 @@
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
       "WatchWidth": 200.0,
-      "WatchHeight": 38.4,
+      "WatchHeight": 40.0,
       "Id": "4ceb5e2b7bfe4f44ac9801040251cd99",
       "NodeType": "ExtensionNode",
       "Inputs": [
@@ -1975,7 +1985,7 @@
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
       "WatchWidth": 200.0,
-      "WatchHeight": 38.4,
+      "WatchHeight": 40.0,
       "Id": "b29c78e82a4c4ccf807fe7f93ec101be",
       "NodeType": "ExtensionNode",
       "Inputs": [
@@ -2006,7 +2016,7 @@
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
       "WatchWidth": 200.0,
-      "WatchHeight": 38.4,
+      "WatchHeight": 40.0,
       "Id": "cea0c82c68324e3ca5dabf98c1bae76a",
       "NodeType": "ExtensionNode",
       "Inputs": [
@@ -2037,7 +2047,7 @@
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
       "WatchWidth": 200.0,
-      "WatchHeight": 38.4,
+      "WatchHeight": 40.0,
       "Id": "080162927ff2451ab5e2bbcd45bfde58",
       "NodeType": "ExtensionNode",
       "Inputs": [
@@ -2068,7 +2078,7 @@
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
       "WatchWidth": 200.0,
-      "WatchHeight": 38.4,
+      "WatchHeight": 40.0,
       "Id": "87a9a71ba77b4e56b8bb54837d810a9e",
       "NodeType": "ExtensionNode",
       "Inputs": [
@@ -2099,7 +2109,7 @@
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
       "WatchWidth": 200.0,
-      "WatchHeight": 38.4,
+      "WatchHeight": 40.0,
       "Id": "2746f0b69c044d3692460c1a46caa757",
       "NodeType": "ExtensionNode",
       "Inputs": [
@@ -2130,7 +2140,7 @@
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
       "WatchWidth": 200.0,
-      "WatchHeight": 38.4,
+      "WatchHeight": 40.0,
       "Id": "b5b1eac82e474ca59164e1f5aaf28b49",
       "NodeType": "ExtensionNode",
       "Inputs": [
@@ -2175,7 +2185,7 @@
         {
           "Id": "e65d0744b7744efca96d19b278a6ef5f",
           "Name": "style",
-          "Description": "Loss factor as Orchid enumeration type.\n\nvar\nDefault value : Orchid.Internals.Enums.Orchid(\"LossFactor.Basic\") (disabled)",
+          "Description": "Loss factor as Orchid enumeration type.\n\nLossFactor\nDefault value : Orchid.RevitProject.Elements.LossFactor.Basic (disabled)",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -2265,9 +2275,9 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitProject.Elements.FamilyType.SetLightLossFactor@Revit.Elements.FamilyType,var,double,double,double,double,double,double,double,double",
+      "FunctionSignature": "Orchid.RevitProject.Elements.FamilyType.ApplyLightLossFactor@Revit.Elements.FamilyType,Orchid.RevitProject.Elements.LossFactor,double,double,double,double,double,double,double,double",
       "Replication": "Auto",
-      "Description": "Set light loss factor, using either basic or advanved loss factor. Note: To verify which values is needed for the style, please look inside Revit!\n\nFamilyType.SetLightLossFactor (familyType: FamilyType, style: var = Orchid.Internals.Enums.Orchid(\"LossFactor.Basic\"), value: double = 1.75, temperature: double = 1, voltage: double = 1, ballast: double = 1, tilt: double = 1, surface: double = 1, lumen: double = 1, luminaire: double = 1): FamilyType"
+      "Description": "Set light loss factor, using either basic or advanved loss factor. Note: To verify which values is needed for the style, please look inside Revit!\n\nFamilyType.ApplyLightLossFactor (familyType: FamilyType, style: LossFactor = Orchid.RevitProject.Elements.LossFactor.Basic, value: double = 1.75, temperature: double = 1, voltage: double = 1, ballast: double = 1, tilt: double = 1, surface: double = 1, lumen: double = 1, luminaire: double = 1): FamilyType"
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -2661,9 +2671,9 @@
           "KeepListStructure": false
         }
       ],
-      "FunctionSignature": "Orchid.RevitProject.Elements.FamilyType.SetAdvancedLossFactor@Revit.Elements.FamilyType,double,double,double,double,double,double,double",
+      "FunctionSignature": "Orchid.RevitProject.Elements.FamilyType.ApplyAdvancedLossFactor@Revit.Elements.FamilyType,double,double,double,double,double,double,double",
       "Replication": "Auto",
-      "Description": "Set light (Advanced) loss factor.\n\nFamilyType.SetAdvancedLossFactor (familyType: FamilyType, temperature: double = 1, voltage: double = 1, ballast: double = 1, tilt: double = 1, surface: double = 1, lumen: double = 1, luminaire: double = 1): FamilyType"
+      "Description": "Set light (Advanced) loss factor.\n\nFamilyType.ApplyAdvancedLossFactor (familyType: FamilyType, temperature: double = 1, voltage: double = 1, ballast: double = 1, tilt: double = 1, surface: double = 1, lumen: double = 1, luminaire: double = 1): FamilyType"
     }
   ],
   "Connectors": [
@@ -3287,6 +3297,7 @@
       ]
     }
   ],
+  "EnableLegacyPolyCurveBehavior": true,
   "Thumbnail": "",
   "GraphDocumentationURL": null,
   "ExtensionWorkspaceData": [
@@ -3316,7 +3327,7 @@
       "ScaleFactor": 1.0,
       "HasRunWithoutCrash": true,
       "IsVisibleInDynamoLibrary": true,
-      "Version": "2.19.3.6394",
+      "Version": "3.7.0.11777",
       "RunType": "Manual",
       "RunPeriod": "1000"
     },
@@ -3342,17 +3353,17 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 1109.592657311711,
-        "Y": -697.72418834416885
+        "Y": -697.7241883441689
       },
       {
         "Id": "f2662e1b877a4599889ab3f94a104c2f",
-        "Name": "FamilyType.SetLightShape",
+        "Name": "FamilyType.ApplyLightShape",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
         "X": 1464.592657311711,
-        "Y": -635.55168834416827
+        "Y": -635.5516883441683
       },
       {
         "Id": "b773e77182524d2da9c3a5dabd90f4ba",
@@ -3361,7 +3372,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": -50.428816301840243,
+        "X": -50.42881630184024,
         "Y": -406.400426605152
       },
       {
@@ -3381,7 +3392,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 610.85624569982679,
+        "X": 610.8562456998268,
         "Y": -406.400426605152
       },
       {
@@ -3392,7 +3403,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 1109.592657311711,
-        "Y": -539.55168834416827
+        "Y": -539.5516883441683
       },
       {
         "Id": "9e40a51c44974fa5adbfc1fad5c52680",
@@ -3402,7 +3413,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 1905.1741340137412,
-        "Y": -697.98399578342151
+        "Y": -697.9839957834215
       },
       {
         "Id": "d79dd133106c4242b6daa0b43212f830",
@@ -3412,11 +3423,11 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 1109.6506894318516,
-        "Y": -67.497652999486036
+        "Y": -67.49765299948604
       },
       {
         "Id": "6e11f5be07dc439da75d93f3f9eb0c49",
-        "Name": "FamilyType.SetLightDistribution",
+        "Name": "FamilyType.ApplyLightDistribution",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
@@ -3432,7 +3443,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 1109.6506894318516,
-        "Y": -225.67015299948571
+        "Y": -225.6701529994857
       },
       {
         "Id": "08efc24e44a743d281aa42f5e9846cf6",
@@ -3441,7 +3452,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 10.058870866973621,
+        "X": 10.05887086697362,
         "Y": 107.23850326369347
       },
       {
@@ -3452,7 +3463,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 320.05887086697453,
-        "Y": 73.411003263693146
+        "Y": 73.41100326369315
       },
       {
         "Id": "3665306d7c4940678ca2958f7e133bac",
@@ -3461,18 +3472,18 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 647.05887086697453,
-        "Y": 73.411003263693146
+        "X": 647.0588708669745,
+        "Y": 73.41100326369315
       },
       {
         "Id": "d979926d8c1f4e2b8605ef53fc5c86c1",
-        "Name": "FamilyType.SetLightColorFilter",
+        "Name": "FamilyType.ApplyLightColorFilter",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
         "X": 1526.8102334280818,
-        "Y": 286.01094993042852
+        "Y": 286.0109499304285
       },
       {
         "Id": "a6ca2bc578254920afdc2257f3a57c09",
@@ -3511,7 +3522,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 2307.9467250167008,
+        "X": 2307.946725016701,
         "Y": -226.2237410566745
       },
       {
@@ -3532,7 +3543,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 2285.820339416462,
-        "Y": -697.98399578342151
+        "Y": -697.9839957834215
       },
       {
         "Id": "ca3e917c3bdd48498e935995a113556d",
@@ -3541,8 +3552,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 2672.4665448191708,
-        "Y": -697.98399578342151
+        "X": 2672.466544819171,
+        "Y": -697.9839957834215
       },
       {
         "Id": "19f9be7836d84bcc9faeff69abce20ae",
@@ -3562,7 +3573,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 3109.4544451547818,
-        "Y": -827.25231586760356
+        "Y": -827.2523158676036
       },
       {
         "Id": "06870b46730f4b8488fd1b244b6b5273",
@@ -3606,57 +3617,57 @@
       },
       {
         "Id": "0c5f6f1a2f394e92b42c906eaff8e1be",
-        "Name": "FamilyType.SetLightCustomColor",
+        "Name": "FamilyType.ApplyLightCustomColor",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": true,
         "ShowGeometry": true,
         "X": 3535.4544451547818,
-        "Y": -947.42572810966294
+        "Y": -947.4257281096629
       },
       {
         "Id": "6deecf4b069f4ec9a3b12ee6fb961468",
-        "Name": "FamilyType.SetLightPresetColor",
+        "Name": "FamilyType.ApplyLightPresetColor",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": true,
         "ShowGeometry": true,
         "X": 3535.4544451547818,
-        "Y": -768.83522547477287
+        "Y": -768.8352254747729
       },
       {
         "Id": "c83adb3a4c844bbb808aa5583aac3e8a",
-        "Name": "FamilyType.SetLightFluxIntensity",
+        "Name": "FamilyType.ApplyLightFluxIntensity",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": true,
         "ShowGeometry": true,
         "X": 3479.4375146382017,
-        "Y": 34.167874825656781
+        "Y": 34.16787482565678
       },
       {
         "Id": "edb9359f77274e00a748af82265ecb85",
-        "Name": "FamilyType.SetLightIlluminanceIntensity",
+        "Name": "FamilyType.ApplyLightIlluminanceIntensity",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": true,
         "ShowGeometry": true,
         "X": 3479.4375146382017,
-        "Y": 390.16787482564769
+        "Y": 390.1678748256477
       },
       {
         "Id": "6786a56ee172488d928e2772aca93ca1",
-        "Name": "FamilyType.SetLightLuminousIntensity",
+        "Name": "FamilyType.ApplyLightLuminousIntensity",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": true,
         "ShowGeometry": true,
         "X": 3479.4375146382017,
-        "Y": 212.16787482565769
+        "Y": 212.1678748256577
       },
       {
         "Id": "0fa1a44000ad47c39a00eecb7bc006be",
-        "Name": "FamilyType.SetLightWattageIntensity",
+        "Name": "FamilyType.ApplyLightWattageIntensity",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": true,
@@ -3666,7 +3677,7 @@
       },
       {
         "Id": "742b071fca504f81989f713d5a3e67ba",
-        "Name": "FamilyType.SetLightColor",
+        "Name": "FamilyType.ApplyLightColor",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
@@ -3676,7 +3687,7 @@
       },
       {
         "Id": "77603f3edd934c16880afb456dbaa7be",
-        "Name": "FamilyType.SetLightIntensity",
+        "Name": "FamilyType.ApplyLightIntensity",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
@@ -3692,7 +3703,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 1110.0543837763914,
-        "Y": 861.75875099249561
+        "Y": 861.7587509924956
       },
       {
         "Id": "fb7b6f29bfff423888e029aa121197d8",
@@ -3702,17 +3713,17 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 3109.4348371285314,
-        "Y": 803.70725762049324
+        "Y": 803.7072576204932
       },
       {
         "Id": "d347d32f9eec4ed2a682f4c04262ae22",
-        "Name": "FamilyType.SetLightDimmingColor",
+        "Name": "FamilyType.ApplyLightDimmingColor",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
         "X": 1606.0543837763914,
-        "Y": 765.75875099249561
+        "Y": 765.7587509924956
       },
       {
         "Id": "976849cd3cfd42f292117894fe16aac9",
@@ -3722,7 +3733,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 2484.7447511098517,
-        "Y": 766.22621466709234
+        "Y": 766.2262146670923
       },
       {
         "Id": "b17321031f1f4b7cbcfa1f4a89d3fd2e",
@@ -3732,7 +3743,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 2053.7447511098517,
-        "Y": 766.22621466709234
+        "Y": 766.2262146670923
       },
       {
         "Id": "e66f9a7d88244a89821bf1eec36b96ad",
@@ -3746,7 +3757,7 @@
       },
       {
         "Id": "16d9e064cbca43f79dc30175e87a0fe4",
-        "Name": "FamilyType.SetBasicLossFactor",
+        "Name": "FamilyType.ApplyBasicLossFactor",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": true,
@@ -3782,7 +3793,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 3989.6705656433214,
-        "Y": -947.42572810966294
+        "Y": -947.4257281096629
       },
       {
         "Id": "77eff8cad87445edb84a4441bcf22dd8",
@@ -3842,7 +3853,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 3989.6705656433214,
-        "Y": -768.83522547477287
+        "Y": -768.8352254747729
       },
       {
         "Id": "76284973f2654fbd83643dad52727e06",
@@ -3851,8 +3862,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 4339.1878104949328,
-        "Y": -912.76756995239566
+        "X": 4339.187810494933,
+        "Y": -912.7675699523957
       },
       {
         "Id": "4ceb5e2b7bfe4f44ac9801040251cd99",
@@ -3861,8 +3872,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 4701.7050553465424,
-        "Y": -912.76756995239566
+        "X": 4701.705055346542,
+        "Y": -912.7675699523957
       },
       {
         "Id": "b29c78e82a4c4ccf807fe7f93ec101be",
@@ -3881,7 +3892,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 4770.9994254090516,
+        "X": 4770.999425409052,
         "Y": -107.09926742639573
       },
       {
@@ -3901,7 +3912,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 5536.1702659952416,
+        "X": 5536.170265995242,
         "Y": -107.09926742639573
       },
       {
@@ -3921,18 +3932,18 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 4759.0473001040018,
+        "X": 4759.047300104002,
         "Y": 1228.4830168396988
       },
       {
         "Id": "2a7a97adbf8f490391c97d88b43d724b",
-        "Name": "FamilyType.SetLightLossFactor",
+        "Name": "FamilyType.ApplyLightLossFactor",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
         "X": 3464.4348371285314,
-        "Y": 769.70725762049324
+        "Y": 769.7072576204932
       },
       {
         "Id": "982930a1479e4f3d8b8f4bba86f2e4fc",
@@ -3952,7 +3963,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 3989.480341288262,
-        "Y": -426.22908728814173
+        "Y": -426.2290872881417
       },
       {
         "Id": "bfca992247ba4c8ba92b5cf3dbe0f21e",
@@ -3961,7 +3972,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 4770.9994254090516,
+        "X": 4770.999425409052,
         "Y": -426.22908728814264
       },
       {
@@ -3971,7 +3982,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 4339.1878104949328,
+        "X": 4339.187810494933,
         "Y": -1217.6694062604315
       },
       {
@@ -3981,7 +3992,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 4701.7050553465424,
+        "X": 4701.705055346542,
         "Y": -1217.6694062604315
       },
       {
@@ -4002,7 +4013,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 3989.480341288262,
-        "Y": 769.70725762049324
+        "Y": 769.7072576204932
       },
       {
         "Id": "2801e1b31e464667aabcbf1c1e2ec816",
@@ -4012,7 +4023,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 4388.41400511596,
-        "Y": 769.70725762049324
+        "Y": 769.7072576204932
       },
       {
         "Id": "3465eb95574d42c0b43c9a8d590b2b07",
@@ -4022,11 +4033,11 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 4752.27777646123,
-        "Y": 769.70725762049324
+        "Y": 769.7072576204932
       },
       {
         "Id": "51d1b7953a1d46a5bfcd9cc619c98e23",
-        "Name": "FamilyType.SetAdvancedLossFactor",
+        "Name": "FamilyType.ApplyAdvancedLossFactor",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": true,
@@ -4049,15 +4060,15 @@
           "aa22cefaeba246dfb884511e1e7e476c"
         ],
         "HasNestedGroups": false,
-        "Left": -60.428816301840243,
-        "Top": -478.800426605152,
-        "Width": 959.685062001667,
-        "Height": 370.59999999999997,
+        "Left": -60.42881630184024,
+        "Top": -479.400426605152,
+        "Width": 958.285062001667,
+        "Height": 365.0,
         "FontSize": 36.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": -406.400426605152,
         "InitialHeight": 145.0,
-        "TextblockHeight": 62.4,
+        "TextblockHeight": 63.0,
         "Background": "#FFFFB8D8"
       },
       {
@@ -4074,14 +4085,14 @@
         ],
         "HasNestedGroups": false,
         "Left": 1099.592657311711,
-        "Top": -770.12418834416883,
-        "Width": 645.39999999999986,
-        "Height": 362.37250000000057,
+        "Top": -770.7241883441689,
+        "Width": 663.0,
+        "Height": 363.1725000000006,
         "FontSize": 36.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
-        "InitialTop": -697.72418834416885,
-        "InitialHeight": 303.17250000000058,
-        "TextblockHeight": 62.4,
+        "InitialTop": -697.7241883441689,
+        "InitialHeight": 303.1725000000006,
+        "TextblockHeight": 63.0,
         "Background": "#FFFFAA45"
       },
       {
@@ -4098,14 +4109,14 @@
         ],
         "HasNestedGroups": false,
         "Left": 1099.6506894318516,
-        "Top": -298.07015299948569,
-        "Width": 697.39999999999986,
-        "Height": 362.37249999999966,
+        "Top": -298.6701529994857,
+        "Width": 715.0,
+        "Height": 363.1724999999997,
         "FontSize": 36.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
-        "InitialTop": -225.67015299948571,
-        "InitialHeight": 303.17249999999967,
-        "TextblockHeight": 62.4,
+        "InitialTop": -225.6701529994857,
+        "InitialHeight": 303.1724999999997,
+        "TextblockHeight": 63.0,
         "Background": "#FFFFAA45"
       },
       {
@@ -4122,14 +4133,14 @@
         ],
         "HasNestedGroups": false,
         "Left": 0.05887086697362065,
-        "Top": 1.0110032636931479,
-        "Width": 898.60000000000093,
-        "Height": 238.02750000000034,
+        "Top": 0.41100326369314644,
+        "Width": 898.0000000000009,
+        "Height": 238.82750000000033,
         "FontSize": 36.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
-        "InitialTop": 73.411003263693146,
+        "InitialTop": 73.41100326369315,
         "InitialHeight": 178.82750000000033,
-        "TextblockHeight": 62.4,
+        "TextblockHeight": 63.0,
         "Background": "#FFC1D676"
       },
       {
@@ -4145,14 +4156,14 @@
         ],
         "HasNestedGroups": false,
         "Left": 2043.3472516359816,
-        "Top": 213.3633416073063,
-        "Width": 701.39999999999918,
-        "Height": 370.6,
+        "Top": 212.7633416073063,
+        "Width": 699.9999999999991,
+        "Height": 365.0,
         "FontSize": 36.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": 285.7633416073063,
         "InitialHeight": 145.0,
-        "TextblockHeight": 62.4,
+        "TextblockHeight": 63.0,
         "Background": "#FFA4E1FF"
       },
       {
@@ -4169,14 +4180,14 @@
         ],
         "HasNestedGroups": false,
         "Left": 1895.452244233971,
-        "Top": -298.62374105667448,
-        "Width": 1065.3889615654714,
-        "Height": 370.59999999999997,
+        "Top": -299.2237410566745,
+        "Width": 1063.9889615654713,
+        "Height": 365.0,
         "FontSize": 36.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": -226.2237410566745,
         "InitialHeight": 145.0,
-        "TextblockHeight": 62.4,
+        "TextblockHeight": 63.0,
         "Background": "#FFA4E1FF"
       },
       {
@@ -4193,14 +4204,14 @@
         ],
         "HasNestedGroups": false,
         "Left": 1895.1741340137412,
-        "Top": -770.38399578342148,
-        "Width": 1065.6924108054297,
-        "Height": 370.59999999999997,
+        "Top": -770.9839957834215,
+        "Width": 1064.2924108054297,
+        "Height": 365.0,
         "FontSize": 36.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
-        "InitialTop": -697.98399578342151,
+        "InitialTop": -697.9839957834215,
         "InitialHeight": 145.0,
-        "TextblockHeight": 62.4,
+        "TextblockHeight": 63.0,
         "Background": "#FFA4E1FF"
       },
       {
@@ -4216,14 +4227,14 @@
         ],
         "HasNestedGroups": false,
         "Left": 1099.8102334280818,
-        "Top": 213.61094993042852,
-        "Width": 739.39999999999986,
-        "Height": 238.45499999999973,
+        "Top": 213.01094993042852,
+        "Width": 757.0,
+        "Height": 239.65499999999975,
         "FontSize": 36.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
-        "InitialTop": 286.01094993042852,
+        "InitialTop": 286.0109499304285,
         "InitialHeight": 153.65499999999975,
-        "TextblockHeight": 62.4,
+        "TextblockHeight": 63.0,
         "Background": "#FFFFAA45"
       },
       {
@@ -4244,14 +4255,14 @@
         ],
         "HasNestedGroups": false,
         "Left": 3099.4375146382017,
-        "Top": -498.13063011392558,
-        "Width": 771.59999999999991,
-        "Height": 1085.6985049395732,
+        "Top": -498.7306301139256,
+        "Width": 772.0,
+        "Height": 1082.8985049395733,
         "FontSize": 36.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": -425.7306301139256,
-        "InitialHeight": 960.89850493957329,
-        "TextblockHeight": 62.4,
+        "InitialHeight": 960.8985049395733,
+        "TextblockHeight": 63.0,
         "Background": "#FFFFAA45"
       },
       {
@@ -4271,14 +4282,14 @@
         ],
         "HasNestedGroups": false,
         "Left": 3099.4544451547818,
-        "Top": -1290.0694062604316,
-        "Width": 765.19999999999982,
-        "Height": 683.43418078565878,
+        "Top": -1290.6694062604315,
+        "Width": 765.0,
+        "Height": 681.8341807856586,
         "FontSize": 36.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": -1217.6694062604315,
-        "InitialHeight": 593.83418078565865,
-        "TextblockHeight": 62.4,
+        "InitialHeight": 593.8341807856586,
+        "TextblockHeight": 63.0,
         "Background": "#FFFFAA45"
       },
       {
@@ -4294,14 +4305,14 @@
         ],
         "HasNestedGroups": false,
         "Left": 2043.7447511098517,
-        "Top": 693.82621466709236,
-        "Width": 729.40000000000009,
-        "Height": 370.6,
+        "Top": 693.2262146670923,
+        "Width": 728.0,
+        "Height": 365.0,
         "FontSize": 36.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
-        "InitialTop": 766.22621466709234,
+        "InitialTop": 766.2262146670923,
         "InitialHeight": 145.0,
-        "TextblockHeight": 62.4,
+        "TextblockHeight": 63.0,
         "Background": "#FFA4E1FF"
       },
       {
@@ -4318,14 +4329,14 @@
         ],
         "HasNestedGroups": false,
         "Left": 1100.0543837763914,
-        "Top": 631.186250992495,
-        "Width": 846.39999999999986,
-        "Height": 362.37250000000051,
+        "Top": 630.586250992495,
+        "Width": 864.0,
+        "Height": 363.1725000000006,
         "FontSize": 36.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": 703.586250992495,
-        "InitialHeight": 303.17250000000058,
-        "TextblockHeight": 62.4,
+        "InitialHeight": 303.1725000000006,
+        "TextblockHeight": 63.0,
         "Background": "#FFFFAA45"
       },
       {
@@ -4346,14 +4357,14 @@
         ],
         "HasNestedGroups": false,
         "Left": 3979.480341288262,
-        "Top": 697.30725762049326,
-        "Width": 1067.9669588157394,
-        "Height": 875.34825921920526,
+        "Top": 696.7072576204932,
+        "Width": 1066.5669588157398,
+        "Height": 873.9482592192053,
         "FontSize": 36.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
-        "InitialTop": 769.70725762049324,
-        "InitialHeight": 780.94825921920528,
-        "TextblockHeight": 62.4,
+        "InitialTop": 769.7072576204932,
+        "InitialHeight": 780.9482592192053,
+        "TextblockHeight": 63.0,
         "Background": "#FFA4E1FF"
       },
       {
@@ -4378,14 +4389,14 @@
         ],
         "HasNestedGroups": false,
         "Left": 3979.480341288262,
-        "Top": -498.62908728814261,
-        "Width": 1845.0899247069792,
-        "Height": 1055.2985049395734,
+        "Top": -499.22908728814264,
+        "Width": 1843.6899247069796,
+        "Height": 1053.8985049395733,
         "FontSize": 36.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": -426.22908728814264,
-        "InitialHeight": 960.89850493957329,
-        "TextblockHeight": 62.4,
+        "InitialHeight": 960.8985049395733,
+        "TextblockHeight": 63.0,
         "Background": "#FFA4E1FF"
       },
       {
@@ -4406,14 +4417,14 @@
         ],
         "HasNestedGroups": false,
         "Left": 3979.6705656433214,
-        "Top": -1290.0694062604316,
-        "Width": 1010.4344897032206,
-        "Height": 688.23418078565874,
+        "Top": -1290.6694062604315,
+        "Width": 1009.034489703221,
+        "Height": 686.8341807856586,
         "FontSize": 36.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": -1217.6694062604315,
-        "InitialHeight": 593.83418078565865,
-        "TextblockHeight": 62.4,
+        "InitialHeight": 593.8341807856586,
+        "TextblockHeight": 63.0,
         "Background": "#FFA4E1FF"
       },
       {
@@ -4432,19 +4443,19 @@
         ],
         "HasNestedGroups": false,
         "Left": 3099.4348371285314,
-        "Top": 697.30725762049326,
+        "Top": 696.7072576204932,
         "Width": 715.0,
-        "Height": 1081.7482592192055,
+        "Height": 1072.9482592192053,
         "FontSize": 36.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
-        "InitialTop": 769.70725762049324,
-        "InitialHeight": 780.94825921920528,
-        "TextblockHeight": 62.4,
+        "InitialTop": 769.7072576204932,
+        "InitialHeight": 780.9482592192053,
+        "TextblockHeight": 63.0,
         "Background": "#FFFFAA45"
       }
     ],
-    "X": 43.055282612569712,
-    "Y": 625.95553539318428,
-    "Zoom": 0.25888536693837522
+    "X": -3165.032001567122,
+    "Y": 1166.7424384852166,
+    "Zoom": 1.0111039302305374
   }
 }
